@@ -14,7 +14,7 @@ export const quiz = {
   questions: [
     {
       ...commonQuestionProps,
-      answers: ["bread", "seed", "read", "green"],
+      answers: ["bread", "example", "read", "green"],
       correctAnswer: "1",
       messageForCorrectAnswer: "Correct answer. Good job.",
       messageForIncorrectAnswer: "Incorrect answer. Please try again.",
