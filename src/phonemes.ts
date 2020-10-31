@@ -13,7 +13,7 @@ export const longVowels = [
 
 export const shortVowels = [
   [
-    "/a/",
+    "/æ/",
     "a, au, ai",
     "<u>a</u>pple, b<u>a</u>ck, pl<u>ai</u>d, l<u>au</u>gh, <u>a</u>fter",
   ],
@@ -158,7 +158,7 @@ export const consonants = [
     "sh, ti, ss, ch, tion, sion",
     "<u>sh</u>are, mo<u>tion</u>, pa<u>ssion</u>, ten<u>sion</u>, Engli<u>sh</u>",
   ],
-  ["/ʒ/", "s, ge, sion, sure", "Asia, casual, beige, vision, measure"],
+  ["/ʒ/", "s, ge, sion, sure", "A<u>si</u>a, ca<u>s</u>ual, bei<u>ge</u>, vi<u>sion</u>, mea<u>sure</u>"],
   ["/m/", "m, mm, mb, me, mn", "mom, grammar, climb, game, autumn"],
   ["/n/", "n, ne, nn, kn, pn, gn", "nine, connect, knife, pneumonia, gnaw"],
   ["/ŋ/", "ng, n", "sing, bank, angry, drink, jungle"],
