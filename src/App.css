@@ -146,6 +146,14 @@ table {
   margin-top: 20px;
 }
 
+.play-icon {
+  margin-right: 10px;
+}
+
+.play-icon:hover {
+  cursor: pointer;
+}
+
 .text-center {
   text-align: center;
 }
@@ -271,25 +279,6 @@ tr:nth-child(even):hover {
 
 .clickable-page:hover {
   color: black;
-}
-
-.container {
-  font-weight: bold;
-  font-size: 50px;
-  display: flex;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  height: 100px;
-  width: 100%;
-  vertical-align: middle;
-  line-height: 100px;
-}
-
-.element {
-  min-height: 100px;
-  border: 1px solid black;
-  flex: 1;
-  text-align: center;
 }
 
 .element:hover {

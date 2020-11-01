@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IoIosConstruct } from "react-icons/io";
+import { HiPlay } from "react-icons/hi";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -59,6 +60,10 @@ const App = () => {
   };
 
   const renderTable = (data: any, renderGrapheme = true) => {
+    const audio = new Audio(
+      "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+    );
+
     return (
       <table>
         <tr>
@@ -77,9 +82,28 @@ const App = () => {
         {data.map((line: any) => {
           return (
             <tr>
-              <td>{line[0]}</td>
+              <td>
+                <HiPlay
+                  className="play-icon"
+                  onClick={() => {
+                    audio.play();
+                  }}
+                />
+                {line[0]}
+              </td>
               {renderGrapheme && <td>{line[1]}</td>}
-              <td dangerouslySetInnerHTML={{ __html: line[2] }} />
+              <td>
+                <HiPlay
+                  className="play-icon"
+                  onClick={() => {
+                    audio.play();
+                  }}
+                />
+                <div
+                  className="text-inline"
+                  dangerouslySetInnerHTML={{ __html: line[2] }}
+                />
+              </td>
             </tr>
           );
         })}
@@ -98,39 +122,11 @@ const App = () => {
     );
   };
 
-  const renderBlockSounds = (blocks: any) => {
-    const audio = new Audio(
-      "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-    );
-
-    return (
-      <>
-        <h4>Click for sound</h4>
-        <div className="container">
-          {blocks.map((block: any) => {
-            return (
-              <div
-                className="element"
-                onClick={() => {
-                  audio.play();
-                }}
-              >
-                {block}
-              </div>
-            );
-          })}
-        </div>
-      </>
-    );
-  };
-
   const renderShortVowels = () => {
     return (
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
-          <br />
-          {renderBlockSounds(["æ", "ɛ", "ɪ", "ɑ", "ʌ", "ʊ"])}
           {renderTable(shortVowels)}
         </div>
       </div>
