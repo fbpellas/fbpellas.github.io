@@ -270,7 +270,7 @@ const App = () => {
             onClick={() => setPageAndClear(href)}
             variant="secondary"
           >
-            {title}
+            {button}
           </Button>
         </Card.Body>
       </Card>
@@ -869,7 +869,7 @@ const App = () => {
                   const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m[2]);
                   setMatches(uniqNewMatches);
                 } else {
-                  setMatches("");
+                  setMatches([]);
                 }
               }}
               type="text"
