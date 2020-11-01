@@ -508,8 +508,8 @@ const App = () => {
         </a>
         <a
           className="h2-title"
-          href="#main"
-          onClick={() => setPageAndClear("main")}
+          href="#home"
+          onClick={() => setPageAndClear("home")}
         >
           English Pronunciation
         </a>

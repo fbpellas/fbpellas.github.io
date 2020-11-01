@@ -78,8 +78,15 @@ export const mapping = [
   [["resource", "resources"], "resources", "Resources"],
   [["quiz", "quizzes"], "quiz", "Quiz"],
   [
-    ["english", "pronunciation", "english pronunciation", "main"],
-    "main",
-    "Main Page",
+    [
+      "english",
+      "pronunciation",
+      "english pronunciation",
+      "home",
+      "homepage",
+      "main",
+    ],
+    "home",
+    "Homepage",
   ],
 ];
