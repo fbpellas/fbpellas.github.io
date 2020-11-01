@@ -258,10 +258,33 @@ const App = () => {
             Learn how to speak English the American way
           </h3>
           <ul>
-            <li>Practice sounds</li>
-            <li>Practice intonation</li>
-            <li>Practice stress</li>
-            <li>TODO: links</li>
+            <li>
+              <a
+                className="main-link"
+                href="#phonemes"
+                onClick={() => setPageAndClear("phonemes")}
+              >
+                Practice sounds
+              </a>
+            </li>
+            <li>
+              <a
+                className="main-link"
+                href="#intonation"
+                onClick={() => setPageAndClear("intonation")}
+              >
+                Practice intonation
+              </a>
+            </li>
+            <li>
+              <a
+                className="main-link"
+                href="#stress"
+                onClick={() => setPageAndClear("stress")}
+              >
+                Practice stress
+              </a>
+            </li>
           </ul>
         </div>
       </div>

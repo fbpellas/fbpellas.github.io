@@ -345,6 +345,16 @@ h4 {
   text-decoration: underline;
 }
 
+.main-link {
+  color: #dc9b00;
+}
+
+.main-link:hover {
+  cursor: pointer;
+  color: #dc9b00;
+  text-decoration: underline;
+}
+
 body {
   background-color: #f7f3e7 !important;
 }
