@@ -31,7 +31,16 @@ const longVowelsKeys = generateKeys(longVowels);
 const rColoredVowelsKeys = generateKeys(rColoredVowels);
 const shortVowelsKeys = generateKeys(shortVowels);
 
+const mappingExamples = [
+  [consonantsKeys, "consonants", "Consonants (examples)"],
+  [longVowelsKeys, "long-vowels", "Long vowels (examples)"],
+  [shortVowelsKeys, "short-vowels", "Short vowels (examples)"],
+  [rColoredVowelsKeys, "r-colored-vowels", "R-colored vowels (examples)"],
+  [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
+];
+
 export const mapping = [
+  ...mappingExamples,
   [
     ["about", "author", "about the author", "faith", "pellas", "faith pellas"],
     "about-author",
@@ -47,7 +56,7 @@ export const mapping = [
     "consonants",
     "Consonants",
   ],
-  [consonantsKeys, "consonants", "Consonants (examples)"],
+
   [["phoneme", "phonemes"], "phonemes", "Phonemes"],
   [["letter", "letter", "vowel", "vowels"], "vowels", "Vowels"],
   [
@@ -55,13 +64,12 @@ export const mapping = [
     "long-vowels",
     "Long vowels",
   ],
-  [longVowelsKeys, "long-vowels", "Long vowels (examples)"],
   [
     ["vowel", "vowels", "short vowel", "short vowels"],
     "short-vowels",
     "Short vowels",
   ],
-  [shortVowelsKeys, "short-vowels", "Short vowels (examples)"],
+
   [
     [
       "vowel",
@@ -74,9 +82,7 @@ export const mapping = [
     "r-colored-vowels",
     "R-colored vowels",
   ],
-  [rColoredVowelsKeys, "r-colored-vowels", "R-colored vowels (examples)"],
   [["diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
-  [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
   [["stress"], "stress", "Stress"],
   [["definition", "definitions", "glossary"], "glossary", "Glossary"],
   [["intonation"], "intonation", "Intonation"],
