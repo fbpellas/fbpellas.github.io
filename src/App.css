@@ -143,8 +143,8 @@ html {
   margin-right: 100px;
   margin-bottom: 30px;
   margin-top: 30px;
-  font-family: "Merryweather";
-  font-size: 30px;
+  font-family: "Merriweather";
+  font-size: 25px;
 }
 
 table {
@@ -241,6 +241,7 @@ tr:nth-child(even):hover {
 .h2-title {
   font-size: 57px;
   color: #dc9b00;
+  font-family: "Playfair Display";
   font-weight: bold;
 }
 
