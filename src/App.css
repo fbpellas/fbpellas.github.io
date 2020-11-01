@@ -333,6 +333,13 @@ h4 {
   font-size: 20px;
 }
 
+.carousel-custom {
+  width: 50%;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
 .result {
   text-decoration: unset;
   color: #dc9b00;

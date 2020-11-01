@@ -27,6 +27,7 @@ import {
   Breadcrumb,
   Card,
   CardDeck,
+  Carousel,
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
@@ -38,6 +39,7 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
+  const [indexCarousel, setIndexCarousel] = React.useState(0);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -275,6 +277,45 @@ const App = () => {
     );
   };
 
+  const ControlledCarousel = () => {
+    const handleSelect = (selectedIndex: number, e: any) => {
+      setIndexCarousel(selectedIndex);
+    };
+
+    return (
+      <Carousel
+        activeIndex={indexCarousel}
+        onSelect={handleSelect}
+        interval={null}
+        className="carousel-custom"
+      >
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>Odd One Out</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="Third slide"
+          />
+
+          <Carousel.Caption>
+            <h3>React Quiz Component Demo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    );
+  };
+
   const renderMain = () => {
     return (
       <div className="block-2">
@@ -477,8 +518,11 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
-            <Quiz quiz={quiz} showInstantFeedback={true} />
-            <Quiz quiz={quizDemo} />
+            <ControlledCarousel />
+            {indexCarousel === 0 && (
+              <Quiz quiz={quiz} showInstantFeedback={true} />
+            )}
+            {indexCarousel === 1 && <Quiz quiz={quizDemo} />}
           </div>
         </div>
       );
