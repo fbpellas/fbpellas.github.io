@@ -23,7 +23,13 @@ import {
 import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
-import { Breadcrumb, OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  Breadcrumb,
+  Card,
+  CardDeck,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -250,6 +256,25 @@ const App = () => {
     );
   };
 
+  const renderCard = (href: string, title: string) => {
+    return (
+      <Card>
+        <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
+        <Card.Body>
+          <Card.Title>Title</Card.Title>
+          <Card.Text>Description</Card.Text>
+          <Button
+            href={`#${href}`}
+            onClick={() => setPageAndClear(href)}
+            variant="secondary"
+          >
+            {title}
+          </Button>
+        </Card.Body>
+      </Card>
+    );
+  };
+
   const renderMain = () => {
     return (
       <div className="block-2">
@@ -257,35 +282,12 @@ const App = () => {
           <h3 className="h3-title">
             Learn how to speak English the American way
           </h3>
-          <ul>
-            <li>
-              <a
-                className="main-link"
-                href="#phonemes"
-                onClick={() => setPageAndClear("phonemes")}
-              >
-                Practice sounds
-              </a>
-            </li>
-            <li>
-              <a
-                className="main-link"
-                href="#intonation"
-                onClick={() => setPageAndClear("intonation")}
-              >
-                Practice intonation
-              </a>
-            </li>
-            <li>
-              <a
-                className="main-link"
-                href="#stress"
-                onClick={() => setPageAndClear("stress")}
-              >
-                Practice stress
-              </a>
-            </li>
-          </ul>
+          <br />
+          <CardDeck>
+            {renderCard("phonemes", "Practice sounds")}
+            {renderCard("intonation", "Practice intonation")}
+            {renderCard("stress", "Practice stress")}
+          </CardDeck>
         </div>
       </div>
     );
