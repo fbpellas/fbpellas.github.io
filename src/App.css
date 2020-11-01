@@ -146,6 +146,10 @@ table {
   margin-top: 20px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 td,
 th {
   border: 1px solid #dddddd;
@@ -200,12 +204,25 @@ tr:nth-child(even):hover {
   font-size: 37px;
   color: gray;
   font-family: "Economica";
+  display: block;
+}
+
+.h1-title:hover {
+  cursor: pointer;
+  color: gray;
+  text-decoration: underline;
 }
 
 .h2-title {
   font-size: 57px;
   color: #dc9b00;
   font-weight: bold;
+}
+
+.h2-title:hover {
+  color: #dc9b00;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .h3-title {

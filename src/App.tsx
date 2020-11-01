@@ -22,6 +22,7 @@ import {
 import { mapping } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -49,9 +50,17 @@ const App = () => {
     return (
       <table>
         <tr>
-          <th>Phoneme</th>
-          {renderGrapheme && <th>Grapheme</th>}
-          <th>Examples</th>
+          <th>
+            <OverlayTrigger
+              key="bottom"
+              placement="bottom"
+              overlay={<Tooltip id={`tooltip-bottom`}>Sounds</Tooltip>}
+            >
+              <div className="text-center">Phonemes</div>
+            </OverlayTrigger>
+          </th>
+          {renderGrapheme && <th className="text-center">Grapheme</th>}
+          <th className="text-center">Examples</th>
         </tr>
         {data.map((line: any) => {
           return (
@@ -479,8 +488,20 @@ const App = () => {
         <link rel="canonical" href="https://fbpellas.github.io/" />
       </Helmet>
       <div className="main">
-        <h1 className="h1-title">Faith Pellas</h1>
-        <h2 className="h2-title">English Pronunciation</h2>
+        <a
+          className="h1-title"
+          href="#about-author"
+          onClick={() => setPageAndClear("about-author")}
+        >
+          Faith Pellas
+        </a>
+        <a
+          className="h2-title"
+          href="#main"
+          onClick={() => setPageAndClear("main")}
+        >
+          English Pronunciation
+        </a>
         <Navbar className="navbar" expand="lg">
           <Dropdown
             onMouseEnter={() => {
