@@ -128,6 +128,15 @@ html {
   overflow-y: scroll;
 }
 
+.breadcrumb {
+  background-color: #f7f3e7 !important;
+  font-size: 20px;
+}
+
+.breadcrumb-item > a {
+  color: #dc9b00 !important;
+}
+
 .main {
   text-align: center;
   margin-left: 100px;

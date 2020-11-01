@@ -23,7 +23,7 @@ import {
 import { mapping } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Breadcrumb, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -45,6 +45,94 @@ const App = () => {
   window.onhashchange = function () {
     const hash = window?.location?.hash?.substr(1);
     setPageAndClear(hash);
+  };
+
+  const renderBreadcrumbs = () => {
+    const links = [["home", "Home"]];
+
+    switch (page) {
+      case "about-author":
+        links.push([page, "About the Author"]);
+        break;
+
+      case "letter-teachers":
+        links.push([page, "Letter to Teachers"]);
+        break;
+
+      case "phonemes":
+        links.push([page, "Phonemes"]);
+        break;
+
+      case "vowels":
+        links.push(["phonemes", "Phonemes"]);
+        links.push([page, "Vowels"]);
+        break;
+
+      case "short-vowels":
+        links.push(["phonemes", "Phonemes"]);
+        links.push(["vowels", "Vowels"]);
+        links.push(["short-vowels", "Short Vowels"]);
+        break;
+
+      case "long-vowels":
+        links.push(["phonemes", "Phonemes"]);
+        links.push(["vowels", "Vowels"]);
+        links.push(["long-vowels", "Long Vowels"]);
+        break;
+
+      case "r-colored-vowels":
+        links.push(["phonemes", "Phonemes"]);
+        links.push(["vowels", "Vowels"]);
+        links.push(["r-colored-vowels", "R-Colored Vowels"]);
+        break;
+
+      case "diphthongs":
+        links.push(["phonemes", "Phonemes"]);
+        links.push(["diphthongs", "Diphthongs"]);
+        break;
+
+      case "consonants":
+        links.push(["phonemes", "Phonemes"]);
+        links.push(["consonants", "Consonants"]);
+        break;
+
+      case "stress":
+        links.push(["stress", "Stress"]);
+        break;
+
+      case "intonation":
+        links.push(["intonation", "Intonation"]);
+        break;
+
+      case "resources":
+        links.push(["resources", "Resources"]);
+        break;
+
+      case "quiz":
+        links.push(["quiz", "Quiz"]);
+        break;
+
+      case "glossary":
+        links.push(["glossary", "Glossary"]);
+        break;
+    }
+
+    const { length } = links;
+
+    if (length <= 1) return null;
+
+    return (
+      <Breadcrumb>
+        {links.map((link, index) => {
+          const [anchor, title] = link;
+          if (index === length - 1) {
+            return <Breadcrumb.Item active>{title}</Breadcrumb.Item>;
+          }
+
+          return <Breadcrumb.Item href={`#${anchor}`}>{title}</Breadcrumb.Item>;
+        })}
+      </Breadcrumb>
+    );
   };
 
   const renderGlossaryTooltip = (abbreviation: string, definition: string) => {
@@ -705,6 +793,7 @@ const App = () => {
         </Navbar>
 
         <div className="body">
+          {renderBreadcrumbs()}
           {renderMatches()}
           {renderBody()}
         </div>
