@@ -150,6 +150,14 @@ table {
   text-align: center;
 }
 
+.bottom-dot {
+  border-bottom: 1px dotted black;
+}
+
+.text-inline {
+  display: inline;
+}
+
 td,
 th {
   border: 1px solid #dddddd;

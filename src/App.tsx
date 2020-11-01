@@ -46,6 +46,18 @@ const App = () => {
     setPageAndClear(hash);
   };
 
+  const renderGlossaryTooltip = (abbreviation: string, definition: string) => {
+    return (
+      <OverlayTrigger
+        key="bottom"
+        placement="bottom"
+        overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}
+      >
+        <div className="text-inline bottom-dot">{abbreviation}</div>
+      </OverlayTrigger>
+    );
+  };
+
   const renderTable = (data: any, renderGrapheme = true) => {
     return (
       <table>
@@ -143,9 +155,10 @@ const App = () => {
           <h3 className="h3-title">Diphthongs</h3>
           <div>
             Diphthongs are a combination of two vowel sounds. There are eight
-            diphthongs in the IPA: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. All eight
-            phonemes can be found in RP, while only five sounds are produced in
-            American English.
+            diphthongs in the{" "}
+            {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}:
+            aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. All eight phonemes can be found in
+            RP, while only five sounds are produced in American English.
           </div>
           {renderTable(diphthongs, false)}
         </div>
@@ -307,8 +320,9 @@ const App = () => {
             <div>
               Vowels are a set of unblocked sounds that are essential to
               producing a syllable. They consist of the letters A, E, I, O, U
-              (sometimes Y). The IPA lists 20 phonemes categorized as long,
-              short, and diphthongs.
+              (sometimes Y). The{" "}
+              {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}{" "}
+              lists 20 phonemes categorized as long, short, and diphthongs.
             </div>
             <br />
             <div>
@@ -337,10 +351,11 @@ const App = () => {
           <div className="article">
             <h3 className="h3-title">Consonants</h3>
             <div>
-              Consonants have 24 blocked sounds. In the IPA, consonants are
-              arranged completely differently from the English alphabet. Each
-              phoneme is organized based on the sound’s place of articulation
-              and alternates between voiced and unvoiced
+              Consonants have 24 blocked sounds. In the{" "}
+              {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")},
+              consonants are arranged completely differently from the English
+              alphabet. Each phoneme is organized based on the sound’s place of
+              articulation and alternates between voiced and unvoiced
             </div>
             {renderTable(consonants)}
           </div>
