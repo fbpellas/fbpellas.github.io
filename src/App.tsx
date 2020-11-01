@@ -388,7 +388,7 @@ const App = () => {
       </div>
     );
 
-    if (["stress", "intonation", "resources"].includes(page)) {
+    if (["stress", "intonation", "resources", "glossary"].includes(page)) {
       return (
         <>
           <div className="block-2">
@@ -645,6 +645,12 @@ const App = () => {
             </Nav.Link>
             <Nav.Link href="#quiz" onClick={() => setPageAndClear("quiz")}>
               Quiz
+            </Nav.Link>
+            <Nav.Link
+              href="#glossary"
+              onClick={() => setPageAndClear("glossary")}
+            >
+              Glossary
             </Nav.Link>
           </Nav>
           <Form inline>

@@ -74,6 +74,7 @@ export const mapping = [
   ],
   [[...diphthongsKeys, "diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
   [["stress"], "stress", "Stress"],
+  [["definition", "definitions", "glossary"], "glossary", "Glossary"],
   [["intonation"], "intonation", "Intonation"],
   [["resource", "resources"], "resources", "Resources"],
   [["quiz", "quizzes"], "quiz", "Quiz"],
