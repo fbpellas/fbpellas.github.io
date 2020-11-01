@@ -476,7 +476,21 @@ const App = () => {
       </div>
     );
 
-    if (["stress", "intonation", "resources", "glossary"].includes(page)) {
+    if (page === "glossary") {
+      return (
+        <div className="block-2">
+          <div className="article">
+            <h3 className="h3-title">
+              International Phonetic Alphabet{" "}
+              <Badge variant="secondary">IPA</Badge>
+            </h3>
+            <p>Explanation</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (["stress", "intonation", "resources"].includes(page)) {
       return (
         <>
           <div className="block-2">
