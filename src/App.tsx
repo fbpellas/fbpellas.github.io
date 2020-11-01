@@ -258,12 +258,12 @@ const App = () => {
     );
   };
 
-  const renderCard = (href: string, title: string) => {
+  const renderCard = (href: string, title: string, button: string) => {
     return (
       <Card>
         <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
         <Card.Body>
-          <Card.Title>Title</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text>Description</Card.Text>
           <Button
             href={`#${href}`}
@@ -325,9 +325,9 @@ const App = () => {
           </h3>
           <br />
           <CardDeck>
-            {renderCard("phonemes", "Practice sounds")}
-            {renderCard("intonation", "Practice intonation")}
-            {renderCard("stress", "Practice stress")}
+            {renderCard("phonemes", "Phonemes", "Practice sounds")}
+            {renderCard("intonation", "Intonation", "Practice intonation")}
+            {renderCard("stress", "Stress", "Practice stress")}
           </CardDeck>
         </div>
       </div>
@@ -384,7 +384,7 @@ const App = () => {
                   )}&body=${encodeURIComponent(emailBody)}`
                 );
               }}
-              variant="primary"
+              variant="warning"
               type="submit"
             >
               Submit
