@@ -20,7 +20,7 @@ import {
   diphthongs,
   consonants,
 } from "./phonemes";
-import { mapping } from "./search";
+import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
 import { Breadcrumb, OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -777,10 +777,13 @@ const App = () => {
 
                 const newMatches: any[] = [];
 
-                mapping.forEach((m: any) => {
-                  const key = m[0];
+                const { length } = input;
 
-                  if (input.length >= 3) {
+                if (length > 0) {
+                  const mappingArray = length >= 3 ? mapping : mappingPhonemes;
+                  mappingArray.forEach((m: any) => {
+                    const key = m[0];
+
                     const matchKey = key.find((k: any) =>
                       k.includes(inputLowercase)
                     );
@@ -788,15 +791,17 @@ const App = () => {
                     if (matchKey) {
                       newMatches.push([matchKey, m[1], m[2]]);
                     }
-                  }
-                });
+                  });
 
-                const sortedNewMatches = newMatches.sort(function (a, b) {
-                  return a[0].length - b[0].length;
-                });
+                  const sortedNewMatches = newMatches.sort(function (a, b) {
+                    return a[0].length - b[0].length;
+                  });
 
-                const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m[2]);
-                setMatches(uniqNewMatches);
+                  const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m[2]);
+                  setMatches(uniqNewMatches);
+                } else {
+                  setMatches("");
+                }
               }}
               type="text"
               placeholder="Search"
@@ -807,8 +812,8 @@ const App = () => {
         </Navbar>
 
         <div className="body">
-          {renderBreadcrumbs()}
           {renderMatches()}
+          {renderBreadcrumbs()}
           {renderBody()}
         </div>
         {/* <div className="footer">Created in 2020</div> */}

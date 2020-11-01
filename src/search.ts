@@ -25,11 +25,40 @@ const generateKeys = (data: any) => {
   );
 };
 
+const generateKeysPhonemes = (data: any) => {
+  return flatten(
+    data.map((el: any) => {
+      const phonemes = el[0];
+      const sanitizedPhonemes = phonemes.replaceAll("/", "");
+
+      return [sanitizedPhonemes, phonemes];
+    })
+  );
+};
+
 const consonantsKeys = generateKeys(consonants);
 const diphthongsKeys = generateKeys(diphthongs);
 const longVowelsKeys = generateKeys(longVowels);
 const rColoredVowelsKeys = generateKeys(rColoredVowels);
 const shortVowelsKeys = generateKeys(shortVowels);
+
+const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
+const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
+const longVowelsKeysPhonemes = generateKeysPhonemes(longVowels);
+const rColoredVowelsKeysPhonemes = generateKeysPhonemes(rColoredVowels);
+const shortVowelsKeysPhonemes = generateKeysPhonemes(shortVowels);
+
+export const mappingPhonemes = [
+  [consonantsKeysPhonemes, "consonants", "Consonants (phonemes)"],
+  [longVowelsKeysPhonemes, "long-vowels", "Long vowels (phonemes)"],
+  [shortVowelsKeysPhonemes, "short-vowels", "Short vowels (phonemes)"],
+  [
+    rColoredVowelsKeysPhonemes,
+    "r-colored-vowels",
+    "R-colored vowels (phonemes)",
+  ],
+  [diphthongsKeysPhonemes, "diphthongs", "Diphthongs (phonemes)"],
+];
 
 const mappingExamples = [
   [consonantsKeys, "consonants", "Consonants (examples)"],
@@ -41,6 +70,7 @@ const mappingExamples = [
 
 export const mapping = [
   ...mappingExamples,
+  ...mappingPhonemes,
   [
     ["about", "author", "about the author", "faith", "pellas", "faith pellas"],
     "about-author",
