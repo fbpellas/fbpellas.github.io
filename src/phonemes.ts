@@ -63,23 +63,41 @@ export const rColoredVowels = [
 ];
 
 export const diphthongs = [
-  ["/aɪ/", "", "b<u>ye</u>, wh<u>y</u>, l<u>ie</u>, dr<u>y</u>, fl<u>y</u>"],
+  [
+    "/aɪ/",
+    "",
+    "ice, bye, lime, fight, sky",
+    "diphthongs/phonemes/-aɪ-.m4a",
+    "diphthongs/examples/ice, bye, lime, fight , sky.m4a",
+  ],
   [
     "/eɪ/",
     "",
-    "<u>a</u>t<u>e</u>, w<u>eigh</u>t, g<u>a</u>t<u>e</u>, cre<u>a</u>t<u>e</u>, p<u>ay</u>",
+    "acorn, jade, paid, weight, hey",
+    "diphthongs/phonemes/-eɪ-.m4a",
+    "diphthongs/examples/acorn, jade, paid, weight, hey.m4a",
   ],
   [
     "/ɔɪ/",
     "",
-    "b<u>oy</u>, c<u>oi</u>n, s<u>oi</u>l, v<u>oi</u>ce, b<u>oi</u>l",
+    "b<u>oy</u>, c<u>oi</u>n, s<u>oi</u>l, v<u>oi</u>ce, turquoise",
+    "diphthongs/phonemes/-ɔɪ-.m4a",
+    "diphthongs/examples/boy, coin, soil, voice, turquoise.m4a",
   ],
   [
     "/oʊ/",
     "",
-    "g<u>o</u>, t<u>o</u>tal, gr<u>ow</u>, <u>o</u>ver, c<u>ol</u>d, m<u>ow</u>",
+    "g<u>o</u>, t<u>o</u>tal, gr<u>ow</u>, <u>o</u>ver, g<u>ol</u>d",
+    "diphthongs/phonemes/-oʊ-.m4a",
+    "diphthongs/examples/go, total, grow, over, gold.m4a",
   ],
-  ["/aʊ/", "", "c<u>ow</u>, n<u>ow</u>, <u>ou</u>ch, w<u>ow</u>, <u>gow</u>n"],
+  [
+    "/aʊ/",
+    "",
+    "c<u>ow</u>, n<u>ow</u>, brown, w<u>ow</u>, <u>gow</u>n",
+    "diphthongs/phonemes/-aʊ-.m4a",
+    "diphthongs/examples/cow, now, brown, wow, gown.m4a",
+  ],
 ];
 
 export const consonants = [
