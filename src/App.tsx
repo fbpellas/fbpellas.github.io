@@ -32,6 +32,8 @@ import {
   Tooltip,
 } from "react-bootstrap";
 
+export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
+
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
@@ -156,10 +158,6 @@ const App = () => {
   };
 
   const renderTable = (data: any, renderGrapheme = true) => {
-    const audio = new Audio(
-      "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-    );
-
     return (
       <table>
         <tr>
@@ -176,6 +174,10 @@ const App = () => {
           <th className="text-center">Examples</th>
         </tr>
         {data.map((line: any) => {
+          const audio = new Audio(
+            `${BASE_PATH}Thursday%2C%20thank%2C%20bath%2C%20nothing%2C%20both.m4a`
+          );
+
           return (
             <tr>
               <td>
