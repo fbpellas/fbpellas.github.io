@@ -13,7 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz, quizDemo } from "./quiz";
 import Quiz from "react-quiz-component";
-import { longVowels, shortVowels, diphthongs, consonants } from "./phonemes";
+import { longVowels, diphthongs, consonants } from "./phonemes";
 import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
@@ -70,12 +70,6 @@ const App = () => {
       case "vowels":
         links.push(["phonemes", "Phonemes"]);
         links.push([page, "Vowels"]);
-        break;
-
-      case "short-vowels":
-        links.push(["phonemes", "Phonemes"]);
-        links.push(["vowels", "Vowels"]);
-        links.push(["short-vowels", "Short Vowels"]);
         break;
 
       case "long-vowels":
@@ -205,17 +199,6 @@ const App = () => {
         <div className="article">
           <h3 className="h3-title">6 Long Vowels /ɑ:, i:, u:, ju: , ɜ:, ɔ:/</h3>
           {renderTable(longVowels)}
-        </div>
-      </div>
-    );
-  };
-
-  const renderShortVowels = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
-          {renderTable(shortVowels)}
         </div>
       </div>
     );
@@ -424,10 +407,6 @@ const App = () => {
           </div>
         </div>
       );
-    }
-
-    if (page === "short-vowels") {
-      return renderShortVowels();
     }
 
     if (page === "long-vowels") {
@@ -724,15 +703,6 @@ const App = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item
-                href="#short-vowels"
-                onClick={() => {
-                  setPageAndClear("short-vowels");
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                Short vowels
-              </Dropdown.Item>
               <Dropdown.Item
                 href="#long-vowels"
                 onClick={() => {
