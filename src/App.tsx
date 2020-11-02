@@ -13,7 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz, quizDemo } from "./quiz";
 import Quiz from "react-quiz-component";
-import { longVowels, diphthongs, consonants } from "./phonemes";
+import { diphthongs, consonants } from "./phonemes";
 import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
@@ -70,12 +70,6 @@ const App = () => {
       case "vowels":
         links.push(["phonemes", "Phonemes"]);
         links.push([page, "Vowels"]);
-        break;
-
-      case "long-vowels":
-        links.push(["phonemes", "Phonemes"]);
-        links.push(["vowels", "Vowels"]);
-        links.push(["long-vowels", "Long Vowels"]);
         break;
 
       case "diphthongs":
@@ -190,17 +184,6 @@ const App = () => {
           );
         })}
       </table>
-    );
-  };
-
-  const renderLongVowels = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">6 Long Vowels /ɑ:, i:, u:, ju: , ɜ:, ɔ:/</h3>
-          {renderTable(longVowels)}
-        </div>
-      </div>
     );
   };
 
@@ -407,10 +390,6 @@ const App = () => {
           </div>
         </div>
       );
-    }
-
-    if (page === "long-vowels") {
-      return renderLongVowels();
     }
 
     if (page === "diphthongs") {
@@ -703,15 +682,6 @@ const App = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item
-                href="#long-vowels"
-                onClick={() => {
-                  setPageAndClear("long-vowels");
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                Long vowels
-              </Dropdown.Item>
               <Dropdown.Item
                 href="#diphthongs"
                 onClick={() => {

@@ -1,4 +1,4 @@
-import { diphthongs, consonants, longVowels } from "./phonemes";
+import { diphthongs, consonants } from "./phonemes";
 import flatten from "lodash/flatten";
 
 const generateKeys = (data: any) => {
@@ -32,21 +32,17 @@ const generateKeysPhonemes = (data: any) => {
 
 const consonantsKeys = generateKeys(consonants);
 const diphthongsKeys = generateKeys(diphthongs);
-const longVowelsKeys = generateKeys(longVowels);
 
 const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
 const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
-const longVowelsKeysPhonemes = generateKeysPhonemes(longVowels);
 
 export const mappingPhonemes = [
   [consonantsKeysPhonemes, "consonants", "Consonants (phonemes)"],
-  [longVowelsKeysPhonemes, "long-vowels", "Long vowels (phonemes)"],
   [diphthongsKeysPhonemes, "diphthongs", "Diphthongs (phonemes)"],
 ];
 
 const mappingExamples = [
   [consonantsKeys, "consonants", "Consonants (examples)"],
-  [longVowelsKeys, "long-vowels", "Long vowels (examples)"],
   [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
 ];
 
@@ -71,11 +67,6 @@ export const mapping = [
 
   [["phoneme", "phonemes"], "phonemes", "Phonemes"],
   [["letter", "letter", "vowel", "vowels"], "vowels", "Vowels"],
-  [
-    ["vowel", "vowels", "long vowel", "long vowels"],
-    "long-vowels",
-    "Long vowels",
-  ],
   [["diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
   [["stress"], "stress", "Stress"],
   [["definition", "definitions", "glossary"], "glossary", "Glossary"],
