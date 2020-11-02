@@ -174,9 +174,14 @@ const App = () => {
           <th className="text-center">Examples</th>
         </tr>
         {data.map((line: any) => {
-          const audio = new Audio(
-            `${BASE_PATH}Thursday%2C%20thank%2C%20bath%2C%20nothing%2C%20both.m4a`
-          );
+          const phonemesSound = line[3];
+          console.log("renderTable -> data", data);
+          const examplesSound = line[4];
+
+          console.log("here");
+          console.log(`${BASE_PATH}${phonemesSound}`);
+          const audioPhonemes = new Audio(`${BASE_PATH}${phonemesSound}`);
+          const audioExamples = new Audio(`${BASE_PATH}${examplesSound}`);
 
           return (
             <tr>
@@ -184,7 +189,7 @@ const App = () => {
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audio.play();
+                    audioPhonemes.play();
                   }}
                 />
                 {line[0]}
@@ -194,7 +199,7 @@ const App = () => {
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audio.play();
+                    audioExamples.play();
                   }}
                 />
                 <div
