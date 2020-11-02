@@ -157,7 +157,7 @@ const App = () => {
     );
   };
 
-  const renderTable = (data: any, renderGrapheme = true) => {
+  const renderTable = (data: any) => {
     return (
       <table>
         <tr>
@@ -170,16 +170,13 @@ const App = () => {
               <div className="text-center">Phonemes</div>
             </OverlayTrigger>
           </th>
-          {renderGrapheme && <th className="text-center">Grapheme</th>}
+          <th className="text-center">Grapheme</th>
           <th className="text-center">Examples</th>
         </tr>
         {data.map((line: any) => {
           const phonemesSound = line[3];
-          console.log("renderTable -> data", data);
           const examplesSound = line[4];
 
-          console.log("here");
-          console.log(`${BASE_PATH}${phonemesSound}`);
           const audioPhonemes = new Audio(`${BASE_PATH}${phonemesSound}`);
           const audioExamples = new Audio(`${BASE_PATH}${examplesSound}`);
 
@@ -194,7 +191,7 @@ const App = () => {
                 />
                 {line[0]}
               </td>
-              {renderGrapheme && <td>{line[1]}</td>}
+              <td>{line[1]}</td>
               <td>
                 <HiPlay
                   className="play-icon"
@@ -241,7 +238,7 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">R-Colored Vowels</h3>
-          {renderTable(rColoredVowels, false)}
+          {renderTable(rColoredVowels)}
         </div>
       </div>
     );
@@ -259,7 +256,7 @@ const App = () => {
             aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. All eight phonemes can be found in
             RP, while only five sounds are produced in American English.
           </div>
-          {renderTable(diphthongs, false)}
+          {renderTable(diphthongs)}
         </div>
       </div>
     );
