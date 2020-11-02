@@ -1,10 +1,4 @@
-import {
-  diphthongs,
-  consonants,
-  longVowels,
-  shortVowels,
-  rColoredVowels,
-} from "./phonemes";
+import { diphthongs, consonants, longVowels, shortVowels } from "./phonemes";
 import flatten from "lodash/flatten";
 
 const generateKeys = (data: any) => {
@@ -39,24 +33,17 @@ const generateKeysPhonemes = (data: any) => {
 const consonantsKeys = generateKeys(consonants);
 const diphthongsKeys = generateKeys(diphthongs);
 const longVowelsKeys = generateKeys(longVowels);
-const rColoredVowelsKeys = generateKeys(rColoredVowels);
 const shortVowelsKeys = generateKeys(shortVowels);
 
 const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
 const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
 const longVowelsKeysPhonemes = generateKeysPhonemes(longVowels);
-const rColoredVowelsKeysPhonemes = generateKeysPhonemes(rColoredVowels);
 const shortVowelsKeysPhonemes = generateKeysPhonemes(shortVowels);
 
 export const mappingPhonemes = [
   [consonantsKeysPhonemes, "consonants", "Consonants (phonemes)"],
   [longVowelsKeysPhonemes, "long-vowels", "Long vowels (phonemes)"],
   [shortVowelsKeysPhonemes, "short-vowels", "Short vowels (phonemes)"],
-  [
-    rColoredVowelsKeysPhonemes,
-    "r-colored-vowels",
-    "R-colored vowels (phonemes)",
-  ],
   [diphthongsKeysPhonemes, "diphthongs", "Diphthongs (phonemes)"],
 ];
 
@@ -64,7 +51,6 @@ const mappingExamples = [
   [consonantsKeys, "consonants", "Consonants (examples)"],
   [longVowelsKeys, "long-vowels", "Long vowels (examples)"],
   [shortVowelsKeys, "short-vowels", "Short vowels (examples)"],
-  [rColoredVowelsKeys, "r-colored-vowels", "R-colored vowels (examples)"],
   [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
 ];
 
@@ -98,19 +84,6 @@ export const mapping = [
     ["vowel", "vowels", "short vowel", "short vowels"],
     "short-vowels",
     "Short vowels",
-  ],
-
-  [
-    [
-      "vowel",
-      "vowels",
-      "r-colored vowel",
-      "r-colored vowels",
-      "r colored vowel",
-      "r colored vowels",
-    ],
-    "r-colored-vowels",
-    "R-colored vowels",
   ],
   [["diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
   [["stress"], "stress", "Stress"],

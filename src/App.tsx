@@ -13,13 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz, quizDemo } from "./quiz";
 import Quiz from "react-quiz-component";
-import {
-  rColoredVowels,
-  longVowels,
-  shortVowels,
-  diphthongs,
-  consonants,
-} from "./phonemes";
+import { longVowels, shortVowels, diphthongs, consonants } from "./phonemes";
 import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
@@ -88,12 +82,6 @@ const App = () => {
         links.push(["phonemes", "Phonemes"]);
         links.push(["vowels", "Vowels"]);
         links.push(["long-vowels", "Long Vowels"]);
-        break;
-
-      case "r-colored-vowels":
-        links.push(["phonemes", "Phonemes"]);
-        links.push(["vowels", "Vowels"]);
-        links.push(["r-colored-vowels", "R-Colored Vowels"]);
         break;
 
       case "diphthongs":
@@ -228,17 +216,6 @@ const App = () => {
         <div className="article">
           <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
           {renderTable(shortVowels)}
-        </div>
-      </div>
-    );
-  };
-
-  const renderRColoredVowels = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">R-Colored Vowels</h3>
-          {renderTable(rColoredVowels)}
         </div>
       </div>
     );
@@ -457,10 +434,6 @@ const App = () => {
       return renderLongVowels();
     }
 
-    if (page === "r-colored-vowels") {
-      return renderRColoredVowels();
-    }
-
     if (page === "diphthongs") {
       return renderDiphthongs();
     }
@@ -490,10 +463,6 @@ const App = () => {
               English language. Some words might vary in phonemes depending on
               regional dialects.
             </div>
-
-            {/* {renderShortVowels()}
-          {renderLongVowels()}
-          {renderRColoredVowels()} */}
           </div>
         </div>
       );
@@ -772,15 +741,6 @@ const App = () => {
                 }}
               >
                 Long vowels
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#r-colored-vowels"
-                onClick={() => {
-                  setPageAndClear("r-colored-vowels");
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                R-colored vowels
               </Dropdown.Item>
               <Dropdown.Item
                 href="#diphthongs"
