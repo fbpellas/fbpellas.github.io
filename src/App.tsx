@@ -13,7 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz, quizDemo } from "./quiz";
 import Quiz from "react-quiz-component";
-import { diphthongs, consonants } from "./phonemes";
+import { diphthongs, consonants, vowels } from "./phonemes";
 import { mapping, mappingPhonemes } from "./search";
 import uniqBy from "lodash/uniqBy";
 import { isMobile } from "react-device-detect";
@@ -74,32 +74,32 @@ const App = () => {
 
       case "diphthongs":
         links.push(["phonemes", "Phonemes"]);
-        links.push(["diphthongs", "Diphthongs"]);
+        links.push([page, "Diphthongs"]);
         break;
 
       case "consonants":
         links.push(["phonemes", "Phonemes"]);
-        links.push(["consonants", "Consonants"]);
+        links.push([page, "Consonants"]);
         break;
 
       case "stress":
-        links.push(["stress", "Stress"]);
+        links.push([page, "Stress"]);
         break;
 
       case "intonation":
-        links.push(["intonation", "Intonation"]);
+        links.push([page, "Intonation"]);
         break;
 
       case "resources":
-        links.push(["resources", "Resources"]);
+        links.push([page, "Resources"]);
         break;
 
       case "quiz":
-        links.push(["quiz", "Quiz"]);
+        links.push([page, "Quiz"]);
         break;
 
       case "glossary":
-        links.push(["glossary", "Glossary"]);
+        links.push([page, "Glossary"]);
         break;
     }
 
@@ -200,6 +200,37 @@ const App = () => {
             RP, while only five sounds are produced in American English.
           </div>
           {renderTable(diphthongs)}
+        </div>
+      </div>
+    );
+  };
+
+  const renderVowels = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h2 className="h3-title vowels-title">Vowels</h2>
+          <br />
+          <div>
+            Vowels are a set of unblocked sounds that are essential to producing
+            a syllable. They consist of the letters A, E, I, O, U (sometimes Y).
+            The{" "}
+            {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}{" "}
+            lists 20 phonemes categorized as long, short, and diphthongs.
+          </div>
+          <br />
+          <div>
+            Vowels can sometimes be categorized as lax (short) and tense (long)
+            depending on the muscular effort the lips and tongue make during
+            phoneme production.
+          </div>
+          <br />
+          <div>
+            Listed below are the phonemes that are widely used in the American
+            English language. Some words might vary in phonemes depending on
+            regional dialects.
+          </div>
+          {renderTable(vowels)}
         </div>
       </div>
     );
@@ -397,33 +428,7 @@ const App = () => {
     }
 
     if (page === "vowels") {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h2 className="h3-title vowels-title">Vowels</h2>
-            <br />
-            <div>
-              Vowels are a set of unblocked sounds that are essential to
-              producing a syllable. They consist of the letters A, E, I, O, U
-              (sometimes Y). The{" "}
-              {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}{" "}
-              lists 20 phonemes categorized as long, short, and diphthongs.
-            </div>
-            <br />
-            <div>
-              Vowels can sometimes be categorized as lax (short) and tense
-              (long) depending on the muscular effort the lips and tongue make
-              during phoneme production.
-            </div>
-            <br />
-            <div>
-              Listed below are the phonemes that are widely used in the American
-              English language. Some words might vary in phonemes depending on
-              regional dialects.
-            </div>
-          </div>
-        </div>
-      );
+      return renderVowels();
     }
 
     if (page === "consonants") {
@@ -683,6 +688,15 @@ const App = () => {
 
             <Dropdown.Menu>
               <Dropdown.Item
+                href="#consonants"
+                onClick={() => {
+                  setPageAndClear("consonants");
+                  setIsPhonemesHovered(false);
+                }}
+              >
+                Consonants
+              </Dropdown.Item>
+              <Dropdown.Item
                 href="#diphthongs"
                 onClick={() => {
                   setPageAndClear("diphthongs");
@@ -692,13 +706,13 @@ const App = () => {
                 Diphthongs
               </Dropdown.Item>
               <Dropdown.Item
-                href="#consonants"
+                href="#vowels"
                 onClick={() => {
-                  setPageAndClear("consonants");
+                  setPageAndClear("vowels");
                   setIsPhonemesHovered(false);
                 }}
               >
-                Consonants
+                Vowels
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

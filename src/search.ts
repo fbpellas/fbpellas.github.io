@@ -1,4 +1,4 @@
-import { diphthongs, consonants } from "./phonemes";
+import { diphthongs, consonants, vowels } from "./phonemes";
 import flatten from "lodash/flatten";
 
 const generateKeys = (data: any) => {
@@ -32,18 +32,22 @@ const generateKeysPhonemes = (data: any) => {
 
 const consonantsKeys = generateKeys(consonants);
 const diphthongsKeys = generateKeys(diphthongs);
+const vowelsKeys = generateKeys(vowels);
 
 const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
 const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
+const vowelsKeysPhonemes = generateKeysPhonemes(vowels);
 
 export const mappingPhonemes = [
   [consonantsKeysPhonemes, "consonants", "Consonants (phonemes)"],
   [diphthongsKeysPhonemes, "diphthongs", "Diphthongs (phonemes)"],
+  [vowelsKeysPhonemes, "vowels", "Vowels (phonemes)"],
 ];
 
 const mappingExamples = [
   [consonantsKeys, "consonants", "Consonants (examples)"],
   [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
+  [vowelsKeys, "vowels", "Vowels (examples)"],
 ];
 
 export const mapping = [

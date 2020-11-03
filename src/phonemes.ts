@@ -1,67 +1,3 @@
-export const longVowels = [
-  [
-    "/ā/",
-    "a, a-e, ai, ay, eigh, ey",
-    "<u>a</u>corn, t<u>a</u>ke, p<u>ai</u>d, n<u>eigh</u>, h<u>e</u>y",
-  ],
-  ["/ē/", "e, ee, ea, ey, ie, y", "beat, sheep, tea, key, funny"],
-  ["/ī/", "i, i-e, igh, y, ie", "ice, hike, fight, sky, pie"],
-  ["/ō/", "o, o-e, oa, ou, ow", "go, note, boat, though, low"],
-  ["/ū/", "u, ew", "use, cube, few, threw,  yo<u>u</u>"],
-  ["/ōō/", "oo, ou, u", "who, noon, you, group, use"],
-];
-
-export const shortVowels = [
-  [
-    "/æ/",
-    "a, au, ai",
-    "<u>a</u>pple, b<u>a</u>ck, pl<u>ai</u>d, l<u>au</u>gh, <u>a</u>fter",
-  ],
-  [
-    "/ɛ/",
-    "e, ea, ai",
-    "m<u>e</u>n, br<u>ea</u>d, m<u>e</u>t, s<u>ai</u>d, h<u>ea</u>d",
-  ],
-  [
-    "/ɪ/",
-    "i, y, ui, u",
-    "<u>i</u>f, s<u>y</u>mbol, b<u>ui</u>ld, b<u>u</u>sy, q<u>ui</u>lt",
-  ],
-  [
-    "/ɑ/",
-    "o, a, ow",
-    "f<u>a</u>ther, c<u>a</u>r, kn<u>ow</u>ledge, g<u>o</u>d, b<u>o</u>dy",
-  ],
-  [
-    "/ʌ/",
-    "u, o, oo, oe",
-    "<u>u</u>nder, h<u>o</u>ney, fl<u>oo</u>d, d<u>oe</u>s, f<u>u</u>n",
-  ],
-  [
-    "/ʊ/",
-    "oo, ou, u",
-    "f<u>ul</u>l, b<u>oo</u>k, c<u>ou</u>ld, sh<u>ou</u>ld, p<u>u</u>sh",
-  ],
-];
-
-export const rColoredVowels = [
-  [
-    "/ar/",
-    "",
-    "h<u>ar</u>d, <u>ar</u>m, sh<u>ar</u>k, he<u>ar</u>t, m<u>ar</u>ket",
-  ],
-  [
-    "/er/",
-    "",
-    "b<u>ir</u>d, h<u>ur</u>t, l<u>ear</u>n, <u>ear</u>th, f<u>ur</u>niture",
-  ],
-  [
-    "/or/",
-    "",
-    "m<u>or</u>ning, fl<u>oor</u>, w<u>ore</u>, b<u>oar</u>d, sp<u>or</u>t",
-  ],
-];
-
 export const diphthongs = [
   [
     "/aɪ/",
@@ -268,5 +204,93 @@ export const consonants = [
     "home, whole, who, hair, ahead",
     "consonants/phonemes/-h-.m4a",
     "consonants/examples/home, whole, who, hair, ahead.m4a",
+  ],
+];
+
+export const vowels = [
+  [
+    "/iː/",
+    "e, ee, ea, ey, ie, y",
+    "green, sheep, tea, key, funny",
+    "vowels/phonemes/-iː-.m4a",
+    "vowels/examples/green, sheep, tea, key, funny.m4a",
+  ],
+  [
+    "/ɪ/",
+    "i, y, ui, u",
+    "pink, symbol, build, busy, quilt",
+    "vowels/phonemes/-ɪ-.m4a",
+    "vowels/examples/-pink, symbol, build, busy, quilt.m4a", // TODO: rename
+  ],
+  [
+    "/ʊ/",
+    "oo, ou, u",
+    "wood, could, full, book, push",
+    "vowels/phonemes/-ʊ-.m4a",
+    "vowels/examples/wood, could, full, book, push.m4a",
+  ],
+  [
+    "/uː/",
+    "u, o, oo, ou",
+    "blue, who, noon, you, group",
+    "vowels/phonemes/-uː-.m4a",
+    "vowels/examples/blue, who, noon, you, group.m4a",
+  ],
+  [
+    "/e/",
+    "e, ea, ai",
+    "men, bread, met, said, head",
+    "vowels/phonemes/-e-.m4a",
+    "vowels/examples/men, bread, met, said, head.m4a",
+  ],
+  [
+    "/ə/",
+    "(schwa sound)",
+    "banana, the, ever, police, upon",
+    "vowels/phonemes/-ə-.m4a",
+    "vowels/examples/banana, the, ever, police, upon.m4a",
+  ],
+  [
+    "/ɜː/",
+    "i(r), u(r), ea(r)",
+    "bird, hurt, learn, earth, furniture",
+    "vowels/phonemes/-ɜː-.m4a",
+    "vowels/examples/bird, hurt, learn, earth, furniture.m4a",
+  ],
+  [
+    "/ɔː/",
+    "o(r), oo(r), o(r)e, oa(r)",
+    "morning, floor, wore, board, sport",
+    "vowels/phonemes/-ɔː-.m4a",
+    "vowels/examples/morning, floor, wore, board, sport.m4a",
+  ],
+  [
+    "/æ/",
+    "a, au, ai",
+    "apple, back, plaid, laugh, after",
+    "vowels/phonemes/-æ-.m4a",
+    "vowels/examples/apple, back, plaid, laugh, after.m4a",
+  ],
+  // TODO: missing?
+  // [
+  //   "/ʌ/",
+  //   "u, o, oo, oe",
+  //   "under, honey, flood, does, fun",
+  //   "vowels/phonemes/-ʊ-.m4a",
+  //   "vowels/examples/",
+  // ],
+  [
+    "/aː/",
+    "a(r), o, ea(r), ow",
+    "hard, shark, heart, knowledge, body",
+    "vowels/phonemes/-aː-.m4a",
+    "vowels/examples/hard, shark, heart, knowledge, body.m4a",
+  ],
+  [
+    "/ɒ/",
+    "o",
+    "lot, cloth, honest, robot, stop",
+    "vowels/phonemes/-ɒ-.m4a",
+    "vowels/examples/lot, cloth, honest, robot, stop.m4a",
   ],
 ];
