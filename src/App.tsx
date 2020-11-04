@@ -133,20 +133,26 @@ const App = () => {
     );
   };
 
+  const renderTooltip = (word: string, definition: string) => {
+    return (
+      <OverlayTrigger
+        key="bottom"
+        placement="bottom"
+        overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}
+      >
+        <div className="text-center">{word}</div>
+      </OverlayTrigger>
+    );
+  };
+
   const renderTable = (data: any) => {
     return (
       <table>
         <tr>
-          <th>
-            <OverlayTrigger
-              key="bottom"
-              placement="bottom"
-              overlay={<Tooltip id={`tooltip-bottom`}>Sounds</Tooltip>}
-            >
-              <div className="text-center">Phonemes</div>
-            </OverlayTrigger>
+          <th>{renderTooltip("Phonemes", "Sounds")}</th>
+          <th className="text-center">
+            {renderTooltip("Grapheme", "Letters that spell the sound")}
           </th>
-          <th className="text-center">Grapheme</th>
           <th className="text-center">Examples</th>
         </tr>
         {data.map((line: any) => {
