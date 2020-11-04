@@ -1,4 +1,4 @@
-const oddOneOut = "Choose the word that does not have the same phoneme.";
+const oddOneOut = " ";
 
 const commonQuestionProps = {
   question: oddOneOut,
@@ -8,48 +8,72 @@ const commonQuestionProps = {
 };
 
 export const quiz = {
-  quizTitle: "Odd One Out",
+  quizTitle: "Different phoneme",
   quizSynopsis:
     "Please do not refresh the page. Please do not change the page until you complete the quiz.",
   questions: [
     {
       ...commonQuestionProps,
-      answers: ["bread", "example", "read", "green"],
+      answers: ["bread", "seed", "read", "green"],
       correctAnswer: "1",
-      messageForCorrectAnswer: "Correct answer. Good job.",
-      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      messageForCorrectAnswer: "bread: /e/",
+      messageForIncorrectAnswer: "seed, read, green: /iː/",
       explanation: "TODO",
     },
     {
       ...commonQuestionProps,
       answers: ["pace", "neighs", "gray", "key"],
       correctAnswer: "4",
-      messageForCorrectAnswer: "Correct answer. Good job.",
-      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      messageForCorrectAnswer: "key: /iː/",
+      messageForIncorrectAnswer: "pace, neighs, gray: /eɪ/",
       explanation: "TODO",
     },
     {
       ...commonQuestionProps,
       answers: ["sew", "through", "brew", "blue"],
       correctAnswer: "1",
-      messageForCorrectAnswer: "Correct answer. Good job.",
-      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      messageForCorrectAnswer: "sew: /oʊ/",
+      messageForIncorrectAnswer: "through, brew, blue: /uː/",
       explanation: "TODO",
     },
     {
       ...commonQuestionProps,
       answers: ["eight", "ant", "aim", "age"],
       correctAnswer: "2",
-      messageForCorrectAnswer: "Correct answer. Good job.",
-      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      messageForCorrectAnswer: "ant: /æ",
+      messageForIncorrectAnswer: "eight, aim, age: /eɪ/",
       explanation: "TODO",
     },
     {
       ...commonQuestionProps,
       answers: ["thick", "then", "third", "through"],
       correctAnswer: "2",
-      messageForCorrectAnswer: "Correct answer. Good job.",
-      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      messageForCorrectAnswer: "then: /ð/",
+      messageForIncorrectAnswer: "thick, third, through: /θ/",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["climb", "fry", "light", "tray"],
+      correctAnswer: "4",
+      messageForCorrectAnswer: "tray: /eɪ/",
+      messageForIncorrectAnswer: "climb, fry, light: /aɪ/",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["brow", "crown", "throw", "meow"],
+      correctAnswer: "3",
+      messageForCorrectAnswer: "throw: /oʊ/",
+      messageForIncorrectAnswer: "brow, crown, meow: /aʊ/",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["mission", "precision", "vision", "version"],
+      correctAnswer: "1",
+      messageForCorrectAnswer: "mission: /ʃ/",
+      messageForIncorrectAnswer: "precision, vision, version: /ʒ/",
       explanation: "TODO",
     },
   ],

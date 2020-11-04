@@ -275,8 +275,8 @@ const App = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Odd One Out</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Different phoneme</h3>
+            <p>Choose the word that has a different phoneme from the rest.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
