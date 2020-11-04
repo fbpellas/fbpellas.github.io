@@ -68,7 +68,7 @@ export const consonants = [
   [
     "/tʃ/",
     "ch, c,  tch, t+ure, t+ion",
-    "<u>ch</u>urch, <u>c</u>ello, bea<u>ch</u>, ma<u>ture</u>, ques<u>tion</u>",
+    "<u>ch</u>ur<u>ch</u>, <u>c</u>ello, bea<u>ch</u>, ma<u>ture</u>, ques<u>tion</u>",
     "consonants/phonemes/-tʃ-.m4a",
     "consonants/examples/church, cello, beach, mature, question.m4a",
   ],

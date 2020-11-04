@@ -455,7 +455,7 @@ const App = () => {
               {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")},
               consonants are arranged completely differently from the English
               alphabet. Each phoneme is organized based on the sound’s place of
-              articulation and alternates between voiced and unvoiced
+              articulation and alternates between voiced and unvoiced.
             </div>
             {renderTable(consonants)}
           </div>
