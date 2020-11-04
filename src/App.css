@@ -408,3 +408,10 @@ body {
   right: 0;
   position: absolute;
 }
+
+u {
+  text-decoration: unset;
+  border-bottom: 2px solid black;
+  line-height: 22px;
+  display: inline-block;
+}
