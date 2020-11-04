@@ -9,7 +9,7 @@ export const diphthongs = [
   [
     "/eɪ/",
     "a, a-e, ai, ay, eigh, ey",
-    "<u>a</u>corn, j<u>a</u>de, p<u>ai</u>d, w<u>eigh</u>t, h<u>ey</u>",
+    "<u>a</u>corn, j<u>a</u>d<u>e</u>, p<u>ai</u>d, w<u>eigh</u>t, h<u>ey</u>",
     "diphthongs/phonemes/-eɪ-.m4a",
     "diphthongs/examples/acorn, jade, paid, weight, hey.m4a",
   ],
