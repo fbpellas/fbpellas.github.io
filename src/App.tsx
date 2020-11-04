@@ -216,7 +216,15 @@ const App = () => {
             a syllable. They consist of the letters A, E, I, O, U (sometimes Y).
             The{" "}
             {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}{" "}
-            lists 20 phonemes categorized as long, short, and diphthongs.
+            lists 20 phonemes categorized as long, short, and{" "}
+            <a
+              className="clickable-page"
+              href="#diphthongs"
+              onClick={() => setPageAndClear("diphthongs")}
+            >
+              diphthongs
+            </a>
+            .
           </div>
           <br />
           <div>

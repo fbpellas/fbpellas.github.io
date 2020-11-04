@@ -271,14 +271,13 @@ export const vowels = [
     "vowels/phonemes/-æ-.m4a",
     "vowels/examples/apple, back, plaid, laugh, after.m4a",
   ],
-  // TODO: missing?
-  // [
-  //   "/ʌ/",
-  //   "u, o, oo, oe",
-  //   "under, honey, flood, does, fun",
-  //   "vowels/phonemes/-ʊ-.m4a",
-  //   "vowels/examples/",
-  // ],
+  [
+    "/ʌ/",
+    "u, o, oo, oe",
+    "under, honey, flood, does, fun",
+    "vowels/phonemes/under, honey, flood, does, fun.m4a",
+    "vowels/examples/-ʌ-.m4a",
+  ],
   [
     "/aː/",
     "a(r), o, ea(r), ow",
