@@ -2,21 +2,21 @@ export const diphthongs = [
   [
     "/aɪ/",
     "i, igh, y, ie",
-    "ice, bye, lime, fight, sky",
+    "<u>i</u>ce, b<u>ye</u>, l<u>i</u>me, f<u>igh</u>t, sk<u>y</u>",
     "diphthongs/phonemes/-aɪ-.m4a",
     "diphthongs/examples/ice, bye, lime, fight , sky.m4a",
   ],
   [
     "/eɪ/",
     "a, a-e, ai, ay, eigh, ey",
-    "acorn, jade, paid, weight, hey",
+    "<u>a</u>corn, j<u>a</u>de, p<u>ai</u>d, w<u>eigh</u>t, h<u>ey</u>",
     "diphthongs/phonemes/-eɪ-.m4a",
     "diphthongs/examples/acorn, jade, paid, weight, hey.m4a",
   ],
   [
     "/ɔɪ/",
     "oi, oy",
-    "b<u>oy</u>, c<u>oi</u>n, s<u>oi</u>l, v<u>oi</u>ce, turquoise",
+    "b<u>oy</u>, c<u>oi</u>n, s<u>oi</u>l, v<u>oi</u>ce, turqu<u>oi</u>se",
     "diphthongs/phonemes/-ɔɪ-.m4a",
     "diphthongs/examples/boy, coin, soil, voice, turquoise.m4a",
   ],
@@ -30,7 +30,7 @@ export const diphthongs = [
   [
     "/aʊ/",
     "ow",
-    "c<u>ow</u>, n<u>ow</u>, brown, w<u>ow</u>, <u>gow</u>n",
+    "c<u>ow</u>, n<u>ow</u>, br<u>ow</u>n, w<u>ow</u>, <u>gow</u>n",
     "diphthongs/phonemes/-aʊ-.m4a",
     "diphthongs/examples/cow, now, brown, wow, gown.m4a",
   ],
