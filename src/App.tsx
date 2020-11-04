@@ -90,16 +90,8 @@ const App = () => {
         links.push([page, "Intonation"]);
         break;
 
-      case "resources":
-        links.push([page, "Resources"]);
-        break;
-
       case "quiz":
         links.push([page, "Quiz"]);
-        break;
-
-      case "glossary":
-        links.push([page, "Glossary"]);
         break;
     }
 
@@ -121,26 +113,18 @@ const App = () => {
     );
   };
 
-  const renderGlossaryTooltip = (abbreviation: string, definition: string) => {
+  const renderTooltip = (
+    word: string,
+    definition: string,
+    className = "text-inline bottom-dot"
+  ) => {
     return (
       <OverlayTrigger
         key="bottom"
         placement="bottom"
         overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}
       >
-        <div className="text-inline bottom-dot">{abbreviation}</div>
-      </OverlayTrigger>
-    );
-  };
-
-  const renderTooltip = (word: string, definition: string) => {
-    return (
-      <OverlayTrigger
-        key="bottom"
-        placement="bottom"
-        overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}
-      >
-        <div className="text-center">{word}</div>
+        <div className={className}>{word}</div>
       </OverlayTrigger>
     );
   };
@@ -149,9 +133,13 @@ const App = () => {
     return (
       <table>
         <tr>
-          <th>{renderTooltip("Phonemes", "Sounds")}</th>
+          <th>{renderTooltip("Phonemes", "Sounds", "text-center")}</th>
           <th className="text-center">
-            {renderTooltip("Grapheme", "Letters that spell the sound")}
+            {renderTooltip(
+              "Grapheme",
+              "Letters that spell the sound",
+              "text-center"
+            )}
           </th>
           <th className="text-center">Examples</th>
         </tr>
@@ -201,9 +189,9 @@ const App = () => {
           <div>
             Diphthongs are a combination of two vowel sounds. There are eight
             diphthongs in the{" "}
-            {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}:
-            aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only five sounds are
-            produced in American English.
+            {renderTooltip("IPA", "International Phonetic Alphabet")}: aɪ, eɪ,
+            ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only five sounds are produced in
+            American English.
           </div>
           {renderTable(diphthongs)}
         </div>
@@ -220,9 +208,8 @@ const App = () => {
           <div>
             Vowels are a set of unblocked sounds that are essential to producing
             a syllable. They consist of the letters A, E, I, O, U (sometimes Y).
-            The{" "}
-            {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}{" "}
-            lists 20 phonemes categorized as long, short, and{" "}
+            The {renderTooltip("IPA", "International Phonetic Alphabet")} lists
+            20 phonemes categorized as long, short, and{" "}
             <a
               className="clickable-page"
               href="#diphthongs"
@@ -452,7 +439,7 @@ const App = () => {
             <h3 className="h3-title">Consonants</h3>
             <div>
               Consonants have 24 blocked sounds. In the{" "}
-              {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")},
+              {renderTooltip("IPA", "International Phonetic Alphabet")},
               consonants are arranged completely differently from the English
               alphabet. Each phoneme is organized based on the sound’s place of
               articulation and alternates between voiced and unvoiced.
@@ -495,21 +482,7 @@ const App = () => {
       </div>
     );
 
-    if (page === "glossary") {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">
-              International Phonetic Alphabet{" "}
-              <Badge variant="secondary">IPA</Badge>
-            </h3>
-            <p>Explanation</p>
-          </div>
-        </div>
-      );
-    }
-
-    if (["stress", "intonation", "resources"].includes(page)) {
+    if (["stress", "intonation"].includes(page)) {
       return (
         <>
           <div className="block-2">
@@ -740,20 +713,8 @@ const App = () => {
             >
               Intonation
             </Nav.Link>
-            <Nav.Link
-              href="#resources"
-              onClick={() => setPageAndClear("resources")}
-            >
-              Resources
-            </Nav.Link>
             <Nav.Link href="#quiz" onClick={() => setPageAndClear("quiz")}>
               Quiz
-            </Nav.Link>
-            <Nav.Link
-              href="#glossary"
-              onClick={() => setPageAndClear("glossary")}
-            >
-              Glossary
             </Nav.Link>
           </Nav>
           <Form inline>
