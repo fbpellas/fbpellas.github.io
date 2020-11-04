@@ -275,8 +275,8 @@ export const vowels = [
     "/ʌ/",
     "u, o, oo, oe",
     "under, honey, flood, does, fun",
-    "vowels/phonemes/under, honey, flood, does, fun.m4a",
-    "vowels/examples/-ʌ-.m4a",
+    "vowels/phonemes/-ʌ-.m4a",
+    "vowels/examples/under, honey, flood, does, fun.m4a",
   ],
   [
     "/aː/",
