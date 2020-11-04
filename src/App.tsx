@@ -196,8 +196,8 @@ const App = () => {
             Diphthongs are a combination of two vowel sounds. There are eight
             diphthongs in the{" "}
             {renderGlossaryTooltip("IPA", "International Phonetic Alphabet")}:
-            aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. All eight phonemes can be found in
-            RP, while only five sounds are produced in American English.
+            aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only five sounds are
+            produced in American English.
           </div>
           {renderTable(diphthongs)}
         </div>
@@ -307,7 +307,7 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">
-            Learn how to speak English the American way
+            Learn the Art of Speaking American English
           </h3>
           <br />
           <CardDeck>
