@@ -16,6 +16,7 @@ import {
   customQuiz,
   defaultCustomQuizAnswers,
   quiz,
+  quizStress,
 } from "./quiz";
 import Quiz from "react-quiz-component";
 import { diphthongs, consonants, vowels } from "./phonemes";
@@ -351,7 +352,7 @@ const App = () => {
           <img
             className="d-block w-100"
             src="https://via.placeholder.com/200x100"
-            alt="First slide"
+            alt="Odd Phoneme Out"
           />
           <Carousel.Caption>
             <h3>Odd Phoneme Out</h3>
@@ -362,12 +363,26 @@ const App = () => {
           <img
             className="d-block w-100"
             src="https://via.placeholder.com/200x100"
-            alt="Second slide"
+            alt="Phonetic Spelling"
           />
 
           <Carousel.Caption>
             <h3>Phonetic Spelling</h3>
             <p>Guess the words based on their phonetic spelling.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="Phonetic Spelling"
+          />
+          <Carousel.Caption>
+            <h3>Where’s the Stress?</h3>
+            <p>
+              Choose the number of syllable where the stress appears. If there
+              is no stress, choose zero.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -581,6 +596,9 @@ const App = () => {
               <Quiz quiz={quiz} showInstantFeedback={true} />
             )}
             {indexCarousel === 1 && renderCustomQuiz()}
+            {indexCarousel === 2 && (
+              <Quiz quiz={quizStress} showInstantFeedback={true} />
+            )}
           </div>
         </div>
       );

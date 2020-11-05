@@ -1,7 +1,5 @@
-const oddOneOut = " ";
-
 const commonQuestionProps = {
-  question: oddOneOut,
+  question: " ",
   questionType: "text",
   answerSelectionType: "single",
   point: "20",
@@ -74,6 +72,92 @@ export const quiz = {
       messageForCorrectAnswer: "mission: /ʃ/",
       messageForIncorrectAnswer: "precision, vision, version: /ʒ/",
       explanation: "TODO",
+    },
+  ],
+};
+
+const commonQuestionStressProps = {
+  questionType: "text",
+  answerSelectionType: "single",
+  point: "20",
+  answers: ["0", "1", "2", "3"],
+  explanation: "TODO",
+};
+
+export const quizStress = {
+  quizTitle: "Where’s the Stress?",
+  quizSynopsis:
+    "Choose the number of syllable where the stress appears. If there is no stress, choose zero.",
+  questions: [
+    {
+      ...commonQuestionStressProps,
+      question: "Apartment",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "a PART ment",
+      messageForIncorrectAnswer: "a PART ment",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Respond",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "re SPOND",
+      messageForIncorrectAnswer: "re SPOND",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Positivity",
+      correctAnswer: "4",
+      messageForCorrectAnswer: "po si TI vi ty",
+      messageForIncorrectAnswer: "po si TI vi ty",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Computer",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "com PU ter",
+      messageForIncorrectAnswer: "com PU ter",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Bakery",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "BA ke ry",
+      messageForIncorrectAnswer: "BA ke ry",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Honorable",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "HO nor a ble",
+      messageForIncorrectAnswer: "HO nor a ble",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Scientific",
+      correctAnswer: "4",
+      messageForCorrectAnswer: "sci en TI fic",
+      messageForIncorrectAnswer: "sci en TI fic",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Weigh",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "no stress",
+      messageForIncorrectAnswer: "no stress",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Winner",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "WI nner",
+      messageForIncorrectAnswer: "WI nner",
+    },
+    {
+      ...commonQuestionStressProps,
+      question: "Competition",
+      correctAnswer: "4",
+      messageForCorrectAnswer: "com pe TI tion",
+      messageForIncorrectAnswer: "com pe TI tion",
     },
   ],
 };
