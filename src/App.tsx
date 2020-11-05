@@ -403,6 +403,11 @@ const App = () => {
                 Faith Pellas is an MA TESOL student at the University of San
                 Francisco.
               </p>
+              <p className="subnote">
+                When she’s not working on her thesis, Faith loves learning
+                French, watercolor painting, and sending postcards to her
+                nearest and dearest.
+              </p>
             </div>
           </div>
           <hr />
@@ -753,13 +758,13 @@ const App = () => {
 
             <Dropdown.Menu>
               <Dropdown.Item
-                href="#consonants"
+                href="#vowels"
                 onClick={() => {
-                  setPageAndClear("consonants");
+                  setPageAndClear("vowels");
                   setIsPhonemesHovered(false);
                 }}
               >
-                Consonants
+                Vowels
               </Dropdown.Item>
               <Dropdown.Item
                 href="#diphthongs"
@@ -771,13 +776,13 @@ const App = () => {
                 Diphthongs
               </Dropdown.Item>
               <Dropdown.Item
-                href="#vowels"
+                href="#consonants"
                 onClick={() => {
-                  setPageAndClear("vowels");
+                  setPageAndClear("consonants");
                   setIsPhonemesHovered(false);
                 }}
               >
-                Vowels
+                Consonants
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

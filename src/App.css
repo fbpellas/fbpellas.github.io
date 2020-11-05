@@ -441,3 +441,7 @@ u {
   display: block;
   margin-bottom: 10px;
 }
+
+.subnote {
+  font-size: 20px;
+}
