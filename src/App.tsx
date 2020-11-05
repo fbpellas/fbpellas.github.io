@@ -282,10 +282,10 @@ const App = () => {
           <h2 className="h3-title vowels-title">Vowels</h2>
           <br />
           <div>
-            Vowels are a set of unblocked sounds that are essential to producing
-            a syllable. They consist of the letters A, E, I, O, U (sometimes Y).
-            The {renderTooltip("IPA", "International Phonetic Alphabet")} lists
-            20 phonemes categorized as long, short, and{" "}
+            Vowels are a set of unblocked sounds. They consist of the letters A,
+            E, I, O, U (sometimes Y). The{" "}
+            {renderTooltip("IPA", "International Phonetic Alphabet")} lists 20
+            phonemes categorized as long, short, and{" "}
             <a
               className="clickable-page"
               href="#diphthongs"
@@ -298,8 +298,8 @@ const App = () => {
           <br />
           <div>
             Vowels can sometimes be categorized as lax (short) and tense (long)
-            depending on the muscular effort the lips and tongue make during
-            phoneme production.
+            depending on how much effort the lips and tongue make when producing
+            the sound.
           </div>
           <br />
           <div>
@@ -398,8 +398,7 @@ const App = () => {
               <h3 className="h3-title">About the Author</h3>
               <p>
                 Faith Pellas is an MA TESOL student at the University of San
-                Francisco. This project was born out of the necessity to provide
-                ESL and EFL teachers a guide on teaching pronunciation.
+                Francisco.
               </p>
             </div>
           </div>

@@ -89,7 +89,7 @@ export const consonants = [
   [
     "/g/",
     "g, gg, gu, gue, gh",
-    "hug, bi<u>gge</u>r, <u>gue</u>st, <u>gh</u>ost, va<u>gue</u>",
+    "hu<u>g</u>, bi<u>gge</u>r, <u>gue</u>st, <u>gh</u>ost, va<u>gue</u>",
     "consonants/phonemes/-g-.m4a",
     "consonants/examples/hug, bigger, guest, ghost, vague.m4a",
   ],
@@ -117,7 +117,7 @@ export const consonants = [
   [
     "/ð/",
     "th, the",
-    "wi<u>th</u>, mo<u>th</u>er, <u>th</u>ose, ga<u>th</u>er, furt<u>h</u>er",
+    "wi<u>th</u>, mo<u>th</u>er, <u>th</u>ose, ga<u>th</u>er, fur<u>th</u>er",
     "consonants/phonemes/-ð-.m4a",
     "consonants/examples/with, mother, those, gather, further.m4a",
   ],
