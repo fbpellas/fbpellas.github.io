@@ -825,7 +825,7 @@ const App = () => {
                     const key = m[0];
 
                     const matchKey = key.find((k: any) =>
-                      k.includes(inputLowercase)
+                      k.toLowerCase().includes(inputLowercase)
                     );
 
                     if (matchKey) {
