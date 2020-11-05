@@ -69,8 +69,8 @@ const App = () => {
         links.push([page, "About the Author"]);
         break;
 
-      case "letter-teachers":
-        links.push([page, "Letter to Teachers"]);
+      case "mission":
+        links.push([page, "Mission"]);
         break;
 
       case "phonemes":
@@ -352,7 +352,7 @@ const App = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Different phoneme</h3>
+            <h3>Odd Phoneme Out</h3>
             <p>Choose the word that has a different phoneme from the rest.</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -456,12 +456,22 @@ const App = () => {
       );
     }
 
-    if (page === "letter-teachers") {
+    if (page === "mission") {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Letter to Teachers</h3>
-            <p>Description of how to use the website</p>
+            <h3 className="h3-title">Mission</h3>
+            <p>
+              One of the biggest goals for language learners is to learn how to
+              speak with the correct pronunciation of their target language.
+              Unfortunately, many English as a second/foreign language (ESL/EFL)
+              curricula do not focus on pronunciation, therefore, many teachers
+              lack training in this field.
+            </p>
+            <p>
+              The purpose of this website is to help teachers and students
+              understand the basics of pronunciation.
+            </p>
           </div>
         </div>
       );
@@ -725,12 +735,12 @@ const App = () => {
               </Dropdown.Item>
               <Dropdown.Item
                 onClick={() => {
-                  setPageAndClear("letter-teachers");
+                  setPageAndClear("mission");
                   setIsAuthorHovered(false);
                 }}
-                href="#letter-teachers"
+                href="#mission"
               >
-                Letter to Teachers
+                Mission
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

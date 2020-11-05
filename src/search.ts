@@ -58,11 +58,7 @@ export const mapping = [
     "about-author",
     "About the Author",
   ],
-  [
-    ["letter", "teachers", "how to", "letter to teachers", "letter teachers"],
-    "letter-teachers",
-    "Letter to Teachers",
-  ],
+  [["mission", "teachers", "how to", "students"], "mission", "Mission"],
   [
     ["consonant", "consonants", "letter", "letters"],
     "consonants",

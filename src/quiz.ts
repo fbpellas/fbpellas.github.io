@@ -8,9 +8,8 @@ const commonQuestionProps = {
 };
 
 export const quiz = {
-  quizTitle: "Different phoneme",
-  quizSynopsis:
-    "Please do not refresh the page. Please do not change the page until you complete the quiz.",
+  quizTitle: "Odd Phoneme Out",
+  quizSynopsis: "Choose the word that has a different phoneme from the rest.",
   questions: [
     {
       ...commonQuestionProps,
