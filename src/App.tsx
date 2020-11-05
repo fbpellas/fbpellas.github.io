@@ -11,7 +11,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
-import { quiz, quizDemo } from "./quiz";
+import {
+  correctCustomQuizAnswers,
+  customQuiz,
+  defaultCustomQuizAnswers,
+  quiz,
+} from "./quiz";
 import Quiz from "react-quiz-component";
 import { diphthongs, consonants, vowels } from "./phonemes";
 import { mapping, mappingPhonemes } from "./search";
@@ -35,10 +40,14 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(0);
+  const [indexCarousel, setIndexCarousel] = React.useState(1);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
+  const [quizAnswers, setQuizAnswers] = React.useState(
+    defaultCustomQuizAnswers
+  );
+  const [quizScore, setQuizScore] = React.useState(0);
 
   const setPageAndClear = (hash: string) => {
     setSearch("");
@@ -199,6 +208,73 @@ const App = () => {
     );
   };
 
+  const renderCustomQuiz = () => {
+    return (
+      <div className="custom-quiz">
+        <div>
+          {quizScore === 0 && "Boxes turn green when correct"}
+          {quizScore === 1 && "Congratulations for your first correct answer!"}
+          {quizScore > 1 &&
+            quizScore < correctCustomQuizAnswers.length &&
+            `${quizScore} correct answers out of ${correctCustomQuizAnswers.length}, keep going`}
+          {quizScore === correctCustomQuizAnswers.length &&
+            "Congratulations! You did it!"}
+          {quizScore === correctCustomQuizAnswers.length + 1 &&
+            "Here are the full answers"}
+        </div>
+        {customQuiz.map((c: string[], index: number) => {
+          const currentValue = quizAnswers[index].toLocaleLowerCase().trim();
+          const isCorrect = currentValue === c[1];
+          return (
+            <div className="block">
+              <input
+                className={isCorrect ? "correct-input" : ""}
+                maxLength={20}
+                type="string"
+                value={currentValue}
+                onChange={(e) => {
+                  const input = e.target.value;
+                  const newQuizAnswers = { ...quizAnswers };
+                  newQuizAnswers[index] = input;
+
+                  let score = 0;
+                  correctCustomQuizAnswers.forEach((correct, index: number) => {
+                    if (newQuizAnswers[index] === correct) score += 1;
+                  });
+
+                  setQuizScore(score);
+
+                  setQuizAnswers(newQuizAnswers);
+                }}
+              />
+              <div className="inline">{c[0]}</div>
+            </div>
+          );
+        })}
+        <br />
+        <button
+          className="button-block"
+          type="button"
+          onClick={() => {
+            setQuizScore(correctCustomQuizAnswers.length + 1);
+            setQuizAnswers(correctCustomQuizAnswers);
+          }}
+        >
+          Check Answers!
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setQuizScore(0);
+            setQuizAnswers(defaultCustomQuizAnswers);
+          }}
+        >
+          Reset
+        </button>
+      </div>
+    );
+  };
+
   const renderVowels = () => {
     return (
       <div className="block-2">
@@ -287,8 +363,8 @@ const App = () => {
           />
 
           <Carousel.Caption>
-            <h3>React Quiz Component Demo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Phonetic spelling.</h3>
+            <p>Guess the words based on their phonetic spelling.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -459,7 +535,7 @@ const App = () => {
             {indexCarousel === 0 && (
               <Quiz quiz={quiz} showInstantFeedback={true} />
             )}
-            {indexCarousel === 1 && <Quiz quiz={quizDemo} />}
+            {indexCarousel === 1 && renderCustomQuiz()}
           </div>
         </div>
       );

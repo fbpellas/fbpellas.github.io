@@ -415,3 +415,25 @@ u {
   line-height: 22px;
   display: inline-block;
 }
+
+.custom-quiz {
+  margin-top: 20px;
+}
+
+.inline {
+  display: inline;
+  margin: 10px;
+}
+
+.block {
+  margin-bottom: 5px;
+}
+
+.correct-input {
+  background: #9ccc9c;
+}
+
+.button-block {
+  display: block;
+  margin-bottom: 10px;
+}
