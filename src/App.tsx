@@ -25,7 +25,6 @@ import { isMobile } from "react-device-detect";
 import {
   Breadcrumb,
   Card,
-  CardDeck,
   Carousel,
   OverlayTrigger,
   Tooltip,
@@ -316,7 +315,7 @@ const App = () => {
 
   const renderCard = (href: string, title: string, button: string) => {
     return (
-      <Card>
+      <Card className="card-single">
         <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
@@ -375,18 +374,17 @@ const App = () => {
   const renderMain = () => {
     return (
       <div className="block-2">
-        <div className="article">
+        <div className="article main-wrapper">
           <img
             className="full-img"
             src={`${BASE_PATH_IMG}IME Thesis.png`}
             alt="Learn the Art of Speaking American English"
           />
-          <br />
-          <CardDeck>
+          <div className="cards-column">
             {renderCard("phonemes", "Phonemes", "Practice sounds")}
             {renderCard("intonation", "Intonation", "Practice intonation")}
             {renderCard("stress", "Stress", "Practice stress")}
-          </CardDeck>
+          </div>
         </div>
       </div>
     );
