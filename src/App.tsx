@@ -33,6 +33,7 @@ import {
 
 export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/img/`;
 export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
+export const EMAIL = "fbpellas@usfca.edu";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -426,7 +427,7 @@ const App = () => {
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Email form</Form.Label>
               <Form.Text className="text-muted">
-                Or send me a message directly at test@example.com
+                {`Or send me an email directly at ${EMAIL}`}
               </Form.Text>
               <br />
               <Form.Label>Subject</Form.Label>
@@ -452,7 +453,7 @@ const App = () => {
             <Button
               onClick={() => {
                 window.open(
-                  `mailto:test@example.com?subject=${encodeURIComponent(
+                  `mailto:${EMAIL}?subject=${encodeURIComponent(
                     emailSubject
                   )}&body=${encodeURIComponent(emailBody)}`
                 );
