@@ -147,6 +147,10 @@ html {
   font-size: 25px;
 }
 
+.full-img {
+  width: 100%;
+}
+
 table {
   font-family: "Merriweather";
   border-collapse: collapse;

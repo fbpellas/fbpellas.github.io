@@ -31,6 +31,7 @@ import {
   Tooltip,
 } from "react-bootstrap";
 
+export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/img/`;
 export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
 
 const App = () => {
@@ -375,9 +376,11 @@ const App = () => {
     return (
       <div className="block-2">
         <div className="article">
-          <h3 className="h3-title">
-            Learn the Art of Speaking American English
-          </h3>
+          <img
+            className="full-img"
+            src={`${BASE_PATH_IMG}IME Thesis.png`}
+            alt="Learn the Art of Speaking American English"
+          />
           <br />
           <CardDeck>
             {renderCard("phonemes", "Phonemes", "Practice sounds")}
