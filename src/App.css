@@ -151,6 +151,10 @@ html {
   width: 100%;
 }
 
+.half-img {
+  width: 50%;
+}
+
 table {
   font-family: "Merriweather";
   border-collapse: collapse;
@@ -256,9 +260,9 @@ tr:nth-child(even):hover {
 }
 
 .h3-title {
+  color: #dc9b00;
   font-weight: bold;
   font-family: "Playfair Display";
-  color: black;
 }
 
 .vowels-title {
@@ -465,4 +469,13 @@ u {
 
 .author-text {
   margin-left: 20px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.note {
+  display: inline;
+  color: #ff7f50;
 }

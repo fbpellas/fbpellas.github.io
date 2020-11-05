@@ -41,7 +41,7 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(1);
+  const [indexCarousel, setIndexCarousel] = React.useState(0);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -472,16 +472,20 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Mission</h3>
-            <p>
+            <img
+              className="half-img"
+              src={`${BASE_PATH_IMG}wall.jpeg`}
+              alt="Learn the Art of Speaking American English"
+            />
+            <p className="margin-top">
               One of the biggest goals for language learners is to learn how to
               speak with the correct pronunciation of their target language.
               Unfortunately, many English as a second/foreign language (ESL/EFL)
               curricula do not focus on pronunciation, therefore, many teachers
-              lack training in this field.
-            </p>
-            <p>
-              The purpose of this website is to help teachers and students
-              understand the basics of pronunciation.
+              lack training in this field. The purpose of this website is to
+              help teachers and students understand the basics of pronunciation.
+              By learning pronunciation, students can feel more confident in
+              speaking and communicating.
             </p>
           </div>
         </div>
@@ -492,6 +496,7 @@ const App = () => {
       return (
         <div className="block-2">
           <div className="article">
+            <h3 className="h3-title">Phonemes</h3>
             <div>
               According to the International Phonetic Alphabet (IPA), there are
               26 letters and 44 phonemes (or sounds) in the English alphabet.
@@ -515,14 +520,19 @@ const App = () => {
             </div>
             <br />
             <div>
-              Notes: Phonemes should not rely on the word’s spelling. For
-              example, the word m
+              <div className="note">Note:</div> Phonemes should not rely on the
+              word’s spelling. For example, the word m
               <i>
                 <b>oo</b>
               </i>
               n is not spelled with the letter ‘u’, yet is produced with the
               long /u/ phoneme.{" "}
             </div>
+            <img
+              className="margin-top half-img"
+              src={`${BASE_PATH_IMG}IPA chart.jpg`}
+              alt="Learn the Art of Speaking American English"
+            />
           </div>
         </div>
       );
@@ -543,10 +553,16 @@ const App = () => {
             <h3 className="h3-title">Consonants</h3>
             <div>
               Consonants have 24 blocked sounds. In the{" "}
-              {renderTooltip("IPA", "International Phonetic Alphabet")},
+              {renderTooltip("IPA", "International Phonetic Alphabet")} chart,
               consonants are arranged completely differently from the English
-              alphabet. Each phoneme is organized based on the sound’s place of
-              articulation and alternates between voiced and unvoiced.
+              alphabet.
+            </div>
+            <div>
+              Phonemes like /p/ and /b/ are next to each other because the lips
+              and the tongue move the same way when producing these sounds. The
+              only difference is the phoneme on the left is unvoiced (no
+              vibration on the throat) and the phoneme on the right is voiced
+              (there is vibration on the throat).
             </div>
             {renderTable(consonants)}
           </div>
