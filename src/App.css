@@ -450,3 +450,15 @@ u {
   font-size: 21px !important;
   background-color: #dc9b00 !important;
 }
+
+.flex-wrapper {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}

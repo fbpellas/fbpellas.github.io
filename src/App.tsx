@@ -400,15 +400,21 @@ const App = () => {
           <div className="block-2">
             <div className="article">
               <h3 className="h3-title">About the Author</h3>
-              <p>
-                Faith Pellas is an MA TESOL student at the University of San
-                Francisco.
-              </p>
-              <p className="subnote">
-                When she’s not working on her thesis, Faith loves learning
-                French, watercolor painting, and sending postcards to her
-                nearest and dearest.
-              </p>
+              <div className="flex-wrapper">
+                <div className="flex-1">test</div>
+                <div className="flex-2">
+                  {" "}
+                  <p>
+                    Faith Pellas is an MA TESOL student at the University of San
+                    Francisco.
+                  </p>
+                  <p className="subnote">
+                    When she’s not working on her thesis, Faith loves learning
+                    French, watercolor painting, and sending postcards to her
+                    nearest and dearest.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <hr />
