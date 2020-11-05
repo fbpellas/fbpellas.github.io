@@ -213,8 +213,9 @@ const App = () => {
     return (
       <div className="custom-quiz">
         <div>
-          {quizScore === 0 && "Boxes turn green when correct"}
-          {quizScore === 1 && "Congratulations for your first correct answer!"}
+          {quizScore === 0 &&
+            "Guess the words based on their phonetic spelling. The box will turn green if the answer is correct."}
+          {quizScore === 1 && "Great work!"}
           {quizScore > 1 &&
             quizScore < correctCustomQuizAnswers.length &&
             `${quizScore} correct answers out of ${correctCustomQuizAnswers.length}, keep going`}
@@ -364,7 +365,7 @@ const App = () => {
           />
 
           <Carousel.Caption>
-            <h3>Phonetic spelling.</h3>
+            <h3>Phonetic Spelling</h3>
             <p>Guess the words based on their phonetic spelling.</p>
           </Carousel.Caption>
         </Carousel.Item>
