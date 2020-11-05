@@ -462,3 +462,7 @@ u {
 .flex-2 {
   flex: 2;
 }
+
+.author-text {
+  margin-left: 20px;
+}

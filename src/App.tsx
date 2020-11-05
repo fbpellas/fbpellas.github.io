@@ -361,7 +361,7 @@ const App = () => {
           <img
             className="d-block w-100"
             src="https://via.placeholder.com/200x100"
-            alt="Third slide"
+            alt="Second slide"
           />
 
           <Carousel.Caption>
@@ -401,17 +401,21 @@ const App = () => {
             <div className="article">
               <h3 className="h3-title">About the Author</h3>
               <div className="flex-wrapper">
-                <div className="flex-1">test</div>
-                <div className="flex-2">
-                  {" "}
+                <div className="flex-1">
+                  <img
+                    className="full-img"
+                    src={`${BASE_PATH_IMG}faith.jpg`}
+                    alt="Faith Pellas"
+                  />
+                </div>
+                <div className="author-text flex-2">
                   <p>
-                    Faith Pellas is an MA TESOL student at the University of San
-                    Francisco.
-                  </p>
-                  <p className="subnote">
-                    When she’s not working on her thesis, Faith loves learning
-                    French, watercolor painting, and sending postcards to her
-                    nearest and dearest.
+                    Faith Pellas is a scholar at the University of San
+                    Francisco’s TESOL department. For the past four years, she
+                    has been teaching English to learners from beginners to
+                    advanced levels. When she’s not working on her thesis, Faith
+                    loves learning French, watercolor painting, and sending
+                    postcards to her nearest and dearest.
                   </p>
                 </div>
               </div>
