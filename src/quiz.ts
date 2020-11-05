@@ -175,6 +175,16 @@ export const customQuiz = [
   ["θɜrd", "third"],
 ];
 
+export const customQuizStress = [
+  ["Record", "stress/‘Re cord.m4a", "/ˈrɛk ərd /", "/ rɪˈkɔrd /", 1],
+  ["Object", "stress/Ob ‘ject.m4a", "/ˈɒb dʒɛkt/", "/ əbˈdʒɛkt /", 2],
+  ["Contract", "stress/Con ‘tract.m4a", "/ ˈkɒn trækt /", "	/ kənˈtrækt /", 2],
+  ["Increase", "stress/‘In crease.m4a", "/ ˈɪn kris /", "/  ɪnˈkris /", 1],
+  ["Recall", "stress/Re ‘call.m4a", "/ ˈri kɔl /", "/ rɪˈkɔl /", 2],
+];
+
+export const defaultCustomQuizStressAnswers = [0, 0, 0, 0, 0];
+
 export const defaultCustomQuizAnswers = [
   "",
   "",

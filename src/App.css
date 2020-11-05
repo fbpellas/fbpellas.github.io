@@ -479,3 +479,17 @@ u {
   display: inline;
   color: #ff7f50;
 }
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.correct-button {
+  background-color: green;
+  color: white;
+}
+
+.incorrect-button {
+  background-color: red;
+  color: white;
+}

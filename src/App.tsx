@@ -14,7 +14,9 @@ import Badge from "react-bootstrap/Badge";
 import {
   correctCustomQuizAnswers,
   customQuiz,
+  customQuizStress,
   defaultCustomQuizAnswers,
+  defaultCustomQuizStressAnswers,
   quiz,
   quizStress,
 } from "./quiz";
@@ -50,7 +52,14 @@ const App = () => {
   const [quizAnswers, setQuizAnswers] = React.useState(
     defaultCustomQuizAnswers
   );
+
+  const [quizStressAnswers, setQuizStressAnswers] = React.useState(
+    defaultCustomQuizStressAnswers
+  );
+
   const [quizScore, setQuizScore] = React.useState(0);
+  const [quizStressScore, setQuizStressScore] = React.useState(0);
+  const [quizStressTotal, setQuizStressTotal] = React.useState(0);
 
   const setPageAndClear = (hash: string) => {
     setSearch("");
@@ -279,6 +288,96 @@ const App = () => {
     );
   };
 
+  const renderCustomQuizStress = () => {
+    const everythingAnswered =
+      quizStressTotal === defaultCustomQuizStressAnswers.length;
+    return (
+      <div className="custom-quiz">
+        {customQuizStress.map((c: any, index: number) => {
+          const audioStress = new Audio(`${BASE_PATH}${c[1]}`);
+          const correctAnswer = c[4];
+          const isDisabled = quizStressAnswers[index] !== 0;
+          let classNameButton1 = "";
+          let classNameButton2 = "";
+
+          if (isDisabled) {
+            if (correctAnswer === 1) {
+              classNameButton1 = "correct-button";
+              classNameButton2 = "incorrect-button";
+            } else {
+              classNameButton1 = "incorrect-button";
+              classNameButton2 = "correct-button";
+            }
+          }
+
+          return (
+            <div className="margin-top">
+              <HiPlay
+                className="play-icon"
+                onClick={() => {
+                  audioStress.play();
+                }}
+              />
+              <div className="margin-right inline">{c[0]}</div>
+              <div>
+                <button
+                  disabled={isDisabled}
+                  className={`margin-right block ${classNameButton1}`}
+                  type="button"
+                  onClick={() => {
+                    const newQuizStressAnswers = { ...quizStressAnswers };
+                    const isCorrectAnswer = correctAnswer === 1;
+                    const value = isCorrectAnswer ? 1 : -1;
+                    newQuizStressAnswers[index] = value;
+                    setQuizStressAnswers(newQuizStressAnswers);
+                    setQuizStressTotal(quizStressTotal + 1);
+                    if (isCorrectAnswer)
+                      setQuizStressScore(quizStressScore + 1);
+                  }}
+                >
+                  {c[2]}
+                </button>
+                <button
+                  className={`inline ${classNameButton2}`}
+                  type="button"
+                  disabled={isDisabled}
+                  onClick={() => {
+                    const newQuizStressAnswers = { ...quizStressAnswers };
+                    const isCorrectAnswer = correctAnswer === 2;
+                    const value = isCorrectAnswer ? 1 : -1;
+                    newQuizStressAnswers[index] = value;
+                    setQuizStressAnswers(newQuizStressAnswers);
+                    setQuizStressTotal(quizStressTotal + 1);
+                    if (isCorrectAnswer)
+                      setQuizStressScore(quizStressScore + 1);
+                  }}
+                >
+                  {c[3]}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+        {everythingAnswered && (
+          <p>
+            {`You scored ${quizStressScore} out of ${defaultCustomQuizStressAnswers.length}`}
+          </p>
+        )}
+        <button
+          className="margin-top"
+          type="button"
+          onClick={() => {
+            setQuizStressAnswers(defaultCustomQuizStressAnswers);
+            setQuizStressScore(0);
+            setQuizStressTotal(0);
+          }}
+        >
+          Reset
+        </button>
+      </div>
+    );
+  };
+
   const renderVowels = () => {
     return (
       <div className="block-2">
@@ -375,7 +474,21 @@ const App = () => {
           <img
             className="d-block w-100"
             src="https://via.placeholder.com/200x100"
-            alt="Phonetic Spelling"
+            alt="Same Words, Different Stress"
+          />
+          <Carousel.Caption>
+            <h3>Same Words, Different Stress</h3>
+            <p>
+              Listen to the recording and choose the answer with the correct
+              stress mark.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="Where’s the Stress?"
           />
           <Carousel.Caption>
             <h3>Where’s the Stress?</h3>
@@ -596,7 +709,8 @@ const App = () => {
               <Quiz quiz={quiz} showInstantFeedback={true} />
             )}
             {indexCarousel === 1 && renderCustomQuiz()}
-            {indexCarousel === 2 && (
+            {indexCarousel === 2 && renderCustomQuizStress()}
+            {indexCarousel === 3 && (
               <Quiz quiz={quizStress} showInstantFeedback={true} />
             )}
           </div>
