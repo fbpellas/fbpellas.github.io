@@ -1561,7 +1561,7 @@ const App = () => {
         data-cross-origin="anonymous"
       />
       <Helmet>
-        <title>Faith Pellas</title>
+        <title>English Pronunciation by Faith Pellas</title>
         <link rel="canonical" href="https://fbpellas.github.io/" />
       </Helmet>
       <div className="main">
