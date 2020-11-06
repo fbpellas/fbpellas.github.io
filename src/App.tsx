@@ -760,13 +760,17 @@ const App = () => {
     );
   };
 
-  const renderCard = (href: string, title: string, button: string) => {
+  const renderCard = (
+    href: string,
+    title: string,
+    description: string,
+    button: string
+  ) => {
     return (
       <Card>
-        <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>Description</Card.Text>
+          <Card.Text>{title}</Card.Text>
+          <Card.Title>{description}</Card.Title>
           <Button
             href={`#${href}`}
             onClick={() => setPageAndClear(href)}
@@ -885,9 +889,24 @@ const App = () => {
           />
           <br />
           <CardDeck>
-            {renderCard("phonemes", "Phonemes", "Practice sounds")}
-            {renderCard("intonation", "Intonation", "Practice intonation")}
-            {renderCard("stress", "Stress", "Practice stress")}
+            {renderCard(
+              "phonemes",
+              "Phonemes",
+              "Learn how to pronounce letters in English",
+              "Learn"
+            )}
+            {renderCard(
+              "stress",
+              "Word Stress",
+              "Understand how to emphasize each syllable",
+              "Learn"
+            )}
+            {renderCard(
+              "intonation",
+              "Intonation",
+              "Improve the pitch and the tone of your voice",
+              "Learn"
+            )}
           </CardDeck>
         </div>
       </div>
