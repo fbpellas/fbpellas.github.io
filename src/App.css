@@ -509,3 +509,8 @@ u {
   background-color: #ffc2db !important;
   font-size: 20px;
 }
+
+.startQuizBtn {
+  background-color: #ffc2db !important;
+  color: white !important;
+}
