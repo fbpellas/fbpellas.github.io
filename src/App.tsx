@@ -562,10 +562,43 @@ const App = () => {
   };
 
   const renderIntonation = () => {
+    const audioTest1 = new Audio(
+      `${BASE_PATH}stress/‘Present vs pre ‘sent.m4a`
+    );
+
     return (
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">Intonation</h3>
+          <img
+            className="margin-top half-img"
+            src={`${BASE_PATH_IMG}pitch.jpg`}
+            alt="Pitch"
+          />
+          <div>
+            Aside from grammar and vocabulary, learning intonation is equally
+            important in American English.
+          </div>
+          <br />
+          <div>
+            Intonation refers to the tone and pitch of the voice when speaking.
+          </div>
+          <div>
+            <div className="note">Pitch:</div> the highness or lowness of the
+            voice
+          </div>
+          <div>
+            <div className="note">Tone:</div> the way someone speaks
+          </div>
+          <br />
+          <div>
+            It helps others understand what kind of message you are trying to
+            communicate. Are you happy? Sad? Surprised? Asking a question? Even
+            though a person speaks with perfect grammar, the meaning could get
+            lost if the intonation is not correct.
+          </div>
+          <br />
+          <div>Listen to these sentences below.</div>
         </div>
       </div>
     );
