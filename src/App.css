@@ -155,6 +155,10 @@ html {
   width: 50%;
 }
 
+.quarter-img {
+  width: 25%;
+}
+
 table {
   font-family: "Merriweather";
   border-collapse: collapse;

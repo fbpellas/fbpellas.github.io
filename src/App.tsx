@@ -575,7 +575,7 @@ const App = () => {
         <div className="article">
           <h3 className="h3-title">Intonation</h3>
           <img
-            className="margin-top half-img"
+            className="margin-top quarter-img"
             src={`${BASE_PATH_IMG}pitch.jpg`}
             alt="Pitch"
           />
