@@ -50,6 +50,7 @@ export enum QuizIndex {
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
+  const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
   const [emailBody, setEmailBody] = React.useState("");
   const [emailSubject, setEmailSubject] = React.useState("");
@@ -1216,6 +1217,7 @@ const App = () => {
           <Dropdown
             onMouseEnter={() => {
               setIsAuthorHovered(true);
+              setIsIntonationHovered(false);
               setIsPhonemesHovered(false);
             }}
             onMouseLeave={() => {
@@ -1260,6 +1262,7 @@ const App = () => {
             onMouseEnter={() => {
               setIsPhonemesHovered(true);
               setIsAuthorHovered(false);
+              setIsIntonationHovered(false);
             }}
             onMouseLeave={() => {
               setIsPhonemesHovered(false);
@@ -1308,16 +1311,65 @@ const App = () => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Nav className="mr-auto">
+          <Nav>
             <Nav.Link href="#stress" onClick={() => setPageAndClear("stress")}>
               Stress
             </Nav.Link>
-            <Nav.Link
+          </Nav>
+          <Dropdown
+            onMouseEnter={() => {
+              setIsIntonationHovered(true);
+              setIsAuthorHovered(false);
+              setIsPhonemesHovered(false);
+            }}
+            onMouseLeave={() => {
+              setIsIntonationHovered(false);
+            }}
+            show={isIntonationHovered}
+          >
+            <Dropdown.Toggle
               href="#intonation"
-              onClick={() => setPageAndClear("intonation")}
+              onClick={() => {
+                setPageAndClear("intonation");
+                setIsIntonationHovered(false);
+              }}
+              variant="secondary"
+              id="dropdown-intonation"
             >
               Intonation
-            </Nav.Link>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                href="#falling"
+                onClick={() => {
+                  setPageAndClear("falling");
+                  setIsIntonationHovered(false);
+                }}
+              >
+                Falling
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#rising"
+                onClick={() => {
+                  setPageAndClear("rising");
+                  setIsIntonationHovered(false);
+                }}
+              >
+                Rising
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#non-final"
+                onClick={() => {
+                  setPageAndClear("non-final");
+                  setIsIntonationHovered(false);
+                }}
+              >
+                Non-Final
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Nav className="mr-auto">
             <Nav.Link href="#quiz" onClick={() => setPageAndClear("quiz")}>
               Quiz
             </Nav.Link>
