@@ -139,8 +139,8 @@ html {
 
 .main {
   text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 30px;
   margin-top: 30px;
   font-family: "Merriweather";
@@ -396,12 +396,6 @@ body {
   text-align: left;
 }
 
-.section {
-  padding: 5px;
-  margin: 5px;
-  text-align: left;
-}
-
 .left {
   text-align: left;
 }
@@ -448,10 +442,6 @@ u {
 .button-block {
   display: block;
   margin-bottom: 10px;
-}
-
-.subnote {
-  font-size: 20px;
 }
 
 .answerBtn {
