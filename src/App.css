@@ -292,11 +292,11 @@ tr:nth-child(even):hover {
 .clickable-page {
   display: inline;
   font-weight: bold;
-  color: black;
+  color: #dc9b00;
 }
 
 .clickable-page:hover {
-  color: black;
+  color: #dc9b00;
 }
 
 .element:hover {
