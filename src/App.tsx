@@ -91,6 +91,8 @@ const App = () => {
         Faith Pellas, website created in 2020 and hosted on{" "}
         <a
           className="clickable-page"
+          target="_blank"
+          rel="noreferrer noopener"
           href="https://github.com/fbpellas/fbpellas.github.io"
         >
           GitHub
@@ -959,7 +961,7 @@ const App = () => {
               variant="warning"
               type="submit"
             >
-              Submit
+              Send
             </Button>
           </Form>
         </div>
