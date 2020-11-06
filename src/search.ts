@@ -73,7 +73,7 @@ export const mapping = [
   [["rising", "up", "intonation"], "rising", "Rising"],
   [["falling", "down", "intonation"], "falling", "Falling"],
   [
-    ["non final", "up", "down", "non final", "intonation"],
+    ["non-final", "up", "down", "non final", "intonation"],
     "non-final",
     "Non-Final",
   ],
