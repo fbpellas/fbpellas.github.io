@@ -10,7 +10,6 @@ import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
-import Badge from "react-bootstrap/Badge";
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -40,6 +39,15 @@ export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpella
 export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
 export const EMAIL = "fbpellas@usfca.edu";
 
+export enum QuizIndex {
+  OddPhonemeOut = 0,
+  PhoneticSpelling = 1,
+  SameWordsDifferentStress = 2,
+  WhereIsTheStress = 3,
+  GuessThePattern = 4,
+  ShoppingForAPresent = 5,
+}
+
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
@@ -47,7 +55,9 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(0);
+  const [indexCarousel, setIndexCarousel] = React.useState(
+    QuizIndex.OddPhonemeOut
+  );
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -556,6 +566,34 @@ const App = () => {
             What other words have similar spellings, but different meanings and
             stress?
           </div>
+          <br />
+          <div>Quiz yourself on how well you can distinguish word stress:</div>
+          <ul>
+            <li>
+              <a
+                className="clickable-page"
+                href="#quiz"
+                onClick={() => {
+                  setPageAndClear("quiz");
+                  setIndexCarousel(QuizIndex.SameWordsDifferentStress);
+                }}
+              >
+                Same Words, Different Stress
+              </a>
+            </li>
+            <li>
+              <a
+                className="clickable-page"
+                href="#quiz"
+                onClick={() => {
+                  setPageAndClear("quiz");
+                  setIndexCarousel(QuizIndex.WhereIsTheStress);
+                }}
+              >
+                Where’s the Stress
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     );
@@ -992,18 +1030,19 @@ const App = () => {
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
             <ControlledCarousel />
-            {indexCarousel === 0 && (
+            {indexCarousel === QuizIndex.OddPhonemeOut && (
               <Quiz quiz={quiz} showInstantFeedback={true} />
             )}
-            {indexCarousel === 1 && renderCustomQuiz()}
-            {indexCarousel === 2 && renderCustomQuizStress()}
-            {indexCarousel === 3 && (
+            {indexCarousel === QuizIndex.PhoneticSpelling && renderCustomQuiz()}
+            {indexCarousel === QuizIndex.SameWordsDifferentStress &&
+              renderCustomQuizStress()}
+            {indexCarousel === QuizIndex.WhereIsTheStress && (
               <Quiz quiz={quizStress} showInstantFeedback={true} />
             )}
-            {indexCarousel === 4 && (
+            {indexCarousel === QuizIndex.GuessThePattern && (
               <Quiz quiz={quizIntonation} showInstantFeedback={true} />
             )}
-            {indexCarousel === 5 && (
+            {indexCarousel === QuizIndex.ShoppingForAPresent && (
               <>
                 <div className="margin-top discussion">
                   <ol>
