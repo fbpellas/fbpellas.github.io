@@ -70,7 +70,29 @@ export const mapping = [
   [["diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
   [["stress"], "stress", "Stress"],
   [["intonation"], "intonation", "Intonation"],
-  [["quiz", "quizzes"], "quiz", "Quiz"],
+  [["rising", "up", "intonation"], "rising", "Rising"],
+  [["falling", "down", "intonation"], "falling", "Falling"],
+  [
+    ["non final", "up", "down", "non final", "intonation"],
+    "non-final",
+    "Non-Final",
+  ],
+  [
+    [
+      "odd phoneme out",
+      "odd one out",
+      "phonetic spelling",
+      "same words different stress",
+      "where is the stress",
+      "where's the stress",
+      "guess the pattern",
+      "shopping for a present",
+      "quiz",
+      "quizzes",
+    ],
+    "quiz",
+    "Quiz",
+  ],
   [
     [
       "english",
