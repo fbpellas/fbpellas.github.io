@@ -252,6 +252,8 @@ const App = () => {
           {quizScore === correctCustomQuizAnswers.length + 1 &&
             "Here are the full answers"}
         </div>
+        <div>Refer to the IPA chart for clues.</div>
+        <br />
         {customQuiz.map((c: string[], index: number) => {
           const currentValue = quizAnswers[index].toLocaleLowerCase().trim();
           const isCorrect = currentValue === c[1];
@@ -311,7 +313,7 @@ const App = () => {
     return (
       <div className="custom-quiz">
         Listen to the recording and choose the answer with the correct stress
-        mark.
+        mark. Green indicates correct and red means the answer is wrong.
         {customQuizStress.map((c: any, index: number) => {
           const audioStress = new Audio(`${BASE_PATH}${c[1]}`);
           const correctAnswer = c[4];
@@ -782,7 +784,7 @@ const App = () => {
           <Carousel.Caption>
             <h3>Where’s the Stress?</h3>
             <p>
-              Choose the number of syllable where the stress appears. If there
+              Choose the number of syllables where the stress appears. If there
               is no stress, choose zero.
             </p>
           </Carousel.Caption>
@@ -1011,6 +1013,33 @@ const App = () => {
               (there is vibration on the throat).
             </div>
             {renderTable(consonants)}
+            <div>Test yourself to see how well you know the phonemes</div>
+            <ul>
+              <li>
+                <a
+                  className="clickable-page"
+                  href="#quiz"
+                  onClick={() => {
+                    setPageAndClear("quiz");
+                    setIndexCarousel(QuizIndex.OddPhonemeOut);
+                  }}
+                >
+                  Odd Phoneme Out
+                </a>
+              </li>
+              <li>
+                <a
+                  className="clickable-page"
+                  href="#quiz"
+                  onClick={() => {
+                    setPageAndClear("quiz");
+                    setIndexCarousel(QuizIndex.PhoneticSpelling);
+                  }}
+                >
+                  Phonetic Spelling
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       );

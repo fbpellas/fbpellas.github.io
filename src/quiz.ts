@@ -87,7 +87,7 @@ const commonQuestionStressProps = {
 export const quizStress = {
   quizTitle: "Where’s the Stress?",
   quizSynopsis:
-    "Choose the number of syllable where the stress appears. If there is no stress, choose zero.",
+    "Choose the number of syllables where the stress appears. If there is no stress, choose zero.",
   questions: [
     {
       ...commonQuestionStressProps,
