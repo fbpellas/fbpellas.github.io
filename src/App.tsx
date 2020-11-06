@@ -977,20 +977,56 @@ const App = () => {
       );
     }
 
-    const renderArrowWord = (word: string) => {
+    const renderArrowWord = (word: string, isUp = false) => {
+      const arrow = isUp ? "➚" : "➘";
+
       return (
         <>
-          <div className="inline-period yellow">➘</div>
+          <div className="inline-period yellow">{arrow}</div>
           {word}
         </>
       );
     };
 
+    const renderIntonationQuizLinks = () => (
+      <>
+        <div>Test yourself to see how well you know intonations:</div>
+        <ul>
+          <li>
+            <a
+              className="clickable-page"
+              href="#quiz"
+              onClick={() => {
+                setPageAndClear("quiz");
+                setIndexCarousel(QuizIndex.GuessThePattern);
+              }}
+            >
+              Guess the Pattern
+            </a>
+          </li>
+          <li>
+            <a
+              className="clickable-page"
+              href="#quiz"
+              onClick={() => {
+                setPageAndClear("quiz");
+                setIndexCarousel(QuizIndex.ShoppingForAPresent);
+              }}
+            >
+              Shopping for a Present
+            </a>
+          </li>
+        </ul>
+      </>
+    );
+
     const renderFalling = () => {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Falling Intonation</h3>
+            <h3 className="h3-title">
+              Falling Intonation {renderArrowWord("")}
+            </h3>
             <div className="margin-top">
               This is the most common intonation pattern in American English. We
               use this intonation when we finish a statement, give a command, as
@@ -1050,33 +1086,194 @@ const App = () => {
               </ul>
             </div>
             <br />
-            <div>Test yourself to see how well you know intonations:</div>
-            <ul>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear("quiz");
-                    setIndexCarousel(QuizIndex.GuessThePattern);
-                  }}
-                >
-                  Guess the Pattern
-                </a>
-              </li>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear("quiz");
-                    setIndexCarousel(QuizIndex.ShoppingForAPresent);
-                  }}
-                >
-                  Shopping for a Present
-                </a>
-              </li>
-            </ul>
+            {renderIntonationQuizLinks()}
+          </div>
+        </div>
+      );
+    };
+
+    const renderRising = () => {
+      return (
+        <div className="block-2">
+          <div className="article">
+            <h3 className="h3-title">
+              Rising Intonation {renderArrowWord("", true)}
+            </h3>
+            <div className="margin-top">
+              The voice rises at the end of the statement. We often use this
+              pattern when asking a yes or no question, a question tag, or to
+              show surprise or disbelief.
+            </div>
+            <br />
+            <div>
+              <b>Yes/No Questions:</b>
+              <br />
+              <ul>
+                <li>Are you working {renderArrowWord("tomorrow", true)}?</li>
+                <li>Has Stephen called {renderArrowWord("you", true)}?</li>
+                <li>
+                  Could you please print out the{" "}
+                  {renderArrowWord("documents", true)}?
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Question Tags:</b>
+              <div>
+                Questions at the end of the sentence to ask for confirmation. A
+                question tag consists of an auxiliary verb (am, is, are, can,
+                have, do, does, etc.) and a pronoun.
+              </div>
+              <br />
+              <ul>
+                <li>
+                  They left already, didn’t {renderArrowWord("they", true)}?
+                </li>
+                <li>
+                  Sandra is your cousin, isn’t {renderArrowWord("she", true)}?
+                </li>
+                <li>
+                  You can ride a motorcycle, can’t{" "}
+                  {renderArrowWord("you", true)}?
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Surprise or Disbelief:</b>
+              <div>The intonation rises on the word that is emphasized.</div>
+              <br />
+              <ul>
+                <li>
+                  {renderArrowWord("Really", true)}? Where did you hear that?
+                </li>
+                <li>
+                  She won 5 million dollars in the{" "}
+                  {renderArrowWord("lottery", true)}? -disbelief that she won
+                  the ‘lottery’
+                </li>
+                <li>
+                  She won {renderArrowWord("5 million", true)} dollars in the
+                  lottery? -disbelief that she won $5 million
+                </li>
+              </ul>
+            </div>
+            <br />
+            {renderIntonationQuizLinks()}
+          </div>
+        </div>
+      );
+    };
+
+    const renderNonFinal = () => {
+      return (
+        <div className="block-2">
+          <div className="article">
+            <h3 className="h3-title">
+              Non-Final Intonation {renderArrowWord("", true)}
+              {renderArrowWord("")}
+            </h3>
+            <div className="margin-top">
+              The non-final or rise-and-fall intonation is often used with
+              choices, lists, or unfinished statements. The examples below show
+              which words rise and where they fall.
+            </div>
+            <br />
+            <div>
+              <b>Choices:</b>
+              <br />
+              <ul>
+                <li>
+                  Do you prefer ice {renderArrowWord("cream", true)} or{" "}
+                  {renderArrowWord("cake")}?
+                </li>
+                <li>
+                  What would you rather do: go {renderArrowWord("hiking", true)}{" "}
+                  or go {renderArrowWord("swimming")}?
+                </li>
+                <li>
+                  Can you speak {renderArrowWord("Mandarin", true)} or{" "}
+                  {renderArrowWord("Spanish")}?
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Lists:</b>
+              <div>
+                Each item on the list rises in sound and the last word falls.
+              </div>
+              <br />
+              <ul>
+                <li>
+                  We need {renderArrowWord("flour", true)},{" "}
+                  {renderArrowWord("milk", true)},{" "}
+                  {renderArrowWord("sugar", true)}, and{" "}
+                  {renderArrowWord("eggs")} to make the cake.
+                </li>
+                <li>
+                  Next week I’m available on {renderArrowWord("Monday", true)},{" "}
+                  {renderArrowWord("Tuesday", true)}, and{" "}
+                  {renderArrowWord("Friday")}.
+                </li>
+                <li>
+                  The shirt comes in {renderArrowWord("small", true)},{" "}
+                  {renderArrowWord("medium", true)}, and{" "}
+                  {renderArrowWord("large")}.
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Introductory/Non-Final Statements:</b>
+              <div>
+                These statements are typically at the beginning of the sentence.
+              </div>
+              <br />
+              <ul>
+                <li>
+                  When {renderArrowWord("I", true)} grow {renderArrowWord("up")}
+                  ...
+                </li>
+                <li>
+                  {renderArrowWord("By", true)} the {renderArrowWord("way")},
+                </li>
+                <li>
+                  {renderArrowWord("As", true)} I was{" "}
+                  {renderArrowWord("saying")},
+                </li>
+                <li>
+                  {renderArrowWord("Just", true)} so you{" "}
+                  {renderArrowWord("know", false)},
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Conditional Statements:</b>
+              <div>
+                Conditionals usually start with ‘if’ or ‘when’. The last word of
+                the first clause rises, then falls at the end.
+              </div>
+              <br />
+              <ul>
+                <li>
+                  If I have a million {renderArrowWord("dollars", true)}, I
+                  would travel the {renderArrowWord("world")}.
+                </li>
+                <li>
+                  When I was a {renderArrowWord("child", true)}, I played{" "}
+                  {renderArrowWord("football")}.
+                </li>
+                <li>
+                  If it’s cold {renderArrowWord("outside", true)}, I will wear a{" "}
+                  {renderArrowWord("jacket")}.
+                </li>
+              </ul>
+            </div>
+            <br />
+            {renderIntonationQuizLinks()}
           </div>
         </div>
       );
@@ -1138,6 +1335,14 @@ const App = () => {
 
     if (page === "falling") {
       return renderFalling();
+    }
+
+    if (page === "rising") {
+      return renderRising();
+    }
+
+    if (page === "non-final") {
+      return renderNonFinal();
     }
 
     if (page === "consonants") {
