@@ -18,6 +18,7 @@ import {
   defaultCustomQuizAnswers,
   defaultCustomQuizStressAnswers,
   quiz,
+  quizIntonation,
   quizStress,
 } from "./quiz";
 import Quiz from "react-quiz-component";
@@ -45,7 +46,7 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(0);
+  const [indexCarousel, setIndexCarousel] = React.useState(4);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -636,6 +637,20 @@ const App = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="Guess the Pattern"
+          />
+          <Carousel.Caption>
+            <h3>Guess the Pattern</h3>
+            <p>
+              Read each sentence and choose whether it has a falling, rising, or
+              non-final intonation.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
     );
   };
@@ -854,6 +869,9 @@ const App = () => {
             {indexCarousel === 2 && renderCustomQuizStress()}
             {indexCarousel === 3 && (
               <Quiz quiz={quizStress} showInstantFeedback={true} />
+            )}
+            {indexCarousel === 4 && (
+              <Quiz quiz={quizIntonation} showInstantFeedback={true} />
             )}
           </div>
         </div>

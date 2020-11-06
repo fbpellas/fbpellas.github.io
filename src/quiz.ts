@@ -162,6 +162,93 @@ export const quizStress = {
   ],
 };
 
+const commonQuestionIntonationProps = {
+  questionType: "text",
+  answerSelectionType: "single",
+  point: "20",
+  answers: ["Rising intonation", "Falling intonation", "Non-Final intonation"],
+  explanation: "TODO",
+};
+
+export const quizIntonation = {
+  quizTitle: "Guess the Pattern",
+  quizSynopsis:
+    "Read each sentence and choose whether it has a falling, rising, or non-final intonation.",
+  questions: [
+    {
+      ...commonQuestionIntonationProps,
+      question: "I brought some wine, snacks, and a blanket for the picnic.",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final: it’s a list",
+      messageForIncorrectAnswer: "Non-final: it’s a list",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "Does she have enough time to prepare?",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Rising: Yes/No question",
+      messageForIncorrectAnswer: "Rising: Yes/No question",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "You’re still coming, aren’t you?",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Rising: Question tag",
+      messageForIncorrectAnswer: "Rising: Question tag",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "It’s nice to meet you!",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling: exclamation",
+      messageForIncorrectAnswer: "Falling: exclamation",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "Did you order the chicken or the fish?",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final: choice",
+      messageForIncorrectAnswer: "Non-final: choice",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "They didn’t go camping this weekend.",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling: finished statement",
+      messageForIncorrectAnswer: "Falling: finished statement",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "Why did you quit your job?",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Rising: WH- question",
+      messageForIncorrectAnswer: "Rising: WH- question",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "Good morning! It’s so beautiful outside.",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling: exclamation and a finished statement",
+      messageForIncorrectAnswer:
+        "Falling: exclamation and a finished statement",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "Submit the form after answering the questions.",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling: command",
+      messageForIncorrectAnswer: "Falling: command",
+    },
+    {
+      ...commonQuestionIntonationProps,
+      question: "When I was a student, I had three months of vacation.",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final: conditional",
+      messageForIncorrectAnswer: "Non-final: conditional",
+    },
+  ],
+};
+
 export const customQuiz = [
   ["əˈtɛn ʃən", "attention"],
   ["ˈfɪʃ ɪŋ", "fishing"],
