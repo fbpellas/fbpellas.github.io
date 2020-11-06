@@ -85,6 +85,20 @@ const App = () => {
     setPageAndClear(hash);
   };
 
+  const renderFooter = () => {
+    return (
+      <div className="footer">
+        Faith Pellas, website created in 2020 and hosted on{" "}
+        <a
+          className="clickable-page"
+          href="https://github.com/fbpellas/fbpellas.github.io"
+        >
+          GitHub
+        </a>
+      </div>
+    );
+  };
+
   const renderBreadcrumbs = () => {
     const links = [["home", "Home"]];
 
@@ -1785,7 +1799,7 @@ const App = () => {
           {renderBreadcrumbs()}
           {renderBody()}
         </div>
-        {/* <div className="footer">Created in 2020</div> */}
+        {renderFooter()}
       </div>
     </HelmetProvider>
   );
