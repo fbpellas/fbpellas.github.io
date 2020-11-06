@@ -225,7 +225,12 @@ const App = () => {
   const renderCustomQuiz = () => {
     return (
       <div className="custom-quiz">
-        <div>
+        <img
+          className="margin-top half-img"
+          src={`${BASE_PATH_IMG}IPA chart.jpg`}
+          alt="Learn the Art of Speaking American English"
+        />
+        <div className="margin-top">
           {quizScore === 0 &&
             "Guess the words based on their phonetic spelling. The box will turn green if the answer is correct."}
           {quizScore === 1 && "Great work!"}
@@ -556,6 +561,16 @@ const App = () => {
     );
   };
 
+  const renderIntonation = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">Intonation</h3>
+        </div>
+      </div>
+    );
+  };
+
   const renderCard = (href: string, title: string, button: string) => {
     return (
       <Card>
@@ -871,6 +886,10 @@ const App = () => {
       return renderStress();
     }
 
+    if (page === "intonation") {
+      return renderIntonation();
+    }
+
     if (page === "quiz") {
       return (
         <div className="block-2">
@@ -939,61 +958,6 @@ const App = () => {
             )}
           </div>
         </div>
-      );
-    }
-
-    const renderFake = () => (
-      <div className="article">
-        <h3 className="h3-title">Something else</h3>
-        <p>Another one</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>One paragraph</p>
-      </div>
-    );
-
-    if (["intonation"].includes(page)) {
-      return (
-        <>
-          <div className="block-2">
-            <div className="article">
-              <h3 className="h3-title">
-                Something <Badge variant="secondary">New</Badge>
-              </h3>
-              <p>One paragraph</p>
-              <p>Another one</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            {renderFake()}
-            {renderFake()}
-          </div>
-          <div className="block-1">
-            <div className="section">
-              <h3 className="h3-title">Some section</h3>
-              <p>Short description</p>
-              <p>One paragraph</p>
-            </div>
-            <div className="section">
-              <h3 className="h3-title">Some other section</h3>
-              <p>Very short description</p>
-            </div>
-          </div>
-        </>
       );
     }
 

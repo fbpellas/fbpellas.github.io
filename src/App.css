@@ -499,3 +499,13 @@ u {
   margin: 5%;
   padding: 5%;
 }
+
+.selection-tag {
+  background-color: #ffc2db !important;
+  font-size: 20px;
+}
+
+.number-of-selection {
+  background-color: #ffc2db !important;
+  font-size: 20px;
+}
