@@ -365,6 +365,10 @@ h4 {
   text-decoration: underline;
 }
 
+.yellow {
+  color: #dc9b00;
+}
+
 body {
   background-color: #f7f3e7 !important;
 }
@@ -429,6 +433,10 @@ u {
 .inline {
   display: inline;
   margin: 10px;
+}
+
+.inline-period {
+  display: inline;
 }
 
 .block {

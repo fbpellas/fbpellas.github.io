@@ -124,6 +124,21 @@ const App = () => {
         links.push([page, "Intonation"]);
         break;
 
+      case "falling":
+        links.push(["intonation", "Intonation"]);
+        links.push([page, "Falling"]);
+        break;
+
+      case "rising":
+        links.push(["intonation", "Intonation"]);
+        links.push([page, "Rising"]);
+        break;
+
+      case "non-final":
+        links.push(["intonation", "Intonation"]);
+        links.push([page, "Non-Final"]);
+        break;
+
       case "quiz":
         links.push([page, "Quiz"]);
         break;
@@ -941,6 +956,111 @@ const App = () => {
       );
     }
 
+    const renderArrowWord = (word: string) => {
+      return (
+        <>
+          <div className="inline-period yellow">➘</div>
+          {word}
+        </>
+      );
+    };
+
+    const renderFalling = () => {
+      return (
+        <div className="block-2">
+          <div className="article">
+            <h3 className="h3-title">Falling Intonation</h3>
+            <div className="margin-top">
+              This is the most common intonation pattern in American English. We
+              use this intonation when we finish a statement, give a command, as
+              an information question, and an exclamation. The intonation falls
+              on the last word of the sentence.
+            </div>
+            <br />
+            <div>
+              <b>Finished Statements:</b>
+              <br />
+              <ul>
+                <li>We live in {renderArrowWord("France")}.</li>
+                <li>They are not {renderArrowWord("invited")}.</li>
+                <li>It takes five hours to get {renderArrowWord("there")}.</li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Commands:</b>
+              <div>
+                Statements use to give orders. Commands or imperative sentences
+                start with the verb and not the subject.
+              </div>
+              <br />
+              <ul>
+                <li>Report to me {renderArrowWord("immediately")}.</li>
+                <li>Do not take any {renderArrowWord("photos")}.</li>
+                <li>Brush your teeth and go to {renderArrowWord("bed")}.</li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Wh- Questions:</b>
+              <div>
+                Who, What, When, Where, How, Why, Which are also known as
+                information questions.
+              </div>
+              <br />
+              <ul>
+                <li>How are {renderArrowWord("you")}?</li>
+                <li>When is your {renderArrowWord("birthday")}?</li>
+                <li>Why did you lie to {renderArrowWord("me")}?</li>
+              </ul>
+            </div>
+            <br />
+            <div>
+              <b>Exclamations or Interjections:</b>
+              <div>
+                Statements that express surprise, awe, pain, etc. Interjections
+                are always marked with an exclamation point (!)
+              </div>
+              <br />
+              <ul>
+                <li>That’s {renderArrowWord("amazing")}!</li>
+                <li>{renderArrowWord("Congratulations")}!</li>
+                <li>You look lovely in that {renderArrowWord("dress")}!</li>
+              </ul>
+            </div>
+            <br />
+            <div>Test yourself to see how well you know intonations:</div>
+            <ul>
+              <li>
+                <a
+                  className="clickable-page"
+                  href="#quiz"
+                  onClick={() => {
+                    setPageAndClear("quiz");
+                    setIndexCarousel(QuizIndex.GuessThePattern);
+                  }}
+                >
+                  Guess the Pattern
+                </a>
+              </li>
+              <li>
+                <a
+                  className="clickable-page"
+                  href="#quiz"
+                  onClick={() => {
+                    setPageAndClear("quiz");
+                    setIndexCarousel(QuizIndex.ShoppingForAPresent);
+                  }}
+                >
+                  Shopping for a Present
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
+    };
+
     if (page === "phonemes") {
       return (
         <div className="block-2">
@@ -993,6 +1113,10 @@ const App = () => {
 
     if (page === "vowels") {
       return renderVowels();
+    }
+
+    if (page === "falling") {
+      return renderFalling();
     }
 
     if (page === "consonants") {
