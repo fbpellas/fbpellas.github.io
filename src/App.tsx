@@ -140,6 +140,27 @@ const App = () => {
         break;
 
       case "quiz":
+        if (
+          [
+            QuizIndex.SameWordsDifferentStress,
+            QuizIndex.WhereIsTheStress,
+          ].includes(indexCarousel)
+        ) {
+          links.push(["stress", "Stress"]);
+        } else if (
+          [QuizIndex.GuessThePattern, QuizIndex.ShoppingForAPresent].includes(
+            indexCarousel
+          )
+        ) {
+          links.push(["intonation", "Intonation"]);
+        } else if (
+          [QuizIndex.OddPhonemeOut, QuizIndex.PhoneticSpelling].includes(
+            indexCarousel
+          )
+        ) {
+          links.push(["phonemes", "Phonemes"]);
+        }
+
         links.push([page, "Quiz"]);
         break;
     }
