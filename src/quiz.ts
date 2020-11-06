@@ -249,6 +249,85 @@ export const quizIntonation = {
   ],
 };
 
+const commonQuestionIntonationBisProps = {
+  questionType: "text",
+  answerSelectionType: "single",
+  point: "20",
+  answers: ["Rising intonation", "Falling intonation", "Non-Final intonation"],
+  explanation: "TODO",
+};
+
+export const quizIntonationBis = {
+  quizTitle: "Shopping for a Present",
+  quizSynopsis:
+    "Read the conversation between Annie and the salesperson. Identify whether the phrases in bold have a falling, rising, or non-final intonation.",
+  questions: [
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "How can I help you?",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling",
+      messageForIncorrectAnswer: "Falling",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "Hi!",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling",
+      messageForIncorrectAnswer: "Falling",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "Is she into sports?",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Rising",
+      messageForIncorrectAnswer: "Rising",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "she already has everything.",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling",
+      messageForIncorrectAnswer: "Falling",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "If I were you",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final",
+      messageForIncorrectAnswer: "Non-final",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "blue or grey?",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final",
+      messageForIncorrectAnswer: "Non-final",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "blue, grey, pink, and orange.",
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Non-final",
+      messageForIncorrectAnswer: "Non-final",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "Add the scarf as well",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling",
+      messageForIncorrectAnswer: "Falling",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
+      question: "$280?",
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Rising",
+      messageForIncorrectAnswer: "Rising",
+    },
+  ],
+};
+
 export const customQuiz = [
   ["əˈtɛn ʃən", "attention"],
   ["ˈfɪʃ ɪŋ", "fishing"],

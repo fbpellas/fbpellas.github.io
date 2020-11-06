@@ -19,6 +19,7 @@ import {
   defaultCustomQuizStressAnswers,
   quiz,
   quizIntonation,
+  quizIntonationBis,
   quizStress,
 } from "./quiz";
 import Quiz from "react-quiz-component";
@@ -46,7 +47,7 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(4);
+  const [indexCarousel, setIndexCarousel] = React.useState(0);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -651,6 +652,20 @@ const App = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://via.placeholder.com/200x100"
+            alt="Shopping for a Present"
+          />
+          <Carousel.Caption>
+            <h3>Shopping for a Present</h3>
+            <p>
+              Identify whether the phrases in bold have a falling, rising, or
+              non-final intonation.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
     );
   };
@@ -872,6 +887,49 @@ const App = () => {
             )}
             {indexCarousel === 4 && (
               <Quiz quiz={quizIntonation} showInstantFeedback={true} />
+            )}
+            {indexCarousel === 5 && (
+              <>
+                <Quiz quiz={quizIntonationBis} showInstantFeedback={true} />
+                <div>
+                  <ul>
+                    <li>
+                      Salesperson: Hello! <b>How can I help you?</b>
+                    </li>
+                    <li>
+                      Annie: <b>Hi!</b> I’m looking for a present for my
+                      sister’s birthday. What would you recommend?
+                    </li>
+                    <li>
+                      S: Well, what does she like? <b>Is she into sports?</b>{" "}
+                      Does she love art?
+                    </li>
+                    <li>
+                      A: I’m not so sure, <b>she already has everything.</b>
+                    </li>
+                    <li>
+                      S: <b>If I were you,</b> I would give her new clothes.
+                      Maybe that shirt?
+                    </li>
+                    <li>
+                      A: Oh, I think she will like that. Should I get her the{" "}
+                      <b>blue or grey</b>?
+                    </li>
+                    <li>
+                      S: Why not give her one of every color? We have{" "}
+                      <b>blue, grey, pink, and orange.</b>
+                    </li>
+                    <li>
+                      A: I’ll take them all. <b>Add the scarf as well,</b>{" "}
+                      please.
+                    </li>
+                    <li>S: Okay, that would be $280 in total.</li>
+                    <li>
+                      A: <b>$280?</b> I think I’ll just get the scarf, then.
+                    </li>
+                  </ul>
+                </div>
+              </>
             )}
           </div>
         </div>
