@@ -493,3 +493,9 @@ u {
   background-color: red;
   color: white;
 }
+
+.discussion {
+  border: 1px solid black;
+  margin: 5%;
+  padding: 5%;
+}

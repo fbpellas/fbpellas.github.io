@@ -320,6 +320,13 @@ export const quizIntonationBis = {
     },
     {
       ...commonQuestionIntonationBisProps,
+      question: "that would be $280 in total",
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Falling",
+      messageForIncorrectAnswer: "Falling",
+    },
+    {
+      ...commonQuestionIntonationBisProps,
       question: "$280?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising",

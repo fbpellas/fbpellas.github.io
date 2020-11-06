@@ -890,9 +890,8 @@ const App = () => {
             )}
             {indexCarousel === 5 && (
               <>
-                <Quiz quiz={quizIntonationBis} showInstantFeedback={true} />
-                <div>
-                  <ul>
+                <div className="margin-top discussion">
+                  <ol>
                     <li>
                       Salesperson: Hello! <b>How can I help you?</b>
                     </li>
@@ -923,12 +922,19 @@ const App = () => {
                       A: I’ll take them all. <b>Add the scarf as well,</b>{" "}
                       please.
                     </li>
-                    <li>S: Okay, that would be $280 in total.</li>
+                    <li>
+                      S: Okay, <b>that would be $280 in total.</b>
+                    </li>
                     <li>
                       A: <b>$280?</b> I think I’ll just get the scarf, then.
                     </li>
-                  </ul>
+                  </ol>
                 </div>
+                <Quiz
+                  className="margin-top"
+                  quiz={quizIntonationBis}
+                  showInstantFeedback={true}
+                />
               </>
             )}
           </div>
