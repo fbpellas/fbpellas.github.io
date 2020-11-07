@@ -294,6 +294,7 @@ const App = () => {
           alt="Learn the Art of Speaking American English"
         />
         <div className="margin-top">
+          <h3>Phonetic Spelling</h3>
           {quizScore === 0 &&
             "Guess the words based on their phonetic spelling. The box will turn green if the answer is correct."}
           {quizScore === 1 && "Great work!"}
@@ -365,6 +366,7 @@ const App = () => {
       quizStressTotal === defaultCustomQuizStressAnswers.length;
     return (
       <div className="custom-quiz">
+        <h3>Same Words, Different Stress</h3>
         Listen to the recording and choose the answer with the correct stress
         mark. Green indicates correct and red means the answer is wrong.
         {customQuizStress.map((c: any, index: number) => {
@@ -798,81 +800,44 @@ const App = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/odd one out.png`}
             alt="Odd Phoneme Out"
           />
-          <Carousel.Caption>
-            <h3>Odd Phoneme Out</h3>
-            <p>Choose the word that has a different phoneme from the rest.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/phon spelling.png`}
             alt="Phonetic Spelling"
           />
-
-          <Carousel.Caption>
-            <h3>Phonetic Spelling</h3>
-            <p>Guess the words based on their phonetic spelling.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/same words diff.png`}
             alt="Same Words, Different Stress"
           />
-          <Carousel.Caption>
-            <h3>Same Words, Different Stress</h3>
-            <p>
-              Listen to the recording and choose the answer with the correct
-              stress mark.
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/wheres the stress.png`}
             alt="Where’s the Stress?"
           />
-          <Carousel.Caption>
-            <h3>Where’s the Stress?</h3>
-            <p>
-              Choose the number of syllables where the stress appears. If there
-              is no stress, choose zero.
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/guess pattern.png`}
             alt="Guess the Pattern"
           />
-          <Carousel.Caption>
-            <h3>Guess the Pattern</h3>
-            <p>
-              Read each sentence and choose whether it has a falling, rising, or
-              non-final intonation.
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/200x100"
+            src={`${BASE_PATH_IMG}quiz/shopping press.png`}
             alt="Shopping for a Present"
           />
-          <Carousel.Caption>
-            <h3>Shopping for a Present</h3>
-            <p>
-              Identify whether the phrases in bold have a falling, rising, or
-              non-final intonation.
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     );
