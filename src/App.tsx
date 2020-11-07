@@ -800,42 +800,42 @@ const App = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/odd one out.png`}
+            src={`${BASE_PATH_IMG}quiz/ODD PHON.png`}
             alt="Odd Phoneme Out"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/phon spelling.png`}
+            src={`${BASE_PATH_IMG}quiz/PHONETIC SPELL.png`}
             alt="Phonetic Spelling"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/same words diff.png`}
+            src={`${BASE_PATH_IMG}quiz/SAME WORDS.png`}
             alt="Same Words, Different Stress"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/wheres the stress.png`}
+            src={`${BASE_PATH_IMG}quiz/WHERES THE STRESS bis.png`}
             alt="Where’s the Stress?"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/guess pattern.png`}
+            src={`${BASE_PATH_IMG}quiz/GUESS THE PATTERN.png`}
             alt="Guess the Pattern"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/shopping press.png`}
+            src={`${BASE_PATH_IMG}quiz/SHOPPING.png`}
             alt="Shopping for a Present"
           />
         </Carousel.Item>
