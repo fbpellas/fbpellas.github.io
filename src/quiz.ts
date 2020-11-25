@@ -1,5 +1,6 @@
+const quizSynopsis = `Choose the word that has a different phoneme from the rest.`;
 const commonQuestionProps = {
-  question: " ",
+  question: quizSynopsis,
   questionType: "text",
   answerSelectionType: "single",
   point: "20",
@@ -7,7 +8,7 @@ const commonQuestionProps = {
 
 export const quiz = {
   quizTitle: "Odd Phoneme Out",
-  quizSynopsis: "Choose the word that has a different phoneme from the rest.",
+  quizSynopsis,
   questions: [
     {
       ...commonQuestionProps,
@@ -76,6 +77,9 @@ export const quiz = {
   ],
 };
 
+const quizStressSynopsisPrefix = `Choose the number of syllables where the stress appears`;
+const quizStressSynopsisSuffix = `. If there is no stress, choose zero.`;
+const quizStressSynopsis = `${quizStressSynopsisPrefix}${quizStressSynopsisSuffix}`;
 const commonQuestionStressProps = {
   questionType: "text",
   answerSelectionType: "single",
@@ -84,77 +88,80 @@ const commonQuestionStressProps = {
   explanation: "TODO",
 };
 
+const createQuestionQuizStress = (word: string) => {
+  return `${quizStressSynopsisPrefix} in "${word}"${quizStressSynopsisSuffix}`;
+};
+
 export const quizStress = {
   quizTitle: "Where’s the Stress?",
-  quizSynopsis:
-    "Choose the number of syllables where the stress appears. If there is no stress, choose zero.",
+  quizSynopsis: quizStressSynopsis,
   questions: [
     {
       ...commonQuestionStressProps,
-      question: "Apartment",
+      question: createQuestionQuizStress("Apartment"),
       correctAnswer: "3",
       messageForCorrectAnswer: "a PART ment",
       messageForIncorrectAnswer: "a PART ment",
     },
     {
       ...commonQuestionStressProps,
-      question: "Respond",
+      question: createQuestionQuizStress("Respond"),
       correctAnswer: "3",
       messageForCorrectAnswer: "re SPOND",
       messageForIncorrectAnswer: "re SPOND",
     },
     {
       ...commonQuestionStressProps,
-      question: "Positivity",
+      question: createQuestionQuizStress("Positivity"),
       correctAnswer: "4",
       messageForCorrectAnswer: "po si TI vi ty",
       messageForIncorrectAnswer: "po si TI vi ty",
     },
     {
       ...commonQuestionStressProps,
-      question: "Computer",
+      question: createQuestionQuizStress("Computer"),
       correctAnswer: "3",
       messageForCorrectAnswer: "com PU ter",
       messageForIncorrectAnswer: "com PU ter",
     },
     {
       ...commonQuestionStressProps,
-      question: "Bakery",
+      question: createQuestionQuizStress("Bakery"),
       correctAnswer: "2",
       messageForCorrectAnswer: "BA ke ry",
       messageForIncorrectAnswer: "BA ke ry",
     },
     {
       ...commonQuestionStressProps,
-      question: "Honorable",
+      question: createQuestionQuizStress("Honorable"),
       correctAnswer: "2",
       messageForCorrectAnswer: "HO nor a ble",
       messageForIncorrectAnswer: "HO nor a ble",
     },
     {
       ...commonQuestionStressProps,
-      question: "Scientific",
+      question: createQuestionQuizStress("Scientific"),
       correctAnswer: "4",
       messageForCorrectAnswer: "sci en TI fic",
       messageForIncorrectAnswer: "sci en TI fic",
     },
     {
       ...commonQuestionStressProps,
-      question: "Weigh",
+      question: createQuestionQuizStress("Weigh"),
       correctAnswer: "1",
       messageForCorrectAnswer: "no stress",
       messageForIncorrectAnswer: "no stress",
     },
     {
       ...commonQuestionStressProps,
-      question: "Winner",
+      question: createQuestionQuizStress("Winner"),
       correctAnswer: "2",
       messageForCorrectAnswer: "WI nner",
       messageForIncorrectAnswer: "WI nner",
     },
     {
       ...commonQuestionStressProps,
-      question: "Competition",
+      question: createQuestionQuizStress("Competition"),
       correctAnswer: "4",
       messageForCorrectAnswer: "com pe TI tion",
       messageForIncorrectAnswer: "com pe TI tion",
@@ -170,63 +177,79 @@ const commonQuestionIntonationProps = {
   explanation: "TODO",
 };
 
+const quizIntonationSynopsis = `Choose whether the following sentence has a falling, rising, or non-final intonation: `;
+const createQuizIntonationQuestion = (sentence: string) => {
+  return `${quizIntonationSynopsis}"${sentence}"`;
+};
+
 export const quizIntonation = {
   quizTitle: "Guess the Pattern",
-  quizSynopsis:
-    "Read each sentence and choose whether it has a falling, rising, or non-final intonation.",
+  quizSynopsis: `Read each sentence and choose whether it has a falling, rising, or non-final intonation.`,
   questions: [
     {
       ...commonQuestionIntonationProps,
-      question: "I brought some wine, snacks, and a blanket for the picnic.",
+      question: createQuizIntonationQuestion(
+        "I brought some wine, snacks, and a blanket for the picnic."
+      ),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: it’s a list",
       messageForIncorrectAnswer: "Non-final: it’s a list",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "Does she have enough time to prepare?",
+      question: createQuizIntonationQuestion(
+        "Does she have enough time to prepare?"
+      ),
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: Yes/No question",
       messageForIncorrectAnswer: "Rising: Yes/No question",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "You’re still coming, aren’t you?",
+      question: createQuizIntonationQuestion(
+        "You’re still coming, aren’t you?"
+      ),
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: Question tag",
       messageForIncorrectAnswer: "Rising: Question tag",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "It’s nice to meet you!",
+      question: createQuizIntonationQuestion("It’s nice to meet you!"),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: exclamation",
       messageForIncorrectAnswer: "Falling: exclamation",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "Did you order the chicken or the fish?",
+      question: createQuizIntonationQuestion(
+        "Did you order the chicken or the fish?"
+      ),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: choice",
       messageForIncorrectAnswer: "Non-final: choice",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "They didn’t go camping this weekend.",
+      question: createQuizIntonationQuestion(
+        "They didn’t go camping this weekend."
+      ),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: finished statement",
       messageForIncorrectAnswer: "Falling: finished statement",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "Why did you quit your job?",
+      question: createQuizIntonationQuestion("Why did you quit your job?"),
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: WH- question",
       messageForIncorrectAnswer: "Rising: WH- question",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "Good morning! It’s so beautiful outside.",
+      question: createQuizIntonationQuestion(
+        "Good morning! It’s so beautiful outside."
+      ),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: exclamation and a finished statement",
       messageForIncorrectAnswer:
@@ -234,14 +257,18 @@ export const quizIntonation = {
     },
     {
       ...commonQuestionIntonationProps,
-      question: "Submit the form after answering the questions.",
+      question: createQuizIntonationQuestion(
+        "Submit the form after answering the questions."
+      ),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: command",
       messageForIncorrectAnswer: "Falling: command",
     },
     {
       ...commonQuestionIntonationProps,
-      question: "When I was a student, I had three months of vacation.",
+      question: createQuizIntonationQuestion(
+        "When I was a student, I had three months of vacation."
+      ),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: conditional",
       messageForIncorrectAnswer: "Non-final: conditional",
@@ -257,6 +284,11 @@ const commonQuestionIntonationBisProps = {
   explanation: "TODO",
 };
 
+const quizIntonationBisSynopsis = `Identify whether the following phrase has a falling, rising, or non-final intonation: `;
+const createQuizIntonationBisQuestion = (phrase: string) => {
+  return `${quizIntonationBisSynopsis}"${phrase}"`;
+};
+
 export const quizIntonationBis = {
   quizTitle: "Shopping for a Present",
   quizSynopsis:
@@ -264,70 +296,72 @@ export const quizIntonationBis = {
   questions: [
     {
       ...commonQuestionIntonationBisProps,
-      question: "How can I help you?",
+      question: createQuizIntonationBisQuestion("How can I help you?"),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "Hi!",
+      question: createQuizIntonationBisQuestion("Hi!"),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "Is she into sports?",
+      question: createQuizIntonationBisQuestion("Is she into sports?"),
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising",
       messageForIncorrectAnswer: "Rising",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "she already has everything.",
+      question: createQuizIntonationBisQuestion("she already has everything."),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "If I were you",
+      question: createQuizIntonationBisQuestion("If I were you"),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "blue or grey?",
+      question: createQuizIntonationBisQuestion("blue or grey?"),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "blue, grey, pink, and orange.",
+      question: createQuizIntonationBisQuestion(
+        "blue, grey, pink, and orange."
+      ),
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "Add the scarf as well",
+      question: createQuizIntonationBisQuestion("Add the scarf as well"),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "that would be $280 in total",
+      question: createQuizIntonationBisQuestion("that would be $280 in total"),
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: "$280?",
+      question: createQuizIntonationBisQuestion("$280?"),
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising",
       messageForIncorrectAnswer: "Rising",

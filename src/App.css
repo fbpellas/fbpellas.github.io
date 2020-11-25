@@ -514,3 +514,7 @@ u {
   background-color: #ffc2db !important;
   color: white !important;
 }
+
+.tag-container {
+  display: none;
+}
