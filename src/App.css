@@ -500,18 +500,13 @@ u {
   padding: 5%;
 }
 
-.selection-tag {
-  background-color: #ffc2db !important;
-  font-size: 20px;
-}
-
-.number-of-selection {
-  background-color: #ffc2db !important;
-  font-size: 20px;
-}
-
 .startQuizBtn {
-  background-color: #ffc2db !important;
+  background-color: #b7dbe7 !important;
+  color: white !important;
+}
+
+.nextQuestionBtn {
+  background-color: #b7dbe7 !important;
   color: white !important;
 }
 
@@ -525,4 +520,20 @@ u {
 
 .react-quiz-container {
   width: unset !important;
+}
+
+.custom-button {
+  background-color: #b7dbe7;
+  color: white;
+  font-size: 15px;
+  border-radius: 2px;
+  line-height: 1.35135;
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.choice-button {
+  background-color: white;
+  color: black;
 }

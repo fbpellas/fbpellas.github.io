@@ -12,10 +12,10 @@ export const quiz = {
   questions: [
     {
       ...commonQuestionProps,
-      answers: ["bread", "seed", "read", "green"],
+      answers: ["bread", "seed", "reads", "green"],
       correctAnswer: "1",
       messageForCorrectAnswer: "bread: /e/",
-      messageForIncorrectAnswer: "seed, read, green: /iː/",
+      messageForIncorrectAnswer: "seed, reads, green: /iː/",
       explanation: "TODO",
     },
     {

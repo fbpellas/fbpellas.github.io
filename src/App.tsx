@@ -339,7 +339,7 @@ const App = () => {
         })}
         <br />
         <button
-          className="button-block"
+          className="button-block custom-button"
           type="button"
           onClick={() => {
             setQuizScore(correctCustomQuizAnswers.length + 1);
@@ -349,6 +349,7 @@ const App = () => {
           Check Answers!
         </button>
         <button
+          className="custom-button"
           type="button"
           onClick={() => {
             setQuizScore(0);
@@ -386,6 +387,8 @@ const App = () => {
             }
           }
 
+          const commonClassesButton = "custom-button choice-button";
+
           return (
             <div className="margin-top">
               <HiPlay
@@ -398,7 +401,7 @@ const App = () => {
               <div>
                 <button
                   disabled={isDisabled}
-                  className={`margin-right block ${classNameButton1}`}
+                  className={`${commonClassesButton} margin-right block ${classNameButton1}`}
                   type="button"
                   onClick={() => {
                     const newQuizStressAnswers = { ...quizStressAnswers };
@@ -414,7 +417,7 @@ const App = () => {
                   {c[2]}
                 </button>
                 <button
-                  className={`inline ${classNameButton2}`}
+                  className={`${commonClassesButton} inline ${classNameButton2}`}
                   type="button"
                   disabled={isDisabled}
                   onClick={() => {
@@ -440,7 +443,7 @@ const App = () => {
           </p>
         )}
         <button
-          className="margin-top"
+          className="margin-top custom-button"
           type="button"
           onClick={() => {
             setQuizStressAnswers(defaultCustomQuizStressAnswers);
