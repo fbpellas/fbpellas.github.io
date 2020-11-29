@@ -77,19 +77,12 @@ export const quiz = {
   ],
 };
 
-const quizStressSynopsisPrefix = `Choose the number of syllables where the stress appears`;
-const quizStressSynopsisSuffix = `. If there is no stress, choose zero.`;
-const quizStressSynopsis = `${quizStressSynopsisPrefix}${quizStressSynopsisSuffix}`;
+const quizStressSynopsis = `Choose the syllable that is pronounced with the correct word stress.`;
 const commonQuestionStressProps = {
   questionType: "text",
   answerSelectionType: "single",
   point: "20",
-  answers: ["0", "1", "2", "3"],
   explanation: "TODO",
-};
-
-const createQuestionQuizStress = (word: string) => {
-  return `${quizStressSynopsisPrefix} in "${word}"${quizStressSynopsisSuffix}`;
 };
 
 export const quizStress = {
@@ -98,71 +91,81 @@ export const quizStress = {
   questions: [
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Apartment"),
-      correctAnswer: "3",
+      question: "Apartment",
+      answers: ["A", "part", "ment", "No stress"],
+      correctAnswer: "2",
       messageForCorrectAnswer: "a PART ment",
       messageForIncorrectAnswer: "a PART ment",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Respond"),
-      correctAnswer: "3",
+      question: "Respond",
+      answers: ["Re", "spond", "No stress"],
+      correctAnswer: "2",
       messageForCorrectAnswer: "re SPOND",
       messageForIncorrectAnswer: "re SPOND",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Positivity"),
-      correctAnswer: "4",
+      question: "Positivity",
+      answers: ["Po", "si", "ti", "vi", "ty", "No stress"],
+      correctAnswer: "3",
       messageForCorrectAnswer: "po si TI vi ty",
       messageForIncorrectAnswer: "po si TI vi ty",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Computer"),
-      correctAnswer: "3",
+      question: "Computer",
+      answers: ["Com", "pu", "ter", "No stress"],
+      correctAnswer: "2",
       messageForCorrectAnswer: "com PU ter",
       messageForIncorrectAnswer: "com PU ter",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Bakery"),
-      correctAnswer: "2",
+      question: "Bakery",
+      answers: ["Ba", "ke", "ry", "No stress"],
+      correctAnswer: "1",
       messageForCorrectAnswer: "BA ke ry",
       messageForIncorrectAnswer: "BA ke ry",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Honorable"),
-      correctAnswer: "2",
+      question: "Honorable",
+      answers: ["Ho", "no", "ra", "ble", "No stress"],
+      correctAnswer: "1",
       messageForCorrectAnswer: "HO nor a ble",
       messageForIncorrectAnswer: "HO nor a ble",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Scientific"),
-      correctAnswer: "4",
+      question: "Scientific",
+      answers: ["Sci", "en", "ti", "fic", "No stress"],
+      correctAnswer: "3",
       messageForCorrectAnswer: "sci en TI fic",
       messageForIncorrectAnswer: "sci en TI fic",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Weigh"),
-      correctAnswer: "1",
-      messageForCorrectAnswer: "no stress",
-      messageForIncorrectAnswer: "no stress",
+      question: "Weigh",
+      answers: ["We", "igh", "No stress"],
+      correctAnswer: "3",
+      messageForCorrectAnswer: "No stress",
+      messageForIncorrectAnswer: "No stress",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Winner"),
-      correctAnswer: "2",
+      question: "Winner",
+      answers: ["Wi", "nner", "No stress"],
+      correctAnswer: "1",
       messageForCorrectAnswer: "WI nner",
       messageForIncorrectAnswer: "WI nner",
     },
     {
       ...commonQuestionStressProps,
-      question: createQuestionQuizStress("Competition"),
-      correctAnswer: "4",
+      question: "Competition",
+      answers: ["Com", "pe", "ti", "tion", "No stress"],
+      correctAnswer: "3",
       messageForCorrectAnswer: "com pe TI tion",
       messageForIncorrectAnswer: "com pe TI tion",
     },
