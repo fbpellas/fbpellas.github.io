@@ -6,7 +6,26 @@ const commonQuestionProps = {
   point: "20",
 };
 
+export const defaultLocale = {
+  landingHeaderText: "<questionLength> Questions",
+  question: "Question",
+  startQuizBtn: "Start Quiz",
+  resultFilterAll: "All",
+  resultFilterCorrect: "Correct",
+  resultFilterIncorrect: "Incorrect",
+  nextQuestionBtn: "Next",
+  resultPageHeaderText:
+    "You got <correctIndexLength> out of <questionLength> questions right.",
+  resultPagePoint: "",
+  singleSelectionTagText: "Single Selection",
+  multipleSelectionTagText: "Multiple Selection",
+  pickNumberOfSelection: "Pick <numberOfSelection>",
+};
+
 export const quiz = {
+  appLocale: {
+    ...defaultLocale,
+  },
   quizTitle: "Odd Phoneme Out",
   quizSynopsis,
   questions: [
@@ -85,6 +104,9 @@ const commonQuestionStressProps = {
 };
 
 export const quizStress = {
+  appLocale: {
+    ...defaultLocale,
+  },
   quizTitle: "",
   quizSynopsis: "",
   questions: [
@@ -180,6 +202,9 @@ const commonQuestionIntonationProps = {
 };
 
 export const quizIntonation = {
+  appLocale: {
+    ...defaultLocale,
+  },
   quizTitle: "",
   quizSynopsis: "",
   questions: [
@@ -266,6 +291,9 @@ const commonQuestionIntonationBisProps = {
 };
 
 export const quizIntonationBis = {
+  appLocale: {
+    ...defaultLocale,
+  },
   quizTitle: "",
   quizSynopsis: "",
   questions: [
