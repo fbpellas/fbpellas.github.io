@@ -537,3 +537,33 @@ u {
   background-color: white;
   color: black;
 }
+
+.previous-quiz {
+  cursor: pointer;
+}
+
+.next-quiz {
+  cursor: pointer;
+}
+
+.disabled-quiz {
+  color: #d4d4d4;
+  cursor: unset;
+}
+
+.disabled-quiz:hover {
+  color: #d4d4d4;
+  text-decoration: none;
+}
+
+.selection-quiz {
+  color: black;
+}
+
+.selection-quiz:hover {
+  color: black;
+}
+
+.footer-quiz {
+  font-size: 20px;
+}

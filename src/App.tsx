@@ -10,6 +10,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
+import classnames from "classnames";
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -47,6 +48,8 @@ export enum QuizIndex {
   GuessThePattern = 4,
   ShoppingForAPresent = 5,
 }
+
+const quizLastIndex = 5;
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -1408,6 +1411,16 @@ const App = () => {
     }
 
     if (page === "quiz") {
+      const previousQuizClasses = classnames(`flex-1 previous-quiz`, {
+        "disabled-quiz": indexCarousel === 0,
+        "selection-quiz": indexCarousel !== 0,
+      });
+
+      const nextQuizClasses = classnames(`flex-1 next-quiz`, {
+        "disabled-quiz": indexCarousel === quizLastIndex,
+        "selection-quiz": indexCarousel !== quizLastIndex,
+      });
+
       return (
         <div className="block-2">
           <div className="article">
@@ -1502,6 +1515,30 @@ const App = () => {
                 />
               </>
             )}
+          </div>
+          <div className="flex-wrapper footer-quiz">
+            <a
+              className={previousQuizClasses}
+              href="#quiz"
+              onClick={() => {
+                if (indexCarousel > 0) {
+                  setIndexCarousel(indexCarousel - 1);
+                }
+              }}
+            >
+              ← Previous Quiz
+            </a>
+            <a
+              className={nextQuizClasses}
+              href="#quiz"
+              onClick={() => {
+                if (indexCarousel < quizLastIndex) {
+                  setIndexCarousel(indexCarousel + 1);
+                }
+              }}
+            >
+              Next Quiz →
+            </a>
           </div>
         </div>
       );
