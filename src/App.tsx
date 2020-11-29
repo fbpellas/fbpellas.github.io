@@ -1443,6 +1443,9 @@ const App = () => {
             {indexCarousel === QuizIndex.ShoppingForAPresent && (
               <>
                 <div className="margin-top discussion">
+                  <p>
+                    Read the conversation between Annie and the salesperson.
+                  </p>
                   <ol>
                     <li>
                       Salesperson: Hello! <b>How can I help you?</b>
@@ -1481,6 +1484,13 @@ const App = () => {
                       A: <b>$280?</b> I think I’ll just get the scarf, then.
                     </li>
                   </ol>
+                </div>
+                <div className="quiz-header">
+                  <h3>Shopping for a Present</h3>
+                  <p>
+                    Identify whether the following phrase has a falling, rising,
+                    or a non-final intonation.
+                  </p>
                 </div>
                 <Quiz
                   className="margin-top"

@@ -265,84 +265,76 @@ const commonQuestionIntonationBisProps = {
   explanation: "TODO",
 };
 
-const quizIntonationBisSynopsis = `Identify whether the following phrase has a falling, rising, or non-final intonation: `;
-const createQuizIntonationBisQuestion = (phrase: string) => {
-  return `${quizIntonationBisSynopsis}"${phrase}"`;
-};
-
 export const quizIntonationBis = {
-  quizTitle: "Shopping for a Present",
-  quizSynopsis:
-    "Read the conversation between Annie and the salesperson. Identify whether the phrases in bold have a falling, rising, or non-final intonation.",
+  quizTitle: "",
+  quizSynopsis: "",
   questions: [
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("How can I help you?"),
+      question: "How can I help you?",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("Hi!"),
+      question: "Hi!",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("Is she into sports?"),
+      question: "Is she into sports?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising",
       messageForIncorrectAnswer: "Rising",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("she already has everything."),
+      question: "she already has everything.",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("If I were you"),
+      question: "If I were you",
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("blue or grey?"),
+      question: "blue or grey?",
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion(
-        "blue, grey, pink, and orange."
-      ),
+      question: "blue, grey, pink, and orange.",
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final",
       messageForIncorrectAnswer: "Non-final",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("Add the scarf as well"),
+      question: "Add the scarf as well",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("that would be $280 in total"),
+      question: "that would be $280 in total",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling",
       messageForIncorrectAnswer: "Falling",
     },
     {
       ...commonQuestionIntonationBisProps,
-      question: createQuizIntonationBisQuestion("$280?"),
+      question: "$280?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising",
       messageForIncorrectAnswer: "Rising",
