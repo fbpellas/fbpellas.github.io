@@ -485,12 +485,12 @@ u {
 }
 
 .correct-button {
-  background-color: green;
+  background-color: green !important;
   color: white;
 }
 
 .incorrect-button {
-  background-color: red;
+  background-color: red !important;
   color: white;
 }
 
