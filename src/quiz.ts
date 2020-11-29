@@ -77,7 +77,6 @@ export const quiz = {
   ],
 };
 
-const quizStressSynopsis = `Choose the syllable that is pronounced with the correct word stress.`;
 const commonQuestionStressProps = {
   questionType: "text",
   answerSelectionType: "single",
@@ -86,8 +85,8 @@ const commonQuestionStressProps = {
 };
 
 export const quizStress = {
-  quizTitle: "Where’s the Stress?",
-  quizSynopsis: quizStressSynopsis,
+  quizTitle: "",
+  quizSynopsis: "",
   questions: [
     {
       ...commonQuestionStressProps,

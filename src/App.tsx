@@ -1417,7 +1417,16 @@ const App = () => {
             {indexCarousel === QuizIndex.SameWordsDifferentStress &&
               renderCustomQuizStress()}
             {indexCarousel === QuizIndex.WhereIsTheStress && (
-              <Quiz quiz={quizStress} showInstantFeedback={true} />
+              <>
+                <div className="quiz-header">
+                  <h3>Where’s the Stress?</h3>
+                  <p>
+                    Choose the syllable that is pronounced with the correct word
+                    stress.
+                  </p>
+                </div>
+                <Quiz quiz={quizStress} showInstantFeedback={true} />
+              </>
             )}
             {indexCarousel === QuizIndex.GuessThePattern && (
               <Quiz quiz={quizIntonation} showInstantFeedback={true} />

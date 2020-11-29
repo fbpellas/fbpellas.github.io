@@ -518,3 +518,7 @@ u {
 .tag-container {
   display: none;
 }
+
+.quiz-header {
+  margin: 20px;
+}
