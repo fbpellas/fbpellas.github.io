@@ -133,8 +133,8 @@ export const quizStress = {
       question: "Honorable",
       answers: ["Ho", "no", "ra", "ble", "No stress"],
       correctAnswer: "1",
-      messageForCorrectAnswer: "HO nor a ble",
-      messageForIncorrectAnswer: "HO nor a ble",
+      messageForCorrectAnswer: "HO no ra ble",
+      messageForIncorrectAnswer: "HO no ra ble",
     },
     {
       ...commonQuestionStressProps,
@@ -179,79 +179,62 @@ const commonQuestionIntonationProps = {
   explanation: "TODO",
 };
 
-const quizIntonationSynopsis = `Choose whether the following sentence has a falling, rising, or non-final intonation: `;
-const createQuizIntonationQuestion = (sentence: string) => {
-  return `${quizIntonationSynopsis}"${sentence}"`;
-};
-
 export const quizIntonation = {
-  quizTitle: "Guess the Pattern",
-  quizSynopsis: `Read each sentence and choose whether it has a falling, rising, or non-final intonation.`,
+  quizTitle: "",
+  quizSynopsis: "",
   questions: [
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "I brought some wine, snacks, and a blanket for the picnic."
-      ),
+      question: `I brought some wine, snacks, and a blanket for the picnic.`,
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: it’s a list",
       messageForIncorrectAnswer: "Non-final: it’s a list",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "Does she have enough time to prepare?"
-      ),
+      question: "Does she have enough time to prepare?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: Yes/No question",
       messageForIncorrectAnswer: "Rising: Yes/No question",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "You’re still coming, aren’t you?"
-      ),
+      question: "You’re still coming, aren’t you?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: Question tag",
       messageForIncorrectAnswer: "Rising: Question tag",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion("It’s nice to meet you!"),
+      question: "It’s nice to meet you!",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: exclamation",
       messageForIncorrectAnswer: "Falling: exclamation",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "Did you order the chicken or the fish?"
-      ),
+      question: "Did you order the chicken or the fish?",
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: choice",
       messageForIncorrectAnswer: "Non-final: choice",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "They didn’t go camping this weekend."
-      ),
+      question: "They didn’t go camping this weekend.",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: finished statement",
       messageForIncorrectAnswer: "Falling: finished statement",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion("Why did you quit your job?"),
+      question: "Why did you quit your job?",
       correctAnswer: "1",
       messageForCorrectAnswer: "Rising: WH- question",
       messageForIncorrectAnswer: "Rising: WH- question",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "Good morning! It’s so beautiful outside."
-      ),
+      question: "Good morning! It’s so beautiful outside.",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: exclamation and a finished statement",
       messageForIncorrectAnswer:
@@ -259,18 +242,14 @@ export const quizIntonation = {
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "Submit the form after answering the questions."
-      ),
+      question: "Submit the form after answering the questions.",
       correctAnswer: "2",
       messageForCorrectAnswer: "Falling: command",
       messageForIncorrectAnswer: "Falling: command",
     },
     {
       ...commonQuestionIntonationProps,
-      question: createQuizIntonationQuestion(
-        "When I was a student, I had three months of vacation."
-      ),
+      question: "When I was a student, I had three months of vacation.",
       correctAnswer: "3",
       messageForCorrectAnswer: "Non-final: conditional",
       messageForIncorrectAnswer: "Non-final: conditional",

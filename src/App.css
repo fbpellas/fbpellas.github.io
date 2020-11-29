@@ -522,3 +522,7 @@ u {
 .quiz-header {
   margin: 20px;
 }
+
+.react-quiz-container {
+  width: unset !important;
+}

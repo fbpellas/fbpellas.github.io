@@ -1429,7 +1429,16 @@ const App = () => {
               </>
             )}
             {indexCarousel === QuizIndex.GuessThePattern && (
-              <Quiz quiz={quizIntonation} showInstantFeedback={true} />
+              <>
+                <div className="quiz-header">
+                  <h3>Guess the Pattern</h3>
+                  <p>
+                    Choose whether the following sentence has a falling, rising,
+                    or a non-final intonation.
+                  </p>
+                </div>
+                <Quiz quiz={quizIntonation} showInstantFeedback={true} />
+              </>
             )}
             {indexCarousel === QuizIndex.ShoppingForAPresent && (
               <>
