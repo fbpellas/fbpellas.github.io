@@ -17,8 +17,9 @@ Deployed on [GitHub pages](https://fbpellas.github.io/), support for desktop onl
 
 ### Deploy
 
-- Commit and push your changes to `develop` branch
+- Commit and push your changes to `main` branch
 - Then run `npm run deploy`
+- It will create a commit in `master` branch
 
 ### Contribute
 

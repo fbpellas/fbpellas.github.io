@@ -29,8 +29,8 @@ import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/img/`;
-export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
+export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/`;
+export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/sounds/`;
 export const EMAIL = 'fbpellas@usfca.edu';
 
 export enum QuizIndex {
