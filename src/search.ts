@@ -1,10 +1,4 @@
-import {
-  diphthongs,
-  consonants,
-  longVowels,
-  shortVowels,
-  rColoredVowels,
-} from "./phonemes";
+import { diphthongs, consonants, vowels } from "./phonemes";
 import flatten from "lodash/flatten";
 
 const generateKeys = (data: any) => {
@@ -25,61 +19,90 @@ const generateKeys = (data: any) => {
   );
 };
 
+const generateKeysPhonemes = (data: any) => {
+  return flatten(
+    data.map((el: any) => {
+      const phonemes = el[0];
+      const sanitizedPhonemes = phonemes.replaceAll("/", "");
+
+      return [sanitizedPhonemes, phonemes];
+    })
+  );
+};
+
 const consonantsKeys = generateKeys(consonants);
 const diphthongsKeys = generateKeys(diphthongs);
-const longVowelsKeys = generateKeys(longVowels);
-const rColoredVowelsKeys = generateKeys(rColoredVowels);
-const shortVowelsKeys = generateKeys(shortVowels);
+const vowelsKeys = generateKeys(vowels);
+
+const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
+const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
+const vowelsKeysPhonemes = generateKeysPhonemes(vowels);
+
+export const mappingPhonemes = [
+  [consonantsKeysPhonemes, "consonants", "Consonants (phonemes)"],
+  [diphthongsKeysPhonemes, "diphthongs", "Diphthongs (phonemes)"],
+  [vowelsKeysPhonemes, "vowels", "Vowels (phonemes)"],
+];
+
+const mappingExamples = [
+  [consonantsKeys, "consonants", "Consonants (examples)"],
+  [diphthongsKeys, "diphthongs", "Diphthongs (examples)"],
+  [vowelsKeys, "vowels", "Vowels (examples)"],
+];
 
 export const mapping = [
+  ...mappingExamples,
+  ...mappingPhonemes,
   [
     ["about", "author", "about the author", "faith", "pellas", "faith pellas"],
     "about-author",
     "About the Author",
   ],
+  [["mission", "teachers", "how to", "students"], "mission", "Mission"],
   [
-    ["letter", "teachers", "how to", "letter to teachers", "letter teachers"],
-    "letter-teachers",
-    "Letter to Teachers",
-  ],
-  [
-    [...consonantsKeys, "consonant", "consonants", "letter", "letters"],
+    ["consonant", "consonants", "letter", "letters"],
     "consonants",
     "Consonants",
   ],
+
   [["phoneme", "phonemes"], "phonemes", "Phonemes"],
   [["letter", "letter", "vowel", "vowels"], "vowels", "Vowels"],
+  [["diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
+  [["stress"], "stress", "Stress"],
+  [["intonation"], "intonation", "Intonation"],
+  [["rising", "up", "intonation"], "rising", "Rising"],
+  [["falling", "down", "intonation"], "falling", "Falling"],
   [
-    [...longVowelsKeys, "vowel", "vowels", "long vowel", "long vowels"],
-    "long-vowels",
-    "Long vowels",
-  ],
-  [
-    [...shortVowelsKeys, "vowel", "vowels", "short vowel", "short vowels"],
-    "short-vowels",
-    "Short vowels",
+    ["non-final", "up", "down", "non final", "intonation"],
+    "non-final",
+    "Non-Final",
   ],
   [
     [
-      ...rColoredVowelsKeys,
-      "vowel",
-      "vowels",
-      "r-colored vowel",
-      "r-colored vowels",
-      "r colored vowel",
-      "r colored vowels",
+      "odd phoneme out",
+      "odd one out",
+      "phonetic spelling",
+      "same words different stress",
+      "where is the stress",
+      "where's the stress",
+      "guess the pattern",
+      "shopping for a present",
+      "quiz",
+      "quizzes",
     ],
-    "r-colored-vowels",
-    "R-colored vowels",
+    "quiz",
+    "Quiz",
   ],
-  [[...diphthongsKeys, "diphthong", "diphthongs"], "diphthongs", "Diphthongs"],
-  [["stress"], "stress", "Stress"],
-  [["intonation"], "intonation", "Intonation"],
-  [["resource", "resources"], "resources", "Resources"],
-  [["quiz", "quizzes"], "quiz", "Quiz"],
   [
-    ["english", "pronunciation", "english pronunciation", "main"],
-    "main",
-    "Main Page",
+    [
+      "english",
+      "pronunciation",
+      "english pronunciation",
+      "home",
+      "homepage",
+      "main",
+    ],
+    "home",
+    "Homepage",
   ],
 ];
