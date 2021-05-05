@@ -6,9 +6,10 @@ Deployed on [GitHub pages](https://fbpellas.github.io/), support for desktop onl
 
 ### Setup
 
-- Clone the repository with `git clone https://github.com/fbpellas/fbpellas.github.io.git`
+- Clone the repository with `git clone git@github.com:fbpellas/fbpellas.github.io.git`
 - Go into the repository (e.g. with `cd`)
 - Run `npm i` to install the dependencies
+- I am using `node -v` being `v14.15.0` and `npm -v` being `6.14.11`
 
 ### Start
 
