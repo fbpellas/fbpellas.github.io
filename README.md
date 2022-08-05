@@ -6,8 +6,10 @@ Deployed on [GitHub pages](https://fbpellas.github.io/), support for desktop onl
 
 ### Setup
 
-- Clone the repository with `git clone https://github.com/fbpellas/fbpellas.github.io.git`
+- Clone the repository with `git clone git@github.com:fbpellas/fbpellas.github.io.git`
 - Go into the repository (e.g. with `cd`)
+- Run `nvm use`
+- Verify versions with `node -v` and `npm -v`
 - Run `npm i` to install the dependencies
 
 ### Start
@@ -17,9 +19,14 @@ Deployed on [GitHub pages](https://fbpellas.github.io/), support for desktop onl
 
 ### Deploy
 
-- Commit and push your changes to `develop` branch
+- Commit and push your changes to `main` branch
 - Then run `npm run deploy`
+- It will create a commit in `master` branch
 
 ### Contribute
 
 - This project is considered complete from a content perspective but the code quality can drastically be improved. For instance by breaking `App.tsx` file down into several components, as well as turning the `renderSomething` functions into their own components, TypeScript typings can be used more frequently, etc. Unit tests are lacking as well. Long story short it has been implemented quickly as a hackathon. For all these reasons, only [Issues](https://github.com/fbpellas/fbpellas.github.io/issues) about the actual website (e.g. content, bugs, etc.) are welcomed. No issues about the code is welcomed yet. Thank you!
+
+### License
+
+This repository having no license is not an oversight. Please read more about it [here](https://choosealicense.com/no-permission/)

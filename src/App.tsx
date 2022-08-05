@@ -35,10 +35,7 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-
-export const BASE_PATH_IMG = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/img/`;
-export const BASE_PATH = `https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/develop/public/sounds/`;
-export const EMAIL = "fbpellas@usfca.edu";
+import { BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants'
 
 export enum QuizIndex {
   OddPhonemeOut = 0,
@@ -236,8 +233,8 @@ const App = () => {
           const phonemesSound = line[3];
           const examplesSound = line[4];
 
-          const audioPhonemes = new Audio(`${BASE_PATH}${phonemesSound}`);
-          const audioExamples = new Audio(`${BASE_PATH}${examplesSound}`);
+          const audioPhonemes = new Audio(`${BASE_PATH_SOUNDS}${phonemesSound}`);
+          const audioExamples = new Audio(`${BASE_PATH_SOUNDS}${examplesSound}`);
 
           return (
             <tr>
@@ -374,7 +371,7 @@ const App = () => {
         Listen to the recording and choose the answer with the correct stress
         mark. Green indicates correct and red means the answer is wrong.
         {customQuizStress.map((c: any, index: number) => {
-          const audioStress = new Audio(`${BASE_PATH}${c[1]}`);
+          const audioStress = new Audio(`${BASE_PATH_SOUNDS}${c[1]}`);
           const correctAnswer = c[4];
           const isDisabled = quizStressAnswers[index] !== 0;
           let classNameButton1 = "";
@@ -500,12 +497,12 @@ const App = () => {
 
   const renderStress = () => {
     const audioPresent = new Audio(
-      `${BASE_PATH}stress/‘Present vs pre ‘sent.m4a`
+      `${BASE_PATH_SOUNDS}stress/‘Present vs pre ‘sent.m4a`
     );
 
-    const audioReject = new Audio(`${BASE_PATH}stress/‘Reject re ‘ject.m4a`);
+    const audioReject = new Audio(`${BASE_PATH_SOUNDS}stress/‘Reject re ‘ject.m4a`);
     const audioConduct = new Audio(
-      `${BASE_PATH}stress/‘Con duct vs Con ‘duct.m4a`
+      `${BASE_PATH_SOUNDS}stress/‘Con duct vs Con ‘duct.m4a`
     );
 
     return (
@@ -664,11 +661,11 @@ const App = () => {
 
   const renderIntonation = () => {
     const audioTest1 = new Audio(
-      `${BASE_PATH}intonation/He failed the test1.m4a`
+      `${BASE_PATH_SOUNDS}intonation/He failed the test1.m4a`
     );
 
     const audioTest2 = new Audio(
-      `${BASE_PATH}intonation/Hé failed the test2.m4a`
+      `${BASE_PATH_SOUNDS}intonation/Hé failed the test2.m4a`
     );
 
     return (
