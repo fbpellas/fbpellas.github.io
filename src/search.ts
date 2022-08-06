@@ -55,7 +55,7 @@ export const mapping = [
   [['consonant', 'consonants', 'letter', 'letters'], 'consonants', 'Consonants'],
 
   [['phoneme', 'phonemes'], 'phonemes', 'Phonemes'],
-  [['letter', 'letter', 'vowel', 'vowels'], 'vowels', 'Vowels'],
+  [['letter', 'vowel', 'vowels'], 'vowels', 'Vowels'],
   [['diphthong', 'diphthongs'], 'diphthongs', 'Diphthongs'],
   [['stress'], 'stress', 'Stress'],
   [['intonation'], 'intonation', 'Intonation'],
