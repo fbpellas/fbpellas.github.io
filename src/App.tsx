@@ -23,12 +23,13 @@ import {
   quizStress
 } from './quiz';
 import Quiz from 'react-quiz-component';
-import { diphthongs, consonants, vowels } from './phonemes';
+import { diphthongs, consonants, vowels } from './data/phonemes';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import { Pronunciation } from './types';
 
 export enum QuizIndex {
   OddPhonemeOut = 0,
@@ -181,7 +182,7 @@ const App = () => {
     );
   };
 
-  const renderTable = (data: any) => {
+  const renderTable = (data: Pronunciation[]) => {
     return (
       <table>
         <tr>
@@ -189,12 +190,11 @@ const App = () => {
           <th className="text-center">{renderTooltip('Grapheme', 'Letters that spell the sound', 'text-center')}</th>
           <th className="text-center">Examples</th>
         </tr>
-        {data.map((line: any) => {
-          const phonemesSound = line[3];
-          const examplesSound = line[4];
+        {data.map((d: Pronunciation) => {
+          const { phoneme, graphemes, examples, audioPhoneme, audioExamples } = d;
 
-          const audioPhonemes = new Audio(`${BASE_PATH_SOUNDS}${phonemesSound}`);
-          const audioExamples = new Audio(`${BASE_PATH_SOUNDS}${examplesSound}`);
+          const audioPhonemeObj = new Audio(`${BASE_PATH_SOUNDS}${audioPhoneme}`);
+          const audioExamplesObj = new Audio(`${BASE_PATH_SOUNDS}${audioExamples}`);
 
           return (
             <tr>
@@ -202,20 +202,20 @@ const App = () => {
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audioPhonemes.play();
+                    audioPhonemeObj.play();
                   }}
                 />
-                {line[0]}
+                {phoneme}
               </td>
-              <td>{line[1]}</td>
+              <td>{graphemes}</td>
               <td>
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audioExamples.play();
+                    audioExamplesObj.play();
                   }}
                 />
-                <div className="text-inline" dangerouslySetInnerHTML={{ __html: line[2] }} />
+                <div className="text-inline" dangerouslySetInnerHTML={{ __html: examples }} />
               </td>
             </tr>
           );

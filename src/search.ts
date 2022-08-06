@@ -1,26 +1,27 @@
-import { diphthongs, consonants, vowels } from './phonemes';
+import { diphthongs, consonants, vowels } from './data/phonemes';
 import flatten from 'lodash/flatten';
+import { Pronunciation } from './types';
 
-const generateKeys = (data: any) => {
+const generateKeys = (data: Pronunciation[]) => {
   return flatten(
-    data.map((el: any) => {
-      const examples = el[2];
+    data.map((d: Pronunciation) => {
+      const { examples } = d;
       const sanitizedExamples = examples.replaceAll('<u>', '').replaceAll('</u>', '').split(', ');
 
-      const filteredExamples = sanitizedExamples.filter((example: any) => example.length > 2);
+      const filteredExamples = sanitizedExamples.filter((example: string) => example.length > 2);
 
       return filteredExamples;
     })
   );
 };
 
-const generateKeysPhonemes = (data: any) => {
+const generateKeysPhonemes = (data: Pronunciation[]) => {
   return flatten(
-    data.map((el: any) => {
-      const phonemes = el[0];
-      const sanitizedPhonemes = phonemes.replaceAll('/', '');
+    data.map((d: Pronunciation) => {
+      const { phoneme } = d;
+      const sanitizedPhoneme = phoneme.replaceAll('/', '');
 
-      return [sanitizedPhonemes, phonemes];
+      return [sanitizedPhoneme, phoneme];
     })
   );
 };
