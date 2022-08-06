@@ -28,7 +28,7 @@ import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, CREATION_YEAR_END, CREATION_YEAR_START, EMAIL } from './constants';
 import { Pronunciation } from './types';
 
 export enum QuizIndex {
@@ -52,7 +52,7 @@ const App = () => {
   const [matches, setMatches] = React.useState<any>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(QuizIndex.OddPhonemeOut);
 
-  const hash = window?.location?.hash?.substr(1);
+  const hash = window?.location?.hash?.substring(1);
   const [page, setPage] = React.useState(hash);
   const [quizAnswers, setQuizAnswers] = React.useState(defaultCustomQuizAnswers);
 
@@ -68,15 +68,15 @@ const App = () => {
     setPage(hash);
   };
 
-  window.onhashchange = function () {
-    const hash = window?.location?.hash?.substr(1);
+  window.onhashchange = () => {
+    const hash = window?.location?.hash?.substring(1);
     setPageAndClear(hash);
   };
 
   const renderFooter = () => {
     return (
       <div className="footer">
-        {AUTHOR_FULLNAME}, website created in 2020 and hosted on{' '}
+        {AUTHOR_FULLNAME}, website created in {CREATION_YEAR_START}-{CREATION_YEAR_END} and hosted on{' '}
         <a
           className="clickable-page"
           target="_blank"
@@ -1536,7 +1536,7 @@ const App = () => {
           <Form inline>
             <FormControl
               onKeyPress={(e: any) => {
-                if (e.keyCode === 13 || e.which === 13) {
+                if ([e.keyCode, e.which].includes(13)) {
                   e.preventDefault();
 
                   if (matches.length > 0) {
