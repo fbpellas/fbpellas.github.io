@@ -23,12 +23,21 @@ import {
   quizStress
 } from './quiz';
 import Quiz from 'react-quiz-component';
-import { diphthongs, consonants, vowels } from './phonemes';
+import { diphthongs, consonants, vowels } from './data/phonemes';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import {
+  AUTHOR_FIRSTNAME,
+  AUTHOR_FULLNAME,
+  BASE_PATH_IMG,
+  BASE_PATH_SOUNDS,
+  CREATION_YEAR_END,
+  CREATION_YEAR_START,
+  EMAIL
+} from './constants';
+import { Pronunciation } from './types';
 
 export enum QuizIndex {
   OddPhonemeOut = 0,
@@ -39,7 +48,7 @@ export enum QuizIndex {
   ShoppingForAPresent = 5
 }
 
-const quizLastIndex = 5;
+const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -51,7 +60,7 @@ const App = () => {
   const [matches, setMatches] = React.useState<any>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(QuizIndex.OddPhonemeOut);
 
-  const hash = window?.location?.hash?.substr(1);
+  const hash = window?.location?.hash?.substring(1);
   const [page, setPage] = React.useState(hash);
   const [quizAnswers, setQuizAnswers] = React.useState(defaultCustomQuizAnswers);
 
@@ -67,15 +76,15 @@ const App = () => {
     setPage(hash);
   };
 
-  window.onhashchange = function () {
-    const hash = window?.location?.hash?.substr(1);
+  window.onhashchange = () => {
+    const hash = window?.location?.hash?.substring(1);
     setPageAndClear(hash);
   };
 
   const renderFooter = () => {
     return (
       <div className="footer">
-        Faith Pellas, website created in 2020 and hosted on{' '}
+        {AUTHOR_FULLNAME}, website created in {CREATION_YEAR_START}-{CREATION_YEAR_END} and hosted on{' '}
         <a
           className="clickable-page"
           target="_blank"
@@ -181,7 +190,7 @@ const App = () => {
     );
   };
 
-  const renderTable = (data: any) => {
+  const renderTable = (data: Pronunciation[]) => {
     return (
       <table>
         <tr>
@@ -189,12 +198,11 @@ const App = () => {
           <th className="text-center">{renderTooltip('Grapheme', 'Letters that spell the sound', 'text-center')}</th>
           <th className="text-center">Examples</th>
         </tr>
-        {data.map((line: any) => {
-          const phonemesSound = line[3];
-          const examplesSound = line[4];
+        {data.map((d: Pronunciation) => {
+          const { phoneme, graphemes, examples, audioPhoneme, audioExamples } = d;
 
-          const audioPhonemes = new Audio(`${BASE_PATH_SOUNDS}${phonemesSound}`);
-          const audioExamples = new Audio(`${BASE_PATH_SOUNDS}${examplesSound}`);
+          const audioPhonemeObj = new Audio(`${BASE_PATH_SOUNDS}${audioPhoneme}`);
+          const audioExamplesObj = new Audio(`${BASE_PATH_SOUNDS}${audioExamples}`);
 
           return (
             <tr>
@@ -202,20 +210,20 @@ const App = () => {
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audioPhonemes.play();
+                    audioPhonemeObj.play();
                   }}
                 />
-                {line[0]}
+                {phoneme}
               </td>
-              <td>{line[1]}</td>
+              <td>{graphemes}</td>
               <td>
                 <HiPlay
                   className="play-icon"
                   onClick={() => {
-                    audioExamples.play();
+                    audioExamplesObj.play();
                   }}
                 />
-                <div className="text-inline" dangerouslySetInnerHTML={{ __html: line[2] }} />
+                <div className="text-inline" dangerouslySetInnerHTML={{ __html: examples }} />
               </td>
             </tr>
           );
@@ -736,14 +744,14 @@ const App = () => {
               <h3 className="h3-title">About the Author</h3>
               <div className="flex-wrapper">
                 <div className="flex-1">
-                  <img className="full-img" src={`${BASE_PATH_IMG}faith.jpg`} alt="Faith Pellas" />
+                  <img className="full-img" src={`${BASE_PATH_IMG}faith.jpg`} alt={AUTHOR_FULLNAME} />
                 </div>
                 <div className="author-text flex-2">
                   <p>
-                    Faith Pellas is a scholar at the University of San Francisco’s TESOL department. For the past four
-                    years, she has been teaching English to learners from beginners to advanced levels. When she’s not
-                    working on her thesis, Faith loves learning French, watercolor painting, and sending postcards to
-                    her nearest and dearest.
+                    {AUTHOR_FULLNAME} is a scholar at the University of San Francisco’s TESOL department. For the past
+                    four years, she has been teaching English to learners from beginners to advanced levels. When she’s
+                    not working on her thesis, {AUTHOR_FIRSTNAME} loves learning French, watercolor painting, and
+                    sending postcards to her nearest and dearest.
                   </p>
                 </div>
               </div>
@@ -1336,11 +1344,11 @@ const App = () => {
     return (
       <HelmetProvider>
         <Helmet>
-          <title>English Pronunciation by Faith Pellas</title>
+          <title>{`English Pronunciation by ${AUTHOR_FULLNAME}`}</title>
           <link rel="canonical" href="https://fbpellas.github.io/" />
         </Helmet>
         <div className="mobile">
-          <h1>Faith Pellas</h1>
+          <h1>{AUTHOR_FULLNAME}</h1>
           <h2>English Pronunciation</h2>
           <div>
             We are working hard to make this website accessible on mobile. In the meantime, please visit it on a
@@ -1362,12 +1370,12 @@ const App = () => {
         data-cross-origin="anonymous"
       />
       <Helmet>
-        <title>English Pronunciation by Faith Pellas</title>
+        <title>{`English Pronunciation by ${AUTHOR_FULLNAME}`}</title>
         <link rel="canonical" href="https://fbpellas.github.io/" />
       </Helmet>
       <div className="main">
         <a className="h1-title" href="#about-author" onClick={() => setPageAndClear('about-author')}>
-          Faith Pellas
+          {AUTHOR_FULLNAME}
         </a>
         <a className="h2-title" href="#home" onClick={() => setPageAndClear('home')}>
           English Pronunciation
@@ -1536,7 +1544,7 @@ const App = () => {
           <Form inline>
             <FormControl
               onKeyPress={(e: any) => {
-                if (e.keyCode === 13 || e.which === 13) {
+                if ([e.keyCode, e.which].includes(13)) {
                   e.preventDefault();
 
                   if (matches.length > 0) {
