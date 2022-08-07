@@ -28,7 +28,15 @@ import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, CREATION_YEAR_END, CREATION_YEAR_START, EMAIL } from './constants';
+import {
+  AUTHOR_FIRSTNAME,
+  AUTHOR_FULLNAME,
+  BASE_PATH_IMG,
+  BASE_PATH_SOUNDS,
+  CREATION_YEAR_END,
+  CREATION_YEAR_START,
+  EMAIL
+} from './constants';
 import { Pronunciation } from './types';
 
 export enum QuizIndex {
@@ -740,10 +748,10 @@ const App = () => {
                 </div>
                 <div className="author-text flex-2">
                   <p>
-                    {AUTHOR_FULLNAME} is a scholar at the University of San Francisco’s TESOL department. For the past four
-                    years, she has been teaching English to learners from beginners to advanced levels. When she’s not
-                    working on her thesis, {AUTHOR_FIRSTNAME} loves learning French, watercolor painting, and sending postcards to
-                    her nearest and dearest.
+                    {AUTHOR_FULLNAME} is a scholar at the University of San Francisco’s TESOL department. For the past
+                    four years, she has been teaching English to learners from beginners to advanced levels. When she’s
+                    not working on her thesis, {AUTHOR_FIRSTNAME} loves learning French, watercolor painting, and
+                    sending postcards to her nearest and dearest.
                   </p>
                 </div>
               </div>

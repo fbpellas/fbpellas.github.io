@@ -50,7 +50,18 @@ const mappingExamples = [
 export const mapping = [
   ...mappingExamples,
   ...mappingPhonemes,
-  [['about', 'author', 'about the author', AUTHOR_FIRSTNAME.toLowerCase(), AUTHOR_LASTNAME.toLowerCase(), AUTHOR_FULLNAME.toLowerCase()], 'about-author', 'About the Author'],
+  [
+    [
+      'about',
+      'author',
+      'about the author',
+      AUTHOR_FIRSTNAME.toLowerCase(),
+      AUTHOR_LASTNAME.toLowerCase(),
+      AUTHOR_FULLNAME.toLowerCase()
+    ],
+    'about-author',
+    'About the Author'
+  ],
   [['mission', 'teachers', 'how to', 'students'], 'mission', 'Mission'],
   [['consonant', 'consonants', 'letter', 'letters'], 'consonants', 'Consonants'],
 
