@@ -1,6 +1,20 @@
 import { Breadcrumb, QuizIndex } from "../types";
 
 /**
+ * @name titleize
+ * @description Returns capital letter then same case
+ */
+const titleize = (word: string) => {
+  if (!word) return '';
+
+  const capitalLetter = word.charAt(0).toUpperCase();
+
+  if (word.length === 1) return capitalLetter;
+
+  return `${capitalLetter}${word.slice(1)}`;
+}
+
+/**
  * @name generateBreadcrumbs
  * @description Based on the current page, get the path to this page
  */
@@ -74,4 +88,4 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex) => {
   return links;
 }
 
-export { generateBreadcrumbs };
+export { generateBreadcrumbs, titleize };

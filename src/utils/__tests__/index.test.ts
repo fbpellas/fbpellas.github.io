@@ -1,4 +1,4 @@
-import { generateBreadcrumbs } from "..";
+import { generateBreadcrumbs, titleize } from "..";
 import { Breadcrumb, QuizIndex } from "../../types";
 
 test('generateBreadcrumbs', () => {
@@ -25,5 +25,12 @@ test('generateBreadcrumbs', () => {
   expect(generateBreadcrumbs('quiz', QuizIndex.ShoppingForAPresent)).toStrictEqual([home, intonation, quiz])
   expect(generateBreadcrumbs('quiz', QuizIndex.OddPhonemeOut)).toStrictEqual([home, phonemes, quiz])
   expect(generateBreadcrumbs('quiz', QuizIndex.PhoneticSpelling)).toStrictEqual([home, phonemes, quiz])
+});
 
+test('titleize', () => {
+  expect(titleize('')).toBe('')
+  expect(titleize('b')).toBe('B')
+  expect(titleize('bonjour')).toBe('Bonjour')
+  expect(titleize('Bonjour')).toBe('Bonjour')
+  expect(titleize('bonJoUr')).toBe('BonJoUr')
 });
