@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArrowWord: down 1`] = `
+<div>
+  <div
+    class="inline-period yellow"
+  >
+    ➘
+  </div>
+  
+</div>
+`;
+
+exports[`ArrowWord: up 1`] = `
+<div>
+  <div
+    class="inline-period yellow"
+  >
+    ➚
+  </div>
+  
+</div>
+`;
+
+exports[`ArrowWord: word and down 1`] = `
+<div>
+  <div
+    class="inline-period yellow"
+  >
+    ➘
+  </div>
+  something
+</div>
+`;
+
+exports[`ArrowWord: word and up 1`] = `
+<div>
+  <div
+    class="inline-period yellow"
+  >
+    ➚
+  </div>
+  something
+</div>
+`;
