@@ -11,6 +11,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import classnames from 'classnames';
+import { generateBreadcrumbs } from './utils';
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -35,18 +36,9 @@ import {
   BASE_PATH_SOUNDS,
   EMAIL
 } from './constants';
-import { Pronunciation } from './types';
+import { Breadcrumb as BreadcrumbType, QuizIndex, Pronunciation } from './types';
 import { Footer } from './components/Footer';
 import { ArrowWord } from './components/ArrowWord';
-
-export enum QuizIndex {
-  OddPhonemeOut = 0,
-  PhoneticSpelling = 1,
-  SameWordsDifferentStress = 2,
-  WhereIsTheStress = 3,
-  GuessThePattern = 4,
-  ShoppingForAPresent = 5
-}
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -82,81 +74,18 @@ const App = () => {
   };
 
   const renderBreadcrumbs = () => {
-    const links = [['home', 'Home']];
+    const breadcrumbs = generateBreadcrumbs(page, indexCarousel);
 
-    switch (page) {
-      case 'about-author':
-        links.push([page, 'About the Author']);
-        break;
-
-      case 'mission':
-        links.push([page, 'Mission']);
-        break;
-
-      case 'phonemes':
-        links.push([page, 'Phonemes']);
-        break;
-
-      case 'vowels':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Vowels']);
-        break;
-
-      case 'diphthongs':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Diphthongs']);
-        break;
-
-      case 'consonants':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Consonants']);
-        break;
-
-      case 'stress':
-        links.push([page, 'Stress']);
-        break;
-
-      case 'intonation':
-        links.push([page, 'Intonation']);
-        break;
-
-      case 'falling':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Falling']);
-        break;
-
-      case 'rising':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Rising']);
-        break;
-
-      case 'non-final':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Non-Final']);
-        break;
-
-      case 'quiz':
-        if ([QuizIndex.SameWordsDifferentStress, QuizIndex.WhereIsTheStress].includes(indexCarousel)) {
-          links.push(['stress', 'Stress']);
-        } else if ([QuizIndex.GuessThePattern, QuizIndex.ShoppingForAPresent].includes(indexCarousel)) {
-          links.push(['intonation', 'Intonation']);
-        } else if ([QuizIndex.OddPhonemeOut, QuizIndex.PhoneticSpelling].includes(indexCarousel)) {
-          links.push(['phonemes', 'Phonemes']);
-        }
-
-        links.push([page, 'Quiz']);
-        break;
-    }
-
-    const { length } = links;
+    const { length } = breadcrumbs;
 
     if (length <= 1) return null;
 
     return (
       <Breadcrumb>
-        {links.map((link, index) => {
-          const [anchor, title] = link;
-          if (index === length - 1) {
+        {breadcrumbs.map((breadcrumb, index) => {
+          const { anchor, title } = breadcrumb;
+          const isLast = index === length - 1;
+          if (isLast) {
             return <Breadcrumb.Item active>{title}</Breadcrumb.Item>;
           }
 
