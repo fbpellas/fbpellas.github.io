@@ -38,6 +38,7 @@ import {
   EMAIL
 } from './constants';
 import { Pronunciation } from './types';
+import { Footer } from './components/Footer';
 
 export enum QuizIndex {
   OddPhonemeOut = 0,
@@ -79,22 +80,6 @@ const App = () => {
   window.onhashchange = () => {
     const hash = window?.location?.hash?.substring(1);
     setPageAndClear(hash);
-  };
-
-  const renderFooter = () => {
-    return (
-      <div className="footer">
-        {AUTHOR_FULLNAME}, website created in {CREATION_YEAR_START}-{CREATION_YEAR_END} and hosted on{' '}
-        <a
-          className="clickable-page"
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://github.com/fbpellas/fbpellas.github.io"
-        >
-          GitHub
-        </a>
-      </div>
-    );
   };
 
   const renderBreadcrumbs = () => {
@@ -1600,7 +1585,7 @@ const App = () => {
           {renderBreadcrumbs()}
           {renderBody()}
         </div>
-        {renderFooter()}
+        <Footer />
       </div>
     </HelmetProvider>
   );

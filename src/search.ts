@@ -7,7 +7,9 @@ const generateKeys = (data: Pronunciation[]) => {
   return flatten(
     data.map((d: Pronunciation) => {
       const { examples } = d;
-      const sanitizedExamples = examples.replaceAll('<u>', '').replaceAll('</u>', '').split(', ');
+
+      // TODO: add utils
+      const sanitizedExamples = examples.replace(/<u>/g, '').replace(/<\/u>/g, '').split(', ');
 
       const filteredExamples = sanitizedExamples.filter((example: string) => example.length > 2);
 
@@ -20,7 +22,8 @@ const generateKeysPhonemes = (data: Pronunciation[]) => {
   return flatten(
     data.map((d: Pronunciation) => {
       const { phoneme } = d;
-      const sanitizedPhoneme = phoneme.replaceAll('/', '');
+      // add utils
+      const sanitizedPhoneme = phoneme.replace('/\//g', '');
 
       return [sanitizedPhoneme, phoneme];
     })
