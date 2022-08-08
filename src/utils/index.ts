@@ -15,18 +15,45 @@ const titleize = (word: string) => {
 }
 
 /**
+ * @name createBreadcrumb
+ * @description Creates a simple breadcrumb based on a page
+ */
+const createBreadcrumb = (page: string): Breadcrumb => ({ anchor: page, title: titleize(page) })
+
+/**
+ * @name getQuizParentBreadcrumb
+ * @description Returns the parent breadcrumb that suits the current quiz best
+ */
+const getQuizParentBreadcrumb = (indexCarousel: QuizIndex): Breadcrumb => {
+  const { GuessThePattern, OddPhonemeOut, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
+  const [phonemes, intonation, stress] = ['phonemes', 'intonation', 'stress'].map(createBreadcrumb);
+
+  switch (indexCarousel) {
+    case SameWordsDifferentStress:
+    case WhereIsTheStress:
+    default:
+      return stress;
+
+    case GuessThePattern:
+    case ShoppingForAPresent:
+      return intonation;
+
+    case OddPhonemeOut:
+    case PhoneticSpelling:
+      return phonemes;
+  }
+};
+
+/**
  * @name generateBreadcrumbs
  * @description Based on the current page, get the path to this page
  */
 const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb[] => {
-  const { GuessThePattern, OddPhonemeOut, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
   const title = page === 'non-final' ? 'Non-Final' : titleize(page);
-
-  const home: Breadcrumb = { anchor: 'home', title: 'Home' };
-  const phonemes: Breadcrumb = { anchor: 'phonemes', title: 'Phonemes' }
-  const intonation: Breadcrumb = { anchor: 'intonation', title: 'Intonation' }
-  const stress: Breadcrumb = { anchor: 'stress', title: 'Stress' }
   const currentPage: Breadcrumb = { anchor: page, title };
+
+  const [home, phonemes, intonation] = ['home', 'phonemes', 'intonation'].map(createBreadcrumb)
+  const quizParentBreadcrumb = getQuizParentBreadcrumb(indexCarousel);
 
   switch (page) {
     case 'about-author':
@@ -51,21 +78,11 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
       return [home, intonation, currentPage];
 
     case 'quiz':
-      if ([SameWordsDifferentStress, WhereIsTheStress].includes(indexCarousel)) {
-        return [home, stress, currentPage]
-      }
-
-      if ([GuessThePattern, ShoppingForAPresent].includes(indexCarousel)) {
-        return [home, intonation, currentPage]
-      }
-
-      if ([OddPhonemeOut, PhoneticSpelling].includes(indexCarousel)) {
-        return [home, phonemes, currentPage]
-      }
+      return [home, quizParentBreadcrumb, currentPage]
 
     default:
       return [home];
   }
 }
 
-export { generateBreadcrumbs, titleize };
+export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, titleize };

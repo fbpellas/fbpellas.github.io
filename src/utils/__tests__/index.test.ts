@@ -1,5 +1,23 @@
-import { generateBreadcrumbs, titleize } from "..";
+import { createBreadcrumb, generateBreadcrumbs, getQuizParentBreadcrumb, titleize } from "..";
 import { Breadcrumb, QuizIndex } from "../../types";
+
+test('createBreadcrumb', () => {
+  expect(createBreadcrumb('something')).toStrictEqual({ anchor: 'something', title: 'Something' })
+});
+
+test('getQuizParentBreadcrumb', () => {
+  const { GuessThePattern, OddPhonemeOut, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
+  const phonemes: Breadcrumb = { anchor: 'phonemes', title: 'Phonemes' };
+  const intonation: Breadcrumb = { anchor: 'intonation', title: 'Intonation' }
+  const stress: Breadcrumb = { anchor: 'stress', title: 'Stress' }
+
+  expect(getQuizParentBreadcrumb(SameWordsDifferentStress)).toStrictEqual(stress);
+  expect(getQuizParentBreadcrumb(WhereIsTheStress)).toStrictEqual(stress);
+  expect(getQuizParentBreadcrumb(GuessThePattern)).toStrictEqual(intonation);
+  expect(getQuizParentBreadcrumb(ShoppingForAPresent)).toStrictEqual(intonation);
+  expect(getQuizParentBreadcrumb(OddPhonemeOut)).toStrictEqual(phonemes);
+  expect(getQuizParentBreadcrumb(PhoneticSpelling)).toStrictEqual(phonemes);
+});
 
 test('generateBreadcrumbs', () => {
   const home: Breadcrumb = { anchor: 'home', title: 'Home' };
