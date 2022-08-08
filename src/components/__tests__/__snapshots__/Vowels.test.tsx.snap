@@ -1,0 +1,872 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vowels 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h2
+        class="h3-title vowels-title"
+      >
+        Vowels
+      </h2>
+      <br />
+      <div>
+        Vowels are a set of unblocked sounds. They consist of the letters A, E, I, O, U (sometimes Y). The
+         
+        <div
+          class="text-inline bottom-dot"
+        >
+          IPA
+        </div>
+         lists 20 phonemes categorized as long, short, and
+         
+        <a
+          class="clickable-page"
+          href="#diphthongs"
+        >
+          diphthongs
+        </a>
+        .
+      </div>
+      <br />
+      <div>
+        Vowels can sometimes be categorized as lax (short) and tense (long) depending on how much effort the lips and tongue make when producing the sound.
+      </div>
+      <br />
+      <div>
+        Listed below are the phonemes that are widely used in the American English language. Some words might vary in phonemes depending on regional dialects.
+      </div>
+      <table>
+        <tr>
+          <th>
+            <div
+              class="text-center"
+            >
+              Phonemes
+            </div>
+          </th>
+          <th
+            class="text-center"
+          >
+            <div
+              class="text-center"
+            >
+              Grapheme
+            </div>
+          </th>
+          <th
+            class="text-center"
+          >
+            Examples
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /iː/
+          </td>
+          <td>
+            e, ee, ea, ey, ie, y
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              gr
+              <u>
+                ee
+              </u>
+              n, sh
+              <u>
+                ee
+              </u>
+              p, t
+              <u>
+                ea
+              </u>
+              , k
+              <u>
+                ey
+              </u>
+              , funn
+              <u>
+                y
+              </u>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ɪ/
+          </td>
+          <td>
+            i, y, ui, u
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              p
+              <u>
+                i
+              </u>
+              nk, s
+              <u>
+                y
+              </u>
+              mbol, b
+              <u>
+                ui
+              </u>
+              ld, b
+              <u>
+                u
+              </u>
+              sy, q
+              <u>
+                ui
+              </u>
+              lt
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ʊ/
+          </td>
+          <td>
+            oo, ou, u
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              w
+              <u>
+                oo
+              </u>
+              d, c
+              <u>
+                ou
+              </u>
+              ld, f
+              <u>
+                ul
+              </u>
+              l, b
+              <u>
+                oo
+              </u>
+              k, p
+              <u>
+                u
+              </u>
+              sh
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /uː/
+          </td>
+          <td>
+            u, o, oo, ou
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              bl
+              <u>
+                u
+              </u>
+              e, wh
+              <u>
+                o
+              </u>
+              , n
+              <u>
+                oo
+              </u>
+              n, y
+              <u>
+                ou
+              </u>
+              , gr
+              <u>
+                ou
+              </u>
+              p
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /e/
+          </td>
+          <td>
+            e, ea, ai
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              m
+              <u>
+                e
+              </u>
+              n, br
+              <u>
+                ea
+              </u>
+              d, m
+              <u>
+                e
+              </u>
+              t, s
+              <u>
+                ai
+              </u>
+              d, h
+              <u>
+                ea
+              </u>
+              d
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ə/
+          </td>
+          <td>
+            (schwa sound)
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              b
+              <u>
+                a
+              </u>
+              nana, th
+              <u>
+                e,
+              </u>
+               ev
+              <u>
+                e
+              </u>
+              r, p
+              <u>
+                o
+              </u>
+              lice, 
+              <u>
+                u
+              </u>
+              pon
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ɜː/
+          </td>
+          <td>
+            i(r), u(r), ea(r)
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              b
+              <u>
+                ir
+              </u>
+              d, h
+              <u>
+                ur
+              </u>
+              t, l
+              <u>
+                ear
+              </u>
+              n, 
+              <u>
+                ear
+              </u>
+              th, f
+              <u>
+                ur
+              </u>
+              niture
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ɔː/
+          </td>
+          <td>
+            o(r), oo(r), o(r)e, oa(r)
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              m
+              <u>
+                or
+              </u>
+              ning, fl
+              <u>
+                oor
+              </u>
+              , w
+              <u>
+                ore
+              </u>
+              , b
+              <u>
+                oar
+              </u>
+              d, sp
+              <u>
+                or
+              </u>
+              t
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /æ/
+          </td>
+          <td>
+            a, au, ai
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              <u>
+                a
+              </u>
+              pple, b
+              <u>
+                a
+              </u>
+              ck, pl
+              <u>
+                ai
+              </u>
+              d, l
+              <u>
+                au
+              </u>
+              gh, 
+              <u>
+                a
+              </u>
+              fter
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ʌ/
+          </td>
+          <td>
+            u, o, oo, oe
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              <u>
+                u
+              </u>
+              nder, h
+              <u>
+                o
+              </u>
+              ney, fl
+              <u>
+                oo
+              </u>
+              d, d
+              <u>
+                oe
+              </u>
+              s, f
+              <u>
+                u
+              </u>
+              n
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /aː/
+          </td>
+          <td>
+            a(r), o, ea(r), ow
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              h
+              <u>
+                ar
+              </u>
+              d, sh
+              <u>
+                ar
+              </u>
+              k, h
+              <u>
+                ear
+              </u>
+              t, kn
+              <u>
+                ow
+              </u>
+              ledge, b
+              <u>
+                o
+              </u>
+              dy
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            /ɒ/
+          </td>
+          <td>
+            o
+          </td>
+          <td>
+            <svg
+              class="play-icon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 20 20"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <div
+              class="text-inline"
+            >
+              l
+              <u>
+                o
+              </u>
+              t, cl
+              <u>
+                o
+              </u>
+              th, h
+              <u>
+                o
+              </u>
+              nest, rob
+              <u>
+                o
+              </u>
+              t, st
+              <u>
+                o
+              </u>
+              p
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+`;
