@@ -3,7 +3,7 @@ import { AUTHOR_FULLNAME, CREATION_YEAR_START, CREATION_YEAR_END } from '../cons
 
 export interface FooterProps { }
 
-const Footer: React.FC<FooterProps> = (props) => {
+const Footer: React.FC<FooterProps> = (_props) => {
   return (
     <div className="footer">
       {AUTHOR_FULLNAME}, website created in {CREATION_YEAR_START}-{CREATION_YEAR_END} and hosted on{' '}

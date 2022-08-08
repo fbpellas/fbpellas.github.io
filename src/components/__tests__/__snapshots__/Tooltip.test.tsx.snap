@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip: className default 1`] = `
+<div>
+  <div
+    class="text-inline bottom-dot"
+  >
+    word
+  </div>
+</div>
+`;
+
+exports[`Tooltip: className provided 1`] = `
+<div>
+  <div
+    class="something"
+  >
+    word
+  </div>
+</div>
+`;

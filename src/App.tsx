@@ -28,7 +28,7 @@ import { diphthongs, consonants, vowels } from './data/phonemes';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
 import {
   AUTHOR_FIRSTNAME,
   AUTHOR_FULLNAME,
@@ -36,9 +36,11 @@ import {
   BASE_PATH_SOUNDS,
   EMAIL
 } from './constants';
-import { Breadcrumb as BreadcrumbType, QuizIndex, Pronunciation } from './types';
+import { QuizIndex, Pronunciation } from './types';
 import { Footer } from './components/Footer';
 import { ArrowWord } from './components/ArrowWord';
+import { Mission } from './components/Mission';
+import { Tooltip } from './components/Tooltip';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -95,20 +97,13 @@ const App = () => {
     );
   };
 
-  const renderTooltip = (word: string, definition: string, className = 'text-inline bottom-dot') => {
-    return (
-      <OverlayTrigger key="bottom" placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}>
-        <div className={className}>{word}</div>
-      </OverlayTrigger>
-    );
-  };
-
+  // TODO: create component
   const renderTable = (data: Pronunciation[]) => {
     return (
       <table>
         <tr>
-          <th>{renderTooltip('Phonemes', 'Sounds', 'text-center')}</th>
-          <th className="text-center">{renderTooltip('Grapheme', 'Letters that spell the sound', 'text-center')}</th>
+          <th><Tooltip className='text-center' definition='Sounds' word='Phonemes' /></th>
+          <th className="text-center"><Tooltip className='text-center' definition='Letters that spell the sound' word='Grapheme' /></th>
           <th className="text-center">Examples</th>
         </tr>
         {data.map((d: Pronunciation) => {
@@ -145,6 +140,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderDiphthongs = () => {
     return (
       <div className="block-2">
@@ -152,7 +148,7 @@ const App = () => {
           <h3 className="h3-title">Diphthongs</h3>
           <div>
             Diphthongs are a combination of two vowel sounds. There are eight diphthongs in the{' '}
-            {renderTooltip('IPA', 'International Phonetic Alphabet')}: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
+            <Tooltip definition='International Phonetic Alphabet' word='IPA' />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
             five sounds are produced in American English.
           </div>
           {renderTable(diphthongs)}
@@ -324,6 +320,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderVowels = () => {
     return (
       <div className="block-2">
@@ -332,7 +329,7 @@ const App = () => {
           <br />
           <div>
             Vowels are a set of unblocked sounds. They consist of the letters A, E, I, O, U (sometimes Y). The{' '}
-            {renderTooltip('IPA', 'International Phonetic Alphabet')} lists 20 phonemes categorized as long, short, and{' '}
+            <Tooltip definition='International Phonetic Alphabet' word='IPA' /> lists 20 phonemes categorized as long, short, and{' '}
             <a className="clickable-page" href="#diphthongs" onClick={() => setPageAndClear('diphthongs')}>
               diphthongs
             </a>
@@ -354,6 +351,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderStress = () => {
     const audioPresent = new Audio(`${BASE_PATH_SOUNDS}stress/‘Present vs pre ‘sent.m4a`);
 
@@ -499,9 +497,9 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderIntonation = () => {
     const audioTest1 = new Audio(`${BASE_PATH_SOUNDS}intonation/He failed the test1.m4a`);
-
     const audioTest2 = new Audio(`${BASE_PATH_SOUNDS}intonation/Hé failed the test2.m4a`);
 
     return (
@@ -713,27 +711,10 @@ const App = () => {
     }
 
     if (page === 'mission') {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Mission</h3>
-            <img
-              className="half-img"
-              src={`${BASE_PATH_IMG}wall.jpeg`}
-              alt="Learn the Art of Speaking American English"
-            />
-            <p className="margin-top">
-              One of the biggest goals for language learners is to learn how to speak with the correct pronunciation of
-              their target language. Unfortunately, many English as a second/foreign language (ESL/EFL) curricula do not
-              focus on pronunciation, therefore, many teachers lack training in this field. The purpose of this website
-              is to help teachers and students understand the basics of pronunciation. By learning pronunciation,
-              students can feel more confident in speaking and communicating.
-            </p>
-          </div>
-        </div>
-      );
+      return <Mission />;
     }
 
+    // TODO: create component
     const renderIntonationQuizLinks = () => (
       <>
         <div>Test yourself to see how well you know intonations:</div>
@@ -766,6 +747,7 @@ const App = () => {
       </>
     );
 
+    // TODO: create component
     const renderFalling = () => {
       return (
         <div className="block-2">
@@ -831,6 +813,7 @@ const App = () => {
       );
     };
 
+    // TODO: create component
     const renderRising = () => {
       return (
         <div className="block-2">
@@ -888,6 +871,7 @@ const App = () => {
       );
     };
 
+    // TODO: create component
     const renderNonFinal = () => {
       return (
         <div className="block-2">
@@ -984,6 +968,7 @@ const App = () => {
       );
     };
 
+    // TODO: create component
     if (page === 'phonemes') {
       return (
         <div className="block-2">
@@ -1040,12 +1025,13 @@ const App = () => {
     }
 
     if (page === 'consonants') {
+      // TODO: create component
       return (
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Consonants</h3>
             <div>
-              Consonants have 24 blocked sounds. In the {renderTooltip('IPA', 'International Phonetic Alphabet')} chart,
+              Consonants have 24 blocked sounds. In the <Tooltip definition='International Phonetic Alphabet' word='IPA' /> chart,
               consonants are arranged completely differently from the English alphabet.
             </div>
             <div>

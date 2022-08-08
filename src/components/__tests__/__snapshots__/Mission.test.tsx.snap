@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Mission
+      </h3>
+      <img
+        alt="Learn the Art of Speaking American English"
+        class="half-img"
+        src="https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/wall.jpeg"
+      />
+      <p
+        class="margin-top"
+      >
+        One of the biggest goals for language learners is to learn how to speak with the correct pronunciation of their target language. Unfortunately, many English as a second/foreign language (ESL/EFL) curricula do not focus on pronunciation, therefore, many teachers lack training in this field. The purpose of this website is to help teachers and students understand the basics of pronunciation. By learning pronunciation, students can feel more confident in speaking and communicating.
+      </p>
+    </div>
+  </div>
+</div>
+`;
