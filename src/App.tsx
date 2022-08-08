@@ -24,7 +24,6 @@ import {
   quizStress
 } from './quiz';
 import Quiz from 'react-quiz-component';
-import { consonants } from './data/phonemes';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
@@ -34,19 +33,17 @@ import {
   AUTHOR_FULLNAME,
   BASE_PATH_IMG,
   BASE_PATH_SOUNDS,
-  EMAIL,
-  IPA_DEFINITION
+  EMAIL
 } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { ArrowWord } from './components/ArrowWord';
 import { Mission } from './components/Mission';
-import { Tooltip } from './components/Tooltip';
-import { PhonemesTable } from './components/PhonemesTable';
 import { Vowels } from './components/Vowels';
 import { Phonemes } from './components/Phonemes';
 import { Diphthongs } from './components/Diphthongs';
 import { Stress } from './components/Stress';
+import { Consonants } from './components/Consonants';
 import { Intonation } from './components/Intonation';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
@@ -660,7 +657,6 @@ const App = () => {
       );
     };
 
-    // TODO: create component
     if (page === 'phonemes') {
       return <Phonemes setPageAndClear={setPageAndClear} />
     }
@@ -686,51 +682,8 @@ const App = () => {
     }
 
     if (page === 'consonants') {
-      // TODO: create component
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Consonants</h3>
-            <div>
-              Consonants have 24 blocked sounds. In the <Tooltip definition={IPA_DEFINITION} word='IPA' /> chart,
-              consonants are arranged completely differently from the English alphabet.
-            </div>
-            <div>
-              Phonemes like /p/ and /b/ are next to each other because the lips and the tongue move the same way when
-              producing these sounds. The only difference is the phoneme on the left is unvoiced (no vibration on the
-              throat) and the phoneme on the right is voiced (there is vibration on the throat).
-            </div>
-            <PhonemesTable data={consonants} />
-            <div>Test yourself to see how well you know the phonemes</div>
-            <ul>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear('quiz');
-                    setIndexCarousel(QuizIndex.OddPhonemeOut);
-                  }}
-                >
-                  Odd Phoneme Out
-                </a>
-              </li>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear('quiz');
-                    setIndexCarousel(QuizIndex.PhoneticSpelling);
-                  }}
-                >
-                  Phonetic Spelling
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <Consonants setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
+
     }
 
     if (page === 'stress') {
