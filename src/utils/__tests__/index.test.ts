@@ -42,11 +42,13 @@ test('generateBreadcrumbs', () => {
     phonemes,
     { anchor: 'diphthongs', title: 'Diphthongs' }
   ]);
+
   expect(generateBreadcrumbs('consonants', 0)).toStrictEqual([
     home,
     phonemes,
     { anchor: 'consonants', title: 'Consonants' }
   ]);
+
   expect(generateBreadcrumbs('stress', 0)).toStrictEqual([home, stress]);
   expect(generateBreadcrumbs('intonation', 0)).toStrictEqual([home, intonation]);
   expect(generateBreadcrumbs('falling', 0)).toStrictEqual([home, intonation, { anchor: 'falling', title: 'Falling' }]);
@@ -56,6 +58,7 @@ test('generateBreadcrumbs', () => {
     intonation,
     { anchor: 'non-final', title: 'Non-Final' }
   ]);
+
   expect(generateBreadcrumbs('quiz', QuizIndex.SameWordsDifferentStress)).toStrictEqual([home, stress, quiz]);
   expect(generateBreadcrumbs('quiz', QuizIndex.WhereIsTheStress)).toStrictEqual([home, stress, quiz]);
   expect(generateBreadcrumbs('quiz', QuizIndex.GuessThePattern)).toStrictEqual([home, intonation, quiz]);

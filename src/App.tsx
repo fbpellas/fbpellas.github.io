@@ -31,7 +31,6 @@ import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
-import { ArrowWord } from './components/ArrowWord';
 import { Mission } from './components/Mission';
 import { Vowels } from './components/Vowels';
 import { Phonemes } from './components/Phonemes';
