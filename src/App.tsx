@@ -34,13 +34,15 @@ import {
   AUTHOR_FULLNAME,
   BASE_PATH_IMG,
   BASE_PATH_SOUNDS,
-  EMAIL
+  EMAIL,
+  IPA_DEFINITION
 } from './constants';
-import { QuizIndex, Pronunciation } from './types';
+import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { ArrowWord } from './components/ArrowWord';
 import { Mission } from './components/Mission';
 import { Tooltip } from './components/Tooltip';
+import { PhonemesTable } from './components/PhonemesTable';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -98,49 +100,6 @@ const App = () => {
   };
 
   // TODO: create component
-  const renderTable = (data: Pronunciation[]) => {
-    return (
-      <table>
-        <tr>
-          <th><Tooltip className='text-center' definition='Sounds' word='Phonemes' /></th>
-          <th className="text-center"><Tooltip className='text-center' definition='Letters that spell the sound' word='Grapheme' /></th>
-          <th className="text-center">Examples</th>
-        </tr>
-        {data.map((d: Pronunciation) => {
-          const { phoneme, graphemes, examples, audioPhoneme, audioExamples } = d;
-
-          const audioPhonemeObj = new Audio(`${BASE_PATH_SOUNDS}${audioPhoneme}`);
-          const audioExamplesObj = new Audio(`${BASE_PATH_SOUNDS}${audioExamples}`);
-
-          return (
-            <tr>
-              <td>
-                <HiPlay
-                  className="play-icon"
-                  onClick={() => {
-                    audioPhonemeObj.play();
-                  }}
-                />
-                {phoneme}
-              </td>
-              <td>{graphemes}</td>
-              <td>
-                <HiPlay
-                  className="play-icon"
-                  onClick={() => {
-                    audioExamplesObj.play();
-                  }}
-                />
-                <div className="text-inline" dangerouslySetInnerHTML={{ __html: examples }} />
-              </td>
-            </tr>
-          );
-        })}
-      </table>
-    );
-  };
-
-  // TODO: create component
   const renderDiphthongs = () => {
     return (
       <div className="block-2">
@@ -148,10 +107,10 @@ const App = () => {
           <h3 className="h3-title">Diphthongs</h3>
           <div>
             Diphthongs are a combination of two vowel sounds. There are eight diphthongs in the{' '}
-            <Tooltip definition='International Phonetic Alphabet' word='IPA' />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
+            <Tooltip definition={IPA_DEFINITION} word='IPA' />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
             five sounds are produced in American English.
           </div>
-          {renderTable(diphthongs)}
+          <PhonemesTable data={diphthongs} />
         </div>
       </div>
     );
@@ -329,7 +288,7 @@ const App = () => {
           <br />
           <div>
             Vowels are a set of unblocked sounds. They consist of the letters A, E, I, O, U (sometimes Y). The{' '}
-            <Tooltip definition='International Phonetic Alphabet' word='IPA' /> lists 20 phonemes categorized as long, short, and{' '}
+            <Tooltip definition={IPA_DEFINITION} word='IPA' /> lists 20 phonemes categorized as long, short, and{' '}
             <a className="clickable-page" href="#diphthongs" onClick={() => setPageAndClear('diphthongs')}>
               diphthongs
             </a>
@@ -345,7 +304,7 @@ const App = () => {
             Listed below are the phonemes that are widely used in the American English language. Some words might vary
             in phonemes depending on regional dialects.
           </div>
-          {renderTable(vowels)}
+          <PhonemesTable data={vowels} />
         </div>
       </div>
     );
@@ -975,7 +934,7 @@ const App = () => {
           <div className="article">
             <h3 className="h3-title">Phonemes</h3>
             <div>
-              According to the International Phonetic Alphabet (IPA), there are 26 letters and 44 phonemes (or sounds)
+              According to the {IPA_DEFINITION} (IPA), there are 26 letters and 44 phonemes (or sounds)
               in the English alphabet. These letters are divided into two categories:{' '}
               <a className="clickable-page" href="#vowels" onClick={() => setPageAndClear('vowels')}>
                 vowels
@@ -1031,7 +990,7 @@ const App = () => {
           <div className="article">
             <h3 className="h3-title">Consonants</h3>
             <div>
-              Consonants have 24 blocked sounds. In the <Tooltip definition='International Phonetic Alphabet' word='IPA' /> chart,
+              Consonants have 24 blocked sounds. In the <Tooltip definition={IPA_DEFINITION} word='IPA' /> chart,
               consonants are arranged completely differently from the English alphabet.
             </div>
             <div>
@@ -1039,7 +998,7 @@ const App = () => {
               producing these sounds. The only difference is the phoneme on the left is unvoiced (no vibration on the
               throat) and the phoneme on the right is voiced (there is vibration on the throat).
             </div>
-            {renderTable(consonants)}
+            <PhonemesTable data={consonants} />
             <div>Test yourself to see how well you know the phonemes</div>
             <ul>
               <li>
