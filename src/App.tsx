@@ -45,6 +45,7 @@ import { Diphthongs } from './components/Diphthongs';
 import { Stress } from './components/Stress';
 import { Consonants } from './components/Consonants';
 import { Intonation } from './components/Intonation';
+import { IntonationQuizLinks } from './components/IntonationQuizLinks';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -404,39 +405,6 @@ const App = () => {
     }
 
     // TODO: create component
-    const renderIntonationQuizLinks = () => (
-      <>
-        <div>Test yourself to see how well you know intonations:</div>
-        <ul>
-          <li>
-            <a
-              className="clickable-page"
-              href="#quiz"
-              onClick={() => {
-                setPageAndClear('quiz');
-                setIndexCarousel(QuizIndex.GuessThePattern);
-              }}
-            >
-              Guess the Pattern
-            </a>
-          </li>
-          <li>
-            <a
-              className="clickable-page"
-              href="#quiz"
-              onClick={() => {
-                setPageAndClear('quiz');
-                setIndexCarousel(QuizIndex.ShoppingForAPresent);
-              }}
-            >
-              Shopping for a Present
-            </a>
-          </li>
-        </ul>
-      </>
-    );
-
-    // TODO: create component
     const renderFalling = () => {
       return (
         <div className="block-2">
@@ -496,7 +464,7 @@ const App = () => {
               </ul>
             </div>
             <br />
-            {renderIntonationQuizLinks()}
+            <IntonationQuizLinks setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
           </div>
         </div>
       );
@@ -554,7 +522,7 @@ const App = () => {
               </ul>
             </div>
             <br />
-            {renderIntonationQuizLinks()}
+            <IntonationQuizLinks setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
           </div>
         </div>
       );
@@ -651,7 +619,7 @@ const App = () => {
               </ul>
             </div>
             <br />
-            {renderIntonationQuizLinks()}
+            <IntonationQuizLinks setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
           </div>
         </div>
       );

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntonationQuizLinks 1`] = `
+<div>
+  <div>
+    Test yourself to see how well you know intonations:
+  </div>
+  <ul>
+    <li>
+      <a
+        class="clickable-page"
+        href="#quiz"
+      >
+        Guess the Pattern
+      </a>
+    </li>
+    <li>
+      <a
+        class="clickable-page"
+        href="#quiz"
+      >
+        Shopping for a Present
+      </a>
+    </li>
+  </ul>
+</div>
+`;
