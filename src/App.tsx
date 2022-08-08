@@ -75,6 +75,7 @@ const App = () => {
     setPageAndClear(hash);
   };
 
+  // TODO: create component
   const renderBreadcrumbs = () => {
     const breadcrumbs = generateBreadcrumbs(page, indexCarousel);
 
@@ -260,6 +261,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderCard = (href: string, title: string, description: string, button: string) => {
     return (
       <Card>
@@ -274,6 +276,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const ControlledCarousel = () => {
     const handleSelect = (selectedIndex: number, e: any) => {
       setIndexCarousel(selectedIndex);
@@ -311,6 +314,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderMain = () => {
     return (
       <div className="block-2">
@@ -331,6 +335,7 @@ const App = () => {
     );
   };
 
+  // TODO: create component
   const renderBody = () => {
     if (page === 'about-author') {
       return (
@@ -446,6 +451,7 @@ const App = () => {
         'selection-quiz': indexCarousel !== quizLastIndex
       });
 
+      // TODO: create component ~ QuizIndex extraction
       return (
         <div className="block-2">
           <div className="article">
@@ -604,6 +610,7 @@ const App = () => {
     );
   }
 
+  // TODO: create component ~ Navbar + Dropdown
   return (
     <HelmetProvider>
       <link
