@@ -28,13 +28,7 @@ import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
-import {
-  AUTHOR_FIRSTNAME,
-  AUTHOR_FULLNAME,
-  BASE_PATH_IMG,
-  BASE_PATH_SOUNDS,
-  EMAIL
-} from './constants';
+import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { ArrowWord } from './components/ArrowWord';
@@ -407,11 +401,11 @@ const App = () => {
     }
 
     if (page === 'phonemes') {
-      return <Phonemes setPageAndClear={setPageAndClear} />
+      return <Phonemes setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'diphthongs') {
-      return <Diphthongs />
+      return <Diphthongs />;
     }
 
     if (page === 'vowels') {
@@ -419,28 +413,27 @@ const App = () => {
     }
 
     if (page === 'falling') {
-      return <Falling setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
+      return <Falling setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'rising') {
-      return <Rising setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
+      return <Rising setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'non-final') {
-      return <NonFinal setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
+      return <NonFinal setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'consonants') {
-      return <Consonants setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
-
+      return <Consonants setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'stress') {
-      return <Stress setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />
+      return <Stress setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'intonation') {
-      return <Intonation setPageAndClear={setPageAndClear} />
+      return <Intonation setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'quiz') {

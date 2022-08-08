@@ -4,5 +4,5 @@ import { Diphthongs } from '../Diphthongs';
 
 test('Diphthongs', () => {
   const { container } = render(<Diphthongs />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

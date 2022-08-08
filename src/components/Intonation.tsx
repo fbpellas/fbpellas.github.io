@@ -3,7 +3,7 @@ import { HiPlay } from 'react-icons/hi';
 import { BASE_PATH_IMG, BASE_PATH_SOUNDS } from '../constants';
 
 export interface IntonationProps {
-  setPageAndClear: (hash: string) => void
+  setPageAndClear: (hash: string) => void;
 }
 
 const Intonation: React.FC<IntonationProps> = (props) => {
@@ -30,9 +30,9 @@ const Intonation: React.FC<IntonationProps> = (props) => {
         </div>
         <br />
         <div>
-          It helps others understand what kind of message you are trying to communicate. Are you happy? Sad?
-          Surprised? Asking a question? Even though a person speaks with perfect grammar, the meaning could get lost
-          if the intonation is not correct.
+          It helps others understand what kind of message you are trying to communicate. Are you happy? Sad? Surprised?
+          Asking a question? Even though a person speaks with perfect grammar, the meaning could get lost if the
+          intonation is not correct.
         </div>
         <br />
         <div>Listen to these sentences below.</div>
@@ -59,14 +59,14 @@ const Intonation: React.FC<IntonationProps> = (props) => {
         </div>
         <br />
         <div>
-          The word <i>test</i> is the focus word, which is stressed or emphasized. When a word is stressed, the pitch
-          is higher. There are 2 basic types of intonation: rising and falling.
+          The word <i>test</i> is the focus word, which is stressed or emphasized. When a word is stressed, the pitch is
+          higher. There are 2 basic types of intonation: rising and falling.
         </div>
         <br />
         <div>
-          In the first sentence, the intonation falls at the end of the sentence to show that the sentence is
-          finished. On the other hand, the intonation on the second statement rises to show surprise or disbelief. The
-          next sections discuss the different patterns of intonation:{' '}
+          In the first sentence, the intonation falls at the end of the sentence to show that the sentence is finished.
+          On the other hand, the intonation on the second statement rises to show surprise or disbelief. The next
+          sections discuss the different patterns of intonation:{' '}
           <a className="clickable-page" href="#falling" onClick={() => setPageAndClear('falling')}>
             falling
           </a>
@@ -83,6 +83,6 @@ const Intonation: React.FC<IntonationProps> = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export { Intonation }
+export { Intonation };

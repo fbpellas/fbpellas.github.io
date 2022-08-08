@@ -16,6 +16,6 @@ const ArrowWord: React.FC<ArrowWordProps> = (props) => {
       {word && word}
     </>
   );
-}
+};
 
-export { ArrowWord }
+export { ArrowWord };

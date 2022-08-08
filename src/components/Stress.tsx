@@ -4,8 +4,8 @@ import { BASE_PATH_IMG, BASE_PATH_SOUNDS } from '../constants';
 import { QuizIndex } from '../types';
 
 export interface StressProps {
-  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>
-  setPageAndClear: (hash: string) => void
+  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>;
+  setPageAndClear: (hash: string) => void;
 }
 
 const Stress: React.FC<StressProps> = (props) => {
@@ -35,8 +35,8 @@ const Stress: React.FC<StressProps> = (props) => {
         </ul>
         <br />
         <div>
-          If a word has one syllable, there is no stress. Word stress is marked with the (ˈ) symbol which looks like
-          an apostrophe. The stress mark comes before the stressed syllable.
+          If a word has one syllable, there is no stress. Word stress is marked with the (ˈ) symbol which looks like an
+          apostrophe. The stress mark comes before the stressed syllable.
         </div>
         <br />
         <p>e.g.</p>
@@ -154,4 +154,4 @@ const Stress: React.FC<StressProps> = (props) => {
   );
 };
 
-export { Stress }
+export { Stress };

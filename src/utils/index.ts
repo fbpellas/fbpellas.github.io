@@ -1,4 +1,4 @@
-import { Breadcrumb, QuizIndex } from "../types";
+import { Breadcrumb, QuizIndex } from '../types';
 
 /**
  * @name titleize
@@ -12,20 +12,27 @@ const titleize = (word: string) => {
   if (word.length === 1) return capitalLetter;
 
   return `${capitalLetter}${word.slice(1)}`;
-}
+};
 
 /**
  * @name createBreadcrumb
  * @description Creates a simple breadcrumb based on a page
  */
-const createBreadcrumb = (page: string): Breadcrumb => ({ anchor: page, title: titleize(page) })
+const createBreadcrumb = (page: string): Breadcrumb => ({ anchor: page, title: titleize(page) });
 
 /**
  * @name getQuizParentBreadcrumb
  * @description Returns the parent breadcrumb that suits the current quiz best
  */
 const getQuizParentBreadcrumb = (indexCarousel: QuizIndex): Breadcrumb => {
-  const { GuessThePattern, OddPhonemeOut, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
+  const {
+    GuessThePattern,
+    OddPhonemeOut,
+    PhoneticSpelling,
+    SameWordsDifferentStress,
+    ShoppingForAPresent,
+    WhereIsTheStress
+  } = QuizIndex;
   const [phonemes, intonation, stress] = ['phonemes', 'intonation', 'stress'].map(createBreadcrumb);
 
   switch (indexCarousel) {
@@ -52,7 +59,7 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
   const title = page === 'non-final' ? 'Non-Final' : titleize(page);
   const currentPage: Breadcrumb = { anchor: page, title };
 
-  const [home, phonemes, intonation] = ['home', 'phonemes', 'intonation'].map(createBreadcrumb)
+  const [home, phonemes, intonation] = ['home', 'phonemes', 'intonation'].map(createBreadcrumb);
   const quizParentBreadcrumb = getQuizParentBreadcrumb(indexCarousel);
 
   switch (page) {
@@ -70,7 +77,7 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
     case 'consonants':
     case 'diphthongs':
     case 'vowels':
-      return [home, phonemes, currentPage]
+      return [home, phonemes, currentPage];
 
     case 'falling':
     case 'non-final':
@@ -78,11 +85,11 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
       return [home, intonation, currentPage];
 
     case 'quiz':
-      return [home, quizParentBreadcrumb, currentPage]
+      return [home, quizParentBreadcrumb, currentPage];
 
     default:
       return [home];
   }
-}
+};
 
 export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, titleize };

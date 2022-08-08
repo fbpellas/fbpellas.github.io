@@ -6,8 +6,8 @@ import { QuizIndex } from '../types';
 import { IPA_DEFINITION } from '../constants';
 
 export interface ConsonantsProps {
-  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>
-  setPageAndClear: (hash: string) => void
+  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>;
+  setPageAndClear: (hash: string) => void;
 }
 
 const Consonants: React.FC<ConsonantsProps> = (props) => {
@@ -18,8 +18,8 @@ const Consonants: React.FC<ConsonantsProps> = (props) => {
       <div className="article">
         <h3 className="h3-title">Consonants</h3>
         <div>
-          Consonants have 24 blocked sounds. In the <Tooltip definition={IPA_DEFINITION} word='IPA' /> chart,
-          consonants are arranged completely differently from the English alphabet.
+          Consonants have 24 blocked sounds. In the <Tooltip definition={IPA_DEFINITION} word="IPA" /> chart, consonants
+          are arranged completely differently from the English alphabet.
         </div>
         <div>
           Phonemes like /p/ and /b/ are next to each other because the lips and the tongue move the same way when
@@ -59,4 +59,4 @@ const Consonants: React.FC<ConsonantsProps> = (props) => {
   );
 };
 
-export { Consonants }
+export { Consonants };

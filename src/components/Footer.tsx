@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AUTHOR_FULLNAME, CREATION_YEAR_START, CREATION_YEAR_END } from '../constants';
 
-export interface FooterProps { }
+export interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = (_props) => {
   return (

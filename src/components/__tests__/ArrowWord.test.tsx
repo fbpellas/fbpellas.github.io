@@ -6,12 +6,12 @@ test('ArrowWord', () => {
   const { container, rerender } = render(<ArrowWord />);
   expect(container).toMatchSnapshot('down');
 
-  rerender(<ArrowWord isUp />)
+  rerender(<ArrowWord isUp />);
   expect(container).toMatchSnapshot('up');
 
-  rerender(<ArrowWord word='something' />)
+  rerender(<ArrowWord word="something" />);
   expect(container).toMatchSnapshot('word and down');
 
-  rerender(<ArrowWord isUp word='something' />)
+  rerender(<ArrowWord isUp word="something" />);
   expect(container).toMatchSnapshot('word and up');
 });

@@ -4,8 +4,8 @@ import { ArrowWord } from './ArrowWord';
 import { IntonationQuizLinks } from './IntonationQuizLinks';
 
 export interface FallingProps {
-  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>
-  setPageAndClear: (hash: string) => void
+  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>;
+  setPageAndClear: (hash: string) => void;
 }
 
 const Falling: React.FC<FallingProps> = (props) => {
@@ -14,20 +14,28 @@ const Falling: React.FC<FallingProps> = (props) => {
   return (
     <div className="block-2">
       <div className="article">
-        <h3 className="h3-title">Falling Intonation <ArrowWord /></h3>
+        <h3 className="h3-title">
+          Falling Intonation <ArrowWord />
+        </h3>
         <div className="margin-top">
           This is the most common intonation pattern in American English. We use this intonation when we finish a
-          statement, give a command, as an information question, and an exclamation. The intonation falls on the
-          last word of the sentence.
+          statement, give a command, as an information question, and an exclamation. The intonation falls on the last
+          word of the sentence.
         </div>
         <br />
         <div>
           <b>Finished Statements:</b>
           <br />
           <ul>
-            <li>We live in <ArrowWord word='France' />.</li>
-            <li>They are not <ArrowWord word='invited' />.</li>
-            <li>It takes five hours to get <ArrowWord word='there' />.</li>
+            <li>
+              We live in <ArrowWord word="France" />.
+            </li>
+            <li>
+              They are not <ArrowWord word="invited" />.
+            </li>
+            <li>
+              It takes five hours to get <ArrowWord word="there" />.
+            </li>
           </ul>
         </div>
         <br />
@@ -38,9 +46,15 @@ const Falling: React.FC<FallingProps> = (props) => {
           </div>
           <br />
           <ul>
-            <li>Report to me <ArrowWord word='immediately' />.</li>
-            <li>Do not take any <ArrowWord word='photos' />.</li>
-            <li>Brush your teeth and go to <ArrowWord word='bed' />.</li>
+            <li>
+              Report to me <ArrowWord word="immediately" />.
+            </li>
+            <li>
+              Do not take any <ArrowWord word="photos" />.
+            </li>
+            <li>
+              Brush your teeth and go to <ArrowWord word="bed" />.
+            </li>
           </ul>
         </div>
         <br />
@@ -49,23 +63,35 @@ const Falling: React.FC<FallingProps> = (props) => {
           <div>Who, What, When, Where, How, Why, Which are also known as information questions.</div>
           <br />
           <ul>
-            <li>How are <ArrowWord word='you' />?</li>
-            <li>When is your <ArrowWord word='birthday' />?</li>
-            <li>Why did you lie to <ArrowWord word='me' />?</li>
+            <li>
+              How are <ArrowWord word="you" />?
+            </li>
+            <li>
+              When is your <ArrowWord word="birthday" />?
+            </li>
+            <li>
+              Why did you lie to <ArrowWord word="me" />?
+            </li>
           </ul>
         </div>
         <br />
         <div>
           <b>Exclamations or Interjections:</b>
           <div>
-            Statements that express surprise, awe, pain, etc. Interjections are always marked with an exclamation
-            point (!)
+            Statements that express surprise, awe, pain, etc. Interjections are always marked with an exclamation point
+            (!)
           </div>
           <br />
           <ul>
-            <li>That’s <ArrowWord word='amazing' />!</li>
-            <li><ArrowWord word='Congratulations' />!</li>
-            <li>You look lovely in that <ArrowWord word='dress' />!</li>
+            <li>
+              That’s <ArrowWord word="amazing" />!
+            </li>
+            <li>
+              <ArrowWord word="Congratulations" />!
+            </li>
+            <li>
+              You look lovely in that <ArrowWord word="dress" />!
+            </li>
           </ul>
         </div>
         <br />
@@ -73,6 +99,6 @@ const Falling: React.FC<FallingProps> = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export { Falling }
+export { Falling };

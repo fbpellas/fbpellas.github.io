@@ -5,5 +5,5 @@ import { Consonants } from '../Consonants';
 test('Consonants', () => {
   const fn = jest.fn();
   const { container } = render(<Consonants setIndexCarousel={fn} setPageAndClear={fn} />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

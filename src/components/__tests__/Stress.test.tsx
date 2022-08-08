@@ -5,5 +5,5 @@ import { Stress } from '../Stress';
 test('Stress', () => {
   const fn = jest.fn();
   const { container } = render(<Stress setIndexCarousel={fn} setPageAndClear={fn} />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

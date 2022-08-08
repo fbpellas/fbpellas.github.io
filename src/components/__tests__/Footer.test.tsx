@@ -4,5 +4,5 @@ import { Footer } from '../Footer';
 
 test('Footer', () => {
   const { container } = render(<Footer />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

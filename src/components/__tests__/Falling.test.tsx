@@ -5,5 +5,5 @@ import { Falling } from '../Falling';
 test('Falling', () => {
   const fn = jest.fn();
   const { container } = render(<Falling setIndexCarousel={fn} setPageAndClear={fn} />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

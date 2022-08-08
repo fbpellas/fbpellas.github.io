@@ -14,8 +14,12 @@ const PhonemesTable: React.FC<PhonemesTableProps> = (props) => {
   return (
     <table>
       <tr>
-        <th><Tooltip className='text-center' definition='Sounds' word='Phonemes' /></th>
-        <th className="text-center"><Tooltip className='text-center' definition='Letters that spell the sound' word='Grapheme' /></th>
+        <th>
+          <Tooltip className="text-center" definition="Sounds" word="Phonemes" />
+        </th>
+        <th className="text-center">
+          <Tooltip className="text-center" definition="Letters that spell the sound" word="Grapheme" />
+        </th>
         <th className="text-center">Examples</th>
       </tr>
       {data.map((d: Pronunciation) => {
@@ -50,6 +54,6 @@ const PhonemesTable: React.FC<PhonemesTableProps> = (props) => {
       })}
     </table>
   );
-}
+};
 
 export { PhonemesTable };

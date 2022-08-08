@@ -4,5 +4,5 @@ import { Mission } from '../Mission';
 
 test('Mission', () => {
   const { container } = render(<Mission />);
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchSnapshot();
 });

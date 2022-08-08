@@ -23,7 +23,7 @@ const generateKeysPhonemes = (data: Pronunciation[]) => {
     data.map((d: Pronunciation) => {
       const { phoneme } = d;
       // TODO: add utils
-      const sanitizedPhoneme = phoneme.replace('/\//g', '');
+      const sanitizedPhoneme = phoneme.replace('///g', '');
 
       return [sanitizedPhoneme, phoneme];
     })

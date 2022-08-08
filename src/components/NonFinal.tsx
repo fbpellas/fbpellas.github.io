@@ -4,8 +4,8 @@ import { ArrowWord } from './ArrowWord';
 import { IntonationQuizLinks } from './IntonationQuizLinks';
 
 export interface NonFinalProps {
-  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>
-  setPageAndClear: (hash: string) => void
+  setIndexCarousel: React.Dispatch<React.SetStateAction<QuizIndex>>;
+  setPageAndClear: (hash: string) => void;
 }
 
 const NonFinal: React.FC<NonFinalProps> = (props) => {
@@ -28,13 +28,13 @@ const NonFinal: React.FC<NonFinalProps> = (props) => {
           <br />
           <ul>
             <li>
-              Do you prefer ice <ArrowWord isUp word='cream' /> or <ArrowWord word='cake' />?
+              Do you prefer ice <ArrowWord isUp word="cream" /> or <ArrowWord word="cake" />?
             </li>
             <li>
-              What would you rather do: go <ArrowWord isUp word='hiking' /> or go <ArrowWord word='swimming' />?
+              What would you rather do: go <ArrowWord isUp word="hiking" /> or go <ArrowWord word="swimming" />?
             </li>
             <li>
-              Can you speak <ArrowWord isUp word='Mandarin' /> or <ArrowWord word='Spanish' />?
+              Can you speak <ArrowWord isUp word="Mandarin" /> or <ArrowWord word="Spanish" />?
             </li>
           </ul>
         </div>
@@ -45,16 +45,16 @@ const NonFinal: React.FC<NonFinalProps> = (props) => {
           <br />
           <ul>
             <li>
-              We need <ArrowWord isUp word='flour' />, <ArrowWord isUp word='milk' />,{' '}
-              <ArrowWord isUp word='sugar' />, and <ArrowWord word='eggs' /> to make the cake.
+              We need <ArrowWord isUp word="flour" />, <ArrowWord isUp word="milk" />, <ArrowWord isUp word="sugar" />,
+              and <ArrowWord word="eggs" /> to make the cake.
             </li>
             <li>
-              Next week I’m available on <ArrowWord isUp word='Monday' />, <ArrowWord isUp word='Tuesday' />, and{' '}
-              <ArrowWord word='Friday' />.
+              Next week I’m available on <ArrowWord isUp word="Monday" />, <ArrowWord isUp word="Tuesday" />, and{' '}
+              <ArrowWord word="Friday" />.
             </li>
             <li>
-              The shirt comes in <ArrowWord isUp word='small' />, <ArrowWord isUp word='medium' />, and{' '}
-              <ArrowWord word='large' />.
+              The shirt comes in <ArrowWord isUp word="small" />, <ArrowWord isUp word="medium" />, and{' '}
+              <ArrowWord word="large" />.
             </li>
           </ul>
         </div>
@@ -65,17 +65,17 @@ const NonFinal: React.FC<NonFinalProps> = (props) => {
           <br />
           <ul>
             <li>
-              When <ArrowWord isUp word='I' /> grow <ArrowWord word='up' />
+              When <ArrowWord isUp word="I" /> grow <ArrowWord word="up" />
               ...
             </li>
             <li>
-              <ArrowWord isUp word='By' /> the <ArrowWord word='way' />,
+              <ArrowWord isUp word="By" /> the <ArrowWord word="way" />,
             </li>
             <li>
-              <ArrowWord isUp word='As' /> I was <ArrowWord word='saying' />,
+              <ArrowWord isUp word="As" /> I was <ArrowWord word="saying" />,
             </li>
             <li>
-              <ArrowWord isUp word='Just' /> so you <ArrowWord word='know' />,
+              <ArrowWord isUp word="Just" /> so you <ArrowWord word="know" />,
             </li>
           </ul>
         </div>
@@ -83,19 +83,19 @@ const NonFinal: React.FC<NonFinalProps> = (props) => {
         <div>
           <b>Conditional Statements:</b>
           <div>
-            Conditionals usually start with ‘if’ or ‘when’. The last word of the first clause rises, then falls at
-            the end.
+            Conditionals usually start with ‘if’ or ‘when’. The last word of the first clause rises, then falls at the
+            end.
           </div>
           <br />
           <ul>
             <li>
-              If I have a million <ArrowWord isUp word='dollars' />, I would travel the <ArrowWord word='world' />.
+              If I have a million <ArrowWord isUp word="dollars" />, I would travel the <ArrowWord word="world" />.
             </li>
             <li>
-              When I was a <ArrowWord isUp word='child' />, I played <ArrowWord word='football' />.
+              When I was a <ArrowWord isUp word="child" />, I played <ArrowWord word="football" />.
             </li>
             <li>
-              If it’s cold <ArrowWord isUp word='outside' />, I will wear a <ArrowWord word='jacket' />.
+              If it’s cold <ArrowWord isUp word="outside" />, I will wear a <ArrowWord word="jacket" />.
             </li>
           </ul>
         </div>
@@ -104,6 +104,6 @@ const NonFinal: React.FC<NonFinalProps> = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export { NonFinal }
+export { NonFinal };

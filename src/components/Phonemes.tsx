@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BASE_PATH_IMG, IPA_DEFINITION } from '../constants';
 
 export interface PhonemesProps {
-  setPageAndClear: (hash: string) => void
+  setPageAndClear: (hash: string) => void;
 }
 
 const Phonemes: React.FC<PhonemesProps> = (props) => {
@@ -13,8 +13,8 @@ const Phonemes: React.FC<PhonemesProps> = (props) => {
       <div className="article">
         <h3 className="h3-title">Phonemes</h3>
         <div>
-          According to the {IPA_DEFINITION} (IPA), there are 26 letters and 44 phonemes (or sounds)
-          in the English alphabet. These letters are divided into two categories:{' '}
+          According to the {IPA_DEFINITION} (IPA), there are 26 letters and 44 phonemes (or sounds) in the English
+          alphabet. These letters are divided into two categories:{' '}
           <a className="clickable-page" href="#vowels" onClick={() => setPageAndClear('vowels')}>
             vowels
           </a>{' '}
@@ -40,6 +40,6 @@ const Phonemes: React.FC<PhonemesProps> = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export { Phonemes }
+export { Phonemes };

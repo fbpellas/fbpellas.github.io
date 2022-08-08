@@ -4,7 +4,7 @@ import { diphthongs } from '../data/phonemes';
 import { PhonemesTable } from './PhonemesTable';
 import { Tooltip } from './Tooltip';
 
-export interface DiphthongsProps { }
+export interface DiphthongsProps {}
 
 const Diphthongs: React.FC<DiphthongsProps> = (_props) => {
   return (
@@ -13,8 +13,8 @@ const Diphthongs: React.FC<DiphthongsProps> = (_props) => {
         <h3 className="h3-title">Diphthongs</h3>
         <div>
           Diphthongs are a combination of two vowel sounds. There are eight diphthongs in the{' '}
-          <Tooltip definition={IPA_DEFINITION} word='IPA' />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
-          five sounds are produced in American English.
+          <Tooltip definition={IPA_DEFINITION} word="IPA" />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only five sounds
+          are produced in American English.
         </div>
         <PhonemesTable data={diphthongs} />
       </div>
@@ -22,4 +22,4 @@ const Diphthongs: React.FC<DiphthongsProps> = (_props) => {
   );
 };
 
-export { Diphthongs }
+export { Diphthongs };
