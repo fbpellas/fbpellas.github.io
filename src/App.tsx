@@ -44,6 +44,7 @@ import { Mission } from './components/Mission';
 import { Tooltip } from './components/Tooltip';
 import { PhonemesTable } from './components/PhonemesTable';
 import { Vowels } from './components/Vowels';
+import { Diphthongs } from './components/Diphthongs';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -97,23 +98,6 @@ const App = () => {
           return <Breadcrumb.Item href={`#${anchor}`}>{title}</Breadcrumb.Item>;
         })}
       </Breadcrumb>
-    );
-  };
-
-  // TODO: create component
-  const renderDiphthongs = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">Diphthongs</h3>
-          <div>
-            Diphthongs are a combination of two vowel sounds. There are eight diphthongs in the{' '}
-            <Tooltip definition={IPA_DEFINITION} word='IPA' />: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
-            five sounds are produced in American English.
-          </div>
-          <PhonemesTable data={diphthongs} />
-        </div>
-      </div>
     );
   };
 
@@ -934,7 +918,7 @@ const App = () => {
     }
 
     if (page === 'diphthongs') {
-      return renderDiphthongs();
+      return <Diphthongs />
     }
 
     if (page === 'vowels') {
