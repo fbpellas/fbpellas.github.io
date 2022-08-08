@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NonFinal 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Non-Final Intonation 
+        <div
+          class="inline-period yellow"
+        >
+          ➚
+        </div>
+        
+        <div
+          class="inline-period yellow"
+        >
+          ➘
+        </div>
+        
+      </h3>
+      <div
+        class="margin-top"
+      >
+        The non-final or rise-and-fall intonation is often used with choices, lists, or unfinished statements. The examples below show which words rise and where they fall.
+      </div>
+      <br />
+      <div>
+        <b>
+          Choices:
+        </b>
+        <br />
+        <ul>
+          <li>
+            Do you prefer ice 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            cream
+             or 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            cake
+            ?
+          </li>
+          <li>
+            What would you rather do: go 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            hiking
+             or go 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            swimming
+            ?
+          </li>
+          <li>
+            Can you speak 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            Mandarin
+             or 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            Spanish
+            ?
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Lists:
+        </b>
+        <div>
+          Each item on the list rises in sound and the last word falls.
+        </div>
+        <br />
+        <ul>
+          <li>
+            We need 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            flour
+            , 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            milk
+            , 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            sugar
+            , and 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            eggs
+             to make the cake.
+          </li>
+          <li>
+            Next week I’m available on 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            Monday
+            , 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            Tuesday
+            , and
+             
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            Friday
+            .
+          </li>
+          <li>
+            The shirt comes in 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            small
+            , 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            medium
+            , and
+             
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            large
+            .
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Introductory/Non-Final Statements:
+        </b>
+        <div>
+          These statements are typically at the beginning of the sentence.
+        </div>
+        <br />
+        <ul>
+          <li>
+            When 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            I
+             grow 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            up
+            ...
+          </li>
+          <li>
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            By
+             the 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            way
+            ,
+          </li>
+          <li>
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            As
+             I was 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            saying
+            ,
+          </li>
+          <li>
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            Just
+             so you 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            know
+            ,
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Conditional Statements:
+        </b>
+        <div>
+          Conditionals usually start with ‘if’ or ‘when’. The last word of the first clause rises, then falls at the end.
+        </div>
+        <br />
+        <ul>
+          <li>
+            If I have a million 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            dollars
+            , I would travel the 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            world
+            .
+          </li>
+          <li>
+            When I was a 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            child
+            , I played 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            football
+            .
+          </li>
+          <li>
+            If it’s cold 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            outside
+            , I will wear a 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            jacket
+            .
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        Test yourself to see how well you know intonations:
+      </div>
+      <ul>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Guess the Pattern
+          </a>
+        </li>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Shopping for a Present
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

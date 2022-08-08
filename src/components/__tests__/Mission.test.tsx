@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Footer } from '../Footer';
+import { Mission } from '../Mission';
 
-test('Footer', () => {
-  const { container } = render(<Footer />);
+test('Mission', () => {
+  const { container } = render(<Mission />);
   expect(container).toMatchSnapshot();
 });

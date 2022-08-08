@@ -7,3 +7,4 @@ export const BASE_PATH_SOUNDS = `${BASE_PATH}sounds/`;
 export const CREATION_YEAR_START = 2020;
 export const CREATION_YEAR_END = 2022;
 export const EMAIL = 'fbpellas@usfca.edu';
+export const IPA_DEFINITION = 'International Phonetic Alphabet';

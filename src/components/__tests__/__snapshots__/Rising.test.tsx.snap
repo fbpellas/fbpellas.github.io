@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rising 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Rising Intonation 
+        <div
+          class="inline-period yellow"
+        >
+          ➚
+        </div>
+        
+      </h3>
+      <div
+        class="margin-top"
+      >
+        The voice rises at the end of the statement. We often use this pattern when asking a yes or no question, a question tag, or to show surprise or disbelief.
+      </div>
+      <br />
+      <div>
+        <b>
+          Yes/No Questions:
+        </b>
+        <br />
+        <ul>
+          <li>
+            Are you working 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            tomorrow
+            ?
+          </li>
+          <li>
+            Has Stephen called 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            you
+            ?
+          </li>
+          <li>
+            Could you please print out the 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            documents
+            ?
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Question Tags:
+        </b>
+        <div>
+          Questions at the end of the sentence to ask for confirmation. A question tag consists of an auxiliary verb (am, is, are, can, have, do, does, etc.) and a pronoun.
+        </div>
+        <br />
+        <ul>
+          <li>
+            They left already, didn’t 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            they
+            ?
+          </li>
+          <li>
+            Sandra is your cousin, isn’t 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            she
+            ?
+          </li>
+          <li>
+            You can ride a motorcycle, can’t 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            you
+            ?
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Surprise or Disbelief:
+        </b>
+        <div>
+          The intonation rises on the word that is emphasized.
+        </div>
+        <br />
+        <ul>
+          <li>
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            Really
+            ? Where did you hear that?
+          </li>
+          <li>
+            She won 5 million dollars in the 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            lottery
+            ? -disbelief that she won the ‘lottery’
+          </li>
+          <li>
+            She won 
+            <div
+              class="inline-period yellow"
+            >
+              ➚
+            </div>
+            5 million
+             dollars in the lottery? -disbelief that she won $5 million
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        Test yourself to see how well you know intonations:
+      </div>
+      <ul>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Guess the Pattern
+          </a>
+        </li>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Shopping for a Present
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

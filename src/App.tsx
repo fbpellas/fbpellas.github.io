@@ -24,21 +24,23 @@ import {
   quizStress
 } from './quiz';
 import Quiz from 'react-quiz-component';
-import { diphthongs, consonants, vowels } from './data/phonemes';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { Breadcrumb, Card, CardDeck, Carousel, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import {
-  AUTHOR_FIRSTNAME,
-  AUTHOR_FULLNAME,
-  BASE_PATH_IMG,
-  BASE_PATH_SOUNDS,
-  EMAIL
-} from './constants';
-import { Breadcrumb as BreadcrumbType, QuizIndex, Pronunciation } from './types';
+import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
+import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
-import { ArrowWord } from './components/ArrowWord';
+import { Mission } from './components/Mission';
+import { Vowels } from './components/Vowels';
+import { Phonemes } from './components/Phonemes';
+import { Diphthongs } from './components/Diphthongs';
+import { Stress } from './components/Stress';
+import { Consonants } from './components/Consonants';
+import { Intonation } from './components/Intonation';
+import { Falling } from './components/Falling';
+import { Rising } from './components/Rising';
+import { NonFinal } from './components/NonFinal';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -92,72 +94,6 @@ const App = () => {
           return <Breadcrumb.Item href={`#${anchor}`}>{title}</Breadcrumb.Item>;
         })}
       </Breadcrumb>
-    );
-  };
-
-  const renderTooltip = (word: string, definition: string, className = 'text-inline bottom-dot') => {
-    return (
-      <OverlayTrigger key="bottom" placement="bottom" overlay={<Tooltip id={`tooltip-bottom`}>{definition}</Tooltip>}>
-        <div className={className}>{word}</div>
-      </OverlayTrigger>
-    );
-  };
-
-  const renderTable = (data: Pronunciation[]) => {
-    return (
-      <table>
-        <tr>
-          <th>{renderTooltip('Phonemes', 'Sounds', 'text-center')}</th>
-          <th className="text-center">{renderTooltip('Grapheme', 'Letters that spell the sound', 'text-center')}</th>
-          <th className="text-center">Examples</th>
-        </tr>
-        {data.map((d: Pronunciation) => {
-          const { phoneme, graphemes, examples, audioPhoneme, audioExamples } = d;
-
-          const audioPhonemeObj = new Audio(`${BASE_PATH_SOUNDS}${audioPhoneme}`);
-          const audioExamplesObj = new Audio(`${BASE_PATH_SOUNDS}${audioExamples}`);
-
-          return (
-            <tr>
-              <td>
-                <HiPlay
-                  className="play-icon"
-                  onClick={() => {
-                    audioPhonemeObj.play();
-                  }}
-                />
-                {phoneme}
-              </td>
-              <td>{graphemes}</td>
-              <td>
-                <HiPlay
-                  className="play-icon"
-                  onClick={() => {
-                    audioExamplesObj.play();
-                  }}
-                />
-                <div className="text-inline" dangerouslySetInnerHTML={{ __html: examples }} />
-              </td>
-            </tr>
-          );
-        })}
-      </table>
-    );
-  };
-
-  const renderDiphthongs = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">Diphthongs</h3>
-          <div>
-            Diphthongs are a combination of two vowel sounds. There are eight diphthongs in the{' '}
-            {renderTooltip('IPA', 'International Phonetic Alphabet')}: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. However, only
-            five sounds are produced in American English.
-          </div>
-          {renderTable(diphthongs)}
-        </div>
-      </div>
     );
   };
 
@@ -324,259 +260,6 @@ const App = () => {
     );
   };
 
-  const renderVowels = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h2 className="h3-title vowels-title">Vowels</h2>
-          <br />
-          <div>
-            Vowels are a set of unblocked sounds. They consist of the letters A, E, I, O, U (sometimes Y). The{' '}
-            {renderTooltip('IPA', 'International Phonetic Alphabet')} lists 20 phonemes categorized as long, short, and{' '}
-            <a className="clickable-page" href="#diphthongs" onClick={() => setPageAndClear('diphthongs')}>
-              diphthongs
-            </a>
-            .
-          </div>
-          <br />
-          <div>
-            Vowels can sometimes be categorized as lax (short) and tense (long) depending on how much effort the lips
-            and tongue make when producing the sound.
-          </div>
-          <br />
-          <div>
-            Listed below are the phonemes that are widely used in the American English language. Some words might vary
-            in phonemes depending on regional dialects.
-          </div>
-          {renderTable(vowels)}
-        </div>
-      </div>
-    );
-  };
-
-  const renderStress = () => {
-    const audioPresent = new Audio(`${BASE_PATH_SOUNDS}stress/‘Present vs pre ‘sent.m4a`);
-
-    const audioReject = new Audio(`${BASE_PATH_SOUNDS}stress/‘Reject re ‘ject.m4a`);
-    const audioConduct = new Audio(`${BASE_PATH_SOUNDS}stress/‘Con duct vs Con ‘duct.m4a`);
-
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">Stress</h3>
-          <img className="half-img" src={`${BASE_PATH_IMG}stress.jpg`} alt="Stress" />
-          <div className="margin-top">
-            Understanding word stress can help English language learners communicate clearly. A word stress emphasizes a
-            syllable of a word with 2 or more syllables. Content words (nouns, verbs, adjectives) are usually stressed.
-          </div>
-          <br />
-          <div>A syllable is a unit of a word with one vowel sound.</div>
-          <br />
-          <ul>
-            <li>hi= 1 syllable</li>
-            <li>flo~wer= 2 syllables</li>
-            <li>e~lec~tric= 3 syllables</li>
-            <li>sig~ni~fi~cant= 4 syllables</li>
-          </ul>
-          <br />
-          <div>
-            If a word has one syllable, there is no stress. Word stress is marked with the (ˈ) symbol which looks like
-            an apostrophe. The stress mark comes before the stressed syllable.
-          </div>
-          <br />
-          <p>e.g.</p>
-          <ul>
-            <li>hi / haɪ /</li>
-            <li>ˈflower /ˈflaʊ ər/</li>
-            <li>eˈlectric / ɪˈlɛk trɪk /</li>
-            <li>sigˈnificant / sɪgˈnɪf ɪ kənt /</li>
-          </ul>
-          <br />
-          <div>
-            When pronouncing the stress, the syllable should sound a little higher, longer, and louder than the rest of
-            the syllables.
-          </div>
-          <br />
-          <h3 className="h3-title">Rule of Thumb</h3>
-          <br />
-          <div>2-syllable nouns: the first syllable is stressed</div>
-          <br />
-          <ul>
-            <li>
-              <u>per</u>son / ˈpɜr sən /
-            </li>
-            <li>
-              <u>cas</u>tle / ˈkæs əl /
-            </li>
-            <li>
-              <u>bas</u>ket /ˈbæs kɪt /
-            </li>
-          </ul>
-          <br />
-          <div>2-syllable verbs: the second syllable is stressed</div>
-          <br />
-          <ul>
-            <li>
-              de<u>mand</u> / dɪˈmænd /
-            </li>
-            <li>
-              ar<u>rive</u> / əˈraɪv /
-            </li>
-            <li>
-              com<u>plete</u> / kəmˈplit /
-            </li>
-          </ul>
-          <br />
-          <div>Some words are similar but have different meanings based on the word stress.</div>
-          <br />
-          <HiPlay
-            className="play-icon"
-            onClick={() => {
-              audioPresent.play();
-            }}
-          />
-          Play
-          <ul>
-            <li>ˈpresent (noun) : current moment or time</li>
-            <li>preˈsent (verb) : to show</li>
-          </ul>
-          <br />
-          <HiPlay
-            className="play-icon"
-            onClick={() => {
-              audioReject.play();
-            }}
-          />
-          Play
-          <ul>
-            <li>ˈreject (noun): something flawed or has mistakes and imperfections</li>
-            <li>reˈject (verb): to refuse, to not accept</li>
-          </ul>
-          <br />
-          <HiPlay
-            className="play-icon"
-            onClick={() => {
-              audioConduct.play();
-            }}
-          />
-          Play
-          <ul>
-            <li>ˈconduct (noun): behavior</li>
-            <li>conˈduct (verb): to lead</li>
-          </ul>
-          <br />
-          <div>What other words have similar spellings, but different meanings and stress?</div>
-          <br />
-          <div>Quiz yourself on how well you can distinguish word stress:</div>
-          <ul>
-            <li>
-              <a
-                className="clickable-page"
-                href="#quiz"
-                onClick={() => {
-                  setPageAndClear('quiz');
-                  setIndexCarousel(QuizIndex.SameWordsDifferentStress);
-                }}
-              >
-                Same Words, Different Stress
-              </a>
-            </li>
-            <li>
-              <a
-                className="clickable-page"
-                href="#quiz"
-                onClick={() => {
-                  setPageAndClear('quiz');
-                  setIndexCarousel(QuizIndex.WhereIsTheStress);
-                }}
-              >
-                Where’s the Stress
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    );
-  };
-
-  const renderIntonation = () => {
-    const audioTest1 = new Audio(`${BASE_PATH_SOUNDS}intonation/He failed the test1.m4a`);
-
-    const audioTest2 = new Audio(`${BASE_PATH_SOUNDS}intonation/Hé failed the test2.m4a`);
-
-    return (
-      <div className="block-2">
-        <div className="article">
-          <h3 className="h3-title">Intonation</h3>
-          <img className="margin-top quarter-img" src={`${BASE_PATH_IMG}pitch.jpg`} alt="Pitch" />
-          <div className="margin-top">
-            Aside from grammar and vocabulary, learning intonation is equally important in American English.
-          </div>
-          <br />
-          <div>Intonation refers to the tone and pitch of the voice when speaking.</div>
-          <div>
-            <div className="note">Pitch:</div> the highness or lowness of the voice
-          </div>
-          <div>
-            <div className="note">Tone:</div> the way someone speaks
-          </div>
-          <br />
-          <div>
-            It helps others understand what kind of message you are trying to communicate. Are you happy? Sad?
-            Surprised? Asking a question? Even though a person speaks with perfect grammar, the meaning could get lost
-            if the intonation is not correct.
-          </div>
-          <br />
-          <div>Listen to these sentences below.</div>
-          <div>
-            {' '}
-            <HiPlay
-              className="play-icon"
-              onClick={() => {
-                audioTest1.play();
-              }}
-            />
-            He failed the <b>test.</b>
-          </div>
-
-          <div>
-            {' '}
-            <HiPlay
-              className="play-icon"
-              onClick={() => {
-                audioTest2.play();
-              }}
-            />
-            He failed the <b>test?</b>
-          </div>
-          <br />
-          <div>
-            The word <i>test</i> is the focus word, which is stressed or emphasized. When a word is stressed, the pitch
-            is higher. There are 2 basic types of intonation: rising and falling.
-          </div>
-          <br />
-          <div>
-            In the first sentence, the intonation falls at the end of the sentence to show that the sentence is
-            finished. On the other hand, the intonation on the second statement rises to show surprise or disbelief. The
-            next sections discuss the different patterns of intonation:{' '}
-            <a className="clickable-page" href="#falling" onClick={() => setPageAndClear('falling')}>
-              falling
-            </a>
-            ,{' '}
-            <a className="clickable-page" href="#rising" onClick={() => setPageAndClear('rising')}>
-              rising
-            </a>
-            , and{' '}
-            <a className="clickable-page" href="#non-final" onClick={() => setPageAndClear('non-final')}>
-              non-final
-            </a>
-            .
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   const renderCard = (href: string, title: string, description: string, button: string) => {
     return (
       <Card>
@@ -713,385 +396,43 @@ const App = () => {
     }
 
     if (page === 'mission') {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Mission</h3>
-            <img
-              className="half-img"
-              src={`${BASE_PATH_IMG}wall.jpeg`}
-              alt="Learn the Art of Speaking American English"
-            />
-            <p className="margin-top">
-              One of the biggest goals for language learners is to learn how to speak with the correct pronunciation of
-              their target language. Unfortunately, many English as a second/foreign language (ESL/EFL) curricula do not
-              focus on pronunciation, therefore, many teachers lack training in this field. The purpose of this website
-              is to help teachers and students understand the basics of pronunciation. By learning pronunciation,
-              students can feel more confident in speaking and communicating.
-            </p>
-          </div>
-        </div>
-      );
+      return <Mission />;
     }
 
-    const renderIntonationQuizLinks = () => (
-      <>
-        <div>Test yourself to see how well you know intonations:</div>
-        <ul>
-          <li>
-            <a
-              className="clickable-page"
-              href="#quiz"
-              onClick={() => {
-                setPageAndClear('quiz');
-                setIndexCarousel(QuizIndex.GuessThePattern);
-              }}
-            >
-              Guess the Pattern
-            </a>
-          </li>
-          <li>
-            <a
-              className="clickable-page"
-              href="#quiz"
-              onClick={() => {
-                setPageAndClear('quiz');
-                setIndexCarousel(QuizIndex.ShoppingForAPresent);
-              }}
-            >
-              Shopping for a Present
-            </a>
-          </li>
-        </ul>
-      </>
-    );
-
-    const renderFalling = () => {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Falling Intonation <ArrowWord /></h3>
-            <div className="margin-top">
-              This is the most common intonation pattern in American English. We use this intonation when we finish a
-              statement, give a command, as an information question, and an exclamation. The intonation falls on the
-              last word of the sentence.
-            </div>
-            <br />
-            <div>
-              <b>Finished Statements:</b>
-              <br />
-              <ul>
-                <li>We live in <ArrowWord word='France' />.</li>
-                <li>They are not <ArrowWord word='invited' />.</li>
-                <li>It takes five hours to get <ArrowWord word='there' />.</li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Commands:</b>
-              <div>
-                Statements use to give orders. Commands or imperative sentences start with the verb and not the subject.
-              </div>
-              <br />
-              <ul>
-                <li>Report to me <ArrowWord word='immediately' />.</li>
-                <li>Do not take any <ArrowWord word='photos' />.</li>
-                <li>Brush your teeth and go to <ArrowWord word='bed' />.</li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Wh- Questions:</b>
-              <div>Who, What, When, Where, How, Why, Which are also known as information questions.</div>
-              <br />
-              <ul>
-                <li>How are <ArrowWord word='you' />?</li>
-                <li>When is your <ArrowWord word='birthday' />?</li>
-                <li>Why did you lie to <ArrowWord word='me' />?</li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Exclamations or Interjections:</b>
-              <div>
-                Statements that express surprise, awe, pain, etc. Interjections are always marked with an exclamation
-                point (!)
-              </div>
-              <br />
-              <ul>
-                <li>That’s <ArrowWord word='amazing' />!</li>
-                <li><ArrowWord word='Congratulations' />!</li>
-                <li>You look lovely in that <ArrowWord word='dress' />!</li>
-              </ul>
-            </div>
-            <br />
-            {renderIntonationQuizLinks()}
-          </div>
-        </div>
-      );
-    };
-
-    const renderRising = () => {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Rising Intonation <ArrowWord isUp /></h3>
-            <div className="margin-top">
-              The voice rises at the end of the statement. We often use this pattern when asking a yes or no question, a
-              question tag, or to show surprise or disbelief.
-            </div>
-            <br />
-            <div>
-              <b>Yes/No Questions:</b>
-              <br />
-              <ul>
-                <li>Are you working <ArrowWord isUp word='tomorrow' />?</li>
-                <li>Has Stephen called <ArrowWord isUp word='you' />?</li>
-                <li>Could you please print out the <ArrowWord isUp word='documents' />?</li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Question Tags:</b>
-              <div>
-                Questions at the end of the sentence to ask for confirmation. A question tag consists of an auxiliary
-                verb (am, is, are, can, have, do, does, etc.) and a pronoun.
-              </div>
-              <br />
-              <ul>
-                <li>They left already, didn’t <ArrowWord isUp word='they' />?</li>
-                <li>Sandra is your cousin, isn’t <ArrowWord isUp word='she' />?</li>
-                <li>You can ride a motorcycle, can’t <ArrowWord isUp word='you' />?</li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Surprise or Disbelief:</b>
-              <div>The intonation rises on the word that is emphasized.</div>
-              <br />
-              <ul>
-                <li><ArrowWord isUp word='Really' />? Where did you hear that?</li>
-                <li>
-                  She won 5 million dollars in the <ArrowWord isUp word='lottery' />? -disbelief that she won the
-                  ‘lottery’
-                </li>
-                <li>
-                  She won <ArrowWord isUp word='5 million' /> dollars in the lottery? -disbelief that she won $5
-                  million
-                </li>
-              </ul>
-            </div>
-            <br />
-            {renderIntonationQuizLinks()}
-          </div>
-        </div>
-      );
-    };
-
-    const renderNonFinal = () => {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">
-              Non-Final Intonation <ArrowWord isUp />
-              <ArrowWord />
-            </h3>
-            <div className="margin-top">
-              The non-final or rise-and-fall intonation is often used with choices, lists, or unfinished statements. The
-              examples below show which words rise and where they fall.
-            </div>
-            <br />
-            <div>
-              <b>Choices:</b>
-              <br />
-              <ul>
-                <li>
-                  Do you prefer ice <ArrowWord isUp word='cream' /> or <ArrowWord word='cake' />?
-                </li>
-                <li>
-                  What would you rather do: go <ArrowWord isUp word='hiking' /> or go <ArrowWord word='swimming' />?
-                </li>
-                <li>
-                  Can you speak <ArrowWord isUp word='Mandarin' /> or <ArrowWord word='Spanish' />?
-                </li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Lists:</b>
-              <div>Each item on the list rises in sound and the last word falls.</div>
-              <br />
-              <ul>
-                <li>
-                  We need <ArrowWord isUp word='flour' />, <ArrowWord isUp word='milk' />,{' '}
-                  <ArrowWord isUp word='sugar' />, and <ArrowWord word='eggs' /> to make the cake.
-                </li>
-                <li>
-                  Next week I’m available on <ArrowWord isUp word='Monday' />, <ArrowWord isUp word='Tuesday' />, and{' '}
-                  <ArrowWord word='Friday' />.
-                </li>
-                <li>
-                  The shirt comes in <ArrowWord isUp word='small' />, <ArrowWord isUp word='medium' />, and{' '}
-                  <ArrowWord word='large' />.
-                </li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Introductory/Non-Final Statements:</b>
-              <div>These statements are typically at the beginning of the sentence.</div>
-              <br />
-              <ul>
-                <li>
-                  When <ArrowWord isUp word='I' /> grow <ArrowWord word='up' />
-                  ...
-                </li>
-                <li>
-                  <ArrowWord isUp word='By' /> the <ArrowWord word='way' />,
-                </li>
-                <li>
-                  <ArrowWord isUp word='As' /> I was <ArrowWord word='saying' />,
-                </li>
-                <li>
-                  <ArrowWord isUp word='Just' /> so you <ArrowWord word='know' />,
-                </li>
-              </ul>
-            </div>
-            <br />
-            <div>
-              <b>Conditional Statements:</b>
-              <div>
-                Conditionals usually start with ‘if’ or ‘when’. The last word of the first clause rises, then falls at
-                the end.
-              </div>
-              <br />
-              <ul>
-                <li>
-                  If I have a million <ArrowWord isUp word='dollars' />, I would travel the <ArrowWord word='world' />.
-                </li>
-                <li>
-                  When I was a <ArrowWord isUp word='child' />, I played <ArrowWord word='football' />.
-                </li>
-                <li>
-                  If it’s cold <ArrowWord isUp word='outside' />, I will wear a <ArrowWord word='jacket' />.
-                </li>
-              </ul>
-            </div>
-            <br />
-            {renderIntonationQuizLinks()}
-          </div>
-        </div>
-      );
-    };
-
     if (page === 'phonemes') {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Phonemes</h3>
-            <div>
-              According to the International Phonetic Alphabet (IPA), there are 26 letters and 44 phonemes (or sounds)
-              in the English alphabet. These letters are divided into two categories:{' '}
-              <a className="clickable-page" href="#vowels" onClick={() => setPageAndClear('vowels')}>
-                vowels
-              </a>{' '}
-              and{' '}
-              <a className="clickable-page" href="#consonants" onClick={() => setPageAndClear('consonants')}>
-                consonants
-              </a>
-              .
-            </div>
-            <br />
-            <div>
-              <div className="note">Note:</div> Phonemes should not rely on the word’s spelling. For example, the word m
-              <i>
-                <b>oo</b>
-              </i>
-              n is not spelled with the letter ‘u’, yet is produced with the long /u/ phoneme.{' '}
-            </div>
-            <img
-              className="margin-top half-img"
-              src={`${BASE_PATH_IMG}IPA chart.jpg`}
-              alt="Learn the Art of Speaking American English"
-            />
-          </div>
-        </div>
-      );
+      return <Phonemes setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'diphthongs') {
-      return renderDiphthongs();
+      return <Diphthongs />;
     }
 
     if (page === 'vowels') {
-      return renderVowels();
+      return <Vowels setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'falling') {
-      return renderFalling();
+      return <Falling setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'rising') {
-      return renderRising();
+      return <Rising setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'non-final') {
-      return renderNonFinal();
+      return <NonFinal setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'consonants') {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Consonants</h3>
-            <div>
-              Consonants have 24 blocked sounds. In the {renderTooltip('IPA', 'International Phonetic Alphabet')} chart,
-              consonants are arranged completely differently from the English alphabet.
-            </div>
-            <div>
-              Phonemes like /p/ and /b/ are next to each other because the lips and the tongue move the same way when
-              producing these sounds. The only difference is the phoneme on the left is unvoiced (no vibration on the
-              throat) and the phoneme on the right is voiced (there is vibration on the throat).
-            </div>
-            {renderTable(consonants)}
-            <div>Test yourself to see how well you know the phonemes</div>
-            <ul>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear('quiz');
-                    setIndexCarousel(QuizIndex.OddPhonemeOut);
-                  }}
-                >
-                  Odd Phoneme Out
-                </a>
-              </li>
-              <li>
-                <a
-                  className="clickable-page"
-                  href="#quiz"
-                  onClick={() => {
-                    setPageAndClear('quiz');
-                    setIndexCarousel(QuizIndex.PhoneticSpelling);
-                  }}
-                >
-                  Phonetic Spelling
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <Consonants setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'stress') {
-      return renderStress();
+      return <Stress setIndexCarousel={setIndexCarousel} setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'intonation') {
-      return renderIntonation();
+      return <Intonation setPageAndClear={setPageAndClear} />;
     }
 
     if (page === 'quiz') {

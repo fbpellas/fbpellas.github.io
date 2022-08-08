@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stress 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Stress
+      </h3>
+      <img
+        alt="Stress"
+        class="half-img"
+        src="https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/stress.jpg"
+      />
+      <div
+        class="margin-top"
+      >
+        Understanding word stress can help English language learners communicate clearly. A word stress emphasizes a syllable of a word with 2 or more syllables. Content words (nouns, verbs, adjectives) are usually stressed.
+      </div>
+      <br />
+      <div>
+        A syllable is a unit of a word with one vowel sound.
+      </div>
+      <br />
+      <ul>
+        <li>
+          hi= 1 syllable
+        </li>
+        <li>
+          flo~wer= 2 syllables
+        </li>
+        <li>
+          e~lec~tric= 3 syllables
+        </li>
+        <li>
+          sig~ni~fi~cant= 4 syllables
+        </li>
+      </ul>
+      <br />
+      <div>
+        If a word has one syllable, there is no stress. Word stress is marked with the (ˈ) symbol which looks like an apostrophe. The stress mark comes before the stressed syllable.
+      </div>
+      <br />
+      <p>
+        e.g.
+      </p>
+      <ul>
+        <li>
+          hi / haɪ /
+        </li>
+        <li>
+          ˈflower /ˈflaʊ ər/
+        </li>
+        <li>
+          eˈlectric / ɪˈlɛk trɪk /
+        </li>
+        <li>
+          sigˈnificant / sɪgˈnɪf ɪ kənt /
+        </li>
+      </ul>
+      <br />
+      <div>
+        When pronouncing the stress, the syllable should sound a little higher, longer, and louder than the rest of the syllables.
+      </div>
+      <br />
+      <h3
+        class="h3-title"
+      >
+        Rule of Thumb
+      </h3>
+      <br />
+      <div>
+        2-syllable nouns: the first syllable is stressed
+      </div>
+      <br />
+      <ul>
+        <li>
+          <u>
+            per
+          </u>
+          son / ˈpɜr sən /
+        </li>
+        <li>
+          <u>
+            cas
+          </u>
+          tle / ˈkæs əl /
+        </li>
+        <li>
+          <u>
+            bas
+          </u>
+          ket /ˈbæs kɪt /
+        </li>
+      </ul>
+      <br />
+      <div>
+        2-syllable verbs: the second syllable is stressed
+      </div>
+      <br />
+      <ul>
+        <li>
+          de
+          <u>
+            mand
+          </u>
+           / dɪˈmænd /
+        </li>
+        <li>
+          ar
+          <u>
+            rive
+          </u>
+           / əˈraɪv /
+        </li>
+        <li>
+          com
+          <u>
+            plete
+          </u>
+           / kəmˈplit /
+        </li>
+      </ul>
+      <br />
+      <div>
+        Some words are similar but have different meanings based on the word stress.
+      </div>
+      <br />
+      <svg
+        class="play-icon"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 20 20"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      Play
+      <ul>
+        <li>
+          ˈpresent (noun) : current moment or time
+        </li>
+        <li>
+          preˈsent (verb) : to show
+        </li>
+      </ul>
+      <br />
+      <svg
+        class="play-icon"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 20 20"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      Play
+      <ul>
+        <li>
+          ˈreject (noun): something flawed or has mistakes and imperfections
+        </li>
+        <li>
+          reˈject (verb): to refuse, to not accept
+        </li>
+      </ul>
+      <br />
+      <svg
+        class="play-icon"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 20 20"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+          fill-rule="evenodd"
+        />
+      </svg>
+      Play
+      <ul>
+        <li>
+          ˈconduct (noun): behavior
+        </li>
+        <li>
+          conˈduct (verb): to lead
+        </li>
+      </ul>
+      <br />
+      <div>
+        What other words have similar spellings, but different meanings and stress?
+      </div>
+      <br />
+      <div>
+        Quiz yourself on how well you can distinguish word stress:
+      </div>
+      <ul>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Same Words, Different Stress
+          </a>
+        </li>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Where’s the Stress
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
