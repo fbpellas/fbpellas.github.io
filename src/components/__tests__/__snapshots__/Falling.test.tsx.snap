@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Falling 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Falling Intonation 
+        <div
+          class="inline-period yellow"
+        >
+          ➘
+        </div>
+        
+      </h3>
+      <div
+        class="margin-top"
+      >
+        This is the most common intonation pattern in American English. We use this intonation when we finish a statement, give a command, as an information question, and an exclamation. The intonation falls on the last word of the sentence.
+      </div>
+      <br />
+      <div>
+        <b>
+          Finished Statements:
+        </b>
+        <br />
+        <ul>
+          <li>
+            We live in 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            France
+            .
+          </li>
+          <li>
+            They are not 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            invited
+            .
+          </li>
+          <li>
+            It takes five hours to get 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            there
+            .
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Commands:
+        </b>
+        <div>
+          Statements use to give orders. Commands or imperative sentences start with the verb and not the subject.
+        </div>
+        <br />
+        <ul>
+          <li>
+            Report to me 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            immediately
+            .
+          </li>
+          <li>
+            Do not take any 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            photos
+            .
+          </li>
+          <li>
+            Brush your teeth and go to 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            bed
+            .
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Wh- Questions:
+        </b>
+        <div>
+          Who, What, When, Where, How, Why, Which are also known as information questions.
+        </div>
+        <br />
+        <ul>
+          <li>
+            How are 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            you
+            ?
+          </li>
+          <li>
+            When is your 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            birthday
+            ?
+          </li>
+          <li>
+            Why did you lie to 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            me
+            ?
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        <b>
+          Exclamations or Interjections:
+        </b>
+        <div>
+          Statements that express surprise, awe, pain, etc. Interjections are always marked with an exclamation point (!)
+        </div>
+        <br />
+        <ul>
+          <li>
+            That’s 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            amazing
+            !
+          </li>
+          <li>
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            Congratulations
+            !
+          </li>
+          <li>
+            You look lovely in that 
+            <div
+              class="inline-period yellow"
+            >
+              ➘
+            </div>
+            dress
+            !
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div>
+        Test yourself to see how well you know intonations:
+      </div>
+      <ul>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Guess the Pattern
+          </a>
+        </li>
+        <li>
+          <a
+            class="clickable-page"
+            href="#quiz"
+          >
+            Shopping for a Present
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
