@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer 1`] = `
+<div>
+  <div
+    class="footer"
+  >
+    Faith Pellas
+    , website created in 
+    2020
+    -
+    2022
+     and hosted on
+     
+    <a
+      class="clickable-page"
+      href="https://github.com/fbpellas/fbpellas.github.io"
+      rel="noreferrer noopener"
+      target="_blank"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
+`;

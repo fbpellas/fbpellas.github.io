@@ -11,6 +11,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import classnames from 'classnames';
+import { generateBreadcrumbs } from './utils';
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -33,20 +34,11 @@ import {
   AUTHOR_FULLNAME,
   BASE_PATH_IMG,
   BASE_PATH_SOUNDS,
-  CREATION_YEAR_END,
-  CREATION_YEAR_START,
   EMAIL
 } from './constants';
-import { Pronunciation } from './types';
-
-export enum QuizIndex {
-  OddPhonemeOut = 0,
-  PhoneticSpelling = 1,
-  SameWordsDifferentStress = 2,
-  WhereIsTheStress = 3,
-  GuessThePattern = 4,
-  ShoppingForAPresent = 5
-}
+import { Breadcrumb as BreadcrumbType, QuizIndex, Pronunciation } from './types';
+import { Footer } from './components/Footer';
+import { ArrowWord } from './components/ArrowWord';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -81,98 +73,19 @@ const App = () => {
     setPageAndClear(hash);
   };
 
-  const renderFooter = () => {
-    return (
-      <div className="footer">
-        {AUTHOR_FULLNAME}, website created in {CREATION_YEAR_START}-{CREATION_YEAR_END} and hosted on{' '}
-        <a
-          className="clickable-page"
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://github.com/fbpellas/fbpellas.github.io"
-        >
-          GitHub
-        </a>
-      </div>
-    );
-  };
-
   const renderBreadcrumbs = () => {
-    const links = [['home', 'Home']];
+    const breadcrumbs = generateBreadcrumbs(page, indexCarousel);
 
-    switch (page) {
-      case 'about-author':
-        links.push([page, 'About the Author']);
-        break;
-
-      case 'mission':
-        links.push([page, 'Mission']);
-        break;
-
-      case 'phonemes':
-        links.push([page, 'Phonemes']);
-        break;
-
-      case 'vowels':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Vowels']);
-        break;
-
-      case 'diphthongs':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Diphthongs']);
-        break;
-
-      case 'consonants':
-        links.push(['phonemes', 'Phonemes']);
-        links.push([page, 'Consonants']);
-        break;
-
-      case 'stress':
-        links.push([page, 'Stress']);
-        break;
-
-      case 'intonation':
-        links.push([page, 'Intonation']);
-        break;
-
-      case 'falling':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Falling']);
-        break;
-
-      case 'rising':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Rising']);
-        break;
-
-      case 'non-final':
-        links.push(['intonation', 'Intonation']);
-        links.push([page, 'Non-Final']);
-        break;
-
-      case 'quiz':
-        if ([QuizIndex.SameWordsDifferentStress, QuizIndex.WhereIsTheStress].includes(indexCarousel)) {
-          links.push(['stress', 'Stress']);
-        } else if ([QuizIndex.GuessThePattern, QuizIndex.ShoppingForAPresent].includes(indexCarousel)) {
-          links.push(['intonation', 'Intonation']);
-        } else if ([QuizIndex.OddPhonemeOut, QuizIndex.PhoneticSpelling].includes(indexCarousel)) {
-          links.push(['phonemes', 'Phonemes']);
-        }
-
-        links.push([page, 'Quiz']);
-        break;
-    }
-
-    const { length } = links;
+    const { length } = breadcrumbs;
 
     if (length <= 1) return null;
 
     return (
       <Breadcrumb>
-        {links.map((link, index) => {
-          const [anchor, title] = link;
-          if (index === length - 1) {
+        {breadcrumbs.map((breadcrumb, index) => {
+          const { anchor, title } = breadcrumb;
+          const isLast = index === length - 1;
+          if (isLast) {
             return <Breadcrumb.Item active>{title}</Breadcrumb.Item>;
           }
 
@@ -821,17 +734,6 @@ const App = () => {
       );
     }
 
-    const renderArrowWord = (word: string, isUp = false) => {
-      const arrow = isUp ? '➚' : '➘';
-
-      return (
-        <>
-          <div className="inline-period yellow">{arrow}</div>
-          {word}
-        </>
-      );
-    };
-
     const renderIntonationQuizLinks = () => (
       <>
         <div>Test yourself to see how well you know intonations:</div>
@@ -868,7 +770,7 @@ const App = () => {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Falling Intonation {renderArrowWord('')}</h3>
+            <h3 className="h3-title">Falling Intonation <ArrowWord /></h3>
             <div className="margin-top">
               This is the most common intonation pattern in American English. We use this intonation when we finish a
               statement, give a command, as an information question, and an exclamation. The intonation falls on the
@@ -879,9 +781,9 @@ const App = () => {
               <b>Finished Statements:</b>
               <br />
               <ul>
-                <li>We live in {renderArrowWord('France')}.</li>
-                <li>They are not {renderArrowWord('invited')}.</li>
-                <li>It takes five hours to get {renderArrowWord('there')}.</li>
+                <li>We live in <ArrowWord word='France' />.</li>
+                <li>They are not <ArrowWord word='invited' />.</li>
+                <li>It takes five hours to get <ArrowWord word='there' />.</li>
               </ul>
             </div>
             <br />
@@ -892,9 +794,9 @@ const App = () => {
               </div>
               <br />
               <ul>
-                <li>Report to me {renderArrowWord('immediately')}.</li>
-                <li>Do not take any {renderArrowWord('photos')}.</li>
-                <li>Brush your teeth and go to {renderArrowWord('bed')}.</li>
+                <li>Report to me <ArrowWord word='immediately' />.</li>
+                <li>Do not take any <ArrowWord word='photos' />.</li>
+                <li>Brush your teeth and go to <ArrowWord word='bed' />.</li>
               </ul>
             </div>
             <br />
@@ -903,9 +805,9 @@ const App = () => {
               <div>Who, What, When, Where, How, Why, Which are also known as information questions.</div>
               <br />
               <ul>
-                <li>How are {renderArrowWord('you')}?</li>
-                <li>When is your {renderArrowWord('birthday')}?</li>
-                <li>Why did you lie to {renderArrowWord('me')}?</li>
+                <li>How are <ArrowWord word='you' />?</li>
+                <li>When is your <ArrowWord word='birthday' />?</li>
+                <li>Why did you lie to <ArrowWord word='me' />?</li>
               </ul>
             </div>
             <br />
@@ -917,9 +819,9 @@ const App = () => {
               </div>
               <br />
               <ul>
-                <li>That’s {renderArrowWord('amazing')}!</li>
-                <li>{renderArrowWord('Congratulations')}!</li>
-                <li>You look lovely in that {renderArrowWord('dress')}!</li>
+                <li>That’s <ArrowWord word='amazing' />!</li>
+                <li><ArrowWord word='Congratulations' />!</li>
+                <li>You look lovely in that <ArrowWord word='dress' />!</li>
               </ul>
             </div>
             <br />
@@ -933,7 +835,7 @@ const App = () => {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Rising Intonation {renderArrowWord('', true)}</h3>
+            <h3 className="h3-title">Rising Intonation <ArrowWord isUp /></h3>
             <div className="margin-top">
               The voice rises at the end of the statement. We often use this pattern when asking a yes or no question, a
               question tag, or to show surprise or disbelief.
@@ -943,9 +845,9 @@ const App = () => {
               <b>Yes/No Questions:</b>
               <br />
               <ul>
-                <li>Are you working {renderArrowWord('tomorrow', true)}?</li>
-                <li>Has Stephen called {renderArrowWord('you', true)}?</li>
-                <li>Could you please print out the {renderArrowWord('documents', true)}?</li>
+                <li>Are you working <ArrowWord isUp word='tomorrow' />?</li>
+                <li>Has Stephen called <ArrowWord isUp word='you' />?</li>
+                <li>Could you please print out the <ArrowWord isUp word='documents' />?</li>
               </ul>
             </div>
             <br />
@@ -957,9 +859,9 @@ const App = () => {
               </div>
               <br />
               <ul>
-                <li>They left already, didn’t {renderArrowWord('they', true)}?</li>
-                <li>Sandra is your cousin, isn’t {renderArrowWord('she', true)}?</li>
-                <li>You can ride a motorcycle, can’t {renderArrowWord('you', true)}?</li>
+                <li>They left already, didn’t <ArrowWord isUp word='they' />?</li>
+                <li>Sandra is your cousin, isn’t <ArrowWord isUp word='she' />?</li>
+                <li>You can ride a motorcycle, can’t <ArrowWord isUp word='you' />?</li>
               </ul>
             </div>
             <br />
@@ -968,13 +870,13 @@ const App = () => {
               <div>The intonation rises on the word that is emphasized.</div>
               <br />
               <ul>
-                <li>{renderArrowWord('Really', true)}? Where did you hear that?</li>
+                <li><ArrowWord isUp word='Really' />? Where did you hear that?</li>
                 <li>
-                  She won 5 million dollars in the {renderArrowWord('lottery', true)}? -disbelief that she won the
+                  She won 5 million dollars in the <ArrowWord isUp word='lottery' />? -disbelief that she won the
                   ‘lottery’
                 </li>
                 <li>
-                  She won {renderArrowWord('5 million', true)} dollars in the lottery? -disbelief that she won $5
+                  She won <ArrowWord isUp word='5 million' /> dollars in the lottery? -disbelief that she won $5
                   million
                 </li>
               </ul>
@@ -991,8 +893,8 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">
-              Non-Final Intonation {renderArrowWord('', true)}
-              {renderArrowWord('')}
+              Non-Final Intonation <ArrowWord isUp />
+              <ArrowWord />
             </h3>
             <div className="margin-top">
               The non-final or rise-and-fall intonation is often used with choices, lists, or unfinished statements. The
@@ -1004,13 +906,13 @@ const App = () => {
               <br />
               <ul>
                 <li>
-                  Do you prefer ice {renderArrowWord('cream', true)} or {renderArrowWord('cake')}?
+                  Do you prefer ice <ArrowWord isUp word='cream' /> or <ArrowWord word='cake' />?
                 </li>
                 <li>
-                  What would you rather do: go {renderArrowWord('hiking', true)} or go {renderArrowWord('swimming')}?
+                  What would you rather do: go <ArrowWord isUp word='hiking' /> or go <ArrowWord word='swimming' />?
                 </li>
                 <li>
-                  Can you speak {renderArrowWord('Mandarin', true)} or {renderArrowWord('Spanish')}?
+                  Can you speak <ArrowWord isUp word='Mandarin' /> or <ArrowWord word='Spanish' />?
                 </li>
               </ul>
             </div>
@@ -1021,16 +923,16 @@ const App = () => {
               <br />
               <ul>
                 <li>
-                  We need {renderArrowWord('flour', true)}, {renderArrowWord('milk', true)},{' '}
-                  {renderArrowWord('sugar', true)}, and {renderArrowWord('eggs')} to make the cake.
+                  We need <ArrowWord isUp word='flour' />, <ArrowWord isUp word='milk' />,{' '}
+                  <ArrowWord isUp word='sugar' />, and <ArrowWord word='eggs' /> to make the cake.
                 </li>
                 <li>
-                  Next week I’m available on {renderArrowWord('Monday', true)}, {renderArrowWord('Tuesday', true)}, and{' '}
-                  {renderArrowWord('Friday')}.
+                  Next week I’m available on <ArrowWord isUp word='Monday' />, <ArrowWord isUp word='Tuesday' />, and{' '}
+                  <ArrowWord word='Friday' />.
                 </li>
                 <li>
-                  The shirt comes in {renderArrowWord('small', true)}, {renderArrowWord('medium', true)}, and{' '}
-                  {renderArrowWord('large')}.
+                  The shirt comes in <ArrowWord isUp word='small' />, <ArrowWord isUp word='medium' />, and{' '}
+                  <ArrowWord word='large' />.
                 </li>
               </ul>
             </div>
@@ -1041,17 +943,17 @@ const App = () => {
               <br />
               <ul>
                 <li>
-                  When {renderArrowWord('I', true)} grow {renderArrowWord('up')}
+                  When <ArrowWord isUp word='I' /> grow <ArrowWord word='up' />
                   ...
                 </li>
                 <li>
-                  {renderArrowWord('By', true)} the {renderArrowWord('way')},
+                  <ArrowWord isUp word='By' /> the <ArrowWord word='way' />,
                 </li>
                 <li>
-                  {renderArrowWord('As', true)} I was {renderArrowWord('saying')},
+                  <ArrowWord isUp word='As' /> I was <ArrowWord word='saying' />,
                 </li>
                 <li>
-                  {renderArrowWord('Just', true)} so you {renderArrowWord('know', false)},
+                  <ArrowWord isUp word='Just' /> so you <ArrowWord word='know' />,
                 </li>
               </ul>
             </div>
@@ -1065,13 +967,13 @@ const App = () => {
               <br />
               <ul>
                 <li>
-                  If I have a million {renderArrowWord('dollars', true)}, I would travel the {renderArrowWord('world')}.
+                  If I have a million <ArrowWord isUp word='dollars' />, I would travel the <ArrowWord word='world' />.
                 </li>
                 <li>
-                  When I was a {renderArrowWord('child', true)}, I played {renderArrowWord('football')}.
+                  When I was a <ArrowWord isUp word='child' />, I played <ArrowWord word='football' />.
                 </li>
                 <li>
-                  If it’s cold {renderArrowWord('outside', true)}, I will wear a {renderArrowWord('jacket')}.
+                  If it’s cold <ArrowWord isUp word='outside' />, I will wear a <ArrowWord word='jacket' />.
                 </li>
               </ul>
             </div>
@@ -1600,7 +1502,7 @@ const App = () => {
           {renderBreadcrumbs()}
           {renderBody()}
         </div>
-        {renderFooter()}
+        <Footer />
       </div>
     </HelmetProvider>
   );
