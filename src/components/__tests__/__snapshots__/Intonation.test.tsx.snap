@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intonation 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        Intonation
+      </h3>
+      <img
+        alt="Pitch"
+        class="margin-top quarter-img"
+        src="https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/pitch.jpg"
+      />
+      <div
+        class="margin-top"
+      >
+        Aside from grammar and vocabulary, learning intonation is equally important in American English.
+      </div>
+      <br />
+      <div>
+        Intonation refers to the tone and pitch of the voice when speaking.
+      </div>
+      <div>
+        <div
+          class="note"
+        >
+          Pitch:
+        </div>
+         the highness or lowness of the voice
+      </div>
+      <div>
+        <div
+          class="note"
+        >
+          Tone:
+        </div>
+         the way someone speaks
+      </div>
+      <br />
+      <div>
+        It helps others understand what kind of message you are trying to communicate. Are you happy? Sad? Surprised? Asking a question? Even though a person speaks with perfect grammar, the meaning could get lost if the intonation is not correct.
+      </div>
+      <br />
+      <div>
+        Listen to these sentences below.
+      </div>
+      <div>
+         
+        <svg
+          class="play-icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 20 20"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        He failed the 
+        <b>
+          test.
+        </b>
+      </div>
+      <div>
+         
+        <svg
+          class="play-icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 20 20"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        He failed the 
+        <b>
+          test?
+        </b>
+      </div>
+      <br />
+      <div>
+        The word 
+        <i>
+          test
+        </i>
+         is the focus word, which is stressed or emphasized. When a word is stressed, the pitch is higher. There are 2 basic types of intonation: rising and falling.
+      </div>
+      <br />
+      <div>
+        In the first sentence, the intonation falls at the end of the sentence to show that the sentence is finished. On the other hand, the intonation on the second statement rises to show surprise or disbelief. The next sections discuss the different patterns of intonation:
+         
+        <a
+          class="clickable-page"
+          href="#falling"
+        >
+          falling
+        </a>
+        ,
+         
+        <a
+          class="clickable-page"
+          href="#rising"
+        >
+          rising
+        </a>
+        , and
+         
+        <a
+          class="clickable-page"
+          href="#non-final"
+        >
+          non-final
+        </a>
+        .
+      </div>
+    </div>
+  </div>
+</div>
+`;
