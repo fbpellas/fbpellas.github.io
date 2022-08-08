@@ -44,6 +44,7 @@ import { Mission } from './components/Mission';
 import { Tooltip } from './components/Tooltip';
 import { PhonemesTable } from './components/PhonemesTable';
 import { Vowels } from './components/Vowels';
+import { Phonemes } from './components/Phonemes';
 import { Diphthongs } from './components/Diphthongs';
 import { Stress } from './components/Stress';
 import { Intonation } from './components/Intonation';
@@ -661,38 +662,7 @@ const App = () => {
 
     // TODO: create component
     if (page === 'phonemes') {
-      return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">Phonemes</h3>
-            <div>
-              According to the {IPA_DEFINITION} (IPA), there are 26 letters and 44 phonemes (or sounds)
-              in the English alphabet. These letters are divided into two categories:{' '}
-              <a className="clickable-page" href="#vowels" onClick={() => setPageAndClear('vowels')}>
-                vowels
-              </a>{' '}
-              and{' '}
-              <a className="clickable-page" href="#consonants" onClick={() => setPageAndClear('consonants')}>
-                consonants
-              </a>
-              .
-            </div>
-            <br />
-            <div>
-              <div className="note">Note:</div> Phonemes should not rely on the word’s spelling. For example, the word m
-              <i>
-                <b>oo</b>
-              </i>
-              n is not spelled with the letter ‘u’, yet is produced with the long /u/ phoneme.{' '}
-            </div>
-            <img
-              className="margin-top half-img"
-              src={`${BASE_PATH_IMG}IPA chart.jpg`}
-              alt="Learn the Art of Speaking American English"
-            />
-          </div>
-        </div>
-      );
+      return <Phonemes setPageAndClear={setPageAndClear} />
     }
 
     if (page === 'diphthongs') {
