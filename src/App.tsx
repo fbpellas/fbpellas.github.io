@@ -44,9 +44,10 @@ import { Card } from './components/Card';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { QuizCarousel } from './components/QuizCarousel';
 
-const quizLastIndex = QuizIndex.ShoppingForAPresent;
-
 const App = () => {
+  const { OddPhonemeOut, GuessThePattern, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
+  const quizLastIndex = ShoppingForAPresent;
+
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
@@ -54,7 +55,7 @@ const App = () => {
   const [emailSubject, setEmailSubject] = React.useState('');
   const [search, setSearch] = React.useState('');
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(QuizIndex.OddPhonemeOut);
+  const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
 
   const hash = window?.location?.hash?.substring(1);
   const [page, setPage] = React.useState(hash);
@@ -392,16 +393,16 @@ const App = () => {
         'selection-quiz': indexCarousel !== quizLastIndex
       });
 
-      // TODO: create component ~ QuizIndex extraction
+      // TODO: create component
       return (
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
             <QuizCarousel indexCarousel={indexCarousel} setIndexCarousel={setIndexCarousel} />
-            {indexCarousel === QuizIndex.OddPhonemeOut && <Quiz quiz={quiz} showInstantFeedback={true} />}
-            {indexCarousel === QuizIndex.PhoneticSpelling && renderCustomQuiz()}
-            {indexCarousel === QuizIndex.SameWordsDifferentStress && renderCustomQuizStress()}
-            {indexCarousel === QuizIndex.WhereIsTheStress && (
+            {indexCarousel === OddPhonemeOut && <Quiz quiz={quiz} showInstantFeedback={true} />}
+            {indexCarousel === PhoneticSpelling && renderCustomQuiz()}
+            {indexCarousel === SameWordsDifferentStress && renderCustomQuizStress()}
+            {indexCarousel === WhereIsTheStress && (
               <>
                 <div className="quiz-header">
                   <h3>Where’s the Stress?</h3>
@@ -410,7 +411,7 @@ const App = () => {
                 <Quiz quiz={quizStress} showInstantFeedback={true} />
               </>
             )}
-            {indexCarousel === QuizIndex.GuessThePattern && (
+            {indexCarousel === GuessThePattern && (
               <>
                 <div className="quiz-header">
                   <h3>Guess the Pattern</h3>
@@ -419,7 +420,7 @@ const App = () => {
                 <Quiz quiz={quizIntonation} showInstantFeedback={true} />
               </>
             )}
-            {indexCarousel === QuizIndex.ShoppingForAPresent && (
+            {indexCarousel === ShoppingForAPresent && (
               <>
                 <div className="margin-top discussion">
                   <p>Read the conversation between Annie and the salesperson.</p>
