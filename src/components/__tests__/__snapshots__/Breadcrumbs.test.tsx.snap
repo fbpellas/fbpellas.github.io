@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs 1`] = `<div />`;
+
+exports[`Breadcrumbs: some breadcrumbs 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+  >
+    <ol
+      class="breadcrumb"
+    >
+      <li
+        class="breadcrumb-item"
+      >
+        <a
+          href="#home"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="breadcrumb-item"
+      >
+        <a
+          href="#phonemes"
+        >
+          Phonemes
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        class="breadcrumb-item active"
+      >
+        Vowels
+      </li>
+    </ol>
+  </nav>
+</div>
+`;

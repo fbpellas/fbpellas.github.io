@@ -11,7 +11,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import classnames from 'classnames';
-import { generateBreadcrumbs } from './utils';
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -27,7 +26,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { Breadcrumb, CardDeck, Carousel } from 'react-bootstrap';
+import { CardDeck, Carousel } from 'react-bootstrap';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
@@ -42,6 +41,7 @@ import { Falling } from './components/Falling';
 import { Rising } from './components/Rising';
 import { NonFinal } from './components/NonFinal';
 import { Card } from './components/Card';
+import { Breadcrumbs } from './components/Breadcrumbs';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -74,29 +74,6 @@ const App = () => {
   window.onhashchange = () => {
     const hash = window?.location?.hash?.substring(1);
     setPageAndClear(hash);
-  };
-
-  // TODO: create component
-  const renderBreadcrumbs = () => {
-    const breadcrumbs = generateBreadcrumbs(page, indexCarousel);
-
-    const { length } = breadcrumbs;
-
-    if (length <= 1) return null;
-
-    return (
-      <Breadcrumb>
-        {breadcrumbs.map((breadcrumb, index) => {
-          const { anchor, title } = breadcrumb;
-          const isLast = index === length - 1;
-          if (isLast) {
-            return <Breadcrumb.Item active>{title}</Breadcrumb.Item>;
-          }
-
-          return <Breadcrumb.Item href={`#${anchor}`}>{title}</Breadcrumb.Item>;
-        })}
-      </Breadcrumb>
-    );
   };
 
   const renderCustomQuiz = () => {
@@ -848,7 +825,7 @@ const App = () => {
 
         <div className="body">
           {renderMatches()}
-          {renderBreadcrumbs()}
+          <Breadcrumbs indexCarousel={indexCarousel} page={page} />
           {renderBody()}
         </div>
         <Footer />
