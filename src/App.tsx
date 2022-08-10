@@ -26,7 +26,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { CardDeck, Carousel } from 'react-bootstrap';
+import { CardDeck } from 'react-bootstrap';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
@@ -42,6 +42,7 @@ import { Rising } from './components/Rising';
 import { NonFinal } from './components/NonFinal';
 import { Card } from './components/Card';
 import { Breadcrumbs } from './components/Breadcrumbs';
+import { QuizCarousel } from './components/QuizCarousel';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -240,44 +241,6 @@ const App = () => {
   };
 
   // TODO: create component
-  const ControlledCarousel = () => {
-    const handleSelect = (selectedIndex: number, e: any) => {
-      setIndexCarousel(selectedIndex);
-    };
-
-    return (
-      <Carousel activeIndex={indexCarousel} onSelect={handleSelect} interval={null} className="carousel-custom">
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/ODD PHON.png`} alt="Odd Phoneme Out" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/PHONETIC SPELL.png`} alt="Phonetic Spelling" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/SAME WORDS.png`}
-            alt="Same Words, Different Stress"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/WHERES THE STRESS bis.png`}
-            alt="Where’s the Stress?"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/GUESS THE PATTERN.png`} alt="Guess the Pattern" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/SHOPPING.png`} alt="Shopping for a Present" />
-        </Carousel.Item>
-      </Carousel>
-    );
-  };
-
-  // TODO: create component
   const renderMain = () => {
     return (
       <div className="block-2">
@@ -434,7 +397,7 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
-            <ControlledCarousel />
+            <QuizCarousel indexCarousel={indexCarousel} setIndexCarousel={setIndexCarousel} />
             {indexCarousel === QuizIndex.OddPhonemeOut && <Quiz quiz={quiz} showInstantFeedback={true} />}
             {indexCarousel === QuizIndex.PhoneticSpelling && renderCustomQuiz()}
             {indexCarousel === QuizIndex.SameWordsDifferentStress && renderCustomQuizStress()}
