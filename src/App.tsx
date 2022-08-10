@@ -4,7 +4,6 @@ import { HiPlay } from 'react-icons/hi';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
@@ -26,8 +25,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { CardDeck } from 'react-bootstrap';
-import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
@@ -40,10 +38,10 @@ import { Intonation } from './components/Intonation';
 import { Falling } from './components/Falling';
 import { Rising } from './components/Rising';
 import { NonFinal } from './components/NonFinal';
-import { Card } from './components/Card';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { QuizCarousel } from './components/QuizCarousel';
 import { Home } from './components/Home';
+import { ContactForm } from './components/ContactForm';
 
 const App = () => {
   const { OddPhonemeOut, GuessThePattern, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
@@ -52,8 +50,6 @@ const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
-  const [emailBody, setEmailBody] = React.useState('');
-  const [emailSubject, setEmailSubject] = React.useState('');
   const [search, setSearch] = React.useState('');
   const [matches, setMatches] = React.useState<any>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
@@ -266,43 +262,7 @@ const App = () => {
             </div>
           </div>
           <hr />
-          <Form className="form">
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Email form</Form.Label>
-              <Form.Text className="text-muted">{`Or send me an email directly at ${EMAIL}`}</Form.Text>
-              <br />
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
-                onChange={(e) => {
-                  setEmailSubject(e.target.value);
-                }}
-                type="text"
-                placeholder="Subject"
-              />
-              <br />
-              <Form.Label>Body</Form.Label>
-              <Form.Control
-                onChange={(e) => {
-                  setEmailBody(e.target.value);
-                }}
-                as="textarea"
-                rows={10}
-                placeholder="Your message"
-              />
-            </Form.Group>
-            <br />
-            <Button
-              onClick={() => {
-                window.open(
-                  `mailto:${EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-                );
-              }}
-              variant="warning"
-              type="submit"
-            >
-              Send
-            </Button>
-          </Form>
+          <ContactForm />
         </div>
       );
     }
