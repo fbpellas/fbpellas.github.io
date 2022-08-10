@@ -27,7 +27,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
+import { Breadcrumb, CardDeck, Carousel } from 'react-bootstrap';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
@@ -41,6 +41,7 @@ import { Intonation } from './components/Intonation';
 import { Falling } from './components/Falling';
 import { Rising } from './components/Rising';
 import { NonFinal } from './components/NonFinal';
+import { Card } from './components/Card';
 
 const quizLastIndex = QuizIndex.ShoppingForAPresent;
 
@@ -262,21 +263,6 @@ const App = () => {
   };
 
   // TODO: create component
-  const renderCard = (href: string, title: string, description: string, button: string) => {
-    return (
-      <Card>
-        <Card.Body>
-          <Card.Text>{title}</Card.Text>
-          <Card.Title>{description}</Card.Title>
-          <Button href={`#${href}`} onClick={() => setPageAndClear(href)} variant="secondary">
-            {button}
-          </Button>
-        </Card.Body>
-      </Card>
-    );
-  };
-
-  // TODO: create component
   const ControlledCarousel = () => {
     const handleSelect = (selectedIndex: number, e: any) => {
       setIndexCarousel(selectedIndex);
@@ -326,9 +312,30 @@ const App = () => {
           />
           <br />
           <CardDeck>
-            {renderCard('phonemes', 'Phonemes', 'Learn how to pronounce letters in English', 'Learn')}
-            {renderCard('stress', 'Word Stress', 'Understand how to emphasize each syllable', 'Learn')}
-            {renderCard('intonation', 'Intonation', 'Improve the pitch and the tone of your voice', 'Learn')}
+            <Card
+              href='phonemes'
+              title='Phonemes'
+              description='Learn how to pronounce letters in English'
+              button='Learn'
+            />
+            <Card
+              href='phonemes'
+              title='Phonemes'
+              description='Learn how to pronounce letters in English'
+              setPageAndClear={setPageAndClear}
+            />
+            <Card
+              href='stress'
+              title='Word Stress'
+              description='Understand how to emphasize each syllable'
+              setPageAndClear={setPageAndClear}
+            />
+            <Card
+              href='intonation'
+              title='Intonation'
+              description='Improve the pitch and the tone of your voice'
+              setPageAndClear={setPageAndClear}
+            />
           </CardDeck>
         </div>
       </div>
