@@ -316,12 +316,6 @@ const App = () => {
               href='phonemes'
               title='Phonemes'
               description='Learn how to pronounce letters in English'
-              button='Learn'
-            />
-            <Card
-              href='phonemes'
-              title='Phonemes'
-              description='Learn how to pronounce letters in English'
               setPageAndClear={setPageAndClear}
             />
             <Card
