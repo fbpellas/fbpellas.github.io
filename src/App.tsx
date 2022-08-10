@@ -25,7 +25,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
+import { AUTHOR_FULLNAME, BASE_PATH_SOUNDS } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
@@ -42,6 +42,7 @@ import { Breadcrumbs } from './components/Breadcrumbs';
 import { QuizCarousel } from './components/QuizCarousel';
 import { Home } from './components/Home';
 import { ContactForm } from './components/ContactForm';
+import { AboutAuthor } from './components/AboutAuthor';
 
 const App = () => {
   const { OddPhonemeOut, GuessThePattern, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
@@ -238,29 +239,12 @@ const App = () => {
     );
   };
 
-  // TODO: create component
+  // TODO: use React Router ultimately
   const renderBody = () => {
     if (page === 'about-author') {
       return (
         <div className="anti-flex">
-          <div className="block-2">
-            <div className="article">
-              <h3 className="h3-title">About the Author</h3>
-              <div className="flex-wrapper">
-                <div className="flex-1">
-                  <img className="full-img" src={`${BASE_PATH_IMG}faith.jpg`} alt={AUTHOR_FULLNAME} />
-                </div>
-                <div className="author-text flex-2">
-                  <p>
-                    {AUTHOR_FULLNAME} is a scholar at the University of San Francisco’s TESOL department. For the past
-                    four years, she has been teaching English to learners from beginners to advanced levels. When she’s
-                    not working on her thesis, {AUTHOR_FIRSTNAME} loves learning French, watercolor painting, and
-                    sending postcards to her nearest and dearest.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <AboutAuthor />
           <hr />
           <ContactForm />
         </div>
@@ -478,6 +462,7 @@ const App = () => {
   }
 
   // TODO: create component ~ Navbar + Dropdown
+  // TODO: setIs*Hovered should instead just indicate which one is hovered
   return (
     <HelmetProvider>
       <link

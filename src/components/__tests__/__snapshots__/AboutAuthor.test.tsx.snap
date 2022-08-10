@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutAuthor 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <h3
+        class="h3-title"
+      >
+        About the Author
+      </h3>
+      <div
+        class="flex-wrapper"
+      >
+        <div
+          class="flex-1"
+        >
+          <img
+            alt="Faith Pellas"
+            class="full-img"
+            src="https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/faith.jpg"
+          />
+        </div>
+        <div
+          class="author-text flex-2"
+        >
+          <p>
+            Faith Pellas
+             is a scholar at the University of San Francisco’s TESOL department. For the past four years, she has been teaching English to learners from beginners to advanced levels. When she’s not working on her thesis, 
+            Faith
+             loves learning French, watercolor painting, and sending postcards to her nearest and dearest.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
