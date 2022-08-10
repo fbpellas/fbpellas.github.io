@@ -25,7 +25,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { AUTHOR_FULLNAME, BASE_PATH_SOUNDS } from './constants';
+import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
