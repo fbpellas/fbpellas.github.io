@@ -458,7 +458,7 @@ const App = () => {
       );
     }
 
-    return <Home />;
+    return <Home setPageAndClear={setPageAndClear} />;
   };
 
   const renderMatches = () => {
