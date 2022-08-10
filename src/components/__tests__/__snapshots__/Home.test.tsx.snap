@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home 1`] = `
+<div>
+  <div
+    class="block-2"
+  >
+    <div
+      class="article"
+    >
+      <img
+        alt="Learn the Art of Speaking American English"
+        class="full-img"
+        src="https://raw.githubusercontent.com/fbpellas/fbpellas.github.io/main/public/img/IME Thesis.png"
+      />
+      <br />
+      <div
+        class="card-deck"
+      >
+        <div
+          class="card"
+        >
+          <div
+            class="card-body"
+          >
+            <p
+              class="card-text"
+            >
+              Phonemes
+            </p>
+            <div
+              class="card-title h5"
+            >
+              Learn how to pronounce letters in English
+            </div>
+            <a
+              class="btn btn-secondary"
+              href="#phonemes"
+            >
+              Learn
+            </a>
+          </div>
+        </div>
+        <div
+          class="card"
+        >
+          <div
+            class="card-body"
+          >
+            <p
+              class="card-text"
+            >
+              Word Stress
+            </p>
+            <div
+              class="card-title h5"
+            >
+              Understand how to emphasize each syllable
+            </div>
+            <a
+              class="btn btn-secondary"
+              href="#stress"
+            >
+              Learn
+            </a>
+          </div>
+        </div>
+        <div
+          class="card"
+        >
+          <div
+            class="card-body"
+          >
+            <p
+              class="card-text"
+            >
+              Intonation
+            </p>
+            <div
+              class="card-title h5"
+            >
+              Improve the pitch and the tone of your voice
+            </div>
+            <a
+              class="btn btn-secondary"
+              href="#intonation"
+            >
+              Learn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

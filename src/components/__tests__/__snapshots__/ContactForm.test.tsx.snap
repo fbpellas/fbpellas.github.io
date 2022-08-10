@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm 1`] = `
+<div>
+  <form
+    class="form"
+  >
+    <div
+      class="form-group"
+    >
+      <label
+        class="form-label"
+        for="exampleForm.ControlTextarea1"
+      >
+        Email form
+      </label>
+      <small
+        class="text-muted form-text"
+      >
+        Or send me an email directly at fbpellas@usfca.edu
+      </small>
+      <br />
+      <label
+        class="form-label"
+        for="exampleForm.ControlTextarea1"
+      >
+        Subject
+      </label>
+      <input
+        class="form-control"
+        id="exampleForm.ControlTextarea1"
+        placeholder="Subject"
+        type="text"
+      />
+      <br />
+      <label
+        class="form-label"
+        for="exampleForm.ControlTextarea1"
+      >
+        Body
+      </label>
+      <textarea
+        class="form-control"
+        id="exampleForm.ControlTextarea1"
+        placeholder="Your message"
+        rows="10"
+      />
+    </div>
+    <br />
+    <button
+      class="btn btn-warning"
+      type="submit"
+    >
+      Send
+    </button>
+  </form>
+</div>
+`;

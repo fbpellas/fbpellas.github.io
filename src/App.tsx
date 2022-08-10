@@ -4,14 +4,12 @@ import { HiPlay } from 'react-icons/hi';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import classnames from 'classnames';
-import { generateBreadcrumbs } from './utils';
 import {
   correctCustomQuizAnswers,
   customQuiz,
@@ -27,8 +25,7 @@ import Quiz from 'react-quiz-component';
 import { mapping, mappingPhonemes } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
-import { Breadcrumb, Card, CardDeck, Carousel } from 'react-bootstrap';
-import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS, EMAIL } from './constants';
+import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
 import { QuizIndex } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
@@ -41,18 +38,29 @@ import { Intonation } from './components/Intonation';
 import { Falling } from './components/Falling';
 import { Rising } from './components/Rising';
 import { NonFinal } from './components/NonFinal';
-
-const quizLastIndex = QuizIndex.ShoppingForAPresent;
+import { Breadcrumbs } from './components/Breadcrumbs';
+import { QuizCarousel } from './components/QuizCarousel';
+import { Home } from './components/Home';
+import { ContactForm } from './components/ContactForm';
+import { AboutAuthor } from './components/AboutAuthor';
 
 const App = () => {
+  const {
+    OddPhonemeOut,
+    GuessThePattern,
+    PhoneticSpelling,
+    SameWordsDifferentStress,
+    ShoppingForAPresent,
+    WhereIsTheStress
+  } = QuizIndex;
+  const quizLastIndex = ShoppingForAPresent;
+
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
-  const [emailBody, setEmailBody] = React.useState('');
-  const [emailSubject, setEmailSubject] = React.useState('');
   const [search, setSearch] = React.useState('');
   const [matches, setMatches] = React.useState<any>([]);
-  const [indexCarousel, setIndexCarousel] = React.useState(QuizIndex.OddPhonemeOut);
+  const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
 
   const hash = window?.location?.hash?.substring(1);
   const [page, setPage] = React.useState(hash);
@@ -73,28 +81,6 @@ const App = () => {
   window.onhashchange = () => {
     const hash = window?.location?.hash?.substring(1);
     setPageAndClear(hash);
-  };
-
-  const renderBreadcrumbs = () => {
-    const breadcrumbs = generateBreadcrumbs(page, indexCarousel);
-
-    const { length } = breadcrumbs;
-
-    if (length <= 1) return null;
-
-    return (
-      <Breadcrumb>
-        {breadcrumbs.map((breadcrumb, index) => {
-          const { anchor, title } = breadcrumb;
-          const isLast = index === length - 1;
-          if (isLast) {
-            return <Breadcrumb.Item active>{title}</Breadcrumb.Item>;
-          }
-
-          return <Breadcrumb.Item href={`#${anchor}`}>{title}</Breadcrumb.Item>;
-        })}
-      </Breadcrumb>
-    );
   };
 
   const renderCustomQuiz = () => {
@@ -260,137 +246,14 @@ const App = () => {
     );
   };
 
-  const renderCard = (href: string, title: string, description: string, button: string) => {
-    return (
-      <Card>
-        <Card.Body>
-          <Card.Text>{title}</Card.Text>
-          <Card.Title>{description}</Card.Title>
-          <Button href={`#${href}`} onClick={() => setPageAndClear(href)} variant="secondary">
-            {button}
-          </Button>
-        </Card.Body>
-      </Card>
-    );
-  };
-
-  const ControlledCarousel = () => {
-    const handleSelect = (selectedIndex: number, e: any) => {
-      setIndexCarousel(selectedIndex);
-    };
-
-    return (
-      <Carousel activeIndex={indexCarousel} onSelect={handleSelect} interval={null} className="carousel-custom">
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/ODD PHON.png`} alt="Odd Phoneme Out" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/PHONETIC SPELL.png`} alt="Phonetic Spelling" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/SAME WORDS.png`}
-            alt="Same Words, Different Stress"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={`${BASE_PATH_IMG}quiz/WHERES THE STRESS bis.png`}
-            alt="Where’s the Stress?"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/GUESS THE PATTERN.png`} alt="Guess the Pattern" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/SHOPPING.png`} alt="Shopping for a Present" />
-        </Carousel.Item>
-      </Carousel>
-    );
-  };
-
-  const renderMain = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <img
-            className="full-img"
-            src={`${BASE_PATH_IMG}IME Thesis.png`}
-            alt="Learn the Art of Speaking American English"
-          />
-          <br />
-          <CardDeck>
-            {renderCard('phonemes', 'Phonemes', 'Learn how to pronounce letters in English', 'Learn')}
-            {renderCard('stress', 'Word Stress', 'Understand how to emphasize each syllable', 'Learn')}
-            {renderCard('intonation', 'Intonation', 'Improve the pitch and the tone of your voice', 'Learn')}
-          </CardDeck>
-        </div>
-      </div>
-    );
-  };
-
+  // TODO: use React Router ultimately
   const renderBody = () => {
     if (page === 'about-author') {
       return (
         <div className="anti-flex">
-          <div className="block-2">
-            <div className="article">
-              <h3 className="h3-title">About the Author</h3>
-              <div className="flex-wrapper">
-                <div className="flex-1">
-                  <img className="full-img" src={`${BASE_PATH_IMG}faith.jpg`} alt={AUTHOR_FULLNAME} />
-                </div>
-                <div className="author-text flex-2">
-                  <p>
-                    {AUTHOR_FULLNAME} is a scholar at the University of San Francisco’s TESOL department. For the past
-                    four years, she has been teaching English to learners from beginners to advanced levels. When she’s
-                    not working on her thesis, {AUTHOR_FIRSTNAME} loves learning French, watercolor painting, and
-                    sending postcards to her nearest and dearest.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <AboutAuthor />
           <hr />
-          <Form className="form">
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Email form</Form.Label>
-              <Form.Text className="text-muted">{`Or send me an email directly at ${EMAIL}`}</Form.Text>
-              <br />
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
-                onChange={(e) => {
-                  setEmailSubject(e.target.value);
-                }}
-                type="text"
-                placeholder="Subject"
-              />
-              <br />
-              <Form.Label>Body</Form.Label>
-              <Form.Control
-                onChange={(e) => {
-                  setEmailBody(e.target.value);
-                }}
-                as="textarea"
-                rows={10}
-                placeholder="Your message"
-              />
-            </Form.Group>
-            <br />
-            <Button
-              onClick={() => {
-                window.open(
-                  `mailto:${EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-                );
-              }}
-              variant="warning"
-              type="submit"
-            >
-              Send
-            </Button>
-          </Form>
+          <ContactForm />
         </div>
       );
     }
@@ -446,15 +309,16 @@ const App = () => {
         'selection-quiz': indexCarousel !== quizLastIndex
       });
 
+      // TODO: create component
       return (
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
-            <ControlledCarousel />
-            {indexCarousel === QuizIndex.OddPhonemeOut && <Quiz quiz={quiz} showInstantFeedback={true} />}
-            {indexCarousel === QuizIndex.PhoneticSpelling && renderCustomQuiz()}
-            {indexCarousel === QuizIndex.SameWordsDifferentStress && renderCustomQuizStress()}
-            {indexCarousel === QuizIndex.WhereIsTheStress && (
+            <QuizCarousel indexCarousel={indexCarousel} setIndexCarousel={setIndexCarousel} />
+            {indexCarousel === OddPhonemeOut && <Quiz quiz={quiz} showInstantFeedback={true} />}
+            {indexCarousel === PhoneticSpelling && renderCustomQuiz()}
+            {indexCarousel === SameWordsDifferentStress && renderCustomQuizStress()}
+            {indexCarousel === WhereIsTheStress && (
               <>
                 <div className="quiz-header">
                   <h3>Where’s the Stress?</h3>
@@ -463,7 +327,7 @@ const App = () => {
                 <Quiz quiz={quizStress} showInstantFeedback={true} />
               </>
             )}
-            {indexCarousel === QuizIndex.GuessThePattern && (
+            {indexCarousel === GuessThePattern && (
               <>
                 <div className="quiz-header">
                   <h3>Guess the Pattern</h3>
@@ -472,7 +336,7 @@ const App = () => {
                 <Quiz quiz={quizIntonation} showInstantFeedback={true} />
               </>
             )}
-            {indexCarousel === QuizIndex.ShoppingForAPresent && (
+            {indexCarousel === ShoppingForAPresent && (
               <>
                 <div className="margin-top discussion">
                   <p>Read the conversation between Annie and the salesperson.</p>
@@ -545,7 +409,7 @@ const App = () => {
       );
     }
 
-    return renderMain();
+    return <Home setPageAndClear={setPageAndClear} />;
   };
 
   const renderMatches = () => {
@@ -604,6 +468,8 @@ const App = () => {
     );
   }
 
+  // TODO: create component ~ Navbar + Dropdown
+  // TODO: setIs*Hovered should instead just indicate which one is hovered
   return (
     <HelmetProvider>
       <link
@@ -840,7 +706,7 @@ const App = () => {
 
         <div className="body">
           {renderMatches()}
-          {renderBreadcrumbs()}
+          <Breadcrumbs indexCarousel={indexCarousel} page={page} />
           {renderBody()}
         </div>
         <Footer />
