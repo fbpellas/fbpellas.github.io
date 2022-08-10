@@ -24,11 +24,7 @@ const QuizCarousel: React.FC<QuizCarouselProps> = (props) => {
         <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/PHONETIC SPELL.png`} alt="Phonetic Spelling" />
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={`${BASE_PATH_IMG}quiz/SAME WORDS.png`}
-          alt="Same Words, Different Stress"
-        />
+        <img className="d-block w-100" src={`${BASE_PATH_IMG}quiz/SAME WORDS.png`} alt="Same Words, Different Stress" />
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -45,6 +41,6 @@ const QuizCarousel: React.FC<QuizCarouselProps> = (props) => {
       </Carousel.Item>
     </Carousel>
   );
-}
+};
 
 export { QuizCarousel };

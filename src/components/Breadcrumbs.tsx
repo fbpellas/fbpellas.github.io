@@ -22,13 +22,21 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
         const { anchor, title } = breadcrumb;
         const isLast = index === length - 1;
         if (isLast) {
-          return <Breadcrumb.Item active key={anchor}>{title}</Breadcrumb.Item>;
+          return (
+            <Breadcrumb.Item active key={anchor}>
+              {title}
+            </Breadcrumb.Item>
+          );
         }
 
-        return <Breadcrumb.Item href={`#${anchor}`} key={anchor}>{title}</Breadcrumb.Item>;
+        return (
+          <Breadcrumb.Item href={`#${anchor}`} key={anchor}>
+            {title}
+          </Breadcrumb.Item>
+        );
       })}
-    </Breadcrumb >
+    </Breadcrumb>
   );
 };
 
-export { Breadcrumbs }
+export { Breadcrumbs };

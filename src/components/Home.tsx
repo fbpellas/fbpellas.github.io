@@ -20,27 +20,27 @@ const Home: React.FC<HomeProps> = (props) => {
         <br />
         <CardDeck>
           <Card
-            href='phonemes'
-            title='Phonemes'
-            description='Learn how to pronounce letters in English'
+            href="phonemes"
+            title="Phonemes"
+            description="Learn how to pronounce letters in English"
             setPageAndClear={setPageAndClear}
           />
           <Card
-            href='stress'
-            title='Word Stress'
-            description='Understand how to emphasize each syllable'
+            href="stress"
+            title="Word Stress"
+            description="Understand how to emphasize each syllable"
             setPageAndClear={setPageAndClear}
           />
           <Card
-            href='intonation'
-            title='Intonation'
-            description='Improve the pitch and the tone of your voice'
+            href="intonation"
+            title="Intonation"
+            description="Improve the pitch and the tone of your voice"
             setPageAndClear={setPageAndClear}
           />
         </CardDeck>
       </div>
     </div>
   );
-}
+};
 
-export { Home }
+export { Home };

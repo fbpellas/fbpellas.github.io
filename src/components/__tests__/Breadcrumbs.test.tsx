@@ -6,8 +6,8 @@ import { QuizIndex } from '../../types';
 test('Breadcrumbs', () => {
   const indexCarousel = QuizIndex.GuessThePattern;
   const { container, rerender } = render(<Breadcrumbs indexCarousel={indexCarousel} page="home" />);
-  expect(container).toBeEmptyDOMElement()
+  expect(container).toBeEmptyDOMElement();
 
-  rerender(<Breadcrumbs indexCarousel={indexCarousel} page='vowels' />);
+  rerender(<Breadcrumbs indexCarousel={indexCarousel} page="vowels" />);
   expect(container).toMatchSnapshot('some breadcrumbs');
 });

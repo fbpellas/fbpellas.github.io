@@ -45,7 +45,14 @@ import { ContactForm } from './components/ContactForm';
 import { AboutAuthor } from './components/AboutAuthor';
 
 const App = () => {
-  const { OddPhonemeOut, GuessThePattern, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
+  const {
+    OddPhonemeOut,
+    GuessThePattern,
+    PhoneticSpelling,
+    SameWordsDifferentStress,
+    ShoppingForAPresent,
+    WhereIsTheStress
+  } = QuizIndex;
   const quizLastIndex = ShoppingForAPresent;
 
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
