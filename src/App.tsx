@@ -43,6 +43,7 @@ import { NonFinal } from './components/NonFinal';
 import { Card } from './components/Card';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { QuizCarousel } from './components/QuizCarousel';
+import { Home } from './components/Home';
 
 const App = () => {
   const { OddPhonemeOut, GuessThePattern, PhoneticSpelling, SameWordsDifferentStress, ShoppingForAPresent, WhereIsTheStress } = QuizIndex;
@@ -237,42 +238,6 @@ const App = () => {
         >
           Reset
         </button>
-      </div>
-    );
-  };
-
-  // TODO: create component
-  const renderMain = () => {
-    return (
-      <div className="block-2">
-        <div className="article">
-          <img
-            className="full-img"
-            src={`${BASE_PATH_IMG}IME Thesis.png`}
-            alt="Learn the Art of Speaking American English"
-          />
-          <br />
-          <CardDeck>
-            <Card
-              href='phonemes'
-              title='Phonemes'
-              description='Learn how to pronounce letters in English'
-              setPageAndClear={setPageAndClear}
-            />
-            <Card
-              href='stress'
-              title='Word Stress'
-              description='Understand how to emphasize each syllable'
-              setPageAndClear={setPageAndClear}
-            />
-            <Card
-              href='intonation'
-              title='Intonation'
-              description='Improve the pitch and the tone of your voice'
-              setPageAndClear={setPageAndClear}
-            />
-          </CardDeck>
-        </div>
       </div>
     );
   };
@@ -493,7 +458,7 @@ const App = () => {
       );
     }
 
-    return renderMain();
+    return <Home />;
   };
 
   const renderMatches = () => {
