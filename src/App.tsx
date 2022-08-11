@@ -22,7 +22,7 @@ import {
   quizStress
 } from './quiz';
 import Quiz from 'react-quiz-component';
-import { mapping, mappingPhonemes } from './search';
+import { mapping, mappingPhoneme } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
@@ -675,7 +675,7 @@ const App = () => {
                 const { length } = input;
 
                 if (length > 0) {
-                  const mappingArray = length >= 3 ? mapping : mappingPhonemes;
+                  const mappingArray = length >= 3 ? mapping : mappingPhoneme;
                   mappingArray.forEach((m: any) => {
                     const key = m[0];
 

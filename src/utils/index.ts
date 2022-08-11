@@ -1,4 +1,5 @@
-import { Breadcrumb, QuizIndex } from '../types';
+import flatten from 'lodash/flatten';
+import { Breadcrumb, Pronunciation, QuizIndex } from '../types';
 
 /**
  * @name sanitizeExamples
@@ -15,6 +16,38 @@ const sanitizeExamples = (examples: string) => {
 const sanitizePhoneme = (phoneme: string) => {
   return phoneme.replace(/\//g, '')
 }
+
+/**
+ * @name generateKeysExamples
+ * @description Returns a list of strings that can be matched for search (examples)
+ */
+const generateKeysExamples = (data: Pronunciation[]) => {
+  return flatten(
+    data.map((d: Pronunciation) => {
+      const { examples } = d;
+      const sanitizedExamples = sanitizeExamples(examples);
+
+      const filteredExamples = sanitizedExamples.filter((example: string) => example.length > 2);
+
+      return filteredExamples;
+    })
+  );
+};
+
+/**
+ * @name generateKeysPhoneme
+ * @description Returns a list of strings that can be matched for search (phoneme)
+ */
+const generateKeysPhoneme = (data: Pronunciation[]) => {
+  return flatten(
+    data.map((d: Pronunciation) => {
+      const { phoneme } = d;
+      const sanitizedPhoneme = sanitizePhoneme(phoneme);
+
+      return [sanitizedPhoneme, phoneme];
+    })
+  );
+};
 
 /**
  * @name titleize
@@ -108,4 +141,4 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
   }
 };
 
-export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, sanitizeExamples, sanitizePhoneme, titleize };
+export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, generateKeysExamples, generateKeysPhoneme, sanitizeExamples, sanitizePhoneme, titleize };

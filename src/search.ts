@@ -1,56 +1,26 @@
 import { diphthongs, consonants, vowels } from './data/phonemes';
-import flatten from 'lodash/flatten';
-import { Pronunciation } from './types';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, AUTHOR_LASTNAME } from './constants';
-import { sanitizeExamples, sanitizePhoneme } from './utils';
+import { generateKeysExamples, generateKeysPhoneme } from './utils';
 
-const generateKeysExamples = (data: Pronunciation[]) => {
-  return flatten(
-    data.map((d: Pronunciation) => {
-      const { examples } = d;
-      const sanitizedExamples = sanitizeExamples(examples);
+const typesSounds = [consonants, diphthongs, vowels];
+const [consonantsKeysExamples, diphthongsKeysExamples, vowelsKeysExamples] = typesSounds.map(generateKeysExamples);
+const [consonantsKeysPhoneme, diphthongsKeysPhoneme, vowelsKeysPhoneme] = typesSounds.map(generateKeysPhoneme)
 
-      const filteredExamples = sanitizedExamples.filter((example: string) => example.length > 2);
-
-      return filteredExamples;
-    })
-  );
-};
-
-const generateKeysPhoneme = (data: Pronunciation[]) => {
-  return flatten(
-    data.map((d: Pronunciation) => {
-      const { phoneme } = d;
-      const sanitizedPhoneme = sanitizePhoneme(phoneme);
-
-      return [sanitizedPhoneme, phoneme];
-    })
-  );
-};
-
-const consonantsKeys = generateKeysExamples(consonants);
-const diphthongsKeys = generateKeysExamples(diphthongs);
-const vowelsKeys = generateKeysExamples(vowels);
-
-const consonantsKeysPhonemes = generateKeysPhoneme(consonants);
-const diphthongsKeysPhonemes = generateKeysPhoneme(diphthongs);
-const vowelsKeysPhonemes = generateKeysPhoneme(vowels);
-
-export const mappingPhonemes = [
-  [consonantsKeysPhonemes, 'consonants', 'Consonants (phonemes)'],
-  [diphthongsKeysPhonemes, 'diphthongs', 'Diphthongs (phonemes)'],
-  [vowelsKeysPhonemes, 'vowels', 'Vowels (phonemes)']
+export const mappingPhoneme = [
+  [consonantsKeysPhoneme, 'consonants', 'Consonants (phonemes)'],
+  [diphthongsKeysPhoneme, 'diphthongs', 'Diphthongs (phonemes)'],
+  [vowelsKeysPhoneme, 'vowels', 'Vowels (phonemes)']
 ];
 
 const mappingExamples = [
-  [consonantsKeys, 'consonants', 'Consonants (examples)'],
-  [diphthongsKeys, 'diphthongs', 'Diphthongs (examples)'],
-  [vowelsKeys, 'vowels', 'Vowels (examples)']
+  [consonantsKeysExamples, 'consonants', 'Consonants (examples)'],
+  [diphthongsKeysExamples, 'diphthongs', 'Diphthongs (examples)'],
+  [vowelsKeysExamples, 'vowels', 'Vowels (examples)']
 ];
 
 export const mapping = [
   ...mappingExamples,
-  ...mappingPhonemes,
+  ...mappingPhoneme,
   [
     [
       'about',
