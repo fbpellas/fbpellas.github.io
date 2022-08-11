@@ -1,5 +1,20 @@
-import { createBreadcrumb, generateBreadcrumbs, getQuizParentBreadcrumb, sanitizeExamples, sanitizePhoneme, titleize } from '..';
-import { Breadcrumb, QuizIndex } from '../../types';
+import { createBreadcrumb, generateBreadcrumbs, generateKeysExamples, generateKeysPhoneme, getQuizParentBreadcrumb, sanitizeExamples, sanitizePhoneme, titleize } from '..';
+import { Breadcrumb, Pronunciation, QuizIndex } from '../../types';
+
+const data: Pronunciation[] = [{
+  phoneme: '/aɪ/',
+  graphemes: 'i, igh, y, ie',
+  examples: '<u>i</u>ce, b<u>ye</u>, l<u>i</u>me, f<u>igh</u>t, sk<u>y</u>',
+  audioPhoneme: 'diphthongs/phonemes/-aɪ-.m4a',
+  audioExamples: 'diphthongs/examples/ice, bye, lime, fight , sky.m4a'
+},
+{
+  phoneme: '/eɪ/',
+  graphemes: 'a, a-e, ai, ay, eigh, ey',
+  examples: '<u>a</u>corn, j<u>a</u>d<u>e</u>, p<u>ai</u>d, w<u>eigh</u>t, h<u>ey</u>',
+  audioPhoneme: 'diphthongs/phonemes/-eɪ-.m4a',
+  audioExamples: 'diphthongs/examples/acorn, jade, paid, weight, hey.m4a'
+}]
 
 test('createBreadcrumb', () => {
   expect(createBreadcrumb('something')).toStrictEqual({ anchor: 'something', title: 'Something' });
@@ -87,3 +102,11 @@ test('titleize', () => {
   expect(titleize('Bonjour')).toBe('Bonjour');
   expect(titleize('bonJoUr')).toBe('BonJoUr');
 });
+
+test('generateKeysExamples', () => {
+  expect(generateKeysExamples(data)).toStrictEqual(['ice', 'bye', 'lime', 'fight', 'sky', 'acorn', 'jade', 'paid', 'weight', 'hey']);
+})
+
+test('generateKeysPhoneme', () => {
+  expect(generateKeysPhoneme(data)).toStrictEqual(['aɪ', '/aɪ/', 'eɪ', '/eɪ/',]);
+})
