@@ -1,4 +1,4 @@
-import { createBreadcrumb, generateBreadcrumbs, getQuizParentBreadcrumb, titleize } from '..';
+import { createBreadcrumb, generateBreadcrumbs, getQuizParentBreadcrumb, sanitizeExamples, sanitizePhoneme, titleize } from '..';
 import { Breadcrumb, QuizIndex } from '../../types';
 
 test('createBreadcrumb', () => {
@@ -65,6 +65,19 @@ test('generateBreadcrumbs', () => {
   expect(generateBreadcrumbs('quiz', QuizIndex.ShoppingForAPresent)).toStrictEqual([home, intonation, quiz]);
   expect(generateBreadcrumbs('quiz', QuizIndex.OddPhonemeOut)).toStrictEqual([home, phonemes, quiz]);
   expect(generateBreadcrumbs('quiz', QuizIndex.PhoneticSpelling)).toStrictEqual([home, phonemes, quiz]);
+});
+
+test('sanitizeExamples', () => {
+  expect(sanitizeExamples('')).toStrictEqual([''])
+  expect(sanitizeExamples('example')).toStrictEqual(['example'])
+  expect(sanitizeExamples('e<u>xa</u>mple')).toStrictEqual(['example'])
+  expect(sanitizeExamples('e<u>xa</u>mple, exampl<u>e2</u>')).toStrictEqual(['example', 'example2'])
+});
+
+test('sanitizePhoneme', () => {
+  expect(sanitizePhoneme('')).toBe('')
+  expect(sanitizePhoneme('/s/')).toBe('s')
+  expect(sanitizePhoneme('/seb/')).toBe('seb')
 });
 
 test('titleize', () => {

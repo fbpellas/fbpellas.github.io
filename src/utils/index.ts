@@ -1,6 +1,22 @@
 import { Breadcrumb, QuizIndex } from '../types';
 
 /**
+ * @name sanitizeExamples
+ * @description Makes examples readable (human-friendly)
+ */
+const sanitizeExamples = (examples: string) => {
+  return examples.replace(/<u>/g, '').replace(/<\/u>/g, '').split(', ')
+}
+
+/**
+ * @name sanitizePhoneme
+ * @description Makes phoneme readable (human-friendly)
+ */
+const sanitizePhoneme = (phoneme: string) => {
+  return phoneme.replace(/\//g, '')
+}
+
+/**
  * @name titleize
  * @description Returns capital letter then same case
  */
@@ -92,4 +108,4 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
   }
 };
 
-export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, titleize };
+export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, sanitizeExamples, sanitizePhoneme, titleize };
