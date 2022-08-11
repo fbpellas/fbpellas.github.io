@@ -2,14 +2,13 @@ import { diphthongs, consonants, vowels } from './data/phonemes';
 import flatten from 'lodash/flatten';
 import { Pronunciation } from './types';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, AUTHOR_LASTNAME } from './constants';
+import { sanitizeExamples, sanitizePhoneme } from './utils';
 
-const generateKeys = (data: Pronunciation[]) => {
+const generateKeysExamples = (data: Pronunciation[]) => {
   return flatten(
     data.map((d: Pronunciation) => {
       const { examples } = d;
-
-      // TODO: add utils
-      const sanitizedExamples = examples.replace(/<u>/g, '').replace(/<\/u>/g, '').split(', ');
+      const sanitizedExamples = sanitizeExamples(examples);
 
       const filteredExamples = sanitizedExamples.filter((example: string) => example.length > 2);
 
@@ -18,25 +17,24 @@ const generateKeys = (data: Pronunciation[]) => {
   );
 };
 
-const generateKeysPhonemes = (data: Pronunciation[]) => {
+const generateKeysPhoneme = (data: Pronunciation[]) => {
   return flatten(
     data.map((d: Pronunciation) => {
       const { phoneme } = d;
-      // TODO: add utils
-      const sanitizedPhoneme = phoneme.replace('///g', '');
+      const sanitizedPhoneme = sanitizePhoneme(phoneme);
 
       return [sanitizedPhoneme, phoneme];
     })
   );
 };
 
-const consonantsKeys = generateKeys(consonants);
-const diphthongsKeys = generateKeys(diphthongs);
-const vowelsKeys = generateKeys(vowels);
+const consonantsKeys = generateKeysExamples(consonants);
+const diphthongsKeys = generateKeysExamples(diphthongs);
+const vowelsKeys = generateKeysExamples(vowels);
 
-const consonantsKeysPhonemes = generateKeysPhonemes(consonants);
-const diphthongsKeysPhonemes = generateKeysPhonemes(diphthongs);
-const vowelsKeysPhonemes = generateKeysPhonemes(vowels);
+const consonantsKeysPhonemes = generateKeysPhoneme(consonants);
+const diphthongsKeysPhonemes = generateKeysPhoneme(diphthongs);
+const vowelsKeysPhonemes = generateKeysPhoneme(vowels);
 
 export const mappingPhonemes = [
   [consonantsKeysPhonemes, 'consonants', 'Consonants (phonemes)'],
