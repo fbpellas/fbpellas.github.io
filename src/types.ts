@@ -6,6 +6,13 @@ export interface Pronunciation {
   audioExamples: string;
 }
 
+export enum NavHover {
+  Author = 'author',
+  Phonemes = 'phonemes',
+  Intonation = 'intonation'
+
+}
+
 export interface Search {
   keywords: string[];
   anchor: string;

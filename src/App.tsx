@@ -26,7 +26,7 @@ import { mapping, mappingPhoneme } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
-import { QuizIndex, Search, SearchMatch } from './types';
+import { NavHover, QuizIndex, Search, SearchMatch } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
 import { Vowels } from './components/Vowels';
@@ -55,9 +55,7 @@ const App = () => {
   } = QuizIndex;
   const quizLastIndex = ShoppingForAPresent;
 
-  const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
-  const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
-  const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
+  const [navHovered, setNavHovered] = React.useState<NavHover | undefined>(undefined);
   const [search, setSearch] = React.useState('');
   const [matches, setMatches] = React.useState<SearchMatch[]>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
@@ -72,7 +70,12 @@ const App = () => {
   const [quizStressScore, setQuizStressScore] = React.useState(0);
   const [quizStressTotal, setQuizStressTotal] = React.useState(0);
 
+  const isAuthorHovered = navHovered === NavHover.Author;
+  const isIntonationHovered = navHovered === NavHover.Intonation;
+  const isPhonemesHovered = navHovered === NavHover.Phonemes;
+
   const setPageAndClear = (hash: string) => {
+    setNavHovered(undefined);
     setSearch('');
     setMatches([]);
     setPage(hash);
@@ -475,7 +478,6 @@ const App = () => {
   }
 
   // TODO: create component ~ Navbar + Dropdown
-  // TODO: setIs*Hovered should instead just indicate which one is hovered
   return (
     <HelmetProvider>
       <link
@@ -498,12 +500,10 @@ const App = () => {
         <Navbar className="navbar" expand="lg">
           <Dropdown
             onMouseEnter={() => {
-              setIsAuthorHovered(true);
-              setIsIntonationHovered(false);
-              setIsPhonemesHovered(false);
+              setNavHovered(NavHover.Author);
             }}
             onMouseLeave={() => {
-              setIsAuthorHovered(false);
+              setNavHovered(undefined);
             }}
             show={isAuthorHovered}
           >
@@ -511,7 +511,7 @@ const App = () => {
               href="#about-author"
               onClick={() => {
                 setPageAndClear('about-author');
-                setIsAuthorHovered(false);
+                setNavHovered(undefined);
               }}
               variant="secondary"
               id="dropdown-about"
@@ -524,7 +524,6 @@ const App = () => {
                 href="#about-author"
                 onClick={() => {
                   setPageAndClear('about-author');
-                  setIsAuthorHovered(false);
                 }}
               >
                 About the Author
@@ -532,7 +531,6 @@ const App = () => {
               <Dropdown.Item
                 onClick={() => {
                   setPageAndClear('mission');
-                  setIsAuthorHovered(false);
                 }}
                 href="#mission"
               >
@@ -542,12 +540,10 @@ const App = () => {
           </Dropdown>
           <Dropdown
             onMouseEnter={() => {
-              setIsPhonemesHovered(true);
-              setIsAuthorHovered(false);
-              setIsIntonationHovered(false);
+              setNavHovered(NavHover.Phonemes);
             }}
             onMouseLeave={() => {
-              setIsPhonemesHovered(false);
+              setNavHovered(undefined);
             }}
             show={isPhonemesHovered}
           >
@@ -555,7 +551,6 @@ const App = () => {
               href="#phonemes"
               onClick={() => {
                 setPageAndClear('phonemes');
-                setIsPhonemesHovered(false);
               }}
               variant="secondary"
               id="dropdown-phonemes"
@@ -568,7 +563,6 @@ const App = () => {
                 href="#vowels"
                 onClick={() => {
                   setPageAndClear('vowels');
-                  setIsPhonemesHovered(false);
                 }}
               >
                 Vowels
@@ -577,7 +571,6 @@ const App = () => {
                 href="#diphthongs"
                 onClick={() => {
                   setPageAndClear('diphthongs');
-                  setIsPhonemesHovered(false);
                 }}
               >
                 Diphthongs
@@ -586,7 +579,6 @@ const App = () => {
                 href="#consonants"
                 onClick={() => {
                   setPageAndClear('consonants');
-                  setIsPhonemesHovered(false);
                 }}
               >
                 Consonants
@@ -600,12 +592,10 @@ const App = () => {
           </Nav>
           <Dropdown
             onMouseEnter={() => {
-              setIsIntonationHovered(true);
-              setIsAuthorHovered(false);
-              setIsPhonemesHovered(false);
+              setNavHovered(NavHover.Intonation);
             }}
             onMouseLeave={() => {
-              setIsIntonationHovered(false);
+              setNavHovered(undefined);
             }}
             show={isIntonationHovered}
           >
@@ -613,7 +603,6 @@ const App = () => {
               href="#intonation"
               onClick={() => {
                 setPageAndClear('intonation');
-                setIsIntonationHovered(false);
               }}
               variant="secondary"
               id="dropdown-intonation"
@@ -626,7 +615,6 @@ const App = () => {
                 href="#falling"
                 onClick={() => {
                   setPageAndClear('falling');
-                  setIsIntonationHovered(false);
                 }}
               >
                 Falling
@@ -635,7 +623,6 @@ const App = () => {
                 href="#rising"
                 onClick={() => {
                   setPageAndClear('rising');
-                  setIsIntonationHovered(false);
                 }}
               >
                 Rising
@@ -644,7 +631,6 @@ const App = () => {
                 href="#non-final"
                 onClick={() => {
                   setPageAndClear('non-final');
-                  setIsIntonationHovered(false);
                 }}
               >
                 Non-Final
