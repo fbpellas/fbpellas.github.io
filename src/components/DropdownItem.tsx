@@ -4,10 +4,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 export interface DropdownItemProps {
   anchor: string;
   setPageAndClear: (hash: string) => void;
+  title: string;
 }
 
 const DropdownItem: React.FC<DropdownItemProps> = (props) => {
-  const { anchor, setPageAndClear } = props;
+  const { anchor, setPageAndClear, title } = props;
   const href = `#${anchor}`;
 
   return (
@@ -17,7 +18,7 @@ const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         setPageAndClear(anchor);
       }}
     >
-      About the Author
+      {title}
     </Dropdown.Item>
   );
 };

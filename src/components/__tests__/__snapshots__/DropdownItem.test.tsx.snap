@@ -6,7 +6,7 @@ exports[`DropdownItem 1`] = `
     class="dropdown-item"
     href="#some-anchor"
   >
-    About the Author
+    Some Title
   </a>
 </div>
 `;

@@ -4,6 +4,6 @@ import { DropdownItem } from '../DropdownItem';
 
 test('DropdownItem', () => {
   const fn = jest.fn();
-  const { container } = render(<DropdownItem anchor="some-anchor" setPageAndClear={fn} />);
+  const { container } = render(<DropdownItem anchor="some-anchor" setPageAndClear={fn} title="Some Title" />);
   expect(container).toMatchSnapshot();
 });
