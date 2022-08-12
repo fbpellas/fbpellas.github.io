@@ -5,5 +5,5 @@ import { NavBar } from '../NavBar';
 test('NavBar', () => {
   const fn = jest.fn();
   const { container } = render(<NavBar navHovered={undefined} setNavHovered={fn} setPageAndClear={fn} />);
-  expect(container).toMatchSnapshot('no nav hovered');
+  expect(container).toMatchSnapshot();
 });

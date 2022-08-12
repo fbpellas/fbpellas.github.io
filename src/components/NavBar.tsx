@@ -32,7 +32,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           href="#about-author"
           onClick={() => {
             setPageAndClear('about-author');
-            setNavHovered(undefined);
           }}
           variant="secondary"
           id="dropdown-about"

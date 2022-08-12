@@ -10,7 +10,6 @@ export enum NavHover {
   Author = 'author',
   Phonemes = 'phonemes',
   Intonation = 'intonation'
-
 }
 
 export interface Search {
