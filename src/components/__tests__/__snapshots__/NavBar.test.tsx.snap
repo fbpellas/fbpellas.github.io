@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <a
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-secondary"
+      href="#about-author"
+      id="dropdown-about"
+    >
+      About
+    </a>
+  </div>
+  <div
+    class="dropdown"
+  >
+    <a
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-secondary"
+      href="#phonemes"
+      id="dropdown-phonemes"
+    >
+      Phonemes
+    </a>
+  </div>
+  <div
+    class="nav"
+  >
+    <a
+      class="nav-link"
+      data-rb-event-key="#stress"
+      href="#stress"
+    >
+      Stress
+    </a>
+  </div>
+  <div
+    class="dropdown"
+  >
+    <a
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-secondary"
+      href="#intonation"
+      id="dropdown-intonation"
+    >
+      Intonation
+    </a>
+  </div>
+  <div
+    class="mr-auto nav"
+  >
+    <a
+      class="nav-link"
+      data-rb-event-key="#quiz"
+      href="#quiz"
+    >
+      Quiz
+    </a>
+  </div>
+</div>
+`;

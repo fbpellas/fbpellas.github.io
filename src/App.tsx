@@ -6,9 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Dropdown from 'react-bootstrap/Dropdown';
 import classnames from 'classnames';
 import {
   correctCustomQuizAnswers,
@@ -26,7 +24,7 @@ import { mapping, mappingPhoneme } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
-import { QuizIndex, Search, SearchMatch } from './types';
+import { NavHover, QuizIndex, Search, SearchMatch } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
 import { Vowels } from './components/Vowels';
@@ -43,6 +41,7 @@ import { QuizCarousel } from './components/QuizCarousel';
 import { Home } from './components/Home';
 import { ContactForm } from './components/ContactForm';
 import { AboutAuthor } from './components/AboutAuthor';
+import { NavBar } from './components/NavBar';
 
 const App = () => {
   const {
@@ -55,9 +54,7 @@ const App = () => {
   } = QuizIndex;
   const quizLastIndex = ShoppingForAPresent;
 
-  const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
-  const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
-  const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
+  const [navHovered, setNavHovered] = React.useState<NavHover | undefined>(undefined);
   const [search, setSearch] = React.useState('');
   const [matches, setMatches] = React.useState<SearchMatch[]>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
@@ -73,6 +70,7 @@ const App = () => {
   const [quizStressTotal, setQuizStressTotal] = React.useState(0);
 
   const setPageAndClear = (hash: string) => {
+    setNavHovered(undefined);
     setSearch('');
     setMatches([]);
     setPage(hash);
@@ -474,8 +472,6 @@ const App = () => {
     );
   }
 
-  // TODO: create component ~ Navbar + Dropdown
-  // TODO: setIs*Hovered should instead just indicate which one is hovered
   return (
     <HelmetProvider>
       <link
@@ -496,166 +492,7 @@ const App = () => {
           English Pronunciation
         </a>
         <Navbar className="navbar" expand="lg">
-          <Dropdown
-            onMouseEnter={() => {
-              setIsAuthorHovered(true);
-              setIsIntonationHovered(false);
-              setIsPhonemesHovered(false);
-            }}
-            onMouseLeave={() => {
-              setIsAuthorHovered(false);
-            }}
-            show={isAuthorHovered}
-          >
-            <Dropdown.Toggle
-              href="#about-author"
-              onClick={() => {
-                setPageAndClear('about-author');
-                setIsAuthorHovered(false);
-              }}
-              variant="secondary"
-              id="dropdown-about"
-            >
-              About
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item
-                href="#about-author"
-                onClick={() => {
-                  setPageAndClear('about-author');
-                  setIsAuthorHovered(false);
-                }}
-              >
-                About the Author
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => {
-                  setPageAndClear('mission');
-                  setIsAuthorHovered(false);
-                }}
-                href="#mission"
-              >
-                Mission
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown
-            onMouseEnter={() => {
-              setIsPhonemesHovered(true);
-              setIsAuthorHovered(false);
-              setIsIntonationHovered(false);
-            }}
-            onMouseLeave={() => {
-              setIsPhonemesHovered(false);
-            }}
-            show={isPhonemesHovered}
-          >
-            <Dropdown.Toggle
-              href="#phonemes"
-              onClick={() => {
-                setPageAndClear('phonemes');
-                setIsPhonemesHovered(false);
-              }}
-              variant="secondary"
-              id="dropdown-phonemes"
-            >
-              Phonemes
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item
-                href="#vowels"
-                onClick={() => {
-                  setPageAndClear('vowels');
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                Vowels
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#diphthongs"
-                onClick={() => {
-                  setPageAndClear('diphthongs');
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                Diphthongs
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#consonants"
-                onClick={() => {
-                  setPageAndClear('consonants');
-                  setIsPhonemesHovered(false);
-                }}
-              >
-                Consonants
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Nav>
-            <Nav.Link href="#stress" onClick={() => setPageAndClear('stress')}>
-              Stress
-            </Nav.Link>
-          </Nav>
-          <Dropdown
-            onMouseEnter={() => {
-              setIsIntonationHovered(true);
-              setIsAuthorHovered(false);
-              setIsPhonemesHovered(false);
-            }}
-            onMouseLeave={() => {
-              setIsIntonationHovered(false);
-            }}
-            show={isIntonationHovered}
-          >
-            <Dropdown.Toggle
-              href="#intonation"
-              onClick={() => {
-                setPageAndClear('intonation');
-                setIsIntonationHovered(false);
-              }}
-              variant="secondary"
-              id="dropdown-intonation"
-            >
-              Intonation
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item
-                href="#falling"
-                onClick={() => {
-                  setPageAndClear('falling');
-                  setIsIntonationHovered(false);
-                }}
-              >
-                Falling
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#rising"
-                onClick={() => {
-                  setPageAndClear('rising');
-                  setIsIntonationHovered(false);
-                }}
-              >
-                Rising
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#non-final"
-                onClick={() => {
-                  setPageAndClear('non-final');
-                  setIsIntonationHovered(false);
-                }}
-              >
-                Non-Final
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Nav className="mr-auto">
-            <Nav.Link href="#quiz" onClick={() => setPageAndClear('quiz')}>
-              Quiz
-            </Nav.Link>
-          </Nav>
+          <NavBar navHovered={navHovered} setPageAndClear={setPageAndClear} setNavHovered={setNavHovered} />
           <Form inline>
             <FormControl
               onKeyPress={(e: any) => {
