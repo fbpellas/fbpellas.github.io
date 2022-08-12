@@ -3,163 +3,167 @@
 exports[`PhonemesTable 1`] = `
 <div>
   <table>
-    <tr>
-      <th>
-        <div
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="text-center"
+          >
+            Phonemes
+          </div>
+        </th>
+        <th
           class="text-center"
         >
-          Phonemes
-        </div>
-      </th>
-      <th
-        class="text-center"
-      >
-        <div
+          <div
+            class="text-center"
+          >
+            Grapheme
+          </div>
+        </th>
+        <th
           class="text-center"
         >
-          Grapheme
-        </div>
-      </th>
-      <th
-        class="text-center"
-      >
-        Examples
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <svg
-          class="play-icon"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-            fill-rule="evenodd"
-          />
-        </svg>
-        /aɪ/
-      </td>
-      <td>
-        i, igh, y, ie
-      </td>
-      <td>
-        <svg
-          class="play-icon"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-            fill-rule="evenodd"
-          />
-        </svg>
-        <div
-          class="text-inline"
-        >
-          <u>
-            i
-          </u>
-          ce, b
-          <u>
-            ye
-          </u>
-          , l
-          <u>
-            i
-          </u>
-          me, f
-          <u>
-            igh
-          </u>
-          t, sk
-          <u>
-            y
-          </u>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <svg
-          class="play-icon"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-            fill-rule="evenodd"
-          />
-        </svg>
-        /eɪ/
-      </td>
-      <td>
-        a, a-e, ai, ay, eigh, ey
-      </td>
-      <td>
-        <svg
-          class="play-icon"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-            fill-rule="evenodd"
-          />
-        </svg>
-        <div
-          class="text-inline"
-        >
-          <u>
-            a
-          </u>
-          corn, j
-          <u>
-            a
-          </u>
-          d
-          <u>
-            e
-          </u>
-          , p
-          <u>
-            ai
-          </u>
-          d, w
-          <u>
-            eigh
-          </u>
-          t, h
-          <u>
-            ey
-          </u>
-        </div>
-      </td>
-    </tr>
+          Examples
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <svg
+            class="play-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+              fill-rule="evenodd"
+            />
+          </svg>
+          /aɪ/
+        </td>
+        <td>
+          i, igh, y, ie
+        </td>
+        <td>
+          <svg
+            class="play-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <div
+            class="text-inline"
+          >
+            <u>
+              i
+            </u>
+            ce, b
+            <u>
+              ye
+            </u>
+            , l
+            <u>
+              i
+            </u>
+            me, f
+            <u>
+              igh
+            </u>
+            t, sk
+            <u>
+              y
+            </u>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <svg
+            class="play-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+              fill-rule="evenodd"
+            />
+          </svg>
+          /eɪ/
+        </td>
+        <td>
+          a, a-e, ai, ay, eigh, ey
+        </td>
+        <td>
+          <svg
+            class="play-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 20 20"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <div
+            class="text-inline"
+          >
+            <u>
+              a
+            </u>
+            corn, j
+            <u>
+              a
+            </u>
+            d
+            <u>
+              e
+            </u>
+            , p
+            <u>
+              ai
+            </u>
+            d, w
+            <u>
+              eigh
+            </u>
+            t, h
+            <u>
+              ey
+            </u>
+          </div>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 `;
