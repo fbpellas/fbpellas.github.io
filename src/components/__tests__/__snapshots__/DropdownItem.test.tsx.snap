@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownItem 1`] = `
+<div>
+  <a
+    class="dropdown-item"
+    href="#some-anchor"
+  >
+    About the Author
+  </a>
+</div>
+`;
