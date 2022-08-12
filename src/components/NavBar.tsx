@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavHover } from '../types';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
+import { DropdownItem } from './DropdownItem';
 
 export interface NavBarProps {
   navHovered: NavHover | undefined;
@@ -40,22 +41,8 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item
-            href="#about-author"
-            onClick={() => {
-              setPageAndClear('about-author');
-            }}
-          >
-            About the Author
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => {
-              setPageAndClear('mission');
-            }}
-            href="#mission"
-          >
-            Mission
-          </Dropdown.Item>
+          <DropdownItem anchor="about-author" setPageAndClear={setPageAndClear} title="About the Author" />
+          <DropdownItem anchor="mission" setPageAndClear={setPageAndClear} title="Mission" />
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown
@@ -79,30 +66,9 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item
-            href="#vowels"
-            onClick={() => {
-              setPageAndClear('vowels');
-            }}
-          >
-            Vowels
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#diphthongs"
-            onClick={() => {
-              setPageAndClear('diphthongs');
-            }}
-          >
-            Diphthongs
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#consonants"
-            onClick={() => {
-              setPageAndClear('consonants');
-            }}
-          >
-            Consonants
-          </Dropdown.Item>
+          <DropdownItem anchor="vowels" setPageAndClear={setPageAndClear} title="Vowels" />
+          <DropdownItem anchor="diphthongs" setPageAndClear={setPageAndClear} title="Diphthongs" />
+          <DropdownItem anchor="consonants" setPageAndClear={setPageAndClear} title="Consonants" />
         </Dropdown.Menu>
       </Dropdown>
       <Nav>
@@ -131,30 +97,9 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item
-            href="#falling"
-            onClick={() => {
-              setPageAndClear('falling');
-            }}
-          >
-            Falling
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#rising"
-            onClick={() => {
-              setPageAndClear('rising');
-            }}
-          >
-            Rising
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#non-final"
-            onClick={() => {
-              setPageAndClear('non-final');
-            }}
-          >
-            Non-Final
-          </Dropdown.Item>
+          <DropdownItem anchor="falling" setPageAndClear={setPageAndClear} title="Falling" />
+          <DropdownItem anchor="rising" setPageAndClear={setPageAndClear} title="Rising" />
+          <DropdownItem anchor="non-final" setPageAndClear={setPageAndClear} title="Non-Final" />
         </Dropdown.Menu>
       </Dropdown>
       <Nav className="mr-auto">
