@@ -202,11 +202,11 @@ tr:hover {
   background-color: #dc9b00;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: #ffebcd;
 }
 
-tr:nth-child(even):hover {
+tr:nth-child(odd):hover {
   background-color: #dc9b00;
 }
 
