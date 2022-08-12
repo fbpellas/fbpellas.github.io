@@ -26,7 +26,7 @@ import { mapping, mappingPhoneme } from './search';
 import uniqBy from 'lodash/uniqBy';
 import { isMobile } from 'react-device-detect';
 import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
-import { QuizIndex } from './types';
+import { QuizIndex, Search, SearchMatch } from './types';
 import { Footer } from './components/Footer';
 import { Mission } from './components/Mission';
 import { Vowels } from './components/Vowels';
@@ -59,7 +59,7 @@ const App = () => {
   const [isIntonationHovered, setIsIntonationHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
   const [search, setSearch] = React.useState('');
-  const [matches, setMatches] = React.useState<any>([]);
+  const [matches, setMatches] = React.useState<SearchMatch[]>([]);
   const [indexCarousel, setIndexCarousel] = React.useState(OddPhonemeOut);
 
   const hash = window?.location?.hash?.substring(1);
@@ -413,30 +413,35 @@ const App = () => {
   };
 
   const renderMatches = () => {
-    if (matches.length === 0 && search.length > 0) {
-      return (
-        <div className="resultsWrapper">
-          <div className="results">No results yet...</div>
-        </div>
-      );
+    if (matches.length === 0) {
+      if (search.length > 0) {
+        return (
+          <div className="resultsWrapper">
+            <div className="results">No results yet...</div>
+          </div>
+        );
+      }
+
+      return null;
     }
 
-    if (matches.length === 0) return null;
-
-    const matchesLinks = matches.map((m: any) => (
-      <div>
-        <a
-          className="result"
-          href={`#${m[1]}`}
-          onClick={() => {
-            setPageAndClear(m[1]);
-          }}
-        >
-          {m[2]}
-        </a>{' '}
-        {`("${m[0]}")`}
-      </div>
-    ));
+    const matchesLinks = matches.map((m: SearchMatch) => {
+      const { anchor, keyword, title } = m;
+      return (
+        <div>
+          <a
+            className="result"
+            href={`#${anchor}`}
+            onClick={() => {
+              setPageAndClear(anchor);
+            }}
+          >
+            {title}
+          </a>{' '}
+          {`("${keyword}")`}
+        </div>
+      );
+    });
 
     return (
       <div className="resultsWrapper">
@@ -658,10 +663,10 @@ const App = () => {
 
                   if (matches.length > 0) {
                     const match = matches[0];
-                    const key = match[1];
+                    const { anchor } = match;
 
-                    setPageAndClear(key);
-                    window.location.href = `#${key}`;
+                    setPageAndClear(anchor);
+                    window.location.href = `#${anchor}`;
                   }
                 }
               }}
@@ -670,27 +675,29 @@ const App = () => {
                 const inputLowercase = input.toLowerCase();
                 setSearch(input);
 
-                const newMatches: any[] = [];
+                const newMatches: SearchMatch[] = [];
 
                 const { length } = input;
 
                 if (length > 0) {
                   const mappingArray = length >= 3 ? mapping : mappingPhoneme;
-                  mappingArray.forEach((m: any) => {
-                    const key = m[0];
+                  mappingArray.forEach((match: Search) => {
+                    const { anchor, title, keywords } = match;
 
-                    const matchKey = key.find((k: any) => k.toLowerCase().includes(inputLowercase));
+                    const matchKey = keywords.find((k: string) => k.toLowerCase().includes(inputLowercase));
 
                     if (matchKey) {
-                      newMatches.push([matchKey, m[1], m[2]]);
+                      newMatches.push({ keyword: matchKey, anchor, title });
                     }
                   });
 
                   const sortedNewMatches = newMatches.sort(function (a, b) {
-                    return a[0].length - b[0].length;
+                    const { keyword: aKeyword } = a;
+                    const { keyword: bKeyword } = b;
+                    return aKeyword.length - bKeyword.length;
                   });
 
-                  const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m[2]);
+                  const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m.title);
                   setMatches(uniqNewMatches);
                 } else {
                   setMatches([]);

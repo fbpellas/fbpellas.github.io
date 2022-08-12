@@ -6,6 +6,18 @@ export interface Pronunciation {
   audioExamples: string;
 }
 
+export interface Search {
+  keywords: string[];
+  anchor: string;
+  title: string;
+}
+
+export interface SearchMatch {
+  keyword: string;
+  anchor: string;
+  title: string;
+}
+
 export interface Breadcrumb {
   anchor: string;
   title: string;

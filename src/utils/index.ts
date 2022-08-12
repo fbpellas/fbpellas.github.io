@@ -6,16 +6,16 @@ import { Breadcrumb, Pronunciation, QuizIndex } from '../types';
  * @description Makes examples readable (human-friendly)
  */
 const sanitizeExamples = (examples: string) => {
-  return examples.replace(/<u>/g, '').replace(/<\/u>/g, '').split(', ')
-}
+  return examples.replace(/<u>/g, '').replace(/<\/u>/g, '').split(', ');
+};
 
 /**
  * @name sanitizePhoneme
  * @description Makes phoneme readable (human-friendly)
  */
 const sanitizePhoneme = (phoneme: string) => {
-  return phoneme.replace(/\//g, '')
-}
+  return phoneme.replace(/\//g, '');
+};
 
 /**
  * @name generateKeysExamples
@@ -141,4 +141,13 @@ const generateBreadcrumbs = (page: string, indexCarousel: QuizIndex): Breadcrumb
   }
 };
 
-export { createBreadcrumb, getQuizParentBreadcrumb, generateBreadcrumbs, generateKeysExamples, generateKeysPhoneme, sanitizeExamples, sanitizePhoneme, titleize };
+export {
+  createBreadcrumb,
+  getQuizParentBreadcrumb,
+  generateBreadcrumbs,
+  generateKeysExamples,
+  generateKeysPhoneme,
+  sanitizeExamples,
+  sanitizePhoneme,
+  titleize
+};

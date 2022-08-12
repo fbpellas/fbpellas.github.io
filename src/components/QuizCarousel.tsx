@@ -11,7 +11,7 @@ export interface QuizCarouselProps {
 const QuizCarousel: React.FC<QuizCarouselProps> = (props) => {
   const { indexCarousel, setIndexCarousel } = props;
 
-  const handleSelect = (selectedIndex: number, _e: any) => {
+  const handleSelect = (selectedIndex: number) => {
     setIndexCarousel(selectedIndex);
   };
 

@@ -1,28 +1,29 @@
 import { diphthongs, consonants, vowels } from './data/phonemes';
 import { AUTHOR_FIRSTNAME, AUTHOR_FULLNAME, AUTHOR_LASTNAME } from './constants';
 import { generateKeysExamples, generateKeysPhoneme } from './utils';
+import { Search } from './types';
 
 const typesSounds = [consonants, diphthongs, vowels];
 const [consonantsKeysExamples, diphthongsKeysExamples, vowelsKeysExamples] = typesSounds.map(generateKeysExamples);
-const [consonantsKeysPhoneme, diphthongsKeysPhoneme, vowelsKeysPhoneme] = typesSounds.map(generateKeysPhoneme)
+const [consonantsKeysPhoneme, diphthongsKeysPhoneme, vowelsKeysPhoneme] = typesSounds.map(generateKeysPhoneme);
 
-export const mappingPhoneme = [
-  [consonantsKeysPhoneme, 'consonants', 'Consonants (phonemes)'],
-  [diphthongsKeysPhoneme, 'diphthongs', 'Diphthongs (phonemes)'],
-  [vowelsKeysPhoneme, 'vowels', 'Vowels (phonemes)']
+export const mappingPhoneme: Search[] = [
+  { keywords: consonantsKeysPhoneme, anchor: 'consonants', title: 'Consonants (phonemes)' },
+  { keywords: diphthongsKeysPhoneme, anchor: 'diphthongs', title: 'Diphthongs (phonemes)' },
+  { keywords: vowelsKeysPhoneme, anchor: 'vowels', title: 'Vowels (phonemes)' }
 ];
 
-const mappingExamples = [
-  [consonantsKeysExamples, 'consonants', 'Consonants (examples)'],
-  [diphthongsKeysExamples, 'diphthongs', 'Diphthongs (examples)'],
-  [vowelsKeysExamples, 'vowels', 'Vowels (examples)']
+const mappingExamples: Search[] = [
+  { keywords: consonantsKeysExamples, anchor: 'consonants', title: 'Consonants (examples)' },
+  { keywords: diphthongsKeysExamples, anchor: 'diphthongs', title: 'Diphthongs (examples)' },
+  { keywords: vowelsKeysExamples, anchor: 'vowels', title: 'Vowels (examples)' }
 ];
 
-export const mapping = [
+export const mapping: Search[] = [
   ...mappingExamples,
   ...mappingPhoneme,
-  [
-    [
+  {
+    keywords: [
       'about',
       'author',
       'about the author',
@@ -30,22 +31,22 @@ export const mapping = [
       AUTHOR_LASTNAME.toLowerCase(),
       AUTHOR_FULLNAME.toLowerCase()
     ],
-    'about-author',
-    'About the Author'
-  ],
-  [['mission', 'teachers', 'how to', 'students'], 'mission', 'Mission'],
-  [['consonant', 'consonants', 'letter', 'letters'], 'consonants', 'Consonants'],
+    anchor: 'about-author',
+    title: 'About the Author'
+  },
+  { keywords: ['mission', 'teachers', 'how to', 'students'], anchor: 'mission', title: 'Mission' },
+  { keywords: ['consonant', 'consonants', 'letter', 'letters'], anchor: 'consonants', title: 'Consonants' },
 
-  [['phoneme', 'phonemes'], 'phonemes', 'Phonemes'],
-  [['letter', 'vowel', 'vowels'], 'vowels', 'Vowels'],
-  [['diphthong', 'diphthongs'], 'diphthongs', 'Diphthongs'],
-  [['stress'], 'stress', 'Stress'],
-  [['intonation'], 'intonation', 'Intonation'],
-  [['rising', 'up', 'intonation'], 'rising', 'Rising'],
-  [['falling', 'down', 'intonation'], 'falling', 'Falling'],
-  [['non-final', 'up', 'down', 'non final', 'intonation'], 'non-final', 'Non-Final'],
-  [
-    [
+  { keywords: ['phoneme', 'phonemes'], anchor: 'phonemes', title: 'Phonemes' },
+  { keywords: ['letter', 'vowel', 'vowels'], anchor: 'vowels', title: 'Vowels' },
+  { keywords: ['diphthong', 'diphthongs'], anchor: 'diphthongs', title: 'Diphthongs' },
+  { keywords: ['stress'], anchor: 'stress', title: 'Stress' },
+  { keywords: ['intonation'], anchor: 'intonation', title: 'Intonation' },
+  { keywords: ['rising', 'up', 'intonation'], anchor: 'rising', title: 'Rising' },
+  { keywords: ['falling', 'down', 'intonation'], anchor: 'falling', title: 'Falling' },
+  { keywords: ['non-final', 'up', 'down', 'non final', 'intonation'], anchor: 'non-final', title: 'Non-Final' },
+  {
+    keywords: [
       'odd phoneme out',
       'odd one out',
       'phonetic spelling',
@@ -57,8 +58,12 @@ export const mapping = [
       'quiz',
       'quizzes'
     ],
-    'quiz',
-    'Quiz'
-  ],
-  [['english', 'pronunciation', 'english pronunciation', 'home', 'homepage', 'main'], 'home', 'Homepage']
+    anchor: 'quiz',
+    title: 'Quiz'
+  },
+  {
+    keywords: ['english', 'pronunciation', 'english pronunciation', 'home', 'homepage', 'main'],
+    anchor: 'home',
+    title: 'Homepage'
+  }
 ];
