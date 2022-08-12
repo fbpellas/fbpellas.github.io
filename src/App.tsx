@@ -682,8 +682,8 @@ const App = () => {
 
                 if (length > 0) {
                   const mappingArray = length >= 3 ? mapping : mappingPhoneme;
-                  mappingArray.forEach((match: Search) => {
-                    const { anchor, title, keywords } = match;
+                  mappingArray.forEach((mappingElement: Search) => {
+                    const { anchor, title, keywords } = mappingElement;
 
                     const matchKey = keywords.find((k: string) => k.toLowerCase().includes(inputLowercase));
 
@@ -692,9 +692,10 @@ const App = () => {
                     }
                   });
 
-                  const sortedNewMatches = newMatches.sort(function (a, b) {
+                  const sortedNewMatches = newMatches.sort((a, b) => {
                     const { keyword: aKeyword } = a;
                     const { keyword: bKeyword } = b;
+
                     return aKeyword.length - bKeyword.length;
                   });
 
