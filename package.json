@@ -30,9 +30,6 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{ts,tsx,json}\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
