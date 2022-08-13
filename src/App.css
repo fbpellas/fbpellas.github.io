@@ -696,4 +696,41 @@ only screen and (max-width: 760px),
   .nowrap {
     white-space: nowrap;
   }
+
+  .home-title {
+    color: #ff6781;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .react-quiz-container {
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .quiz-header {
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .attempt-input {
+    max-width: 50%;
+  }
+
+  .discussion {
+    margin: 0%;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 5%;
+  }
+
+  .answerBtn {
+    font-size: 16px !important;
+  }
+
+  .card-body {
+    padding: 0 !important;
+  }
 }

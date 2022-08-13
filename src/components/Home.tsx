@@ -10,16 +10,16 @@ export interface HomeProps {
 
 const Home: React.FC<HomeProps> = (props) => {
   const { setPageAndClear } = props;
+  const title = 'Learn the Art of Speaking American English';
+
   return (
     <div className="block-2">
       <div className="article">
-        {!isMobile && (
+        {isMobile ? (
+          <div className="home-title">{title}</div>
+        ) : (
           <>
-            <img
-              className="full-img"
-              src={`${BASE_PATH_IMG}IME Thesis.png`}
-              alt="Learn the Art of Speaking American English"
-            />
+            <img className="full-img" src={`${BASE_PATH_IMG}IME Thesis.png`} alt={title} />
             <br />
           </>
         )}
