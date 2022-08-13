@@ -665,33 +665,33 @@ u {
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-
+	table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
   th {
     border: 1px solid #777;
   }
-	
-	tbody > tr { border: 1px solid #777; }
 
-  td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-	}
-	
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
+  tbody > tr { border: 1px solid #777; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
 
   .nowrap {
     white-space: nowrap;
