@@ -420,9 +420,10 @@ const App = () => {
 
     const matchesLinks = matches.map((m: SearchMatch) => {
       const { anchor, keyword, title } = m;
+      const key = `search:${search};match:${anchor};keyword:${keyword};title:${title}`;
 
       return (
-        <div key={anchor}>
+        <div key={key}>
           <a
             className="result"
             href={`#${anchor}`}
