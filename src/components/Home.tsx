@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CardDeck } from 'react-bootstrap';
 import { BASE_PATH_IMG } from '../constants';
 import { Card } from './Card';
+import { isMobile } from 'react-device-detect';
 
 export interface HomeProps {
   setPageAndClear: (hash: string) => void;
@@ -9,15 +10,19 @@ export interface HomeProps {
 
 const Home: React.FC<HomeProps> = (props) => {
   const { setPageAndClear } = props;
+  const title = 'Learn the Art of Speaking American English';
+
   return (
     <div className="block-2">
       <div className="article">
-        <img
-          className="full-img"
-          src={`${BASE_PATH_IMG}IME Thesis.png`}
-          alt="Learn the Art of Speaking American English"
-        />
-        <br />
+        {isMobile ? (
+          <div className="home-title">{title}</div>
+        ) : (
+          <>
+            <img className="full-img" src={`${BASE_PATH_IMG}IME Thesis.png`} alt={title} />
+            <br />
+          </>
+        )}
         <CardDeck>
           <Card
             href="phonemes"

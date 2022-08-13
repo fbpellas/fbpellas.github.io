@@ -198,39 +198,12 @@ th {
   background-color: #dc9b00;
 }
 
-tr:hover {
-  background-color: #dc9b00;
-}
-
 tr:nth-child(odd) {
   background-color: #ffebcd;
 }
 
-tr:nth-child(odd):hover {
-  background-color: #dc9b00;
-}
-
-.dropdown-toggle {
-  background-color: transparent !important;
-  color: #dc9b00 !important;
-  font-size: 32px !important;
-  border: unset !important;
-}
-
-.dropdown-toggle::after {
-  border: unset !important;
-}
-
 .dropdown-item:active {
   background-color: #dc9b00 !important;
-}
-
-.dropdown-toggle:focus {
-  box-shadow: unset !important;
-}
-
-.dropdown-toggle:hover {
-  box-shadow: 0 -0.75em 0 #ffebcd inset;
 }
 
 #dropdown-phonemes {
@@ -406,17 +379,6 @@ body {
   justify-content: center;
 }
 
-.mobile {
-  margin: 15px !important;
-}
-
-.icon-mobile {
-  margin: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-
 u {
   text-decoration: unset;
   border-bottom: 2px solid black;
@@ -567,4 +529,197 @@ u {
 .footer-quiz {
   margin-top: 40px;
   font-size: 20px;
+}
+
+@media only screen and (min-width: 601px) {
+  .dropdown-toggle {
+    background-color: transparent !important;
+    color: #dc9b00 !important;
+    font-size: 32px !important;
+    border: unset !important;
+  }
+  
+  .dropdown-toggle::after {
+    border: unset !important;
+  }
+  
+  .dropdown-toggle:focus {
+    box-shadow: unset !important;
+  }
+  
+  .dropdown-toggle:hover {
+    box-shadow: 0 -0.75em 0 #ffebcd inset;
+  }
+
+  tr:hover {
+    background-color: #dc9b00;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .h1-title {
+    font-size: 26px;
+  }
+
+  .h2-title {
+    font-size: 30px;
+  }
+  
+  .main {
+    font-size: 18px;
+  }
+
+  .author-text {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  .flex-wrapper {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form-button {
+    width: 100%;
+  }
+
+  .half-img {
+    width: 100%;
+  }
+
+  .quarter-img {
+    width: 100%;
+  }
+
+  .breadcrumb {
+    font-size: 16px;
+  }
+
+  .play-icon {
+    font-size: 40px;
+  }
+
+  .results {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .navbar {
+    border-radius: 0px;
+    margin-top: 0px;
+  }
+
+  .body {
+    padding: 20px;
+  }
+
+  .carousel-custom {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .footer-quiz {
+    font-size: 16px;
+    flex-direction: row;
+  }
+
+  .nav-link {
+    font-size: 22px;
+  }
+
+  .nav-link:hover {
+    box-shadow: unset;
+  }
+
+  .dropdown-toggle {
+    font-size: 22px !important;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th {
+    border: 1px solid #777;
+  }
+
+  tbody > tr { border: 1px solid #777; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .home-title {
+    color: #ff6781;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .react-quiz-container {
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .quiz-header {
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .attempt-input {
+    max-width: 50%;
+  }
+
+  .discussion {
+    margin: 0%;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 5%;
+  }
+
+  .answerBtn {
+    font-size: 16px !important;
+  }
+
+  .card-body {
+    padding: 0 !important;
+  }
 }

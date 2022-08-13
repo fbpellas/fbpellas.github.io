@@ -48,7 +48,7 @@ exports[`ContactForm 1`] = `
     </div>
     <br />
     <button
-      class="btn btn-warning"
+      class="form-button btn btn-warning"
       type="submit"
     >
       Send

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { EMAIL } from '../constants';
+import { isMobile } from 'react-device-detect';
 
 export interface ContactFormProps {}
 
@@ -33,7 +34,7 @@ const ContactForm: React.FC<ContactFormProps> = (_props) => {
             setEmailBody(e.target.value);
           }}
           as="textarea"
-          rows={10}
+          rows={isMobile ? 5 : 10}
           placeholder="Your message"
         />
       </Form.Group>
@@ -42,6 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = (_props) => {
         onClick={() => {
           window.open(buttonRequest);
         }}
+        className="form-button"
         variant="warning"
         type="submit"
       >
