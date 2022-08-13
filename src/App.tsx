@@ -107,6 +107,7 @@ const App = () => {
           const currentValue = quizAnswers[index].toLocaleLowerCase().trim();
           const isCorrect = currentValue === c[1];
           const classNames = isCorrect ? 'correct-input attempt-input' : 'attempt-input';
+
           return (
             <div className="block">
               <input

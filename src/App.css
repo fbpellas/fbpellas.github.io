@@ -379,17 +379,6 @@ body {
   justify-content: center;
 }
 
-.mobile {
-  margin: 15px !important;
-}
-
-.icon-mobile {
-  margin: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-
 u {
   text-decoration: unset;
   border-bottom: 2px solid black;
