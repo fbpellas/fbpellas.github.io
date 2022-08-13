@@ -198,16 +198,8 @@ th {
   background-color: #dc9b00;
 }
 
-tr:hover {
-  background-color: #dc9b00;
-}
-
 tr:nth-child(odd) {
   background-color: #ffebcd;
-}
-
-tr:nth-child(odd):hover {
-  background-color: #dc9b00;
 }
 
 .dropdown-item:active {
@@ -569,6 +561,10 @@ u {
   .dropdown-toggle:hover {
     box-shadow: 0 -0.75em 0 #ffebcd inset;
   }
+
+  tr:hover {
+    background-color: #dc9b00;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -610,7 +606,7 @@ u {
   }
 
   .breadcrumb {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .play-icon {
@@ -663,5 +659,41 @@ u {
   .dropdown-item.active, .dropdown-item:active {
     background-color: white !important;
     color: black !important;
+  }
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+  th {
+    border: 1px solid #777;
+  }
+	
+	tbody > tr { border: 1px solid #777; }
+
+  td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+  .nowrap {
+    white-space: nowrap;
   }
 }

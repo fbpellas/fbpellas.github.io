@@ -95,22 +95,66 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  p
-                </u>
-                en, u
-                <u>
-                  pp
-                </u>
-                er, pu
-                <u>
-                  pp
-                </u>
-                y, gra
-                <u>
-                  p
-                </u>
-                e, ha
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    p
+                  </u>
+                  en
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  u
+                  <u>
+                    pp
+                  </u>
+                  er
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  pu
+                  <u>
+                    pp
+                  </u>
+                  y
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  gra
+                  <u>
+                    p
+                  </u>
+                  e
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                ha
                 <u>
                   pp
                 </u>
@@ -161,22 +205,65 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  b
-                </u>
-                ig, ho
-                <u>
-                  bb
-                </u>
-                y, 
-                <u>
-                  b
-                </u>
-                ee, li
-                <u>
-                  b
-                </u>
-                rary, ca
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    b
+                  </u>
+                  ig
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ho
+                  <u>
+                    bb
+                  </u>
+                  y
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    b
+                  </u>
+                  ee
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  li
+                  <u>
+                    b
+                  </u>
+                  rary
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                ca
                 <u>
                   b
                 </u>
@@ -226,22 +313,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  t
-                </u>
-                est, ki
-                <u>
-                  tt
-                </u>
-                en, dou
-                <u>
-                  bt
-                </u>
-                , l
-                <u>
-                  ight
-                </u>
-                , work
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    t
+                  </u>
+                  est
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ki
+                  <u>
+                    tt
+                  </u>
+                  en
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  dou
+                  <u>
+                    bt
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  l
+                  <u>
+                    ight
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                work
                 <u>
                   ed
                 </u>
@@ -291,22 +420,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  d
-                </u>
-                aughter, a
-                <u>
-                  dd
-                </u>
-                , br
-                <u>
-                  ide
-                </u>
-                , wou
-                <u>
-                  ld
-                </u>
-                , be
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    d
+                  </u>
+                  aughter
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  a
+                  <u>
+                    dd
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  br
+                  <u>
+                    ide
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  wou
+                  <u>
+                    ld
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                be
                 <u>
                   d
                 </u>
@@ -356,26 +526,66 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  ch
-                </u>
-                ur
-                <u>
-                  ch
-                </u>
-                , 
-                <u>
-                  c
-                </u>
-                ello, bea
-                <u>
-                  ch
-                </u>
-                , ma
-                <u>
-                  ture
-                </u>
-                , ques
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    ch
+                  </u>
+                  ur
+                  <u>
+                    ch
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    c
+                  </u>
+                  ello
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  bea
+                  <u>
+                    ch
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ma
+                  <u>
+                    ture
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                ques
                 <u>
                   tion
                 </u>
@@ -425,23 +635,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                ca
-                <u>
-                  ge
-                </u>
-                , 
-                <u>
-                  j
-                </u>
-                am,  ju
-                <u>
-                  dge
-                </u>
-                , su
-                <u>
-                  gg
-                </u>
-                est,  e
+                <div
+                  class="text-inline nowrap"
+                >
+                  ca
+                  <u>
+                    ge
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    j
+                  </u>
+                  am
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                   ju
+                  <u>
+                    dge
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  su
+                  <u>
+                    gg
+                  </u>
+                  est
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                 e
                 <u>
                   dge
                 </u>
@@ -491,22 +742,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  c
-                </u>
-                ause, 
-                <u>
-                  k
-                </u>
-                ing,  la
-                <u>
-                  ck
-                </u>
-                ,  a
-                <u>
-                  ch
-                </u>
-                e, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    c
+                  </u>
+                  ause
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    k
+                  </u>
+                  ing
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                   la
+                  <u>
+                    ck
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                   a
+                  <u>
+                    ch
+                  </u>
+                  e
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   que
                 </u>
@@ -557,23 +849,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                hu
-                <u>
-                  g
-                </u>
-                , bi
-                <u>
-                  gge
-                </u>
-                r, 
-                <u>
-                  gue
-                </u>
-                st, 
-                <u>
-                  gh
-                </u>
-                ost, va
+                <div
+                  class="text-inline nowrap"
+                >
+                  hu
+                  <u>
+                    g
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  bi
+                  <u>
+                    gge
+                  </u>
+                  r
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    gue
+                  </u>
+                  st
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    gh
+                  </u>
+                  ost
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                va
                 <u>
                   gue
                 </u>
@@ -623,22 +956,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  f
-                </u>
-                lower, o
-                <u>
-                  ff
-                </u>
-                er, gra
-                <u>
-                  ph
-                </u>
-                , ha
-                <u>
-                  lf
-                </u>
-                , gira
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    f
+                  </u>
+                  lower
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  o
+                  <u>
+                    ff
+                  </u>
+                  er
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  gra
+                  <u>
+                    ph
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ha
+                  <u>
+                    lf
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                gira
                 <u>
                   ffe
                 </u>
@@ -688,22 +1063,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  ve
-                </u>
-                st, ha
-                <u>
-                  ve
-                </u>
-                , glo
-                <u>
-                  ve
-                </u>
-                , wi
-                <u>
-                  ve
-                </u>
-                s, wa
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    ve
+                  </u>
+                  st
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ha
+                  <u>
+                    ve
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  glo
+                  <u>
+                    ve
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  wi
+                  <u>
+                    ve
+                  </u>
+                  s
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                wa
                 <u>
                   ve
                 </u>
@@ -753,22 +1170,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  Th
-                </u>
-                ursday, 
-                <u>
-                  th
-                </u>
-                ank, ba
-                <u>
-                  th
-                </u>
-                , no
-                <u>
-                  th
-                </u>
-                ing, bo
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    Th
+                  </u>
+                  ursday
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    th
+                  </u>
+                  ank
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ba
+                  <u>
+                    th
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  no
+                  <u>
+                    th
+                  </u>
+                  ing
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                bo
                 <u>
                   th
                 </u>
@@ -818,23 +1277,65 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                wi
-                <u>
-                  th
-                </u>
-                , mo
-                <u>
-                  th
-                </u>
-                er, 
-                <u>
-                  th
-                </u>
-                ose, ga
-                <u>
-                  th
-                </u>
-                er, fur
+                <div
+                  class="text-inline nowrap"
+                >
+                  wi
+                  <u>
+                    th
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  mo
+                  <u>
+                    th
+                  </u>
+                  er
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    th
+                  </u>
+                  ose
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ga
+                  <u>
+                    th
+                  </u>
+                  er
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                fur
                 <u>
                   th
                 </u>
@@ -885,23 +1386,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                ki
-                <u>
-                  ss
-                </u>
-                , 
-                <u>
-                  ps
-                </u>
-                ychology, ri
-                <u>
-                  ce
-                </u>
-                , 
-                <u>
-                  c
-                </u>
-                ircle, pea
+                <div
+                  class="text-inline nowrap"
+                >
+                  ki
+                  <u>
+                    ss
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    ps
+                  </u>
+                  ychology
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ri
+                  <u>
+                    ce
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    c
+                  </u>
+                  ircle
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                pea
                 <u>
                   ce
                 </u>
@@ -951,22 +1492,65 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  z
-                </u>
-                oo, ja
-                <u>
-                  zz
-                </u>
-                , sci
-                <u>
-                  ss
-                </u>
-                or, la
-                <u>
-                  z
-                </u>
-                y, qui
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    z
+                  </u>
+                  oo
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ja
+                  <u>
+                    zz
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  sci
+                  <u>
+                    ss
+                  </u>
+                  or
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  la
+                  <u>
+                    z
+                  </u>
+                  y
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                qui
                 <u>
                   zz
                 </u>
@@ -1017,22 +1601,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  sh
-                </u>
-                are, mo
-                <u>
-                  tion
-                </u>
-                , pa
-                <u>
-                  ssion
-                </u>
-                , ten
-                <u>
-                  sion
-                </u>
-                , Engli
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    sh
+                  </u>
+                  are
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  mo
+                  <u>
+                    tion
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  pa
+                  <u>
+                    ssion
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ten
+                  <u>
+                    sion
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                Engli
                 <u>
                   sh
                 </u>
@@ -1082,23 +1707,65 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                A
-                <u>
-                  s
-                </u>
-                ia, ca
-                <u>
-                  s
-                </u>
-                ual, bei
-                <u>
-                  ge
-                </u>
-                , vi
-                <u>
-                  sion
-                </u>
-                , mea
+                <div
+                  class="text-inline nowrap"
+                >
+                  A
+                  <u>
+                    s
+                  </u>
+                  ia
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ca
+                  <u>
+                    s
+                  </u>
+                  ual
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  bei
+                  <u>
+                    ge
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  vi
+                  <u>
+                    sion
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                mea
                 <u>
                   sure
                 </u>
@@ -1148,26 +1815,67 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  m
-                </u>
-                o
-                <u>
-                  m
-                </u>
-                , gra
-                <u>
-                  mm
-                </u>
-                ar, cli
-                <u>
-                  mb
-                </u>
-                , ga
-                <u>
-                  me
-                </u>
-                , autu
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    m
+                  </u>
+                  o
+                  <u>
+                    m
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  gra
+                  <u>
+                    mm
+                  </u>
+                  ar
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  cli
+                  <u>
+                    mb
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ga
+                  <u>
+                    me
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                autu
                 <u>
                   mn
                 </u>
@@ -1217,26 +1925,66 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  n
-                </u>
-                i
-                <u>
-                  ne
-                </u>
-                , co
-                <u>
-                  nn
-                </u>
-                ect, 
-                <u>
-                  kn
-                </u>
-                ife, 
-                <u>
-                  pn
-                </u>
-                eumonia, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    n
+                  </u>
+                  i
+                  <u>
+                    ne
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  co
+                  <u>
+                    nn
+                  </u>
+                  ect
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    kn
+                  </u>
+                  ife
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    pn
+                  </u>
+                  eumonia
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   gn
                 </u>
@@ -1287,23 +2035,66 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                si
-                <u>
-                  ng
-                </u>
-                , ba
-                <u>
-                  n
-                </u>
-                k, a
-                <u>
-                  ng
-                </u>
-                ry, dri
-                <u>
-                  n
-                </u>
-                k, ju
+                <div
+                  class="text-inline nowrap"
+                >
+                  si
+                  <u>
+                    ng
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  ba
+                  <u>
+                    n
+                  </u>
+                  k
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  a
+                  <u>
+                    ng
+                  </u>
+                  ry
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  dri
+                  <u>
+                    n
+                  </u>
+                  k
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                ju
                 <u>
                   n
                 </u>
@@ -1354,22 +2145,64 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  y
-                </u>
-                oung, on
-                <u>
-                  io
-                </u>
-                n, opin
-                <u>
-                  io
-                </u>
-                n, 
-                <u>
-                  y
-                </u>
-                es, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    y
+                  </u>
+                  oung
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  on
+                  <u>
+                    io
+                  </u>
+                  n
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  opin
+                  <u>
+                    io
+                  </u>
+                  n
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    y
+                  </u>
+                  es
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   u
                 </u>
@@ -1420,26 +2253,66 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  l
-                </u>
-                ong, pi
-                <u>
-                  ll
-                </u>
-                , tab
-                <u>
-                  le
-                </u>
-                , 
-                <u>
-                  l
-                </u>
-                ike
-                <u>
-                  l
-                </u>
-                y, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    l
+                  </u>
+                  ong
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  pi
+                  <u>
+                    ll
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  tab
+                  <u>
+                    le
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    l
+                  </u>
+                  ike
+                  <u>
+                    l
+                  </u>
+                  y
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   l
                 </u>
@@ -1490,22 +2363,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  r
-                </u>
-                est, bo
-                <u>
-                  rr
-                </u>
-                ow, 
-                <u>
-                  rh
-                </u>
-                ythm, 
-                <u>
-                  wr
-                </u>
-                ite, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    r
+                  </u>
+                  est
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  bo
+                  <u>
+                    rr
+                  </u>
+                  ow
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    rh
+                  </u>
+                  ythm
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    wr
+                  </u>
+                  ite
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   wr
                 </u>
@@ -1556,22 +2470,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  w
-                </u>
-                est, 
-                <u>
-                  wh
-                </u>
-                en, q
-                <u>
-                  u
-                </u>
-                iet, 
-                <u>
-                  o
-                </u>
-                ne, 
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    w
+                  </u>
+                  est
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    wh
+                  </u>
+                  en
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  q
+                  <u>
+                    u
+                  </u>
+                  iet
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    o
+                  </u>
+                  ne
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   wh
                 </u>
@@ -1622,22 +2577,63 @@ exports[`Consonants 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  h
-                </u>
-                ome, 
-                <u>
-                  wh
-                </u>
-                ole, 
-                <u>
-                  wh
-                </u>
-                o, 
-                <u>
-                  h
-                </u>
-                air, a
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    h
+                  </u>
+                  ome
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    wh
+                  </u>
+                  ole
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    wh
+                  </u>
+                  o
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    h
+                  </u>
+                  air
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                a
                 <u>
                   h
                 </u>

@@ -72,22 +72,65 @@ exports[`PhonemesTable 1`] = `
           <div
             class="text-inline"
           >
-            <u>
-              i
-            </u>
-            ce, b
-            <u>
-              ye
-            </u>
-            , l
-            <u>
-              i
-            </u>
-            me, f
-            <u>
-              igh
-            </u>
-            t, sk
+            <div
+              class="text-inline nowrap"
+            >
+              <u>
+                i
+              </u>
+              ce
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              b
+              <u>
+                ye
+              </u>
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              l
+              <u>
+                i
+              </u>
+              me
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              f
+              <u>
+                igh
+              </u>
+              t
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline nowrap"
+          >
+            sk
             <u>
               y
             </u>
@@ -137,26 +180,69 @@ exports[`PhonemesTable 1`] = `
           <div
             class="text-inline"
           >
-            <u>
-              a
-            </u>
-            corn, j
-            <u>
-              a
-            </u>
-            d
-            <u>
-              e
-            </u>
-            , p
-            <u>
-              ai
-            </u>
-            d, w
-            <u>
-              eigh
-            </u>
-            t, h
+            <div
+              class="text-inline nowrap"
+            >
+              <u>
+                a
+              </u>
+              corn
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              j
+              <u>
+                a
+              </u>
+              d
+              <u>
+                e
+              </u>
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              p
+              <u>
+                ai
+              </u>
+              d
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline"
+          >
+            <div
+              class="text-inline nowrap"
+            >
+              w
+              <u>
+                eigh
+              </u>
+              t
+            </div>
+            ,
+             
+          </div>
+          <div
+            class="text-inline nowrap"
+          >
+            h
             <u>
               ey
             </u>

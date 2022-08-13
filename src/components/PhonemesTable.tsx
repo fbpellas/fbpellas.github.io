@@ -30,6 +30,7 @@ const PhonemesTable: React.FC<PhonemesTableProps> = (props) => {
 
           const audioPhonemeObj = new Audio(`${BASE_PATH_SOUNDS}${audioPhoneme}`);
           const audioExamplesObj = new Audio(`${BASE_PATH_SOUNDS}${audioExamples}`);
+          const examplesSplit = examples.split(', ');
 
           return (
             <tr key={phoneme}>
@@ -50,7 +51,20 @@ const PhonemesTable: React.FC<PhonemesTableProps> = (props) => {
                     audioExamplesObj.play();
                   }}
                 />
-                <div className="text-inline" dangerouslySetInnerHTML={{ __html: examples }} />
+                {examplesSplit.map((example: string, index: number) => {
+                  const isLast = index === examplesSplit.length - 1;
+
+                  if (isLast)
+                    return (
+                      <div key={example} className="text-inline nowrap" dangerouslySetInnerHTML={{ __html: example }} />
+                    );
+
+                  return (
+                    <div key={example} className="text-inline">
+                      <div className="text-inline nowrap" dangerouslySetInnerHTML={{ __html: example }} />,{' '}
+                    </div>
+                  );
+                })}
               </td>
             </tr>
           );

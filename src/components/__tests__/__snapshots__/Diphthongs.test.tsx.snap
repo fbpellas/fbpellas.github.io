@@ -93,22 +93,65 @@ exports[`Diphthongs 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  i
-                </u>
-                ce, b
-                <u>
-                  ye
-                </u>
-                , l
-                <u>
-                  i
-                </u>
-                me, f
-                <u>
-                  igh
-                </u>
-                t, sk
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    i
+                  </u>
+                  ce
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  b
+                  <u>
+                    ye
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  l
+                  <u>
+                    i
+                  </u>
+                  me
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  f
+                  <u>
+                    igh
+                  </u>
+                  t
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                sk
                 <u>
                   y
                 </u>
@@ -158,26 +201,69 @@ exports[`Diphthongs 1`] = `
               <div
                 class="text-inline"
               >
-                <u>
-                  a
-                </u>
-                corn, j
-                <u>
-                  a
-                </u>
-                d
-                <u>
-                  e
-                </u>
-                , p
-                <u>
-                  ai
-                </u>
-                d, w
-                <u>
-                  eigh
-                </u>
-                t, h
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    a
+                  </u>
+                  corn
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  j
+                  <u>
+                    a
+                  </u>
+                  d
+                  <u>
+                    e
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  p
+                  <u>
+                    ai
+                  </u>
+                  d
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  w
+                  <u>
+                    eigh
+                  </u>
+                  t
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                h
                 <u>
                   ey
                 </u>
@@ -227,23 +313,66 @@ exports[`Diphthongs 1`] = `
               <div
                 class="text-inline"
               >
-                b
-                <u>
-                  oy
-                </u>
-                , c
-                <u>
-                  oi
-                </u>
-                n, s
-                <u>
-                  oi
-                </u>
-                l, v
-                <u>
-                  oi
-                </u>
-                ce, turqu
+                <div
+                  class="text-inline nowrap"
+                >
+                  b
+                  <u>
+                    oy
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  c
+                  <u>
+                    oi
+                  </u>
+                  n
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  s
+                  <u>
+                    oi
+                  </u>
+                  l
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  v
+                  <u>
+                    oi
+                  </u>
+                  ce
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
+                turqu
                 <u>
                   oi
                 </u>
@@ -294,23 +423,64 @@ exports[`Diphthongs 1`] = `
               <div
                 class="text-inline"
               >
+                <div
+                  class="text-inline nowrap"
+                >
+                  g
+                  <u>
+                    o
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  t
+                  <u>
+                    o
+                  </u>
+                  tal
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  gr
+                  <u>
+                    ow
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  <u>
+                    o
+                  </u>
+                  ver
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 g
-                <u>
-                  o
-                </u>
-                , t
-                <u>
-                  o
-                </u>
-                tal, gr
-                <u>
-                  ow
-                </u>
-                , 
-                <u>
-                  o
-                </u>
-                ver, g
                 <u>
                   ol
                 </u>
@@ -361,23 +531,63 @@ exports[`Diphthongs 1`] = `
               <div
                 class="text-inline"
               >
-                c
-                <u>
-                  ow
-                </u>
-                , n
-                <u>
-                  ow
-                </u>
-                , br
-                <u>
-                  ow
-                </u>
-                n, w
-                <u>
-                  ow
-                </u>
-                , 
+                <div
+                  class="text-inline nowrap"
+                >
+                  c
+                  <u>
+                    ow
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  n
+                  <u>
+                    ow
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  br
+                  <u>
+                    ow
+                  </u>
+                  n
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline"
+              >
+                <div
+                  class="text-inline nowrap"
+                >
+                  w
+                  <u>
+                    ow
+                  </u>
+                </div>
+                ,
+                 
+              </div>
+              <div
+                class="text-inline nowrap"
+              >
                 <u>
                   gow
                 </u>
