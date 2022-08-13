@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { IoIosConstruct } from 'react-icons/io';
 import { HiPlay } from 'react-icons/hi';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +6,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Navbar from 'react-bootstrap/Navbar';
+import { isMobile } from 'react-device-detect';
 import classnames from 'classnames';
 import {
   correctCustomQuizAnswers,
@@ -22,7 +22,6 @@ import {
 import Quiz from 'react-quiz-component';
 import { mapping, mappingPhoneme } from './search';
 import uniqBy from 'lodash/uniqBy';
-import { isMobile } from 'react-device-detect';
 import { AUTHOR_FULLNAME, BASE_PATH_IMG, BASE_PATH_SOUNDS } from './constants';
 import { NavHover, QuizIndex, Search, SearchMatch } from './types';
 import { Footer } from './components/Footer';
@@ -42,6 +41,8 @@ import { Home } from './components/Home';
 import { ContactForm } from './components/ContactForm';
 import { AboutAuthor } from './components/AboutAuthor';
 import { NavBar } from './components/NavBar';
+import { Nav, NavDropdown } from 'react-bootstrap';
+import { MobileNavBar } from './components/MobileNavBar';
 
 const App = () => {
   const {
@@ -412,14 +413,6 @@ const App = () => {
 
   const renderMatches = () => {
     if (matches.length === 0) {
-      if (search.length > 0) {
-        return (
-          <div className="resultsWrapper">
-            <div className="results">No results yet...</div>
-          </div>
-        );
-      }
-
       return null;
     }
 
@@ -451,27 +444,6 @@ const App = () => {
     );
   };
 
-  if (isMobile) {
-    return (
-      <HelmetProvider>
-        <Helmet>
-          <title>{`English Pronunciation by ${AUTHOR_FULLNAME}`}</title>
-          <link rel="canonical" href="https://fbpellas.github.io/" />
-        </Helmet>
-        <div className="mobile">
-          <h1>{AUTHOR_FULLNAME}</h1>
-          <h2>English Pronunciation</h2>
-          <div>
-            We are working hard to make this website accessible on mobile. In the meantime, please visit it on a
-            computer instead. Thank you for your understanding!
-          </div>
-        </div>
-        <br />
-        <IoIosConstruct className="icon-mobile" size="100px" />
-      </HelmetProvider>
-    );
-  }
-
   return (
     <HelmetProvider>
       <link
@@ -484,71 +456,76 @@ const App = () => {
         <title>{`English Pronunciation by ${AUTHOR_FULLNAME}`}</title>
         <link rel="canonical" href="https://fbpellas.github.io/" />
       </Helmet>
+      {isMobile && <MobileNavBar setPageAndClear={setPageAndClear} />}
       <div className="main">
-        <a className="h1-title" href="#about-author" onClick={() => setPageAndClear('about-author')}>
-          {AUTHOR_FULLNAME}
-        </a>
+        {!isMobile && (
+          <a className="h1-title" href="#about-author" onClick={() => setPageAndClear('about-author')}>
+            {AUTHOR_FULLNAME}
+          </a>
+        )}
         <a className="h2-title" href="#home" onClick={() => setPageAndClear('home')}>
           English Pronunciation
         </a>
-        <Navbar className="navbar" expand="lg">
-          <NavBar navHovered={navHovered} setPageAndClear={setPageAndClear} setNavHovered={setNavHovered} />
-          <Form inline>
-            <FormControl
-              onKeyPress={(e: any) => {
-                if ([e.keyCode, e.which].includes(13)) {
-                  e.preventDefault();
+        {!isMobile && (
+          <Navbar className="navbar" expand="lg">
+            <NavBar navHovered={navHovered} setPageAndClear={setPageAndClear} setNavHovered={setNavHovered} />
+            <Form inline>
+              <FormControl
+                onKeyPress={(e: any) => {
+                  if ([e.keyCode, e.which].includes(13)) {
+                    e.preventDefault();
 
-                  if (matches.length > 0) {
-                    const match = matches[0];
-                    const { anchor } = match;
+                    if (matches.length > 0) {
+                      const match = matches[0];
+                      const { anchor } = match;
 
-                    setPageAndClear(anchor);
-                    window.location.href = `#${anchor}`;
-                  }
-                }
-              }}
-              onChange={(e) => {
-                const input = e.target.value;
-                const inputLowercase = input.toLowerCase();
-                setSearch(input);
-
-                const newMatches: SearchMatch[] = [];
-
-                const { length } = input;
-
-                if (length > 0) {
-                  const mappingArray = length >= 3 ? mapping : mappingPhoneme;
-                  mappingArray.forEach((mappingElement: Search) => {
-                    const { anchor, title, keywords } = mappingElement;
-
-                    const matchKey = keywords.find((k: string) => k.toLowerCase().includes(inputLowercase));
-
-                    if (matchKey) {
-                      newMatches.push({ keyword: matchKey, anchor, title });
+                      setPageAndClear(anchor);
+                      window.location.href = `#${anchor}`;
                     }
-                  });
+                  }
+                }}
+                onChange={(e) => {
+                  const input = e.target.value;
+                  const inputLowercase = input.toLowerCase();
+                  setSearch(input);
 
-                  const sortedNewMatches = newMatches.sort((a, b) => {
-                    const { keyword: aKeyword } = a;
-                    const { keyword: bKeyword } = b;
+                  const newMatches: SearchMatch[] = [];
 
-                    return aKeyword.length - bKeyword.length;
-                  });
+                  const { length } = input;
 
-                  const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m.title);
-                  setMatches(uniqNewMatches);
-                } else {
-                  setMatches([]);
-                }
-              }}
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-              value={search}
-            />
-          </Form>
-        </Navbar>
+                  if (length > 0) {
+                    const mappingArray = length >= 2 ? mapping : mappingPhoneme;
+                    mappingArray.forEach((mappingElement: Search) => {
+                      const { anchor, title, keywords } = mappingElement;
+
+                      const matchKey = keywords.find((k: string) => k.toLowerCase().includes(inputLowercase));
+
+                      if (matchKey) {
+                        newMatches.push({ keyword: matchKey, anchor, title });
+                      }
+                    });
+
+                    const sortedNewMatches = newMatches.sort((a, b) => {
+                      const { keyword: aKeyword } = a;
+                      const { keyword: bKeyword } = b;
+
+                      return aKeyword.length - bKeyword.length;
+                    });
+
+                    const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m.title);
+                    setMatches(uniqNewMatches);
+                  } else {
+                    setMatches([]);
+                  }
+                }}
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+                value={search}
+              />
+            </Form>
+          </Navbar>
+        )}
 
         <div className="body">
           {renderMatches()}

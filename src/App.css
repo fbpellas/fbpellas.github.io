@@ -210,27 +210,8 @@ tr:nth-child(odd):hover {
   background-color: #dc9b00;
 }
 
-.dropdown-toggle {
-  background-color: transparent !important;
-  color: #dc9b00 !important;
-  font-size: 32px !important;
-  border: unset !important;
-}
-
-.dropdown-toggle::after {
-  border: unset !important;
-}
-
 .dropdown-item:active {
   background-color: #dc9b00 !important;
-}
-
-.dropdown-toggle:focus {
-  box-shadow: unset !important;
-}
-
-.dropdown-toggle:hover {
-  box-shadow: 0 -0.75em 0 #ffebcd inset;
 }
 
 #dropdown-phonemes {
@@ -567,4 +548,120 @@ u {
 .footer-quiz {
   margin-top: 40px;
   font-size: 20px;
+}
+
+@media only screen and (min-width: 601px) {
+  .dropdown-toggle {
+    background-color: transparent !important;
+    color: #dc9b00 !important;
+    font-size: 32px !important;
+    border: unset !important;
+  }
+  
+  .dropdown-toggle::after {
+    border: unset !important;
+  }
+  
+  .dropdown-toggle:focus {
+    box-shadow: unset !important;
+  }
+  
+  .dropdown-toggle:hover {
+    box-shadow: 0 -0.75em 0 #ffebcd inset;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .h1-title {
+    font-size: 26px;
+  }
+
+  .h2-title {
+    font-size: 30px;
+  }
+  
+  .main {
+    font-size: 18px;
+  }
+
+  .author-text {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  .flex-wrapper {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form-button {
+    width: 100%;
+  }
+
+  .half-img {
+    width: 100%;
+  }
+
+  .quarter-img {
+    width: 100%;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .play-icon {
+    font-size: 40px;
+  }
+
+  .results {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .navbar {
+    border-radius: 0px;
+    margin-top: 0px;
+  }
+
+  .body {
+    padding: 20px;
+  }
+
+  .carousel-custom {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .footer-quiz {
+    font-size: 16px;
+    flex-direction: row;
+  }
+
+  .nav-link {
+    font-size: 22px;
+  }
+
+  .nav-link:hover {
+    box-shadow: unset;
+  }
+
+  .dropdown-toggle {
+    font-size: 22px !important;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: white !important;
+    color: black !important;
+  }
 }
