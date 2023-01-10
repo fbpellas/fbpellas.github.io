@@ -1,6 +1,6 @@
 # English Pronunciation by Faith Pellas
 
-Deployed on [GitHub pages](https://fbpellas.github.io/), support for desktop only at the moment.
+Deployed on [GitHub pages](https://fbpellas.github.io/).
 
 ## Development
 
